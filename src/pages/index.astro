@@ -472,24 +472,46 @@ const schemaJsonLd = `<script type="application/ld+json">
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-      {[
-        { n:'01', title:'Free Consultation', desc:'Book a free consultation, tell us about your business, with no long-term obligations. We map your current ledger needs.', ac:'amber' },
-        { n:'02', title:'Fixed Quote', desc:'Receive your fixed quote indicating a clear transparent monthly price parameter tailored to your ledger lines.', ac:'sky' },
-        { n:'03', title:'Handover & Setup', desc:'We handle transfer procedures from your former ledger agency cleanly, establish active linkups inside Xero or QBO with zero hassle.', ac:'emerald' },
-      ].map((step) => (
-        <div class={`bg-white p-8 rounded-2xl border border-slate-200 hover:border-${step.ac}-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5`}>
-          <div class={`absolute top-4 right-4 bg-${step.ac}-500/10 text-${step.ac}-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-${step.ac}-500/20`}>{step.n}</div>
-          <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br from-${step.ac}-50 to-${step.ac}-100/80 flex items-center justify-center text-${step.ac}-600 border border-${step.ac}-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300`}>
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              {step.n === '01' && <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>}
-              {step.n === '02' && <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>}
-              {step.n === '03' && <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>}
-            </svg>
-          </div>
-          <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">{step.title}</h3>
-          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+
+      <!-- Step 01 — amber -->
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-amber-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-amber-500/10 text-amber-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-amber-500/20">01</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/80 flex items-center justify-center text-amber-600 border border-amber-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <!-- Clock icon -->
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
         </div>
-      ))}
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">Free Consultation</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">Book a free consultation, tell us about your business, with no long-term obligations. We map your current ledger needs.</p>
+      </div>
+
+      <!-- Step 02 — sky -->
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-sky-500/10 text-sky-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-sky-500/20">02</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/80 flex items-center justify-center text-sky-600 border border-sky-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <!-- Coins / Dollar icon -->
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">Fixed Quote</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">Receive your fixed quote indicating a clear transparent monthly price parameter tailored to your ledger lines.</p>
+      </div>
+
+      <!-- Step 03 — emerald -->
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-emerald-500/10 text-emerald-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-emerald-500/20">03</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/80 flex items-center justify-center text-emerald-600 border border-emerald-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <!-- CheckCircle icon -->
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">Handover & Setup</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">We handle transfer procedures from your former ledger agency cleanly, establish active linkups inside Xero or QBO with zero hassle.</p>
+      </div>
+
     </div>
   </div>
 </section>

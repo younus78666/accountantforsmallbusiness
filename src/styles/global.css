@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+@theme {
+  --color-navy:       #000F22;
+  --color-navy-deep:  #000F24;
+  --color-navy-panel: #0A1628;
+  --color-gold:       #DAA035;
+  --color-gold-btn:   #DCA33C;
+  --color-gold-hover: #C8912F;
+  --color-white:      #FEFFFF;
+  --color-off-white:  #F5F5F5;
+  --color-muted:      #CBCFD8;
+  --color-ink:        #000F22;
+  --color-light-bg:   #F5F7FA;
+  --color-blue-chart: #3B6FB5;
+
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans:  'Geist', -apple-system, system-ui, sans-serif;
+}
+
+/* ─── Base Typography ────────────────────────────────────────────────────── */
+html {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* ─── Gold Gradient Text ─────────────────────────────────────────────────── */
+@utility gold-gradient {
+  background: linear-gradient(135deg, #DCA33C 0%, #DAA035 45%, #C8912F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: var(--font-serif);
+}
+
+/* ─── Card shadow ────────────────────────────────────────────────────────── */
+@utility card-shadow {
+  box-shadow: 0 2px 24px rgba(0, 15, 34, 0.08);
+}

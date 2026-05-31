@@ -1,0 +1,39 @@
+---
+interface Props {
+  heading: string;
+  subtext?: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const { heading, subtext, primaryLabel, primaryHref, secondaryLabel, secondaryHref } = Astro.props;
+---
+
+<section class="bg-navy py-20 lg:py-24">
+  <div class="max-w-[1200px] mx-auto px-6 text-center">
+    <h2 class="text-3xl lg:text-4xl text-white mb-4" style="font-family: var(--font-serif);">
+      {heading}
+    </h2>
+    {subtext && (
+      <p class="text-muted text-lg max-w-xl mx-auto mb-8 leading-relaxed">{subtext}</p>
+    )}
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        href={primaryHref}
+        class="inline-flex items-center px-7 py-3.5 bg-gold-btn text-navy text-base font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+      >
+        {primaryLabel}
+      </a>
+      {secondaryLabel && secondaryHref && (
+        <a
+          href={secondaryHref}
+          class="inline-flex items-center px-7 py-3.5 border border-gold text-gold text-base font-semibold rounded-lg hover:bg-gold-btn hover:text-navy transition-colors"
+        >
+          {secondaryLabel}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

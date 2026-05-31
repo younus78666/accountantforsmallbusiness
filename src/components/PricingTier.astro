@@ -1,0 +1,76 @@
+---
+interface Feature {
+  label: string;
+  included: boolean;
+}
+
+interface Props {
+  name: string;
+  price: string;
+  period?: string;
+  tagline: string;
+  features: string[];
+  cta: { label: string; href: string };
+  highlighted?: boolean;
+}
+
+const { name, price, period = '/month', tagline, features, cta, highlighted = false } = Astro.props;
+---
+
+<div
+  class={`relative rounded-2xl p-8 flex flex-col
+    ${highlighted
+      ? 'bg-gold-btn text-navy ring-2 ring-gold-btn'
+      : 'bg-navy-panel border border-white/10 text-white'
+    }`}
+>
+  {highlighted && (
+    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-navy text-gold text-xs font-semibold rounded-full border border-gold/30">
+      Most Popular
+    </div>
+  )}
+
+  <div class="mb-6">
+    <h3
+      class={`text-lg font-semibold mb-1 ${highlighted ? 'text-navy' : 'text-white'}`}
+      style="font-family: var(--font-sans);"
+    >
+      {name}
+    </h3>
+    <!-- CONFIRM price placeholder -->
+    <div class={`flex items-baseline gap-1 mb-2 ${highlighted ? 'text-navy' : 'text-white'}`}>
+      <span class="text-4xl font-bold" style="font-family: var(--font-serif);">{price}</span>
+      <span class={`text-sm ${highlighted ? 'text-navy/70' : 'text-muted'}`}>{period}</span>
+    </div>
+    <p class={`text-sm ${highlighted ? 'text-navy/80' : 'text-muted'}`}>{tagline}</p>
+  </div>
+
+  <ul class="flex flex-col gap-3 mb-8 flex-1">
+    {features.map((feature) => (
+      <li class="flex items-start gap-2.5 text-sm">
+        <svg
+          class={`w-4.5 h-4.5 flex-shrink-0 mt-0.5 ${highlighted ? 'text-navy' : 'text-gold'}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span class={highlighted ? 'text-navy/90' : 'text-muted'}>{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href={cta.href}
+    class={`block text-center px-6 py-3 rounded-lg font-semibold text-sm transition-colors
+      ${highlighted
+        ? 'bg-navy text-gold-btn hover:bg-navy-deep'
+        : 'bg-gold-btn text-navy hover:bg-gold-hover'
+      }`}
+  >
+    {cta.label}
+  </a>
+</div>

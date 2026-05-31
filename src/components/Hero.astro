@@ -1,0 +1,77 @@
+---
+interface Props {
+  h1: string;
+  h1Accent?: string;
+  subhead: string;
+  primaryCta: { label: string; href: string };
+  secondaryCta: { label: string; href: string };
+  trustItems?: string[];
+  bgImage?: string;
+}
+
+const {
+  h1,
+  h1Accent,
+  subhead,
+  primaryCta,
+  secondaryCta,
+  trustItems = [],
+  bgImage = '/hero-bg.png',
+} = Astro.props;
+---
+
+<section
+  class="relative bg-navy overflow-hidden"
+  style={`background-image: url(${bgImage}); background-size: cover; background-position: center right;`}
+>
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0 bg-navy/80"></div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 py-24 lg:py-32">
+    <div class="max-w-2xl">
+
+      <!-- H1 -->
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl leading-tight mb-2 text-white" style="font-family: var(--font-serif);">
+        {h1}
+        {h1Accent && (
+          <span class="block gold-gradient mt-1">{h1Accent}</span>
+        )}
+      </h1>
+
+      <!-- Subhead -->
+      <p class="mt-6 text-lg lg:text-xl text-muted leading-relaxed max-w-xl" style="font-family: var(--font-sans);">
+        {subhead}
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href={primaryCta.href}
+          class="inline-flex items-center px-6 py-3.5 bg-gold-btn text-navy text-base font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+        >
+          {primaryCta.label}
+        </a>
+        <a
+          href={secondaryCta.href}
+          class="inline-flex items-center px-6 py-3.5 border border-gold text-gold text-base font-semibold rounded-lg hover:bg-gold-btn hover:text-navy transition-colors"
+        >
+          {secondaryCta.label}
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      {trustItems.length > 0 && (
+        <div class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3">
+          {trustItems.map((item, i) => (
+            <>
+              <span class="text-muted text-sm">{item}</span>
+              {i < trustItems.length - 1 && (
+                <span class="text-white/20 hidden sm:inline" aria-hidden="true">&bull;</span>
+              )}
+            </>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

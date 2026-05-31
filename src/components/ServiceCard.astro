@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  blurb: string;
+  href: string;
+  dark?: boolean;
+  icon?: string;
+}
+
+const { title, blurb, href, dark = false, icon } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`group block rounded-xl p-6 transition-all hover:-translate-y-0.5
+    ${dark
+      ? 'bg-navy-panel border border-white/10 hover:border-gold/30'
+      : 'bg-white card-shadow hover:shadow-[0_4px_32px_rgba(0,15,34,0.14)]'
+    }`}
+>
+  {icon && (
+    <div class="w-10 h-10 mb-4 text-gold" aria-hidden="true" set:html={icon} />
+  )}
+  <h3
+    class={`text-base font-semibold mb-2 group-hover:text-gold transition-colors
+      ${dark ? 'text-white' : 'text-ink'}`}
+    style="font-family: var(--font-sans);"
+  >
+    {title}
+  </h3>
+  <p class={`text-sm leading-relaxed ${dark ? 'text-muted' : 'text-ink/70'}`}>
+    {blurb}
+  </p>
+  <span class={`inline-block mt-4 text-sm font-medium text-gold group-hover:underline`}>
+    Learn more &rarr;
+  </span>
+</a>

@@ -1,0 +1,109 @@
+---
+const year = new Date().getFullYear();
+
+const services = [
+  { label: 'Accounting Services', href: '/accounting-services-singapore/' },
+  { label: 'Bookkeeping', href: '/bookkeeping-services-singapore/' },
+  { label: 'Outsource Accounting', href: '/outsource-accounting-services-singapore/' },
+  { label: 'Payroll & CPF', href: '/payroll-services-singapore/' },
+  { label: 'Financial Statements', href: '/financial-statements-singapore/' },
+];
+
+const company = [
+  { label: 'About', href: '/about/' },
+  { label: 'Pricing', href: '/pricing/' },
+  { label: 'Packages', href: '/packages/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Contact', href: '/contact/' },
+];
+
+const legal = [
+  { label: 'Privacy Policy', href: '/privacy/' },
+  { label: 'Terms of Service', href: '/terms/' },
+];
+---
+
+<footer class="bg-navy border-t border-white/10">
+  <div class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand column -->
+      <div class="lg:col-span-1">
+        <a href="/" aria-label="Accountant for Small Business home">
+          <img src="/logo.png" alt="Accountant for Small Business" class="h-9 w-auto mb-4" />
+        </a>
+        <p class="text-muted text-sm leading-relaxed">
+          Remote accounting services for Singapore small businesses. Fixed monthly fees, no surprises.
+        </p>
+        <div class="mt-5">
+          <a
+            href="/contact/"
+            class="inline-flex items-center px-4 py-2 bg-gold-btn text-navy text-sm font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+          >
+            Book a free consultation
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Services</h3>
+        <ul class="flex flex-col gap-2.5">
+          {services.map((link) => (
+            <li>
+              <a href={link.href} class="text-muted text-sm hover:text-gold transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
+        <ul class="flex flex-col gap-2.5">
+          {company.map((link) => (
+            <li>
+              <a href={link.href} class="text-muted text-sm hover:text-gold transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal + Contact -->
+      <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Legal</h3>
+        <ul class="flex flex-col gap-2.5 mb-8">
+          {legal.map((link) => (
+            <li>
+              <a href={link.href} class="text-muted text-sm hover:text-gold transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-3">Contact</h3>
+        <a
+          href="mailto:hello@accountantforsmallbusiness.com"
+          class="text-muted text-sm hover:text-gold transition-colors break-all"
+        >
+          hello@accountantforsmallbusiness.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-muted text-xs">
+        &copy; {year} Accountant for Small Business. All rights reserved.
+      </p>
+      <p class="text-muted text-xs">
+        Serving Singapore SMEs remotely &middot; Powered by Xero & QuickBooks
+      </p>
+    </div>
+  </div>
+</footer>

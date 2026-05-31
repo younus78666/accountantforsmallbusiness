@@ -11,7 +11,7 @@ const navLinks = [
       { label: 'Accounting Services', href: '/accounting-services-singapore/' },
       { label: 'Bookkeeping', href: '/bookkeeping-services-singapore/' },
       { label: 'Outsource Accounting', href: '/outsource-accounting-services-singapore/' },
-      { label: 'Payroll', href: '/payroll-services-singapore/' },
+      { label: 'Payroll & CPF', href: '/payroll-services-singapore/' },
       { label: 'Financial Statements', href: '/financial-statements-singapore/' },
     ],
   },
@@ -32,48 +32,58 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-navy border-b border-white/10">
-  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16 lg:h-18">
+<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-white/8">
+  <div class="section-inner flex items-center justify-between h-20">
 
-    <!-- Logo -->
-    <a href="/" class="flex-shrink-0" aria-label="Accountant for Small Business home">
-      <img src="/favicon.png" alt="Accountant for Small Business" class="h-9 w-9 object-contain" />
+    <!-- Logo (favicon icon, 4x prominent) -->
+    <a href="/" class="flex-shrink-0 group" aria-label="Accountant for Small Business home">
+      <img
+        src="/favicon.png"
+        alt="Accountant for Small Business"
+        class="h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-105"
+      />
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+    <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
       {navLinks.map((link) => (
         link.children ? (
           <div class="relative group">
             <button
-              class={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md
-                ${pathname.startsWith(link.href) ? 'text-gold' : 'text-off-white hover:text-gold'}`}
-              aria-expanded="false"
+              class={`flex items-center gap-1.5 px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
+                ${pathname.startsWith(link.href) ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
+              style="font-family: var(--font-sans);"
               aria-haspopup="true"
             >
               {link.label}
-              <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <!-- Dropdown -->
-            <div class="absolute top-full left-0 mt-1 w-56 bg-navy-panel border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              {link.children.map((child) => (
-                <a
-                  href={child.href}
-                  class={`block px-4 py-2.5 text-sm transition-colors first:rounded-t-lg last:rounded-b-lg
-                    ${pathname === child.href ? 'text-gold bg-white/5' : 'text-muted hover:text-gold hover:bg-white/5'}`}
-                >
-                  {child.label}
-                </a>
-              ))}
+            <div class="absolute top-full left-0 pt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="bg-navy-panel border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+                {link.children.map((child) => (
+                  <a
+                    href={child.href}
+                    class={`block px-5 py-3 text-sm font-500 transition-colors
+                      ${pathname === child.href
+                        ? 'text-gold-btn bg-white/5'
+                        : 'text-white/70 hover:text-white hover:bg-white/5'}`}
+                    style="font-family: var(--font-sans);"
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         ) : (
           <a
             href={link.href}
-            class={`px-3 py-2 text-sm font-medium transition-colors rounded-md
-              ${pathname === link.href ? 'text-gold' : 'text-off-white hover:text-gold'}`}
+            class={`px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
+              ${pathname === link.href ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
+            style="font-family: var(--font-sans);"
           >
             {link.label}
           </a>
@@ -81,20 +91,24 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Desktop CTA -->
+    <!-- CTA -->
     <div class="hidden lg:block">
       <a
         href="/contact/"
-        class="inline-flex items-center px-5 py-2.5 bg-gold-btn text-navy text-sm font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+        class="inline-flex items-center gap-2 px-6 py-2.5 bg-gold-btn text-navy text-sm font-700 rounded-lg hover:bg-gold-hover transition-all duration-200 hover:shadow-lg hover:shadow-gold/20"
+        style="font-family: var(--font-sans);"
       >
-        Get Started
+        Get a Quote
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
       </a>
     </div>
 
     <!-- Mobile Hamburger -->
     <button
       id="mobile-menu-toggle"
-      class="lg:hidden flex items-center justify-center w-10 h-10 text-off-white hover:text-gold transition-colors"
+      class="lg:hidden flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-colors rounded-lg"
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -109,22 +123,18 @@ const navLinks = [
   </div>
 
   <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="lg:hidden hidden bg-navy-panel border-t border-white/10"
-    aria-label="Mobile navigation"
-  >
-    <div class="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-1">
+  <div id="mobile-menu" class="lg:hidden hidden bg-navy-panel border-t border-white/8" aria-label="Mobile navigation">
+    <div class="section-inner py-5 flex flex-col gap-1">
       {navLinks.map((link) => (
         link.children ? (
           <div>
-            <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted">{link.label}</div>
-            <div class="pl-4 flex flex-col gap-1">
+            <div class="px-4 py-2 text-[0.65rem] font-700 uppercase tracking-widest text-white/40">{link.label}</div>
+            <div class="pl-4 flex flex-col">
               {link.children.map((child) => (
                 <a
                   href={child.href}
-                  class={`px-3 py-2 text-sm rounded-md transition-colors
-                    ${pathname === child.href ? 'text-gold' : 'text-off-white hover:text-gold'}`}
+                  class={`px-4 py-2.5 text-sm font-500 rounded-lg transition-colors
+                    ${pathname === child.href ? 'text-gold-btn' : 'text-white/70 hover:text-white'}`}
                 >
                   {child.label}
                 </a>
@@ -134,19 +144,16 @@ const navLinks = [
         ) : (
           <a
             href={link.href}
-            class={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors
-              ${pathname === link.href ? 'text-gold' : 'text-off-white hover:text-gold'}`}
+            class={`px-4 py-3 text-sm font-600 rounded-lg transition-colors
+              ${pathname === link.href ? 'text-gold-btn bg-white/5' : 'text-white/80 hover:text-white'}`}
           >
             {link.label}
           </a>
         )
       ))}
-      <div class="pt-4 pb-2">
-        <a
-          href="/contact/"
-          class="block text-center px-5 py-3 bg-gold-btn text-navy text-sm font-semibold rounded-lg hover:bg-gold-hover transition-colors"
-        >
-          Get Started
+      <div class="pt-4 pb-1">
+        <a href="/contact/" class="block text-center px-6 py-3.5 bg-gold-btn text-navy text-sm font-700 rounded-xl hover:bg-gold-hover transition-colors">
+          Get a Quote
         </a>
       </div>
     </div>
@@ -158,7 +165,6 @@ const navLinks = [
   const menu = document.getElementById('mobile-menu');
   const hamburger = document.getElementById('hamburger-icon');
   const closeIcon = document.getElementById('close-icon');
-
   toggle?.addEventListener('click', () => {
     const isOpen = !menu?.classList.contains('hidden');
     menu?.classList.toggle('hidden', isOpen);

@@ -4,34 +4,34 @@ interface Props {
   blurb: string;
   href: string;
   dark?: boolean;
-  icon?: string;
 }
 
-const { title, blurb, href, dark = false, icon } = Astro.props;
+const { title, blurb, href, dark = false } = Astro.props;
 ---
 
 <a
   href={href}
-  class={`group block rounded-xl p-6 transition-all hover:-translate-y-0.5
+  class={`group block rounded-2xl p-7 border transition-all duration-200 hover:-translate-y-1
     ${dark
-      ? 'bg-navy-panel border border-white/10 hover:border-gold/30'
-      : 'bg-white card-shadow hover:shadow-[0_4px_32px_rgba(0,15,34,0.14)]'
+      ? 'bg-navy-panel border-white/8 hover:border-gold/30 hover:bg-navy-panel'
+      : 'bg-white border-ink/6 hover:border-gold/30 card-shadow hover:card-shadow-lg'
     }`}
 >
-  {icon && (
-    <div class="w-10 h-10 mb-4 text-gold" aria-hidden="true" set:html={icon} />
-  )}
-  <h3
-    class={`text-base font-semibold mb-2 group-hover:text-gold transition-colors
-      ${dark ? 'text-white' : 'text-ink'}`}
-    style="font-family: var(--font-sans);"
-  >
+  <!-- Gold accent bar -->
+  <div class="gold-bar mb-5 transition-all duration-200 group-hover:w-12"></div>
+
+  <h3 class={`text-base font-700 mb-2 transition-colors duration-200 group-hover:text-gold-btn
+    ${dark ? 'text-white' : 'text-ink'}`}>
     {title}
   </h3>
-  <p class={`text-sm leading-relaxed ${dark ? 'text-muted' : 'text-ink/70'}`}>
+  <p class={`text-sm leading-relaxed mb-5 ${dark ? 'text-white/50' : 'text-ink/55'}`}>
     {blurb}
   </p>
-  <span class={`inline-block mt-4 text-sm font-medium text-gold group-hover:underline`}>
-    Learn more &rarr;
+  <span class={`inline-flex items-center gap-1.5 text-xs font-700 uppercase tracking-wider transition-colors duration-200
+    ${dark ? 'text-white/30 group-hover:text-gold-btn' : 'text-ink/30 group-hover:text-gold-btn'}`}>
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
   </span>
 </a>

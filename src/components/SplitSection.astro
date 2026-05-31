@@ -6,86 +6,90 @@ interface Props {
   imageSrc?: string;
   placeholderLabel?: string;
   placeholderIcon?: string;
-  flip?: boolean;   /* true = image on left, text on right */
+  flip?: boolean;
   dark?: boolean;
+  goldBg?: boolean;
 }
 
 const {
-  eyebrow,
-  heading,
-  imageAlt,
-  imageSrc,
+  eyebrow, heading, imageAlt, imageSrc,
   placeholderLabel = 'Image placeholder',
   placeholderIcon = '📊',
   flip = false,
   dark = false,
+  goldBg = false,
 } = Astro.props;
 
-const bg = dark ? 'bg-navy' : 'bg-white';
-const headingColor = dark ? 'text-white' : 'text-ink';
-const bodyColor = dark ? 'text-muted' : 'text-ink/75';
+let bg = 'bg-white';
+if (dark) bg = 'bg-navy';
+if (goldBg) bg = 'bg-gold-btn';
+
+const headingColor = (dark || goldBg) ? (goldBg ? 'text-navy' : 'text-white') : 'text-ink';
+const bodySlotColor = (dark || goldBg) ? (goldBg ? 'text-navy/80' : 'text-white/65') : 'text-ink/70';
 ---
 
-<section class={`${bg} py-20 lg:py-28`}>
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+<section class={`${bg} py-20 lg:py-28 overflow-hidden`}>
+  <div class="section-inner">
+    <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${flip ? 'lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1' : ''}`}>
 
-      <!-- Text column -->
+      <!-- Text -->
       <div>
         {eyebrow && (
-          <p class="text-sm font-700 uppercase tracking-widest gold-gradient mb-4">{eyebrow}</p>
+          <div class={`mb-5 ${(dark && !goldBg) ? 'eyebrow-dark' : 'eyebrow-light'}`}>
+            {eyebrow}
+          </div>
         )}
-        <div class="gold-rule mb-5"></div>
-        <h2
-          class={`text-3xl lg:text-4xl xl:text-[2.6rem] leading-tight mb-6 ${headingColor}`}
-          style="font-family: var(--font-serif); font-weight: 700;"
-        >
+        <h2 class={`text-3xl lg:text-4xl xl:text-[2.75rem] mb-6 ${headingColor}`}>
           {heading}
         </h2>
-        <div class={`space-y-4 text-base ${bodyColor}`} style="font-family: var(--font-sans);">
+        <div class={`space-y-4 text-base leading-relaxed ${bodySlotColor}`}>
           <slot />
         </div>
       </div>
 
-      <!-- Image column -->
+      <!-- Image / Placeholder -->
       <div class="relative">
         {imageSrc ? (
           <img
             src={imageSrc}
             alt={imageAlt}
-            class="w-full h-[400px] lg:h-[480px] object-cover rounded-2xl shadow-2xl"
+            class="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl"
             loading="lazy"
+            style="box-shadow: 0 24px 64px rgba(0,15,34,0.18);"
           />
         ) : (
-          /* Branded placeholder until real image is swapped in */
-          <div class="relative w-full h-[380px] lg:h-[460px] rounded-2xl overflow-hidden bg-navy-panel border border-gold/20 flex flex-col items-center justify-center gap-4">
+          <div class="relative w-full h-[380px] lg:h-[460px] rounded-2xl overflow-hidden bg-navy-panel flex flex-col items-center justify-center" style="box-shadow: 0 24px 64px rgba(0,15,34,0.25);">
             <!-- Grid pattern -->
             <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-                  <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#DAA035" stroke-width="0.5"/>
+                <pattern id={`grid-${eyebrow?.replace(/\s/g,'')}`} width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#DAA035" stroke-width="0.6"/>
                 </pattern>
               </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
+              <rect width="100%" height="100%" fill={`url(#grid-${eyebrow?.replace(/\s/g,'')})`} />
             </svg>
-            <!-- Gold corner accents -->
-            <span class="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-gold/60 rounded-tl-sm"></span>
-            <span class="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-gold/60 rounded-tr-sm"></span>
-            <span class="absolute bottom-5 left-5 w-8 h-8 border-b-2 border-l-2 border-gold/60 rounded-bl-sm"></span>
-            <span class="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-gold/60 rounded-br-sm"></span>
+
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gold/5"></div>
+
+            <!-- Corner accents -->
+            <span class="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-gold/50 rounded-tl"></span>
+            <span class="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-gold/50 rounded-tr"></span>
+            <span class="absolute bottom-4 left-4 w-7 h-7 border-b-2 border-l-2 border-gold/50 rounded-bl"></span>
+            <span class="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-gold/50 rounded-br"></span>
+
             <!-- Content -->
-            <div class="relative text-center px-8">
-              <div class="text-4xl mb-3 opacity-60">{placeholderIcon}</div>
-              <p class="text-gold/70 text-xs uppercase tracking-widest font-semibold mb-1">Image Placeholder</p>
-              <p class="text-muted/60 text-sm leading-relaxed">{placeholderLabel}</p>
+            <div class="relative text-center px-10">
+              <div class="text-5xl mb-4">{placeholderIcon}</div>
+              <p class="text-gold/60 text-[0.65rem] uppercase tracking-widest font-700 mb-2">Image Placeholder</p>
+              <p class="text-white/35 text-xs leading-relaxed max-w-[220px] mx-auto">{placeholderLabel}</p>
             </div>
           </div>
         )}
-        <!-- Gold accent dot -->
-        <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-gold/10 blur-2xl pointer-events-none"></div>
-        <div class="absolute -top-4 -left-4 w-16 h-16 rounded-full bg-gold/8 blur-xl pointer-events-none"></div>
-      </div>
 
+        <!-- Floating glow accent -->
+        <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+      </div>
     </div>
   </div>
 </section>

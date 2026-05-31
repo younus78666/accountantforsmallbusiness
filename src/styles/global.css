@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
-/* Playfair Display - bold, commanding headings */
-@import "@fontsource/playfair-display/400.css";
-@import "@fontsource/playfair-display/700.css";
-@import "@fontsource/playfair-display/400-italic.css";
-
-/* Plus Jakarta Sans - clean professional body */
-@import "@fontsource/plus-jakarta-sans/400.css";
-@import "@fontsource/plus-jakarta-sans/500.css";
-@import "@fontsource/plus-jakarta-sans/600.css";
-@import "@fontsource/plus-jakarta-sans/700.css";
-@import "@fontsource/plus-jakarta-sans/800.css";
+/* Poppins — all weights for full hierarchy control */
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800.css";
+@import "@fontsource/poppins/400-italic.css";
+@import "@fontsource/poppins/600-italic.css";
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 @theme {
-  --color-navy:       #000F22;
-  --color-navy-deep:  #000F24;
-  --color-navy-panel: #0A1628;
-  --color-gold:       #DAA035;
-  --color-gold-btn:   #DCA33C;
-  --color-gold-hover: #C8912F;
-  --color-white:      #FEFFFF;
-  --color-off-white:  #F5F5F5;
-  --color-muted:      #CBCFD8;
-  --color-ink:        #000F22;
-  --color-light-bg:   #F5F7FA;
-  --color-blue-chart: #3B6FB5;
+  --color-navy:        #000F22;
+  --color-navy-deep:   #000F24;
+  --color-navy-panel:  #0A1628;
+  --color-gold:        #DAA035;
+  --color-gold-btn:    #DCA33C;
+  --color-gold-hover:  #C8912F;
+  --color-gold-dark:   #9A6400; /* gold that passes contrast on white/light-bg */
+  --color-white:       #FEFFFF;
+  --color-off-white:   #F5F5F5;
+  --color-muted:       #CBCFD8;
+  --color-ink:         #000F22;
+  --color-light-bg:    #F5F7FA;
+  --color-blue-chart:  #3B6FB5;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans:  'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+  --font-sans: 'Poppins', -apple-system, system-ui, sans-serif;
+  --font-serif: 'Poppins', -apple-system, system-ui, sans-serif;
 }
 
-/* ─── Base Typography ────────────────────────────────────────────────────── */
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
 html {
   font-family: var(--font-sans);
   color: var(--color-ink);
@@ -40,37 +40,69 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
+h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+h2 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
+h3 { font-weight: 600; letter-spacing: -0.01em; }
+p  { line-height: 1.75; }
 
-/* Body text sizing */
-p {
-  line-height: 1.75;
-}
-
-/* ─── Gold Gradient Text ─────────────────────────────────────────────────── */
+/* ─── Gold gradient — DARK BACKGROUNDS ONLY ─────────────────────────────── */
 @utility gold-gradient {
-  background: linear-gradient(135deg, #DCA33C 0%, #DAA035 45%, #C8912F 100%);
+  background: linear-gradient(135deg, #F0C050 0%, #DCA33C 40%, #C8912F 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  font-family: var(--font-serif);
+}
+
+/* ─── Eyebrow chip — works on any background ────────────────────────────── */
+@utility eyebrow-dark {
+  display: inline-block;
+  font-size: 0.65rem;
   font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #DCA33C;
+  background: rgba(220,163,60,0.12);
+  border: 1px solid rgba(220,163,60,0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
 }
 
-/* ─── Card shadow ────────────────────────────────────────────────────────── */
-@utility card-shadow {
-  box-shadow: 0 2px 24px rgba(0, 15, 34, 0.08);
+@utility eyebrow-light {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7A5200;
+  background: rgba(154,100,0,0.08);
+  border: 1px solid rgba(154,100,0,0.2);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
 }
 
-/* ─── Section divider accent ─────────────────────────────────────────────── */
-@utility gold-rule {
-  width: 48px;
-  height: 3px;
+/* ─── Decorative gold bar ────────────────────────────────────────────────── */
+@utility gold-bar {
+  display: block;
+  width: 40px;
+  height: 4px;
   background: linear-gradient(90deg, #DCA33C, #C8912F);
   border-radius: 2px;
+}
+
+/* ─── Card shadows ───────────────────────────────────────────────────────── */
+@utility card-shadow {
+  box-shadow: 0 2px 20px rgba(0, 15, 34, 0.07);
+}
+@utility card-shadow-lg {
+  box-shadow: 0 8px 48px rgba(0, 15, 34, 0.12);
+}
+
+/* ─── Section max-width ──────────────────────────────────────────────────── */
+@utility section-inner {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }

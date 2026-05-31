@@ -9,51 +9,59 @@ interface Props {
   bgImage?: string;
 }
 
-const {
-  h1,
-  h1Accent,
-  subhead,
-  primaryCta,
-  secondaryCta,
-  trustItems = [],
-  bgImage = '/hero-bg.png',
-} = Astro.props;
+const { h1, h1Accent, subhead, primaryCta, secondaryCta, trustItems = [], bgImage = '/hero-bg.png' } = Astro.props;
 ---
 
 <section
-  class="relative bg-navy overflow-hidden"
-  style={`background-image: url(${bgImage}); background-size: cover; background-position: center right;`}
+  class="relative bg-navy min-h-[90vh] flex items-center overflow-hidden"
+  style={`background-image: url(${bgImage}); background-size: cover; background-position: center;`}
 >
-  <!-- Dark overlay for readability -->
-  <div class="absolute inset-0 bg-navy/80"></div>
+  <!-- Layered dark overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40"></div>
 
-  <div class="relative z-10 max-w-[1200px] mx-auto px-6 py-24 lg:py-32">
+  <!-- Subtle grid pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#DAA035" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-grid)" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 section-inner w-full py-24 lg:py-32">
     <div class="max-w-2xl">
 
+      <!-- Eyebrow -->
+      <div class="eyebrow-dark mb-7">Singapore Accounting Services</div>
+
       <!-- H1 -->
-      <h1 class="text-5xl lg:text-6xl xl:text-7xl leading-[1.08] tracking-tight mb-2 text-white font-bold">
+      <h1 class="text-5xl lg:text-6xl xl:text-7xl text-white mb-6">
         {h1}
-        {h1Accent && (
-          <span class="block gold-gradient">{h1Accent}</span>
-        )}
+        {h1Accent && <span class="block gold-gradient">{h1Accent}</span>}
       </h1>
 
       <!-- Subhead -->
-      <p class="mt-7 text-lg lg:text-xl text-muted leading-relaxed max-w-xl font-normal">
+      <p class="text-lg lg:text-xl text-white/65 leading-relaxed max-w-lg mb-10 font-400">
         {subhead}
       </p>
 
       <!-- CTAs -->
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="flex flex-wrap gap-4 mb-12">
         <a
           href={primaryCta.href}
-          class="inline-flex items-center px-6 py-3.5 bg-gold-btn text-navy text-base font-semibold rounded-lg hover:bg-gold-hover transition-colors"
+          class="inline-flex items-center gap-2 px-7 py-4 bg-gold-btn text-navy text-base font-700 rounded-xl hover:bg-gold-hover transition-all duration-200 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5"
         >
           {primaryCta.label}
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
         <a
           href={secondaryCta.href}
-          class="inline-flex items-center px-6 py-3.5 border border-gold text-gold text-base font-semibold rounded-lg hover:bg-gold-btn hover:text-navy transition-colors"
+          class="inline-flex items-center gap-2 px-7 py-4 border-2 border-white/30 text-white text-base font-600 rounded-xl hover:border-gold hover:text-gold-btn transition-all duration-200 hover:-translate-y-0.5"
         >
           {secondaryCta.label}
         </a>
@@ -61,14 +69,14 @@ const {
 
       <!-- Trust strip -->
       {trustItems.length > 0 && (
-        <div class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3">
-          {trustItems.map((item, i) => (
-            <>
-              <span class="text-muted text-sm">{item}</span>
-              {i < trustItems.length - 1 && (
-                <span class="text-white/20 hidden sm:inline" aria-hidden="true">&bull;</span>
-              )}
-            </>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6 border-t border-white/10">
+          {trustItems.map((item) => (
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-gold-btn flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-white/60 text-sm font-500">{item}</span>
+            </div>
           ))}
         </div>
       )}

@@ -1,102 +1,57 @@
 @import "tailwindcss";
 
-/* Fonts matching the original React design */
-@import "@fontsource/instrument-serif/400.css";
-@import "@fontsource/instrument-serif/400-italic.css";
-@import "@fontsource/geist-sans/400.css";
-@import "@fontsource/geist-sans/500.css";
-@import "@fontsource/geist-sans/600.css";
-@import "@fontsource/geist-sans/700.css";
-@import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/500.css";
-@import "@fontsource/jetbrains-mono/600.css";
-
-/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+/* Exact copy of React app's index.css tokens */
 @theme {
-  --color-navy:        #000F22;
-  --color-navy-deep:   #000F24;
-  --color-navy-panel:  #0A1628;
-  --color-gold:        #DAA035;
-  --color-gold-btn:    #DCA33C;
-  --color-gold-hover:  #C8912F;
-  --color-white:       #FEFFFF;
-  --color-off-white:   #F5F5F5;
-  --color-muted:       #CBCFD8;
-  --color-ink:         #000F22;
-  --color-light-bg:    #F5F7FA;
+  --color-navy: #000F22;
+  --color-navy-deep: #000F24;
+  --color-navy-panel: #0A1628;
+  --color-gold: #DAA035;
+  --color-gold-btn: #DCA33C;
+  --color-gold-hover: #C8912F;
+  --color-white: #FEFFFF;
+  --color-off-white: #F5F5F5;
+  --color-muted: #CBCFD8;
+  --color-ink: #000F22;
+  --color-light-bg: #F5F7FA;
+  --color-blue-chart: #3B6FB5;
 
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans:  'Geist', -apple-system, system-ui, sans-serif;
-  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+  /* Same as React app — Inter for serif + sans, JetBrains Mono for mono */
+  --font-serif: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans:  "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-/* ─── Base ───────────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  font-family: var(--font-sans);
-  color: var(--color-muted);
-  background: var(--color-navy);
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(135deg, #DCA33C 0%, #DAA035 45%, #C8912F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 body {
-  background: #000F22;
-  color: #CBCFD8;
   font-family: var(--font-sans);
+  background-color: #000F22;
+  color: #CBCFD8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, .heading-serif {
   font-family: var(--font-serif);
 }
 
-/* ─── Section container ──────────────────────────────────────────────────── */
-@utility section-inner {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
+/* Custom scrollbar — exact copy from React app */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #000F22; }
+::-webkit-scrollbar-thumb { background: #0A1628; border: 2px solid #000F22; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #DAA035; }
 
-/* ─── Answer block ───────────────────────────────────────────────────────── */
-@utility answer-block-dark {
-  background: #0A1628;
-  border-left: 3px solid #DAA035;
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 1rem 1.25rem;
-  font-style: italic;
-  color: #CBCFD8;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-@utility answer-block-light {
-  background: #F1F5F9;
-  border-left: 3px solid #DAA035;
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 1rem 1.25rem;
-  font-style: italic;
-  color: #374151;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-/* ─── Shadows ────────────────────────────────────────────────────────────── */
-@utility card-shadow {
-  box-shadow: 0 2px 20px rgba(0, 15, 34, 0.06);
-}
-
-/* ─── Animations ─────────────────────────────────────────────────────────── */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.5; }
-}
-
+/* fadeIn animation used in plan calculator */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-.animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+.animate-fadeIn { animation: fadeIn 0.25s ease-out; }

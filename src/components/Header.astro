@@ -1,171 +1,135 @@
 ---
 const pathname = Astro.url.pathname;
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  {
-    label: 'Services',
-    href: '/accounting-services-singapore/',
-    children: [
-      { label: 'Accounting Services', href: '/accounting-services-singapore/' },
-      { label: 'Bookkeeping', href: '/bookkeeping-services-singapore/' },
-      { label: 'Outsource Accounting', href: '/outsource-accounting-services-singapore/' },
-      { label: 'Payroll & CPF', href: '/payroll-services-singapore/' },
-      { label: 'Financial Statements', href: '/financial-statements-singapore/' },
-    ],
-  },
-  { label: 'Pricing', href: '/pricing/' },
-  {
-    label: 'Blog',
-    href: '/blog/',
-    children: [
-      { label: 'Bookkeeping vs Accounting', href: '/blog/bookkeeping-vs-accounting/' },
-      { label: 'How to Choose an Accountant', href: '/blog/how-to-choose-accountant-sme/' },
-      { label: 'Year-End Checklist', href: '/blog/year-end-accounting-checklist/' },
-      { label: 'Accountant Cost', href: '/blog/accountant-cost-singapore/' },
-      { label: 'Best Accounting Software', href: '/blog/best-accounting-software-singapore/' },
-      { label: 'Xero vs QuickBooks', href: '/blog/xero-vs-quickbooks-singapore/' },
-    ],
-  },
-  { label: 'Contact', href: '/contact/' },
+const services = [
+  { label: 'Accounting Services', href: '/accounting-services-singapore/' },
+  { label: 'Bookkeeping', href: '/bookkeeping-services-singapore/' },
+  { label: 'Outsource Accounting', href: '/outsource-accounting-services-singapore/' },
+  { label: 'Payroll & CPF', href: '/payroll-services-singapore/' },
+  { label: 'Financial Statements', href: '/financial-statements-singapore/' },
+];
+
+const blogs = [
+  { label: 'Bookkeeping vs Accounting', href: '/blog/bookkeeping-vs-accounting/' },
+  { label: 'How to Choose an Accountant', href: '/blog/how-to-choose-accountant-sme/' },
+  { label: 'Year-End Checklist', href: '/blog/year-end-accounting-checklist/' },
+  { label: 'Accountant Cost', href: '/blog/accountant-cost-singapore/' },
+  { label: 'Best Accounting Software', href: '/blog/best-accounting-software-singapore/' },
+  { label: 'Xero vs QuickBooks', href: '/blog/xero-vs-quickbooks-singapore/' },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-white/8">
-  <div class="section-inner flex items-center justify-between h-20">
+<header class="sticky top-0 z-50 bg-[#000F22]/95 backdrop-blur-md border-b border-gray-900/80 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
 
-    <!-- Logo (favicon icon, 4x prominent) -->
-    <a href="/" class="flex-shrink-0 group" aria-label="Accountant for Small Business home">
-      <img
-        src="/favicon.png"
-        alt="Accountant for Small Business"
-        class="h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-105"
-      />
-    </a>
-
-    <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
-      {navLinks.map((link) => (
-        link.children ? (
-          <div class="relative group">
-            <button
-              class={`flex items-center gap-1.5 px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
-                ${pathname.startsWith(link.href) ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
-                           aria-haspopup="true"
-            >
-              {link.label}
-              <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <!-- Dropdown -->
-            <div class="absolute top-full left-0 pt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-              <div class="bg-navy-panel border border-white/10 rounded-xl shadow-2xl overflow-hidden">
-                {link.children.map((child) => (
-                  <a
-                    href={child.href}
-                    class={`block px-5 py-3 text-sm font-500 transition-colors
-                      ${pathname === child.href
-                        ? 'text-gold-btn bg-white/5'
-                        : 'text-white/70 hover:text-white hover:bg-white/5'}`}
-                                     >
-                    {child.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <a
-            href={link.href}
-            class={`px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
-              ${pathname === link.href ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
-                     >
-            {link.label}
-          </a>
-        )
-      ))}
-    </nav>
-
-    <!-- CTA -->
-    <div class="hidden lg:block">
-      <a
-        href="/contact/"
-        class="inline-flex items-center gap-2 px-6 py-2.5 bg-gold-btn text-navy text-sm font-700 rounded-lg hover:bg-gold-hover transition-all duration-200 hover:shadow-lg hover:shadow-gold/20"
-             >
-        Get a Quote
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group cursor-pointer select-none" aria-label="Home">
+        <!-- Gold icon box -->
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center shadow-md shrink-0" style="background: linear-gradient(135deg, #DCA33C, #C8912F); box-shadow: 0 4px 12px rgba(220,163,60,0.25);">
+          <svg class="w-6 h-6 text-[#000F22]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#FEFFFF] block transition-colors group-hover:text-[#DAA035]">
+            Accountant <span class="text-[#DAA035] italic">for Small Business</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-wider text-[#CBCFD8] block uppercase -mt-0.5">
+            Singapore &bull; Remote Excellence
+          </span>
+        </div>
       </a>
-    </div>
 
-    <!-- Mobile Hamburger -->
-    <button
-      id="mobile-menu-toggle"
-      class="lg:hidden flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-colors rounded-lg"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden hidden bg-navy-panel border-t border-white/8" aria-label="Mobile navigation">
-    <div class="section-inner py-5 flex flex-col gap-1">
-      {navLinks.map((link) => (
-        link.children ? (
-          <div>
-            <div class="px-4 py-2 text-[0.65rem] font-700 uppercase tracking-widest text-white/40">{link.label}</div>
-            <div class="pl-4 flex flex-col">
-              {link.children.map((child) => (
-                <a
-                  href={child.href}
-                  class={`px-4 py-2.5 text-sm font-500 rounded-lg transition-colors
-                    ${pathname === child.href ? 'text-gold-btn' : 'text-white/70 hover:text-white'}`}
-                >
-                  {child.label}
-                </a>
-              ))}
-            </div>
+        <a href="/" class={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${pathname === '/' ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>Home</a>
+        <a href="/about/" class={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${pathname.startsWith('/about') ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>About</a>
+
+        <!-- Services dropdown -->
+        <div class="relative group">
+          <button class={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${['/accounting-services-singapore/','/bookkeeping-services-singapore/','/outsource-accounting-services-singapore/','/payroll-services-singapore/','/financial-statements-singapore/'].includes(pathname) ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>
+            Services
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute left-0 mt-1 w-60 bg-[#0A1628] border border-gray-900 rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            {services.map((s) => (
+              <a href={s.href} class={`block px-4 py-2.5 text-sm transition-colors hover:bg-[#000F22] hover:text-[#DAA035] ${pathname === s.href ? 'text-[#DAA035] border-l-2 border-[#DAA035]' : 'text-[#CBCFD8]'}`}>{s.label}</a>
+            ))}
           </div>
-        ) : (
-          <a
-            href={link.href}
-            class={`px-4 py-3 text-sm font-600 rounded-lg transition-colors
-              ${pathname === link.href ? 'text-gold-btn bg-white/5' : 'text-white/80 hover:text-white'}`}
-          >
-            {link.label}
-          </a>
-        )
-      ))}
-      <div class="pt-4 pb-1">
-        <a href="/contact/" class="block text-center px-6 py-3.5 bg-gold-btn text-navy text-sm font-700 rounded-xl hover:bg-gold-hover transition-colors">
+        </div>
+
+        <a href="/pricing/" class={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${pathname.startsWith('/pricing') ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>Pricing</a>
+
+        <!-- Blog dropdown -->
+        <div class="relative group">
+          <button class={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${pathname.startsWith('/blog') ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>
+            Blog
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute right-0 mt-1 w-64 bg-[#0A1628] border border-gray-900 rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="/blog/" class="block px-4 py-2.5 text-sm font-semibold border-b border-gray-800 text-[#DAA035] bg-[#000F22]/30 hover:bg-[#000F22]">All Articles &rarr;</a>
+            {blogs.map((b) => (
+              <a href={b.href} class={`block px-4 py-2 text-xs transition-colors hover:bg-[#000F22] hover:text-[#DAA035] ${pathname === b.href ? 'text-[#DAA035] font-semibold' : 'text-[#CBCFD8]'}`}>{b.label}</a>
+            ))}
+          </div>
+        </div>
+
+        <a href="/contact/" class={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${pathname.startsWith('/contact') ? 'text-[#DAA035]' : 'text-[#CBCFD8] hover:text-[#FEFFFF]'}`}>Contact</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:block">
+        <a href="/contact/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:scale-[1.02] flex items-center gap-1.5 shadow-md" style="box-shadow: 0 4px 12px rgba(220,163,60,0.15);">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           Get a Quote
         </a>
       </div>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-toggle" class="lg:hidden p-2 text-[#CBCFD8] hover:text-white rounded-md focus:outline-none" aria-label="Toggle menu">
+        <svg id="icon-menu" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-[#0A1628] border-b border-gray-900">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      <a href="/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Home</a>
+      <a href="/about/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">About</a>
+      <div class="pl-3 py-1 border-l border-gray-800 space-y-1">
+        <span class="block text-xs uppercase tracking-wider text-[#DAA035] font-semibold px-3 py-1">Services</span>
+        {services.map((s) => (
+          <a href={s.href} class="block px-3 py-2 text-sm text-[#CBCFD8] hover:text-[#DAA035]">{s.label}</a>
+        ))}
+      </div>
+      <a href="/pricing/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Pricing</a>
+      <div class="pl-3 py-1 border-l border-gray-800 space-y-1">
+        <span class="block text-xs uppercase tracking-wider text-[#DAA035] font-semibold px-3 py-1">Blog</span>
+        {blogs.map((b) => (
+          <a href={b.href} class="block px-3 py-1.5 text-xs text-[#CBCFD8] hover:text-[#DAA035]">{b.label}</a>
+        ))}
+      </div>
+      <a href="/contact/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Contact</a>
+      <a href="/contact/" class="block w-full text-center bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-semibold py-3 px-4 rounded-lg mt-4">
+        Book a Free Consultation
+      </a>
     </div>
   </div>
 </header>
 
 <script>
-  const toggle = document.getElementById('mobile-menu-toggle');
+  const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
-  const hamburger = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
   toggle?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden', isOpen);
-    hamburger?.classList.toggle('hidden', !isOpen);
-    closeIcon?.classList.toggle('hidden', isOpen);
-    toggle.setAttribute('aria-expanded', String(!isOpen));
+    const open = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden', open);
+    iconMenu?.classList.toggle('hidden', !open);
+    iconClose?.classList.toggle('hidden', open);
   });
 </script>

@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
-@import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/500.css";
-@import "@fontsource/poppins/600.css";
-@import "@fontsource/poppins/700.css";
-@import "@fontsource/poppins/800.css";
-@import "@fontsource/poppins/400-italic.css";
+/* Fonts matching the original React design */
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-sans/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/600.css";
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 @theme {
@@ -20,32 +24,10 @@
   --color-muted:       #CBCFD8;
   --color-ink:         #000F22;
   --color-light-bg:    #F5F7FA;
-  --color-blue-chart:  #3B6FB5;
 
-  --font-sans:  'Poppins', -apple-system, system-ui, sans-serif;
-  --font-serif: 'Poppins', -apple-system, system-ui, sans-serif;
-}
-
-/* ─── Animations ─────────────────────────────────────────────────────────── */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-7px); }
-}
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-12px) rotate(3deg); }
-}
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50%       { opacity: 0.30; transform: scale(1.08); }
-}
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans:  'Geist', -apple-system, system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
@@ -53,55 +35,20 @@
 
 html {
   font-family: var(--font-sans);
-  color: var(--color-ink);
+  color: var(--color-muted);
+  background: var(--color-navy);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
-h2 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
-h3 { font-weight: 600; letter-spacing: -0.01em; }
-p  { line-height: 1.75; }
-
-/* ─── Gold gradient text (dark backgrounds only) ─────────────────────────── */
-@utility gold-gradient {
-  background: linear-gradient(135deg, #F0C050 0%, #DCA33C 40%, #C8912F 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+body {
+  background: #000F22;
+  color: #CBCFD8;
+  font-family: var(--font-sans);
 }
 
-/* ─── Eyebrow chips ──────────────────────────────────────────────────────── */
-@utility eyebrow-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #DCA33C;
-  background: rgba(220,163,60,0.1);
-  border: 1px solid rgba(220,163,60,0.22);
-  border-radius: 999px;
-  padding: 0.35rem 1rem;
-}
-
-@utility eyebrow-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #7A5200;
-  background: rgba(154,100,0,0.07);
-  border: 1px solid rgba(154,100,0,0.18);
-  border-radius: 999px;
-  padding: 0.35rem 1rem;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
 }
 
 /* ─── Section container ──────────────────────────────────────────────────── */
@@ -113,42 +60,43 @@ p  { line-height: 1.75; }
   padding-right: 1.5rem;
 }
 
-/* ─── Icon box (animated gold glow) ─────────────────────────────────────── */
-@utility icon-box {
-  position: relative;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 0.875rem;
-  background: rgba(220,163,60,0.12);
-  border: 1px solid rgba(220,163,60,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ─── Answer block ───────────────────────────────────────────────────────── */
+@utility answer-block-dark {
+  background: #0A1628;
+  border-left: 3px solid #DAA035;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  color: #CBCFD8;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-@utility icon-float {
-  animation: float 3.5s ease-in-out infinite;
-}
-@utility icon-float-slow {
-  animation: float-slow 5s ease-in-out infinite;
-}
-
-/* ─── Gold bar accent ────────────────────────────────────────────────────── */
-@utility gold-bar {
-  display: block;
-  width: 40px;
-  height: 4px;
-  background: linear-gradient(90deg, #DCA33C, #C8912F);
-  border-radius: 2px;
+@utility answer-block-light {
+  background: #F1F5F9;
+  border-left: 3px solid #DAA035;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* ─── Shadows ────────────────────────────────────────────────────────────── */
 @utility card-shadow {
   box-shadow: 0 2px 20px rgba(0, 15, 34, 0.06);
 }
-@utility card-shadow-lg {
-  box-shadow: 0 8px 48px rgba(0, 15, 34, 0.12);
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
 }
-@utility card-shadow-gold {
-  box-shadow: 0 8px 32px rgba(220, 163, 60, 0.20);
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+.animate-fadeIn { animation: fadeIn 0.3s ease-out; }

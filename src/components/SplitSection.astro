@@ -1,0 +1,91 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  imageAlt: string;
+  imageSrc?: string;
+  placeholderLabel?: string;
+  placeholderIcon?: string;
+  flip?: boolean;   /* true = image on left, text on right */
+  dark?: boolean;
+}
+
+const {
+  eyebrow,
+  heading,
+  imageAlt,
+  imageSrc,
+  placeholderLabel = 'Image placeholder',
+  placeholderIcon = '📊',
+  flip = false,
+  dark = false,
+} = Astro.props;
+
+const bg = dark ? 'bg-navy' : 'bg-white';
+const headingColor = dark ? 'text-white' : 'text-ink';
+const bodyColor = dark ? 'text-muted' : 'text-ink/75';
+---
+
+<section class={`${bg} py-20 lg:py-28`}>
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+
+      <!-- Text column -->
+      <div>
+        {eyebrow && (
+          <p class="text-sm font-700 uppercase tracking-widest gold-gradient mb-4">{eyebrow}</p>
+        )}
+        <div class="gold-rule mb-5"></div>
+        <h2
+          class={`text-3xl lg:text-4xl xl:text-[2.6rem] leading-tight mb-6 ${headingColor}`}
+          style="font-family: var(--font-serif); font-weight: 700;"
+        >
+          {heading}
+        </h2>
+        <div class={`space-y-4 text-base ${bodyColor}`} style="font-family: var(--font-sans);">
+          <slot />
+        </div>
+      </div>
+
+      <!-- Image column -->
+      <div class="relative">
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-[400px] lg:h-[480px] object-cover rounded-2xl shadow-2xl"
+            loading="lazy"
+          />
+        ) : (
+          /* Branded placeholder until real image is swapped in */
+          <div class="relative w-full h-[380px] lg:h-[460px] rounded-2xl overflow-hidden bg-navy-panel border border-gold/20 flex flex-col items-center justify-center gap-4">
+            <!-- Grid pattern -->
+            <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#DAA035" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+            <!-- Gold corner accents -->
+            <span class="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-gold/60 rounded-tl-sm"></span>
+            <span class="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-gold/60 rounded-tr-sm"></span>
+            <span class="absolute bottom-5 left-5 w-8 h-8 border-b-2 border-l-2 border-gold/60 rounded-bl-sm"></span>
+            <span class="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-gold/60 rounded-br-sm"></span>
+            <!-- Content -->
+            <div class="relative text-center px-8">
+              <div class="text-4xl mb-3 opacity-60">{placeholderIcon}</div>
+              <p class="text-gold/70 text-xs uppercase tracking-widest font-semibold mb-1">Image Placeholder</p>
+              <p class="text-muted/60 text-sm leading-relaxed">{placeholderLabel}</p>
+            </div>
+          </div>
+        )}
+        <!-- Gold accent dot -->
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-gold/10 blur-2xl pointer-events-none"></div>
+        <div class="absolute -top-4 -left-4 w-16 h-16 rounded-full bg-gold/8 blur-xl pointer-events-none"></div>
+      </div>
+
+    </div>
+  </div>
+</section>

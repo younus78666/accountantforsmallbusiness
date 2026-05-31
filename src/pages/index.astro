@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
+import SplitSection from '../components/SplitSection.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import PricingTier from '../components/PricingTier.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
@@ -186,179 +187,191 @@ const pricingTiers = [
     ]}
   />
 
-  <!-- Section 1: What services? (light-bg) -->
-  <section class="bg-light-bg py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          What accounting services do small businesses in Singapore need?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            Most Singapore small businesses need a few core things handled well: bookkeeping, SFRS-compliant financial statements, payroll with CPF, and clear monthly management reports. Get these right and your records stay accurate, your statutory accounts are ready, and you have numbers you can actually use to run the business.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          You don't need a full finance department. You need the essentials done correctly and on time. Everything most SMEs require sits inside one fixed monthly fee, so nothing slips through the cracks and you always know what you're paying.
-        </p>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Day to day that means monthly bookkeeping and bank reconciliation, SFRS-compliant unaudited financial statements, accounts payable and receivable, monthly payroll with CPF and itemised payslips, and management reports you can read.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 1: What services do SMEs need? (text left, image right) ── -->
+  <SplitSection
+    eyebrow="Core Services"
+    heading="What accounting services do small businesses in Singapore need?"
+    imageAlt="Accountant reviewing bookkeeping records on Xero dashboard"
+    placeholderLabel="Accountant at desk reviewing Xero dashboard with monthly reports"
+    placeholderIcon="📒"
+    flip={false}
+  >
+    <AnswerBlock>
+      <p>
+        Most Singapore small businesses need a few core things handled well: bookkeeping, SFRS-compliant financial statements, payroll with CPF, and clear monthly management reports. Get these right and your records stay accurate, your statutory accounts are ready, and you have numbers you can actually use to run the business.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      You don't need a full finance department. You need the essentials done correctly and on time. Everything most SMEs require sits inside one fixed monthly fee, so nothing slips through the cracks and you always know what you're paying.
+    </p>
+    <p class="text-ink/75">
+      Day to day that means monthly bookkeeping and bank reconciliation, SFRS-compliant unaudited financial statements, accounts payable and receivable, monthly payroll with CPF and itemised payslips, and management reports you can read.
+    </p>
+  </SplitSection>
 
-  <!-- Section 2: How much does it cost? (white) -->
-  <section class="bg-white py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          How much do accounting services cost in Singapore?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            Accounting services in Singapore typically cost between S$60 and S$400 per month, depending on your transaction volume, GST status and payroll headcount. We charge a transparent fixed monthly fee in that range. You'll know the exact figure before you commit, with no hidden add-ons.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Pricing confusion is the number one frustration we hear. One firm quotes S$75, another over S$1,000, and it's never clear what's included. Our fix is simple: publish what each package covers and quote a flat monthly fee up front.
-        </p>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          See full pricing on our <a href="/pricing/" class="text-gold hover:underline">pricing page</a>, or get a fixed quote in one short call.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 2: How much does it cost? (image left, text right) ── -->
+  <SplitSection
+    eyebrow="Transparent Pricing"
+    heading="How much do accounting services cost in Singapore?"
+    imageAlt="Pricing comparison chart showing Singapore accounting service tiers"
+    placeholderLabel="Clean infographic of S$60-S$400 monthly pricing tiers with feature comparison"
+    placeholderIcon="💰"
+    flip={true}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        Accounting services in Singapore typically cost between S$60 and S$400 per month, depending on your transaction volume, GST status and payroll headcount. We charge a transparent fixed monthly fee in that range. You'll know the exact figure before you commit, with no hidden add-ons.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      Pricing confusion is the number one frustration we hear. One firm quotes S$75, another over S$1,000, and it's never clear what's included. Our fix is simple: publish what each package covers and quote a flat monthly fee up front.
+    </p>
+    <a href="/pricing/" class="inline-flex items-center text-gold font-semibold hover:underline mt-2">
+      See full pricing &rarr;
+    </a>
+  </SplitSection>
 
-  <!-- Section 3: In-house vs outsource? (light-bg) -->
-  <section class="bg-light-bg py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          Should you hire an in-house accountant or outsource?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            For most small businesses in Singapore, outsourcing is cheaper and safer than hiring in-house. A full-time accountant costs a monthly salary plus CPF, leave and software, often S$3,000+ a month, and is idle when transaction volume is low. Outsourcing gives you the same expertise for a fraction of the cost.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Hire in-house and you pay salary, CPF, benefits, software and training, then carry the risk yourself if that person leaves or makes an error.
-        </p>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Outsource to us and you get one fixed fee, a dedicated qualified accountant, compliant software, and continuity you never have to manage. Scale the service up or down as the business grows.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 3: In-house vs outsource? (text left, image right) ── -->
+  <SplitSection
+    eyebrow="Cost Comparison"
+    heading="Should you hire an in-house accountant or outsource?"
+    imageAlt="Side-by-side cost comparison of in-house vs outsourced accountant"
+    placeholderLabel="Split visual: in-house salary costs (S$3,000+/mo) vs outsourced fixed fee"
+    placeholderIcon="⚖️"
+    flip={false}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        For most small businesses in Singapore, outsourcing is cheaper and safer than hiring in-house. A full-time accountant costs a monthly salary plus CPF, leave and software, often S$3,000+ a month, and is idle when transaction volume is low. Outsourcing gives you the same expertise for a fraction of the cost.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      Hire in-house and you pay salary, CPF, benefits, software and training, then carry the risk yourself if that person leaves or makes an error.
+    </p>
+    <p class="text-ink/75">
+      Outsource to us and you get one fixed fee, a dedicated qualified accountant, compliant software, and continuity you never have to manage. Scale the service up or down as the business grows.
+    </p>
+  </SplitSection>
 
-  <!-- Section 4: Remote delivery (white) -->
-  <section class="bg-white py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          How do you deliver Singapore accounting services remotely?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            We work entirely in the cloud using Xero, secure document sharing and scheduled video calls. Because we operate remotely with lower overhead, our fees are lower than a traditional Singapore firm's, while every filing still meets ACRA, IRAS and SFRS requirements. You get the same compliance, less cost.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Remote doesn't mean hands-off. You get a named accountant, real-time access to your numbers on Xero, monthly reports, and direct answers when you have a question. Your records stay confidential and encrypted at every step.
-        </p>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Founder Mehdi Javed has managed accounting operations for SMEs and logistics businesses across Pakistan, the UAE and the United States, so your books are in experienced hands, wherever they're kept.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 4: Remote delivery (image left, text right) ── -->
+  <SplitSection
+    eyebrow="How We Work"
+    heading="How do you deliver Singapore accounting services remotely?"
+    imageAlt="Remote accountant working on cloud accounting software"
+    placeholderLabel="Laptop with Xero open, cloud icons, video call interface -- modern remote work setup"
+    placeholderIcon="☁️"
+    flip={true}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        We work entirely in the cloud using Xero, secure document sharing and scheduled video calls. Because we operate remotely with lower overhead, our fees are lower than a traditional Singapore firm's, while every filing still meets ACRA, IRAS and SFRS requirements. You get the same compliance, less cost.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      Remote doesn't mean hands-off. You get a named accountant, real-time access to your numbers on Xero, monthly reports, and direct answers when you have a question. Your records stay confidential and encrypted at every step.
+    </p>
+    <p class="text-ink/75">
+      Founder Mehdi Javed has managed accounting operations for SMEs and logistics businesses across Pakistan, the UAE and the United States, so your books are in experienced hands, wherever they're kept.
+    </p>
+  </SplitSection>
 
-  <!-- Section 5: How to choose (light-bg) -->
-  <section class="bg-light-bg py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          How do you choose the right accountant for your business?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            Three things matter most. Genuine local compliance knowledge across ACRA, IRAS, GST and SFRS. Pricing you can see before you sign. And direct access to a qualified person instead of a rotating call centre. A good accountant files on time, explains your numbers, and flags problems before they turn into penalties.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          Most Singapore firms hide their fees and their people. With us, you know exactly what you pay and exactly who handles your account. You talk to Mehdi, not a queue.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 5: How to choose (text left, image right) ── -->
+  <SplitSection
+    eyebrow="Choosing Right"
+    heading="How do you choose the right accountant for your business?"
+    imageAlt="Checklist of criteria for choosing an accountant in Singapore"
+    placeholderLabel="Elegant checklist or criteria comparison: compliance, price transparency, direct access"
+    placeholderIcon="✅"
+    flip={false}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        Three things matter most. Genuine local compliance knowledge across ACRA, IRAS, GST and SFRS. Pricing you can see before you sign. And direct access to a qualified person instead of a rotating call centre. A good accountant files on time, explains your numbers, and flags problems before they turn into penalties.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      Most Singapore firms hide their fees and their people. With us, you know exactly what you pay and exactly who handles your account. You talk to Mehdi, not a queue.
+    </p>
+  </SplitSection>
 
-  <!-- Section 6: Missing deadlines (white) -->
-  <section class="bg-white py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          What happens if you miss an ACRA or IRAS deadline?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            Messy or late records cause real problems. Your statutory accounts slip, your tax agent cannot file on time, and decisions get made on numbers you cannot trust. We keep your books current and your financial statements ready, so nothing holds up your year-end.
-          </p>
-        </AnswerBlock>
-        <p class="text-base leading-relaxed text-ink/80 mt-4">
-          We close your books monthly and keep your statements ready ahead of year-end, so whoever files your tax and GST has clean numbers to work from. No last-minute scrambles, no chasing missing records.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── SPLIT SECTION 6: Deadlines (image left, text right) ── -->
+  <SplitSection
+    eyebrow="Deadline Protection"
+    heading="What happens if you miss an ACRA or IRAS deadline?"
+    imageAlt="Calendar showing accounting deadlines and clean financial records"
+    placeholderLabel="Calendar with ACRA/IRAS deadline dates marked, green tick on completed filings"
+    placeholderIcon="📅"
+    flip={true}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        Messy or late records cause real problems. Your statutory accounts slip, your tax agent cannot file on time, and decisions get made on numbers you cannot trust. We keep your books current and your financial statements ready, so nothing holds up your year-end.
+      </p>
+    </AnswerBlock>
+    <p class="text-ink/75 mt-2">
+      We close your books monthly and keep your statements ready ahead of year-end, so whoever files your tax and GST has clean numbers to work from. No last-minute scrambles, no chasing missing records.
+    </p>
+  </SplitSection>
 
-  <!-- Section 7: Services grid (navy) -->
-  <section class="bg-navy py-24">
+  <!-- ── SERVICES GRID (navy) ── -->
+  <section class="bg-navy py-24 lg:py-28">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold uppercase tracking-widest gold-gradient mb-3">What we do</p>
-        <h2 class="text-3xl lg:text-4xl text-white" style="font-family: var(--font-serif);">
+      <div class="text-center mb-14">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] gold-gradient mb-4">What We Do</p>
+        <h2 class="text-3xl lg:text-5xl text-white max-w-2xl mx-auto leading-tight">
           Core accounting services for Singapore SMEs
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((svc) => (
-          <ServiceCard
-            title={svc.title}
-            blurb={svc.blurb}
-            href={svc.href}
-            dark={true}
-          />
+          <ServiceCard title={svc.title} blurb={svc.blurb} href={svc.href} dark={true} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Section 8: Who we help (light-bg) -->
-  <section class="bg-light-bg py-24">
+  <!-- ── WHO WE HELP (light-bg icon strip) ── -->
+  <section class="bg-light-bg py-20">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          Who do you help?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            We work with Singapore small businesses and SMEs, sole proprietors, new Pte Ltd companies, e-commerce sellers, agencies and growing startups with one to twenty staff. If you'd rather run your business than wrestle with IRAS forms, you're who we built this for.
-          </p>
-        </AnswerBlock>
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] gold-gradient mb-4">Who We Help</p>
+        <h2 class="text-3xl lg:text-4xl text-ink mb-6">Who do you help?</h2>
+        <p class="text-ink/75 text-lg leading-relaxed mb-10">
+          We work with Singapore small businesses and SMEs, sole proprietors, new Pte Ltd companies, e-commerce sellers, agencies and growing startups with one to twenty staff. If you'd rather run your business than wrestle with IRAS forms, you're who we built this for.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {[
+            { icon: '🏪', label: 'Sole Traders' },
+            { icon: '🏢', label: 'Pte Ltd' },
+            { icon: '🛍️', label: 'E-commerce' },
+            { icon: '💼', label: 'Agencies' },
+            { icon: '🚀', label: 'Startups' },
+            { icon: '👥', label: '1-20 Staff' },
+          ].map((item) => (
+            <div class="bg-white rounded-xl p-4 card-shadow flex flex-col items-center gap-2 text-center">
+              <span class="text-2xl">{item.icon}</span>
+              <span class="text-xs font-600 text-ink/70">{item.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 9: Pricing (navy) -->
-  <section class="bg-navy py-24">
+  <!-- ── PRICING (navy) ── -->
+  <section class="bg-navy py-24 lg:py-28">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold uppercase tracking-widest gold-gradient mb-3">Transparent pricing</p>
-        <h2 class="text-3xl lg:text-4xl text-white mb-4" style="font-family: var(--font-serif);">
+      <div class="text-center mb-14">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] gold-gradient mb-4">Transparent Pricing</p>
+        <h2 class="text-3xl lg:text-5xl text-white mb-4 max-w-xl mx-auto leading-tight">
           Fixed monthly fees, published up front
         </h2>
-        <p class="text-muted max-w-xl mx-auto">No hidden costs. No locked tiers you can't leave. See the <a href="/pricing/" class="text-gold hover:underline">full pricing page</a> or get a custom quote.</p>
+        <p class="text-muted max-w-lg mx-auto">No hidden costs. No locked tiers. See the <a href="/pricing/" class="text-gold hover:underline">full pricing page</a> or get a custom quote.</p>
       </div>
       <!-- CONFIRM all prices below are placeholders -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -377,91 +390,91 @@ const pricingTiers = [
     </div>
   </section>
 
-  <!-- Section 10: Why choose us / About Mehdi (light-bg) -->
-  <section class="bg-light-bg py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          Why choose accountantforsmallbusiness.com?
-        </h2>
-        <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
-            Because you get a qualified Financial Controller, transparent fixed pricing, and direct personal service, not a faceless retainer. Mehdi Javed brings 15+ years of multi-entity finance experience, an Executive MBA in Accounting &amp; Finance, and a track record of 28% faster financial close and 10% cost reduction.
-          </p>
-        </AnswerBlock>
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="bg-white rounded-xl p-6 card-shadow">
-            <div class="text-2xl font-bold mb-2 gold-gradient" style="font-family: var(--font-serif);">Expertise</div>
-            <p class="text-sm text-ink/70 leading-relaxed">IFRS and SFRS reporting, ERP implementation, and automated AP/AR and payroll.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 card-shadow">
-            <div class="text-2xl font-bold mb-2 gold-gradient" style="font-family: var(--font-serif);">Price</div>
-            <p class="text-sm text-ink/70 leading-relaxed">Fixed monthly fees published up front with no hidden costs.</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 card-shadow">
-            <div class="text-2xl font-bold mb-2 gold-gradient" style="font-family: var(--font-serif);">Access</div>
-            <p class="text-sm text-ink/70 leading-relaxed">Work with a dedicated accountant who knows your business, never a call centre.</p>
-          </div>
+  <!-- ── ABOUT MEHDI / WHY CHOOSE US (split, image left) ── -->
+  <SplitSection
+    eyebrow="Meet the Founder"
+    heading="Why choose accountantforsmallbusiness.com?"
+    imageAlt="Mehdi Javed, Financial Controller and founder"
+    placeholderLabel="Professional portrait of Mehdi Javed -- confident, business attire, neutral studio background"
+    placeholderIcon="👤"
+    flip={true}
+    dark={false}
+  >
+    <AnswerBlock>
+      <p>
+        Because you get a qualified Financial Controller, transparent fixed pricing, and direct personal service, not a faceless retainer. Mehdi Javed brings 15+ years of multi-entity finance experience, an Executive MBA in Accounting &amp; Finance, and a track record of 28% faster financial close and 10% cost reduction.
+      </p>
+    </AnswerBlock>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+      {[
+        { label: 'Expertise', desc: 'IFRS, SFRS, ERP implementation, automated AP/AR and payroll.' },
+        { label: 'Price', desc: 'Fixed monthly fees published up front. No hidden costs ever.' },
+        { label: 'Access', desc: 'Talk to Mehdi directly. Never a call centre.' },
+      ].map((item) => (
+        <div class="bg-light-bg border border-ink/8 rounded-xl p-4">
+          <div class="gold-gradient text-lg font-700 mb-1">{item.label}</div>
+          <p class="text-xs text-ink/65 leading-relaxed">{item.desc}</p>
         </div>
-        <p class="mt-6 text-base text-ink/80">
-          <a href="/about/" class="text-gold hover:underline font-medium">Read more about Mehdi.</a>
-        </p>
-      </div>
+      ))}
     </div>
-  </section>
+    <a href="/about/" class="inline-flex items-center text-gold font-semibold hover:underline mt-4">
+      Read more about Mehdi &rarr;
+    </a>
+  </SplitSection>
 
-  <!-- Section 11: How to get started (white) -->
-  <section class="bg-white py-24">
+  <!-- ── HOW TO GET STARTED (white, numbered steps) ── -->
+  <section class="bg-white py-24 lg:py-28">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-4" style="font-family: var(--font-serif);">
-          How do you get started?
-        </h2>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] gold-gradient mb-4">Getting Started</p>
+        <div class="gold-rule mb-5"></div>
+        <h2 class="text-3xl lg:text-4xl text-ink mb-4">How do you get started?</h2>
         <AnswerBlock>
-          <p class="text-base leading-relaxed text-ink">
+          <p>
             Getting started takes three steps and one free call. You book a consultation, we assess your needs and send a fixed quote, then we onboard your business onto Xero and take over your books, usually within a week, with no downtime.
           </p>
         </AnswerBlock>
-        <ol class="mt-6 flex flex-col gap-5">
-          <li class="flex items-start gap-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-btn text-navy text-sm font-bold flex items-center justify-center" style="font-family: var(--font-serif);">1</span>
-            <div>
-              <span class="font-semibold text-ink">Book a free consultation</span>
-              <span class="text-ink/70"> &ndash; tell us about your business, no obligation.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-btn text-navy text-sm font-bold flex items-center justify-center" style="font-family: var(--font-serif);">2</span>
-            <div>
-              <span class="font-semibold text-ink">Get your fixed quote</span>
-              <span class="text-ink/70"> &ndash; a clear monthly fee for exactly what you need.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-btn text-navy text-sm font-bold flex items-center justify-center" style="font-family: var(--font-serif);">3</span>
-            <div>
-              <span class="font-semibold text-ink">We take over</span>
-              <span class="text-ink/70"> &ndash; we onboard you onto Xero and handle the handover from your current accountant.</span>
-            </div>
-          </li>
+        <ol class="mt-8 flex flex-col gap-0">
+          {[
+            { n: '01', title: 'Book a free consultation', desc: 'Tell us about your business, no obligation.' },
+            { n: '02', title: 'Get your fixed quote', desc: 'A clear monthly fee for exactly what you need.' },
+            { n: '03', title: 'We take over', desc: 'We onboard you onto Xero and handle the handover from your current accountant.' },
+          ].map((step, i) => (
+            <li class="flex gap-6 relative">
+              {i < 2 && <div class="absolute left-6 top-14 bottom-0 w-px bg-gold/20"></div>}
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center z-10">
+                <span class="gold-gradient text-sm font-700">{step.n}</span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-lg font-700 text-ink mb-1" style="font-family: var(--font-sans);">{step.title}</h3>
+                <p class="text-ink/65 text-base">{step.desc}</p>
+              </div>
+            </li>
+          ))}
         </ol>
+        <a
+          href="/contact/"
+          class="inline-flex items-center px-7 py-3.5 bg-gold-btn text-navy font-700 rounded-lg hover:bg-gold-hover transition-colors mt-4"
+        >
+          Book a free consultation
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Section 12: FAQ (light-bg) -->
+  <!-- ── FAQ (light-bg) ── -->
   <section class="bg-light-bg py-24">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl lg:text-4xl text-ink mb-10" style="font-family: var(--font-serif);">
-          Frequently asked questions
-        </h2>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xs font-700 uppercase tracking-[0.2em] gold-gradient mb-4">Common Questions</p>
+        <div class="gold-rule mb-5"></div>
+        <h2 class="text-3xl lg:text-4xl text-ink mb-10">Frequently asked questions</h2>
         <FaqAccordion items={faqs} />
       </div>
     </div>
   </section>
 
-  <!-- Closing CTA (navy) -->
+  <!-- ── CLOSING CTA (navy) ── -->
   <CTASection
     heading="Ready to stop worrying about your books?"
     subtext="Book a free consultation with Mehdi today and get a fixed monthly quote. No obligation, no jargon."

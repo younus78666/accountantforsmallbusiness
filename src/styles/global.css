@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-/* Poppins — all weights for full hierarchy control */
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 @import "@fontsource/poppins/600.css";
 @import "@fontsource/poppins/700.css";
 @import "@fontsource/poppins/800.css";
 @import "@fontsource/poppins/400-italic.css";
-@import "@fontsource/poppins/600-italic.css";
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 @theme {
@@ -17,7 +15,6 @@
   --color-gold:        #DAA035;
   --color-gold-btn:    #DCA33C;
   --color-gold-hover:  #C8912F;
-  --color-gold-dark:   #9A6400; /* gold that passes contrast on white/light-bg */
   --color-white:       #FEFFFF;
   --color-off-white:   #F5F5F5;
   --color-muted:       #CBCFD8;
@@ -25,8 +22,30 @@
   --color-light-bg:    #F5F7FA;
   --color-blue-chart:  #3B6FB5;
 
-  --font-sans: 'Poppins', -apple-system, system-ui, sans-serif;
+  --font-sans:  'Poppins', -apple-system, system-ui, sans-serif;
   --font-serif: 'Poppins', -apple-system, system-ui, sans-serif;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-12px) rotate(3deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.30; transform: scale(1.08); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
@@ -45,7 +64,7 @@ h2 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
 h3 { font-weight: 600; letter-spacing: -0.01em; }
 p  { line-height: 1.75; }
 
-/* ─── Gold gradient — DARK BACKGROUNDS ONLY ─────────────────────────────── */
+/* ─── Gold gradient text (dark backgrounds only) ─────────────────────────── */
 @utility gold-gradient {
   background: linear-gradient(135deg, #F0C050 0%, #DCA33C 40%, #C8912F 100%);
   -webkit-background-clip: text;
@@ -54,34 +73,67 @@ p  { line-height: 1.75; }
   color: transparent;
 }
 
-/* ─── Eyebrow chip — works on any background ────────────────────────────── */
+/* ─── Eyebrow chips ──────────────────────────────────────────────────────── */
 @utility eyebrow-dark {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #DCA33C;
-  background: rgba(220,163,60,0.12);
-  border: 1px solid rgba(220,163,60,0.25);
+  background: rgba(220,163,60,0.1);
+  border: 1px solid rgba(220,163,60,0.22);
   border-radius: 999px;
-  padding: 0.3rem 0.9rem;
+  padding: 0.35rem 1rem;
 }
 
 @utility eyebrow-light {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #7A5200;
-  background: rgba(154,100,0,0.08);
-  border: 1px solid rgba(154,100,0,0.2);
+  background: rgba(154,100,0,0.07);
+  border: 1px solid rgba(154,100,0,0.18);
   border-radius: 999px;
-  padding: 0.3rem 0.9rem;
+  padding: 0.35rem 1rem;
 }
 
-/* ─── Decorative gold bar ────────────────────────────────────────────────── */
+/* ─── Section container ──────────────────────────────────────────────────── */
+@utility section-inner {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ─── Icon box (animated gold glow) ─────────────────────────────────────── */
+@utility icon-box {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.875rem;
+  background: rgba(220,163,60,0.12);
+  border: 1px solid rgba(220,163,60,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility icon-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+@utility icon-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+/* ─── Gold bar accent ────────────────────────────────────────────────────── */
 @utility gold-bar {
   display: block;
   width: 40px;
@@ -90,19 +142,13 @@ p  { line-height: 1.75; }
   border-radius: 2px;
 }
 
-/* ─── Card shadows ───────────────────────────────────────────────────────── */
+/* ─── Shadows ────────────────────────────────────────────────────────────── */
 @utility card-shadow {
-  box-shadow: 0 2px 20px rgba(0, 15, 34, 0.07);
+  box-shadow: 0 2px 20px rgba(0, 15, 34, 0.06);
 }
 @utility card-shadow-lg {
   box-shadow: 0 8px 48px rgba(0, 15, 34, 0.12);
 }
-
-/* ─── Section max-width ──────────────────────────────────────────────────── */
-@utility section-inner {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+@utility card-shadow-gold {
+  box-shadow: 0 8px 32px rgba(220, 163, 60, 0.20);
 }

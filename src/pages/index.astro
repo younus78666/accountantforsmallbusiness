@@ -68,209 +68,153 @@ const schemaJsonLd = `<script type="application/ld+json">
 <\/script>`;
 
 const services = [
-  {
-    title: 'Accounting & Bookkeeping',
-    blurb: 'Clean, SFRS-compliant books every month',
-    href: '/accounting-services-singapore/',
-  },
-  {
-    title: 'Bookkeeping',
-    blurb: 'Day-to-day records, reconciled on Xero',
-    href: '/bookkeeping-services-singapore/',
-  },
-  {
-    title: 'Management Reports',
-    blurb: 'Monthly numbers you can act on',
-    href: '/accounting-services-singapore/',
-  },
-  {
-    title: 'AP / AR',
-    blurb: 'Payables and receivables tracked',
-    href: '/accounting-services-singapore/',
-  },
-  {
-    title: 'Payroll & CPF',
-    blurb: 'Monthly payroll, payslips, CPF',
-    href: '/payroll-services-singapore/',
-  },
-  {
-    title: 'Financial Statements',
-    blurb: 'SFRS-compliant year-end accounts',
-    href: '/accounting-services-singapore/',
-  },
+  { title: 'Accounting & Bookkeeping', blurb: 'Clean, SFRS-compliant books every month', href: '/accounting-services-singapore/',
+    icon: 'M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25' },
+  { title: 'Bookkeeping', blurb: 'Day-to-day records, reconciled on Xero', href: '/bookkeeping-services-singapore/',
+    icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z' },
+  { title: 'Management Reports', blurb: 'Monthly numbers you can act on', href: '/accounting-services-singapore/',
+    icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z' },
+  { title: 'AP / AR', blurb: 'Payables and receivables tracked', href: '/accounting-services-singapore/',
+    icon: 'M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { title: 'Payroll & CPF', blurb: 'Monthly payroll, payslips, CPF', href: '/payroll-services-singapore/',
+    icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z' },
+  { title: 'Financial Statements', blurb: 'SFRS-compliant year-end accounts', href: '/accounting-services-singapore/',
+    icon: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z' },
 ];
 
 const faqs = [
-  {
-    q: 'Can a remote accountant keep my books compliant?',
-    a: 'Yes. Your bookkeeping, financial statements and payroll all meet Singapore SFRS and CPF standards regardless of where your accountant is based, prepared on Xero and ready for your tax agent to file.',
-  },
-  {
-    q: 'Is my financial data safe?',
-    a: 'Yes. Data is shared through encrypted, access-controlled channels and stored securely. Only your assigned accountant can access your records, and we work under confidentiality terms.',
-  },
-  {
-    q: 'Which accounting software do you use?',
-    a: 'We work in both Xero and QuickBooks Online, whichever you prefer. Both are SFRS-friendly and give you real-time access to your numbers.',
-  },
-  {
-    q: 'Do you handle payroll and management reports?',
-    a: 'Yes. We run monthly payroll with CPF and itemised payslips, and provide clear monthly management reports, all within your package.',
-  },
-  {
-    q: 'How do I switch from my current accountant?',
-    a: 'We manage the handover for you, collecting your records, setting up Xero and picking up your filings with no gap in compliance.',
-  },
+  { q: 'Can a remote accountant keep my books compliant?', a: 'Yes. Your bookkeeping, financial statements and payroll all meet Singapore SFRS and CPF standards regardless of where your accountant is based, prepared on Xero and ready for your tax agent to file.' },
+  { q: 'Is my financial data safe?', a: 'Yes. Data is shared through encrypted, access-controlled channels and stored securely. Only your assigned accountant can access your records, and we work under confidentiality terms.' },
+  { q: 'Which accounting software do you use?', a: 'We work in both Xero and QuickBooks Online, whichever you prefer. Both are SFRS-friendly and give you real-time access to your numbers.' },
+  { q: 'Do you handle payroll and management reports?', a: 'Yes. We run monthly payroll with CPF and itemised payslips, and provide clear monthly management reports, all within your package.' },
+  { q: 'How do I switch from my current accountant?', a: 'We manage the handover for you, collecting your records, setting up Xero and picking up your filings with no gap in compliance.' },
 ];
 
 // CONFIRM - all prices below are placeholders awaiting client confirmation
 const pricingTiers = [
   {
-    name: 'Starter',
-    price: 'S$90',
-    period: '/month',
-    tagline: 'For low-volume sole proprietors',
-    features: [
-      'Monthly bookkeeping',
-      'Bank reconciliation',
-      'Unaudited financial statements',
-      'Management reports',
-      'Xero subscription included',
-    ],
-    cta: { label: 'Get a fixed quote', href: '/contact/' },
-    highlighted: false,
+    name: 'Starter', price: 'S$90', period: '/month', tagline: 'For low-volume sole proprietors',
+    features: ['Monthly bookkeeping','Bank reconciliation','Unaudited financial statements','Management reports','Xero subscription included'],
+    cta: { label: 'Get a fixed quote', href: '/contact/' }, highlighted: false,
   },
   {
-    name: 'Growth',
-    price: 'S$250',
-    period: '/month',
-    tagline: 'For growing SMEs',
-    features: [
-      'Everything in Starter',
-      'Accounts payable & receivable',
-      'GST tracking & support',
-      'Priority response',
-      'Monthly strategy call',
-    ],
-    cta: { label: 'Get a fixed quote', href: '/contact/' },
-    highlighted: true,
+    name: 'Growth', price: 'S$250', period: '/month', tagline: 'For growing SMEs',
+    features: ['Everything in Starter','Accounts payable & receivable','GST tracking & support','Priority response','Monthly strategy call'],
+    cta: { label: 'Get a fixed quote', href: '/contact/' }, highlighted: true,
   },
   {
-    name: 'Full',
-    price: 'S$450',
-    period: '/month + S$8/employee',
-    tagline: 'For SMEs with staff',
-    features: [
-      'Everything in Growth',
-      'Monthly payroll & CPF',
-      'Itemised payslips',
-      'Multi-entity support',
-      'Dedicated accountant',
-    ],
-    cta: { label: 'Get a fixed quote', href: '/contact/' },
-    highlighted: false,
+    name: 'Full', price: 'S$450', period: '/month + S$8/employee', tagline: 'For SMEs with staff',
+    features: ['Everything in Growth','Monthly payroll & CPF','Itemised payslips','Multi-entity support','Dedicated accountant'],
+    cta: { label: 'Get a fixed quote', href: '/contact/' }, highlighted: false,
   },
+];
+
+const whoWeHelp = [
+  { label: 'Sole Traders', desc: 'Freelancers & individuals',
+    path: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z' },
+  { label: 'Pte Ltd', desc: 'Registered companies',
+    path: 'M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21' },
+  { label: 'E-commerce', desc: 'Online sellers',
+    path: 'M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z' },
+  { label: 'Agencies', desc: 'Service businesses',
+    path: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z' },
+  { label: 'Startups', desc: 'Growing businesses',
+    path: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' },
+  { label: '1-20 Staff', desc: 'Teams with payroll',
+    path: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z' },
+];
+
+const steps = [
+  { n: '01', title: 'Free consultation', desc: 'Tell us about your business. We scope exactly what you need and ask the right questions about your transaction volume, GST status, and payroll.',
+    path: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
+  { n: '02', title: 'Fixed quote sent', desc: 'You receive a clear monthly fee in writing within 24 hours. No hidden tiers, no ambiguous add-ons. You approve it and we begin.',
+    path: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+  { n: '03', title: 'We take over', desc: "We onboard you onto Xero, collect your records from the previous accountant, and start month one. You don't lift a finger.",
+    path: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' },
 ];
 ---
 
 <BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
 
-  <!-- ════════════════════════════════════════════ HERO (navy) ══ -->
+  <!-- ══ HERO (navy) ══ -->
   <Hero
     h1="Accounting Services in Singapore"
     h1Accent="for Small Businesses"
     subhead="Fixed monthly fees. No surprises. Your books, payroll and financial statements handled remotely by a Financial Controller with 15+ years of experience, so you can get back to running your business."
     primaryCta={{ label: 'Book a free consultation', href: '/contact/' }}
     secondaryCta={{ label: 'Get a fixed quote', href: '/contact/' }}
-    trustItems={[
-      "Xero & QuickBooks",
-      "SFRS-ready books",
-      "15+ years' experience",
-      "Serving Singapore SMEs remotely",
-    ]}
+    trustItems={["Xero & QuickBooks","SFRS-ready books","15+ years' experience","Serving Singapore SMEs remotely"]}
   />
 
-  <!-- ════════════════════════════════════════ STATS (gold bg) ══ -->
+  <!-- ══ STATS (gold) ══ -->
   <StatsBanner stats={[
-    { value: "15+", label: "Years' experience" },
-    { value: "28%", label: "Faster financial close" },
-    { value: "S$90", label: "Starting from /month" },
+    { value: "15+",  label: "Years' experience" },
+    { value: "28%",  label: "Faster financial close" },
+    { value: "S$90", label: "Starting from per month" },
     { value: "100%", label: "Cloud-based delivery" },
   ]} />
 
-  <!-- ════════════════════════════ SPLIT 1: Services overview (white) ══ -->
-  <!-- ── SPLIT SECTION 1: What services? (white, text left) ── -->
+  <!-- ══ SPLIT 1: What services? (white, text left) ══ -->
   <SplitSection
     eyebrow="Core Services"
     heading="What accounting services do small businesses in Singapore need?"
-    imageAlt="Accountant reviewing bookkeeping records on Xero dashboard"
-    placeholderLabel="Accountant at desk reviewing Xero dashboard with monthly reports, clean modern office"
-    placeholderIcon="📒"
-    flip={false}
+    imageAlt="Accountant reviewing Xero bookkeeping dashboard"
+    placeholderLabel="Accountant at desk reviewing Xero dashboard — clean modern Singapore office"
+    placeholderIconPath="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+    variant="white" flip={false}
   >
     <AnswerBlock>
-      <p>
-        Most Singapore small businesses need a few core things handled well: bookkeeping, SFRS-compliant financial statements, payroll with CPF, and clear monthly management reports. Get these right and your records stay accurate, your statutory accounts are ready, and you have numbers you can actually use to run the business.
-      </p>
+      <p>Most Singapore small businesses need a few core things handled well: bookkeeping, SFRS-compliant financial statements, payroll with CPF, and clear monthly management reports. Get these right and your records stay accurate, your statutory accounts are ready, and you have numbers you can actually use to run the business.</p>
     </AnswerBlock>
-    <p>
-      You don't need a full finance department. You need the essentials done correctly and on time. Everything most SMEs require sits inside one fixed monthly fee, so nothing slips through the cracks and you always know what you're paying.
-    </p>
+    <p>You don't need a full finance department. You need the essentials done correctly and on time. Everything most SMEs require sits inside one fixed monthly fee, so nothing slips through the cracks and you always know what you're paying.</p>
     <a href="/accounting-services-singapore/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-600 rounded-xl hover:bg-navy-deep transition-colors mt-2">
-      See all services
+      Explore services
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
   </SplitSection>
 
-  <!-- ── MINI CTA after section 1 ── -->
-  <MiniBanner
-    text="Not sure what services your business needs? Book a free 15-minute call."
-    ctaLabel="Book free call"
-    ctaHref="/contact/"
-    variant="navy"
-  />
-
-  <!-- ── SPLIT SECTION 2: In-house vs outsource? (light-bg, image left) ── -->
-  <SplitSection
-    eyebrow="Cost Comparison"
-    heading="Should you hire an in-house accountant or outsource?"
-    imageAlt="Side-by-side cost comparison of in-house vs outsourced accountant"
-    placeholderLabel="Split visual: in-house salary costs S$3,000+/mo vs fixed outsourced fee — clean comparison graphic"
-    placeholderIcon="⚖️"
-    flip={true}
-    dark={false}
-  >
-    <AnswerBlock>
-      <p>
-        For most small businesses in Singapore, outsourcing is cheaper and safer than hiring in-house. A full-time accountant costs a monthly salary plus CPF, leave and software, often S$3,000+ a month, and is idle when transaction volume is low. Outsourcing gives you the same expertise for a fraction of the cost.
-      </p>
-    </AnswerBlock>
-    <p>
-      Hire in-house and you pay salary, CPF, benefits, software and training, then carry the risk yourself if that person leaves or makes an error.
-    </p>
-    <p>
-      Outsource to us and you get one fixed fee, a dedicated qualified accountant, compliant software, and continuity you never have to manage. Scale the service up or down as the business grows.
-    </p>
-  </SplitSection>
-
-  <!-- ══════════════════════════ SERVICES GRID (navy) ══ -->
-  <section class="bg-navy py-24 lg:py-28">
-    <div class="section-inner">
+  <!-- ══ SERVICES GRID (navy) ══ -->
+  <section class="relative bg-navy py-24 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full" style="background: radial-gradient(ellipse at center, rgba(220,163,60,0.06) 0%, transparent 65%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="dots-svc" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="14" cy="14" r="1.2" fill="#DAA035"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots-svc)"/>
+      </svg>
+    </div>
+    <div class="relative section-inner">
       <div class="text-center mb-14">
         <div class="eyebrow-dark mb-5">What We Do</div>
-        <h2 class="text-3xl lg:text-5xl text-white max-w-2xl mx-auto">
-          Core accounting services for Singapore SMEs
-        </h2>
+        <h2 class="text-3xl lg:text-5xl text-white max-w-xl mx-auto">Six services. One fixed monthly fee.</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((svc) => (
-          <ServiceCard title={svc.title} blurb={svc.blurb} href={svc.href} dark={true} />
+          <ServiceCard title={svc.title} blurb={svc.blurb} href={svc.href} dark={true} iconPath={svc.icon} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════ MAIN GOLD CTA ══ -->
+  <!-- ══ MINI CTA (navy) ══ -->
+  <MiniBanner text="Not sure what services your business needs? Book a free 15-minute assessment call." ctaLabel="Book free call" ctaHref="/contact/" variant="navy" />
+
+  <!-- ══ SPLIT 2: In-house vs outsource (light-bg, image left) ══ -->
+  <SplitSection
+    eyebrow="Cost Comparison"
+    heading="Should you hire an in-house accountant or outsource?"
+    imageAlt="Cost comparison: in-house salary vs outsourced fixed fee"
+    placeholderLabel="Split graphic — in-house S$3,000+/month vs fixed outsourced fee"
+    placeholderIconPath="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z"
+    variant="light" flip={true}
+  >
+    <AnswerBlock>
+      <p>For most small businesses in Singapore, outsourcing is cheaper and safer than hiring in-house. A full-time accountant costs a monthly salary plus CPF, leave and software, often S$3,000+ a month, and is idle when transaction volume is low. Outsourcing gives you the same expertise for a fraction of the cost.</p>
+    </AnswerBlock>
+    <p>Hire in-house and you pay salary, CPF, benefits, software and training, then carry the risk yourself if that person leaves or makes an error.</p>
+    <p>Outsource to us and you get one fixed fee, a dedicated qualified accountant, compliant software, and continuity you never have to manage. Scale the service up or down as the business grows.</p>
+  </SplitSection>
+
+  <!-- ══ MAIN GOLD CTA ══ -->
   <CTASection
     variant="gold"
     heading="Get a fixed quote in one free call."
@@ -281,234 +225,195 @@ const pricingTiers = [
     secondaryHref="/pricing/"
   />
 
-  <!-- ── SPLIT SECTION 3: Remote delivery (white, text right) ── -->
+  <!-- ══ SPLIT 3: Remote delivery (white, text left) ══ -->
   <SplitSection
     eyebrow="How We Work"
     heading="How do you deliver Singapore accounting services remotely?"
-    imageAlt="Remote accountant working on cloud accounting software with Singapore skyline"
-    placeholderLabel="Laptop with Xero open, cloud icons, secure upload interface — modern remote accounting setup"
-    placeholderIcon="☁️"
-    flip={false}
-    dark={false}
+    imageAlt="Remote accountant on cloud accounting software"
+    placeholderLabel="Laptop with Xero open, secure cloud upload, video call — modern remote accounting"
+    placeholderIconPath="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"
+    variant="white" flip={false}
   >
     <AnswerBlock>
-      <p>
-        We work entirely in the cloud using Xero, secure document sharing and scheduled video calls. Because we operate remotely with lower overhead, our fees are lower than a traditional Singapore firm's, while every filing still meets ACRA, IRAS and SFRS requirements. You get the same compliance, less cost.
-      </p>
+      <p>We work entirely in the cloud using Xero, secure document sharing and scheduled video calls. Because we operate remotely with lower overhead, our fees are lower than a traditional Singapore firm's, while every filing still meets ACRA, IRAS and SFRS requirements. You get the same compliance, less cost.</p>
     </AnswerBlock>
-    <p>
-      Remote doesn't mean hands-off. You get a named accountant, real-time access to your numbers on Xero, monthly reports, and direct answers when you have a question. Your records stay confidential and encrypted at every step.
-    </p>
-    <p>
-      Founder Mehdi Javed has managed accounting operations for SMEs and logistics businesses across Pakistan, the UAE and the United States, so your books are in experienced hands, wherever they're kept.
-    </p>
+    <p>Remote doesn't mean hands-off. You get a named accountant, real-time access to your numbers on Xero, monthly reports, and direct answers when you have a question. Your records stay confidential and encrypted at every step.</p>
+    <p>Founder Mehdi Javed has managed accounting operations for SMEs and logistics businesses across Pakistan, the UAE and the United States, so your books are in experienced hands, wherever they're kept.</p>
   </SplitSection>
 
-  <!-- ── SPLIT SECTION 4: How to choose (light-bg, image right) ── -->
+  <!-- ══ SPLIT 4: How to choose (light-bg, image right) ══ -->
   <SplitSection
     eyebrow="Choosing Right"
     heading="How do you choose the right accountant for your business?"
-    imageAlt="Checklist criteria for choosing an accountant in Singapore"
-    placeholderLabel="Professional three-column comparison card: Compliance knowledge, Transparent pricing, Direct access"
-    placeholderIcon="✅"
-    flip={true}
-    dark={false}
+    imageAlt="Three criteria for choosing an accountant in Singapore"
+    placeholderLabel="Three criteria cards: Compliance, Transparent pricing, Direct access"
+    placeholderIconPath="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+    variant="light" flip={true}
   >
     <AnswerBlock>
-      <p>
-        Three things matter most. Genuine local compliance knowledge across ACRA, IRAS, GST and SFRS. Pricing you can see before you sign. And direct access to a qualified person instead of a rotating call centre. A good accountant files on time, explains your numbers, and flags problems before they turn into penalties.
-      </p>
+      <p>Three things matter most. Genuine local compliance knowledge across ACRA, IRAS, GST and SFRS. Pricing you can see before you sign. And direct access to a qualified person instead of a rotating call centre. A good accountant files on time, explains your numbers, and flags problems before they turn into penalties.</p>
     </AnswerBlock>
-    <p>
-      Most Singapore firms hide their fees and their people. With us, you know exactly what you pay and exactly who handles your account. You talk to Mehdi, not a queue.
-    </p>
+    <p>Most Singapore firms hide their fees and their people. With us, you know exactly what you pay and exactly who handles your account. You talk to Mehdi, not a queue.</p>
     <a href="/contact/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-600 rounded-xl hover:bg-navy-deep transition-colors mt-2">
-      Get a Quote
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      Get a Quote <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
   </SplitSection>
 
-  <!-- ── MINI CTA ── -->
-  <MiniBanner
-    text="Ready to stop guessing? Get a fixed quote in one short call — no paperwork needed."
-    ctaLabel="Book free consultation"
-    ctaHref="/contact/"
-    variant="light"
-  />
+  <!-- ══ MINI CTA (light) ══ -->
+  <MiniBanner text="Transparent pricing, published up front. No locked tiers, no surprise add-ons at year-end." ctaLabel="See pricing" ctaHref="/pricing/" variant="light" />
 
-  <!-- ══════════════ PRICING (navy) ══ -->
-  <section class="bg-navy py-24 lg:py-28">
-    <div class="section-inner">
+  <!-- ══ PRICING (navy) ══ -->
+  <section class="relative bg-navy py-24 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full" style="background: radial-gradient(ellipse at center, rgba(220,163,60,0.07) 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="dots-price" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="18" cy="18" r="1.5" fill="#DAA035"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots-price)"/>
+      </svg>
+    </div>
+    <div class="relative section-inner">
       <div class="text-center mb-14">
         <div class="eyebrow-dark mb-5">Transparent Pricing</div>
-        <h2 class="text-3xl lg:text-5xl text-white mb-4">
-          Fixed monthly fees,<br/>published up front
-        </h2>
-        <p class="text-white/50 max-w-md mx-auto font-400">No hidden costs. No locked tiers. See the <a href="/pricing/" class="text-gold-btn hover:underline">full pricing page</a> or get a custom quote.</p>
+        <h2 class="text-3xl lg:text-5xl text-white mb-4">Fixed monthly fees,<br class="hidden sm:inline"/> published up front</h2>
+        <p class="text-white/45 max-w-md mx-auto font-400">No hidden costs. No locked tiers. See the <a href="/pricing/" class="text-gold-btn hover:underline font-600">full pricing page</a> or get a custom quote.</p>
       </div>
       <!-- CONFIRM all prices below are placeholders -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {pricingTiers.map((tier) => (
-          <PricingTier
-            name={tier.name}
-            price={tier.price}
-            period={tier.period}
-            tagline={tier.tagline}
-            features={tier.features}
-            cta={tier.cta}
-            highlighted={tier.highlighted}
-          />
+          <PricingTier name={tier.name} price={tier.price} period={tier.period} tagline={tier.tagline} features={tier.features} cta={tier.cta} highlighted={tier.highlighted} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── SPLIT: About Mehdi (light-bg, image left) ── -->
+  <!-- ══ SPLIT: About Mehdi (light-bg, image left) ══ -->
   <SplitSection
     eyebrow="Meet the Founder"
     heading="Why choose accountantforsmallbusiness.com?"
     imageAlt="Mehdi Javed, Financial Controller and founder"
-    placeholderLabel="Professional portrait — confident South Asian man, business formal, neutral grey studio, warm lighting"
-    placeholderIcon="👤"
-    flip={true}
-    dark={false}
+    placeholderLabel="Professional portrait — confident, business formal, neutral studio, warm natural lighting"
+    placeholderIconPath="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+    variant="light" flip={true}
   >
     <AnswerBlock>
-      <p>
-        Because you get a qualified Financial Controller, transparent fixed pricing, and direct personal service, not a faceless retainer. Mehdi Javed brings 15+ years of multi-entity finance experience, an Executive MBA in Accounting &amp; Finance, and a track record of 28% faster financial close and 10% cost reduction.
-      </p>
+      <p>Because you get a qualified Financial Controller, transparent fixed pricing, and direct personal service, not a faceless retainer. Mehdi Javed brings 15+ years of multi-entity finance experience, an Executive MBA in Accounting &amp; Finance, and a track record of 28% faster financial close and 10% cost reduction.</p>
     </AnswerBlock>
     <div class="grid grid-cols-3 gap-3 mt-2">
-      {[
-        { stat: '15+', label: 'Years experience' },
-        { stat: '28%', label: 'Faster close' },
-        { stat: '10%', label: 'Cost reduction' },
-      ].map((s) => (
-        <div class="bg-navy rounded-xl p-4 text-center">
-          <div class="text-2xl font-800 text-gold-btn mb-1">{s.stat}</div>
-          <div class="text-white/50 text-xs font-600 leading-tight">{s.label}</div>
+      {[{ stat: '15+', label: 'Years experience' }, { stat: '28%', label: 'Faster close' }, { stat: '10%', label: 'Cost reduction' }].map((s) => (
+        <div class="bg-navy rounded-2xl p-4 text-center">
+          <div class="text-2xl font-800 text-gold-btn mb-1 tracking-tight">{s.stat}</div>
+          <div class="text-white/40 text-[0.6rem] font-600 uppercase tracking-wide leading-tight">{s.label}</div>
         </div>
       ))}
     </div>
-    <p class="mt-4">
-      On expertise: IFRS and SFRS reporting, ERP implementation, automated AP/AR and payroll. On price: fixed monthly fees published up front. On access: you work with Mehdi directly, never a call centre.
-    </p>
+    <p class="mt-4">On expertise: IFRS and SFRS reporting, ERP implementation, automated AP/AR and payroll. On price: fixed monthly fees up front. On access: you work with Mehdi directly, never a call centre.</p>
     <a href="/about/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-600 rounded-xl hover:bg-navy-deep transition-colors mt-2">
-      Read more about Mehdi
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      Read more about Mehdi <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
   </SplitSection>
 
-  <!-- ══════════════ GETTING STARTED (navy, redesigned) ══ -->
-  <section class="bg-navy py-24 lg:py-28">
-    <div class="section-inner">
+  <!-- ══ GETTING STARTED (navy-deep) ══ -->
+  <section class="relative bg-navy-deep py-24 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style="background: radial-gradient(circle, rgba(220,163,60,0.05) 0%, transparent 65%);"></div>
+      <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] rounded-full" style="background: radial-gradient(circle, rgba(220,163,60,0.04) 0%, transparent 65%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="grid-gs" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#DAA035" stroke-width="0.5"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid-gs)"/>
+      </svg>
+    </div>
+    <div class="relative section-inner">
       <div class="text-center mb-16">
         <div class="eyebrow-dark mb-5">Getting Started</div>
         <h2 class="text-3xl lg:text-5xl text-white mb-4">Up and running in one week</h2>
-        <p class="text-white/50 max-w-md mx-auto font-400">Three steps, one free call. No paperwork, no downtime.</p>
+        <p class="text-white/40 max-w-md mx-auto font-400">Three steps, one free call. No paperwork, no downtime.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-        {[
-          {
-            n: '01',
-            title: 'Free consultation',
-            desc: 'Tell us about your business. We ask the right questions to understand your transaction volume, GST status, and payroll needs.',
-            icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
-          },
-          {
-            n: '02',
-            title: 'Fixed quote sent',
-            desc: "You receive a clear monthly fee in writing — no tiers, no hidden costs. You approve it. That's it.",
-            icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-          },
-          {
-            n: '03',
-            title: 'We take over',
-            desc: 'We onboard you onto Xero, collect your records from your previous accountant, and start your first month with no gap in compliance.',
-            icon: 'M5 13l4 4L19 7',
-          },
-        ].map((step) => (
-          <div class="relative bg-navy-panel rounded-2xl p-8 border border-white/8 hover:border-gold/25 transition-all duration-200 group">
-            <!-- Step number -->
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-gold-btn/15 border border-gold-btn/20 flex items-center justify-center">
-                <svg class="w-5 h-5 text-gold-btn" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d={step.icon} />
+      <div class="relative grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14">
+        <!-- Connector (desktop) -->
+        <div class="hidden md:block absolute top-14 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(220,163,60,0.35) 20%, rgba(220,163,60,0.35) 80%, transparent 100%);"></div>
+
+        {steps.map((step) => (
+          <div class="group relative bg-navy-panel rounded-2xl p-8 border border-white/8 hover:border-gold/30 transition-all duration-200 hover:-translate-y-1">
+            <div class="relative mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gold-btn/10 border border-gold-btn/18 flex items-center justify-center transition-all duration-300 group-hover:bg-gold-btn/18">
+                <svg class="w-7 h-7 text-gold-btn icon-float" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={step.path} />
                 </svg>
               </div>
-              <span class="text-gold-btn/40 text-2xl font-800 tracking-tight">{step.n}</span>
+              <div class="absolute top-1 left-1 w-12 h-12 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(220,163,60,0.14); filter: blur(12px);"></div>
             </div>
-            <h3 class="text-lg font-700 text-white mb-3">{step.title}</h3>
-            <p class="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="text-gold-btn/25 text-3xl font-800 tracking-tight leading-none">{step.n}</span>
+              <h3 class="text-base font-700 text-white">{step.title}</h3>
+            </div>
+            <p class="text-white/40 text-sm leading-relaxed">{step.desc}</p>
           </div>
         ))}
       </div>
 
       <div class="text-center">
-        <a
-          href="/contact/"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-gold-btn text-navy text-base font-700 rounded-xl hover:bg-gold-hover transition-all duration-200 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5"
-        >
+        <a href="/contact/" class="inline-flex items-center gap-2 px-8 py-4 bg-gold-btn text-navy text-base font-700 rounded-xl hover:bg-gold-hover transition-all duration-200 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5">
           Book a free consultation
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <p class="text-white/30 text-xs font-500 mt-4">Usually up and running within one week of your first call.</p>
+        <p class="text-white/20 text-xs font-500 mt-4">Usually up and running within one week of your first call.</p>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ WHO WE HELP (white, icon grid) ══ -->
-  <section class="bg-white py-20">
+  <!-- ══ WHO WE HELP (white, modern icon cards) ══ -->
+  <section class="bg-white py-20 lg:py-24">
     <div class="section-inner">
-      <div class="max-w-3xl mx-auto text-center mb-12">
+      <div class="text-center mb-12">
         <div class="eyebrow-light mb-5">Who We Help</div>
         <h2 class="text-3xl lg:text-4xl text-ink mb-4">Built for Singapore SMEs</h2>
-        <p class="text-ink/55 text-lg font-400">
-          We work with Singapore small businesses and SMEs, sole proprietors, new Pte Ltd companies, e-commerce sellers, agencies and growing startups with one to twenty staff. If you'd rather run your business than wrestle with IRAS forms, you're who we built this for.
+        <p class="text-ink/45 text-lg max-w-xl mx-auto font-400">
+          Sole proprietors, new Pte Ltd companies, e-commerce sellers, agencies and startups with one to twenty staff. If you'd rather run your business than wrestle with IRAS forms, you're who we built this for.
         </p>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-3xl mx-auto">
-        {[
-          { icon: '🏪', label: 'Sole Traders' },
-          { icon: '🏢', label: 'Pte Ltd' },
-          { icon: '🛍️', label: 'E-commerce' },
-          { icon: '💼', label: 'Agencies' },
-          { icon: '🚀', label: 'Startups' },
-          { icon: '👥', label: '1-20 Staff' },
-        ].map((item) => (
-          <div class="bg-light-bg rounded-2xl p-5 flex flex-col items-center gap-3 text-center border border-ink/5 hover:border-gold/30 hover:-translate-y-0.5 transition-all duration-200">
-            <span class="text-3xl">{item.icon}</span>
-            <span class="text-xs font-700 text-ink/60 uppercase tracking-wide">{item.label}</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+        {whoWeHelp.map((item) => (
+          <div class="group flex flex-col items-center gap-4 p-5 rounded-2xl bg-light-bg border border-ink/5 hover:border-gold/30 hover:bg-white hover:-translate-y-1.5 transition-all duration-200 card-shadow hover:card-shadow-lg">
+            <div class="relative">
+              <div class="icon-box w-12 h-12 rounded-xl group-hover:scale-110 transition-transform duration-300" style="animation: float 3.5s ease-in-out infinite;">
+                <svg class="w-6 h-6 text-gold-btn" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.path} />
+                </svg>
+              </div>
+              <div class="absolute top-0 left-0 w-12 h-12 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(220,163,60,0.15); filter: blur(10px);"></div>
+            </div>
+            <div class="text-center">
+              <div class="text-xs font-700 text-ink mb-0.5">{item.label}</div>
+              <div class="text-[0.6rem] text-ink/35 font-500 leading-tight">{item.desc}</div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ FAQ (light-bg) ══ -->
+  <!-- ══ FAQ (light-bg) ══ -->
   <section class="bg-light-bg py-24">
     <div class="section-inner">
       <div class="max-w-3xl mx-auto">
         <div class="eyebrow-light mb-5">Common Questions</div>
         <h2 class="text-3xl lg:text-4xl text-ink mb-10">Frequently asked questions</h2>
         <FaqAccordion items={faqs} />
-        <div class="mt-10 pt-8 border-t border-ink/8 text-center">
-          <p class="text-ink/55 mb-4">Have a question not covered here?</p>
-          <a href="/contact/" class="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white text-sm font-600 rounded-xl hover:bg-navy-deep transition-colors">
-            Ask us directly
+        <div class="mt-10 pt-8 border-t border-ink/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-ink/40 text-sm">Have a question not covered here?</p>
+          <a href="/contact/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-600 rounded-xl hover:bg-navy-deep transition-colors">
+            Ask us directly <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ CONTACT + MAP (light-bg) ══ -->
+  <!-- ══ CONTACT + MAP (navy) ══ -->
   <ContactSection />
 
-  <!-- ══════════════ FINAL GOLD CTA ══ -->
+  <!-- ══ FINAL GOLD CTA ══ -->
   <CTASection
     variant="gold"
     heading="Ready to stop worrying about your books?"

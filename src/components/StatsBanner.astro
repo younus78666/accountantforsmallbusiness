@@ -4,15 +4,31 @@ interface Props { stats: Stat[]; }
 const { stats } = Astro.props;
 ---
 
-<section class="bg-gold-btn py-12">
-  <div class="section-inner">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x-0 lg:divide-x divide-navy/15">
-      {stats.map((stat) => (
-        <div class="flex flex-col items-center text-center py-4 px-6">
+<section class="relative bg-gold-btn overflow-hidden py-12">
+  <!-- Diagonal lines bg texture -->
+  <div class="absolute inset-0 opacity-[0.06]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="diag" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+          <line x1="0" y1="0" x2="0" y2="32" stroke="#000F22" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#diag)" />
+    </svg>
+  </div>
+
+  <!-- Floating circle accents -->
+  <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-navy/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-navy/10 blur-3xl pointer-events-none"></div>
+
+  <div class="relative section-inner">
+    <div class="grid grid-cols-2 lg:grid-cols-4 divide-x-0 sm:divide-x divide-navy/15">
+      {stats.map((stat, i) => (
+        <div class={`flex flex-col items-center text-center px-6 py-4 ${i < stats.length - 1 && i % 2 === 1 ? 'border-b border-navy/15 sm:border-b-0' : ''} ${i === 0 || i === 2 ? 'sm:border-0' : ''}`}>
           <span class="text-4xl lg:text-5xl font-800 text-navy tracking-tight leading-none mb-2">
             {stat.value}
           </span>
-          <span class="text-xs font-600 uppercase tracking-widest text-navy/65">{stat.label}</span>
+          <span class="text-[0.65rem] font-700 uppercase tracking-widest text-navy/60">{stat.label}</span>
         </div>
       ))}
     </div>

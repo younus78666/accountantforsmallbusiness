@@ -2,14 +2,14 @@
 /* Contact form + Singapore map — used inline on homepage */
 ---
 
-<section class="bg-light-bg py-20 lg:py-28" id="contact">
+<section class="bg-navy py-20 lg:py-28" id="contact">
   <div class="section-inner">
 
     <!-- Header -->
     <div class="text-center mb-14">
-      <div class="eyebrow-light mb-5">Get in Touch</div>
-      <h2 class="text-3xl lg:text-5xl text-ink mb-4">Book a free consultation</h2>
-      <p class="text-ink/60 text-lg max-w-xl mx-auto font-400">
+      <div class="eyebrow-dark mb-5">Get in Touch</div>
+      <h2 class="text-3xl lg:text-5xl text-white mb-4">Book a free consultation</h2>
+      <p class="text-white/55 text-lg max-w-xl mx-auto font-400">
         Tell us about your business. We'll assess your needs and send a fixed quote within one business day.
       </p>
     </div>
@@ -17,8 +17,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
       <!-- Form -->
-      <div class="bg-white rounded-2xl p-8 lg:p-10" style="box-shadow: 0 4px 32px rgba(0,15,34,0.08);">
-        <h3 class="text-xl font-700 text-ink mb-6">Send us a message</h3>
+      <div class="bg-navy-panel rounded-2xl p-8 lg:p-10 border border-white/8">
+        <h3 class="text-xl font-700 text-white mb-6">Send us a message</h3>
         <form
           name="contact"
           method="POST"
@@ -30,58 +30,58 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="name" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Full Name *</label>
+              <label for="name" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Full Name *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
                 placeholder="Your full name"
-                class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink placeholder-ink/30 bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
             <div>
-              <label for="email" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Email Address *</label>
+              <label for="email" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Email Address *</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
                 placeholder="you@company.com"
-                class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink placeholder-ink/30 bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="company" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Company Name</label>
+              <label for="company" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Company Name</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 placeholder="Your company"
-                class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink placeholder-ink/30 bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
             <div>
-              <label for="phone" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Phone / WhatsApp</label>
+              <label for="phone" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Phone / WhatsApp</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 placeholder="+65 XXXX XXXX"
-                class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink placeholder-ink/30 bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
           </div>
 
           <div>
-            <label for="service" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Service Needed</label>
+            <label for="service" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Service Needed</label>
             <select
               id="service"
               name="service"
-              class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 appearance-none"
+              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 appearance-none"
             >
               <option value="" disabled selected>Select a service</option>
               <option value="bookkeeping">Bookkeeping</option>
@@ -94,13 +94,13 @@
           </div>
 
           <div>
-            <label for="message" class="block text-xs font-700 uppercase tracking-wider text-ink/50 mb-2">Tell us about your business</label>
+            <label for="message" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Tell us about your business</label>
             <textarea
               id="message"
               name="message"
               rows="4"
               placeholder="How many transactions per month? Any staff? GST registered? (Optional — helps us quote accurately)"
-              class="w-full px-4 py-3 rounded-xl border border-ink/12 text-sm font-500 text-ink placeholder-ink/30 bg-light-bg focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 resize-none"
+              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 resize-none"
             ></textarea>
           </div>
 
@@ -114,7 +114,7 @@
             </svg>
           </button>
 
-          <p class="text-center text-xs text-ink/40 font-400">We respond within 1 business day. No spam, ever.</p>
+          <p class="text-center text-xs text-white/30 font-400">We respond within 1 business day. No spam, ever.</p>
         </form>
       </div>
 

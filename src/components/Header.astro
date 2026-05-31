@@ -52,8 +52,7 @@ const navLinks = [
             <button
               class={`flex items-center gap-1.5 px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
                 ${pathname.startsWith(link.href) ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
-              style="font-family: var(--font-sans);"
-              aria-haspopup="true"
+                           aria-haspopup="true"
             >
               {link.label}
               <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -70,8 +69,7 @@ const navLinks = [
                       ${pathname === child.href
                         ? 'text-gold-btn bg-white/5'
                         : 'text-white/70 hover:text-white hover:bg-white/5'}`}
-                    style="font-family: var(--font-sans);"
-                  >
+                                     >
                     {child.label}
                   </a>
                 ))}
@@ -83,8 +81,7 @@ const navLinks = [
             href={link.href}
             class={`px-4 py-2 text-sm font-600 tracking-wide transition-colors rounded-md
               ${pathname === link.href ? 'text-gold-btn' : 'text-white/80 hover:text-white'}`}
-            style="font-family: var(--font-sans);"
-          >
+                     >
             {link.label}
           </a>
         )
@@ -96,8 +93,7 @@ const navLinks = [
       <a
         href="/contact/"
         class="inline-flex items-center gap-2 px-6 py-2.5 bg-gold-btn text-navy text-sm font-700 rounded-lg hover:bg-gold-hover transition-all duration-200 hover:shadow-lg hover:shadow-gold/20"
-        style="font-family: var(--font-sans);"
-      >
+             >
         Get a Quote
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

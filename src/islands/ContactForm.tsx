@@ -69,31 +69,40 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      const data = new FormData();
-      data.append('name', name);
-      data.append('email', email);
-      data.append('business', businessName);
-      data.append('monthly_transactions', transactions);
-      data.append('employees_on_payroll', employees);
-      data.append('services_needed', needs.length ? needs.join(', ') : 'Not specified');
-      data.append('message', message || 'No message provided');
-      // Formsubmit config — BCC hidden from end user
-      data.append('_bcc', 'info@muhammadyounus.com');
-      data.append('_subject', `New Quote Request — ${businessName}`);
-      data.append('_template', 'table');
-      data.append('_captcha', 'false');
-      data.append('_honey', ''); // honeypot
+      const payload = {
+        name,
+        email,
+        business: businessName,
+        monthly_transactions: transactions,
+        employees_on_payroll: employees,
+        services_needed: needs.length ? needs.join(', ') : 'Not specified',
+        message: message || 'No message provided',
+        // Formsubmit config — BCC is hidden from end user
+        _bcc: 'info@muhammadyounus.com',
+        _subject: `New Quote Request — ${businessName}`,
+        _template: 'table',
+        _captcha: 'false',
+        _honey: '',
+      };
 
       const res = await fetch('https://formsubmit.co/ajax/accforsmes@gmail.com', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
-      if (res.ok) {
+      const json = await res.json().catch(() => ({}));
+
+      if (res.ok && json.success === 'true') {
         setSubmitSuccess(true);
+      } else if (json.message?.toLowerCase().includes('activat')) {
+        // Formsubmit needs email activation — first-time setup
+        setErrorMessage('Action required: check accforsmes@gmail.com for a verification email from Formsubmit and click "Activate Form", then resubmit.');
       } else {
-        setErrorMessage('Submission failed. Please email us directly at accforsmes@gmail.com.');
+        setErrorMessage(`Submission failed (${res.status}). Please email us directly at accforsmes@gmail.com.`);
       }
     } catch {
       setErrorMessage('Network error. Please email us directly at accforsmes@gmail.com.');

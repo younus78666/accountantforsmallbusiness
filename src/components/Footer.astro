@@ -5,75 +5,110 @@ const year = new Date().getFullYear();
 <footer class="bg-[#000F22] border-t border-gray-900 text-[#CBCFD8] pt-16 pb-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-
-      <!-- Brand -->
-      <div class="space-y-4">
-        <a href="/" class="flex items-center gap-2">
-          <img src="/logo-icon.png" alt="AFSB" class="w-[90px] h-[90px] object-contain shrink-0" />
-          <span class="font-sans text-base font-extrabold text-[#FEFFFF] tracking-tight uppercase">Account For Small Business</span>
+    <!-- ── CENTERED FULL LOGO (big) ── -->
+    <div class="flex flex-col items-center text-center mb-14">
+      <a href="/" aria-label="Accountant for Small Business — Home">
+        <!-- logo.png has a navy bg that matches #000F22 perfectly -->
+        <img
+          src="/logo.png"
+          alt="Accountant for Small Business"
+          class="w-auto h-28 sm:h-36 lg:h-44 object-contain mx-auto"
+        />
+      </a>
+      <p class="mt-5 text-sm text-[#CBCFD8] max-w-lg leading-relaxed">
+        Remote accounting services for Singapore small businesses — bookkeeping, payroll, financial statements and management reporting. Fixed monthly fees. No surprises.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mt-5">
+        <a href="/contact/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] text-xs font-bold rounded-lg transition-colors">
+          Book a free consultation
         </a>
-        <p class="text-xs leading-relaxed text-[#CBCFD8]">
-          Affordable, reliable accounting and bookkeeping services for small businesses and SMEs in Singapore. Remote operational excellence powered by certified cloud technology.
-        </p>
-        <div class="space-y-2 pt-2 text-xs">
+        <a href="/pricing/" class="inline-flex items-center gap-2 px-5 py-2.5 border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-xs font-semibold rounded-lg transition-colors">
+          See pricing
+        </a>
+      </div>
+    </div>
+
+    <!-- ── DIVIDER ── -->
+    <div class="border-t border-gray-800/60 mb-12"></div>
+
+    <!-- ── COLUMNS ── -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Contact -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-wider">Get in Touch</h4>
+        <div class="space-y-2.5 text-xs">
           <a href="mailto:accforsmes@gmail.com" class="flex items-center gap-2 hover:text-[#DAA035] transition-colors">
             <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             accforsmes@gmail.com
           </a>
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Mon&ndash;Fri, Singapore business hours (GMT+8)
+            Mon&ndash;Fri, Singapore (GMT+8)
           </div>
+          <a href="https://wa.me/923332999777" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-[#DAA035] transition-colors">
+            <svg class="w-4 h-4 text-[#DAA035] shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp us
+          </a>
         </div>
       </div>
 
       <!-- Services -->
-      <div class="space-y-4">
-        <h4 class="text-sm font-sans font-semibold text-[#FEFFFF] uppercase tracking-wider">Core Services</h4>
-        <ul class="space-y-2.5 text-xs">
-          <li><a href="/accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Accounting & Bookkeeping Services</a></li>
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-wider">Core Services</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Accounting & Bookkeeping</a></li>
           <li><a href="/bookkeeping-services-singapore/" class="hover:text-[#DAA035] transition-colors">Day-to-day Bookkeeping</a></li>
-          <li><a href="/outsource-accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Outsource Accounting Services</a></li>
+          <li><a href="/outsource-accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Outsource Accounting</a></li>
           <li><a href="/payroll-services-singapore/" class="hover:text-[#DAA035] transition-colors">Payroll with CPF Submission</a></li>
           <li><a href="/financial-statements-singapore/" class="hover:text-[#DAA035] transition-colors">Unaudited Financial Statements</a></li>
         </ul>
       </div>
 
       <!-- Company -->
-      <div class="space-y-4">
-        <h4 class="text-sm font-sans font-semibold text-[#FEFFFF] uppercase tracking-wider">Company & Guides</h4>
-        <ul class="space-y-2.5 text-xs">
-          <li><a href="/about/" class="hover:text-[#DAA035] transition-colors">About Mehdi Javed (Founder)</a></li>
-          <li><a href="/pricing/" class="hover:text-[#DAA035] transition-colors">Transparent Pricing Table</a></li>
-          <li><a href="/packages/" class="hover:text-[#DAA035] transition-colors">Plan Comparison Matrix</a></li>
-          <li><a href="/blog/" class="hover:text-[#DAA035] transition-colors font-semibold text-[#DAA035]">Small Business Fin-SME Blog</a></li>
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-wider">Company</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/about/" class="hover:text-[#DAA035] transition-colors">About Mehdi Javed</a></li>
+          <li><a href="/pricing/" class="hover:text-[#DAA035] transition-colors">Transparent Pricing</a></li>
+          <li><a href="/packages/" class="hover:text-[#DAA035] transition-colors">Plan Comparison</a></li>
+          <li><a href="/blog/" class="hover:text-[#DAA035] transition-colors text-[#DAA035] font-semibold">SME Accounting Blog</a></li>
           <li><a href="/contact/" class="hover:text-[#DAA035] transition-colors">Contact Us</a></li>
         </ul>
       </div>
 
       <!-- Scope -->
-      <div class="space-y-4 bg-[#0A1628]/50 p-4 rounded-lg border border-gray-900">
+      <div class="space-y-3 bg-[#0A1628]/50 p-4 rounded-xl border border-gray-900">
         <h4 class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-wider flex items-center gap-1.5">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           Scope of Service
         </h4>
         <p class="text-[11px] leading-relaxed text-[#CBCFD8]">
-          We handle core accounting, bookkeeping, year-end financial statement preparation, payroll, and management reporting remotely.
+          We handle bookkeeping, financial statements, payroll, and management reporting remotely.
         </p>
-        <p class="text-[11px] leading-relaxed text-[#CBCFD8] border-t border-gray-800/80 pt-2 italic">
-          <strong>Compliance Boundary:</strong> We do not act as local filing controllers, file GST, file corporate tax, incorporate companies, or conduct audits. Those services are referred to your licensed filing agent or ACRA-registered public accountant.
+        <p class="text-[11px] leading-relaxed text-[#CBCFD8] border-t border-gray-800 pt-2 italic">
+          <strong>Note:</strong> We do not file GST, corporate tax, or conduct audits. These are referred to your licensed tax agent or ACRA-registered public accountant.
         </p>
       </div>
     </div>
 
-    <!-- Bottom -->
+    <!-- ── BOTTOM BAR ── -->
     <div class="border-t border-gray-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-      <div class="text-center sm:text-left space-y-1">
-        <p class="text-[#CBCFD8]">&copy; {year} Account for Small Business LTD &bull; All Rights Reserved.</p>
-        <p class="text-[10px] text-gray-600 font-mono">Designed for remote operational agility using SFRS compliance parameters.</p>
-      </div>
-      <span class="text-[11px] text-[#CBCFD8]">SFRS & SFRS for Small Entities Compliant</span>
+      <p class="text-[#CBCFD8]">&copy; {year} Accountant for Small Business &bull; All Rights Reserved.</p>
+      <span class="text-[11px] text-gray-600 font-mono">SFRS &amp; SFRS for Small Entities Compliant</span>
     </div>
+
   </div>
 </footer>
+
+<!-- ── BELOW-FOOTER: Business description bar ── -->
+<div class="bg-[#000B18] border-t border-gray-900/50 py-8">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+    <p class="text-sm text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      <strong class="text-[#CBCFD8]">Accountant for Small Business</strong> is a remote accounting firm serving Singapore sole proprietors, Pte Ltd companies, e-commerce sellers and growing SMEs. We handle bookkeeping, CPF payroll, SFRS financial statements and monthly management reports — so your records stay clean, your tax agent can file on time, and you always know what you're paying.
+    </p>
+    <p class="text-xs text-gray-600 font-mono">
+      Singapore-focused &bull; Cloud-based delivery via Xero &amp; QuickBooks &bull; Fixed monthly fees &bull; No hidden costs
+    </p>
+  </div>
+</div>

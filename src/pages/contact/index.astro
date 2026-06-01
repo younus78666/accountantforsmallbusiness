@@ -5,6 +5,10 @@ import ContactForm from '../../islands/ContactForm';
 const title = 'Contact | Accountant for Small Business Singapore | AFSB';
 const description = 'Get in touch for a free, no-obligation consultation. Reach Mehdi Javed directly about bookkeeping, payroll and accounting for your Singapore small business.';
 
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","@id":"https://accountantforsmallbusiness.com/contact/#page","url":"https://accountantforsmallbusiness.com/contact/","name":"Contact Accountant for Small Business","description":"Get in touch for a free consultation about accounting services for your Singapore small business.","mainEntity":{"@id":"https://accountantforsmallbusiness.com/#org"}},{"@type":["Organization","ProfessionalService"],"@id":"https://accountantforsmallbusiness.com/#org","name":"Accountant for Small Business","url":"https://accountantforsmallbusiness.com/","email":"accforsmes@gmail.com","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":"English","areaServed":"Singapore","hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"]}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens after I get in touch?","acceptedAnswer":{"@type":"Answer","text":"You hear back within one business day with a fixed quote, no obligation."}},{"@type":"Question","name":"Is the first consultation free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No credit card, no contract, no obligation. We scope your needs and send a quote."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://accountantforsmallbusiness.com/contact/"}]}]}
+<\/script>`;
+
 const faqs = [
   { q: 'What happens after I get in touch?', a: 'You hear back within one business day. We ask about your transaction volume and needs, give a fixed quote with no obligation, and handle a clean handover onto Xero or QuickBooks if it is a fit.' },
   { q: 'Do you work with businesses outside Singapore?', a: 'Yes. We are a remote service serving Singapore small businesses on cloud accounting, aligned to Singapore hours with responses within a business day.' },
@@ -13,7 +17,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
 
 <!-- ════════════════════════════════════════════ HERO ════ -->
 <section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-24 pb-20 border-b border-gray-900 text-center">

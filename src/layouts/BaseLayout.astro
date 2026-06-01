@@ -40,14 +40,21 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#000F22" />
 
     <!-- Open Graph -->
+    <meta property="og:site_name" content="Accountant for Small Business" />
+    <meta property="og:locale" content="en_SG" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Accountant for Small Business — Singapore SME accounting services" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

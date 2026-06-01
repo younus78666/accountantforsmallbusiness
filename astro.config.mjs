@@ -37,5 +37,11 @@ export default defineConfig({
     },
   },
 
-  integrations: [mdx(), sitemap(), react()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes('/thank-you'),
+    }),
+    react(),
+  ],
 });

@@ -1,0 +1,494 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Outsource Accounting Services Singapore for SMEs | AFSB';
+const description = "Should you outsource accounting or hire in-house? See the real cost comparison for Singapore SMEs and get a dedicated accountant from a fixed monthly fee.";
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":["Service","AccountingService"],"@id":"https://accountantforsmallbusiness.com/outsource-accounting-services-singapore/#service","name":"Outsourced Accounting Services Singapore","serviceType":"Outsourced accounting","provider":{"@id":"https://accountantforsmallbusiness.com/#org"},"areaServed":{"@type":"Country","name":"Singapore"},"description":"Outsourced accounting for Singapore SMEs: bookkeeping, financial statements, payroll and management reporting from a dedicated remote Financial Controller, priced on transaction volume.","offers":{"@type":"Offer","priceCurrency":"SGD","priceSpecification":{"@type":"PriceSpecification","minPrice":"200","maxPrice":"2500","priceCurrency":"SGD"}},"isRelatedTo":{"@id":"https://accountantforsmallbusiness.com/accounting-services-singapore/#service"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will I lose control of my finances?","acceptedAnswer":{"@type":"Answer","text":"No. You keep full visibility through Xero or QuickBooks and approve everything before it is finalised."}},{"@type":"Question","name":"Is my financial data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything runs in cloud accounting software with proper access controls, not files over email."}},{"@type":"Question","name":"How does the handover work?","acceptedAnswer":{"@type":"Answer","text":"We collect your records, set up or take over your software, and pick up your monthly cycle with no gap. It usually takes a few weeks."}},{"@type":"Question","name":"Do you file my tax and GST?","acceptedAnswer":{"@type":"Answer","text":"No. We keep books clean and statements ready. GST and corporate tax are filed by your licensed Singapore tax agent."}},{"@type":"Question","name":"Can I scale the service as I grow?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pricing tracks your transaction volume, so the service scales up or down with you."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Accounting Services","item":"https://accountantforsmallbusiness.com/accounting-services-singapore/"},{"@type":"ListItem","position":3,"name":"Outsource Accounting Services","item":"https://accountantforsmallbusiness.com/outsource-accounting-services-singapore/"}]}]}
+<\/script>`;
+
+const faqs = [
+  { q: 'Will I lose control of my finances?', a: 'No. You keep full visibility through Xero or QuickBooks and approve everything before it\'s finalised. Outsourcing the work doesn\'t mean handing over control.' },
+  { q: 'Is my financial data safe?', a: 'Yes. Everything runs in cloud accounting software with proper access controls, not files traded over email, so your data stays secure and access stays yours.' },
+  { q: 'How does the handover work?', a: 'We collect your records, set up or take over your software, and pick up your monthly cycle with no gap. A clean handover usually takes a few weeks.' },
+  { q: 'Do you file my tax and GST?', a: 'No. We keep your books clean and your statements ready. Your GST and corporate tax are filed by your licensed Singapore tax agent, and accurate books are what let them file on time.' },
+  { q: 'Can I scale the service as I grow?', a: 'Yes. Because pricing tracks your transaction volume, the service scales up or down with you, with no renegotiation of fixed tiers.' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.02)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Accounting Services</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Outsource Accounting</span>
+    </nav>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      Outsource Accounting Services in Singapore
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-2xl mx-auto leading-relaxed">
+      Get a dedicated, qualified accountant for less than the cost of a single in-house hire. We keep your books clean and your reports current, remotely, so you can stop spending evenings on spreadsheets.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+      <a href="/contact/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all hover:scale-[1.01] shadow-lg shadow-[#DCA33C]/10">
+        Get a quote
+      </a>
+      <a href="/contact/" class="bg-transparent border border-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-[#DAA035] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all">
+        Book a free consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 1: What is outsourced accounting? (light F8FAFC, text left) ════ -->
+<section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHAT IT IS</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">
+          What is outsourced accounting?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            Outsourced accounting means hiring an external accountant to run your books instead of employing someone in-house. A good provider handles your bookkeeping, bank reconciliation, financial statements, payroll and monthly management reports, so you get a full finance function without the cost of a full finance department.
+          </p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+          <p>It's how most Singapore SMEs keep their accounting accurate without carrying a salaried hire. You hand over the transactional work, keep the oversight, and get back the hours you were losing to spreadsheets.</p>
+          <p>With us, the accounting covers bookkeeping and reconciliation, SFRS-compliant financial statements, payroll with CPF, accounts payable and receivable, and management reporting.</p>
+        </div>
+      </div>
+
+      <!-- Visual: full finance function at a fraction -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-6 font-mono">
+              <span class="text-xs text-[#DAA035] font-bold uppercase tracking-wider">What's covered</span>
+              <span class="text-[10px] bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase">Full function</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              {[
+                { label: 'Bookkeeping & reconciliation', icon: '📒' },
+                { label: 'SFRS financial statements', icon: '📄' },
+                { label: 'Payroll with CPF', icon: '👥' },
+                { label: 'Accounts payable & receivable', icon: '💳' },
+                { label: 'Management reporting', icon: '📊' },
+              ].map((row) => (
+                <div class="p-3 bg-[#020B16] rounded-xl border border-gray-800 flex items-center gap-3 hover:border-gray-700 transition-colors">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/25 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0">&#10003;</span>
+                  <span class="text-xs font-bold text-white">{row.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Full finance function — no in-house headcount needed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 2: Outsource or in-house? (dark 0A1B30, visual left) ════ -->
+<section class="bg-[#0A1B30] text-[#CBCFD8] py-20 border-b border-gray-950/45">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: decision rule -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">The Decision Rule</span>
+            </div>
+            <div class="space-y-4 font-sans">
+              <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] uppercase font-bold">Outsource (most SMEs)</span>
+                <div class="flex items-center gap-2">
+                  <div class="flex-1 bg-gray-900 rounded-full h-2">
+                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 70%"></div>
+                  </div>
+                  <span class="text-xs text-gray-400 shrink-0">Under S$5M revenue</span>
+                </div>
+                <p class="text-[11px] text-gray-400 leading-relaxed">Lower cost, better compliance, more time for growth.</p>
+              </div>
+              <div class="p-4 bg-[#020B16] rounded-xl border border-gray-800 space-y-2">
+                <span class="block text-[10px] font-mono text-gray-500 uppercase font-bold">Hybrid model</span>
+                <p class="text-[11px] text-gray-500 leading-relaxed">Outsource transactional work to us; keep light strategic oversight in-house.</p>
+              </div>
+              <div class="p-4 bg-[#020B16] rounded-xl border border-red-900/20 space-y-2">
+                <span class="block text-[10px] font-mono text-red-400 uppercase font-bold">Hire in-house (large SMEs)</span>
+                <div class="flex items-center gap-2">
+                  <div class="flex-1 bg-gray-900 rounded-full h-2">
+                    <div class="bg-red-500/60 h-2 rounded-full" style="width: 90%"></div>
+                  </div>
+                  <span class="text-xs text-gray-400 shrink-0">S$5M+ revenue</span>
+                </div>
+                <p class="text-[11px] text-gray-500 leading-relaxed">Daily on-site control worth the overhead at scale.</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*The honest decision is about revenue and complexity</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">OUTSOURCE VS IN-HOUSE</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">
+          Should you outsource accounting or hire in-house?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">
+            For most Singapore SMEs under S$5 million in revenue, outsourcing is the clearer choice. It costs less, keeps your compliance on track, and frees up your time. Hiring in-house only starts to make real sense above roughly S$5 to 8 million in revenue with complex operations, where daily, on-site finance control is worth the overhead.
+          </p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>The honest decision rule is about revenue and complexity, not preference. Below the threshold, an in-house hire sits idle part of the month while still costing you a full salary. Above it, the volume justifies a dedicated seat.</p>
+          <p>In between, many businesses run a hybrid: outsource the transactional work to us, keep light strategic oversight in-house.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ REAL COST TABLE (light EBF3FC) ════ -->
+<section class="bg-[#EBF3FC] py-20 border-b border-gray-200">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 space-y-4">
+      <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">COST COMPARISON</span>
+      <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">In-house vs outsourced: the real cost</h2>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-xl">
+      <table class="w-full text-left border-collapse text-xs sm:text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF] border-b border-gray-800">
+            <th class="p-4 font-mono font-bold tracking-wider uppercase">Metric</th>
+            <th class="p-4 font-mono font-bold tracking-wider uppercase text-red-300">In-house accountant</th>
+            <th class="p-4 font-mono font-bold tracking-wider uppercase text-[#DAA035]">Outsourced (us)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          {[
+            { metric: 'Monthly base', inhouse: 'S$3,500 to S$4,500', outsource: 'One fixed fee from far less', outClass: 'text-emerald-700 font-semibold' },
+            { metric: 'Plus', inhouse: 'CPF, benefits, software, training, desk', outsource: 'Nothing — all included', outClass: 'text-emerald-700 font-semibold' },
+            { metric: 'Fully-loaded / year', inhouse: 'S$62,000 to S$87,000', outsource: 'A fraction of that', outClass: 'text-emerald-700 font-semibold' },
+            { metric: 'Cover if they leave', inhouse: 'You carry the recruitment gap', outsource: 'Always covered seamlessly', outClass: 'text-emerald-700 font-semibold' },
+            { metric: 'Expertise', inhouse: "One person's technical knowledge", outsource: 'A qualified Financial Controller (Mehdi Javed)', outClass: 'text-emerald-700 font-semibold' },
+          ].map((row) => (
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="p-4 font-semibold text-[#000F22]">{row.metric}</td>
+              <td class="p-4 text-red-700">{row.inhouse}</td>
+              <td class={`p-4 ${row.outClass}`}>{row.outsource}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 3: How much does outsourcing cost? (dark 061224, visual left) ════ -->
+<section class="bg-[#061224] text-[#CBCFD8] py-20 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: savings calculator style -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Annual Cost Comparison</span>
+            </div>
+            <div class="space-y-4 font-sans">
+              <div class="p-4 bg-red-950/20 rounded-xl border border-red-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-red-400 uppercase font-bold">In-house accountant</span>
+                <span class="block text-3xl font-black text-red-200">S$62,000<span class="text-sm font-normal text-gray-400"> &ndash; 87,000 /yr</span></span>
+                <p class="text-[11px] text-gray-400">Salary, CPF, benefits, desk, software</p>
+              </div>
+              <div class="flex items-center justify-center py-2">
+                <div class="flex items-center gap-2 bg-[#DAA035]/10 border border-[#DAA035]/25 px-4 py-2 rounded-full">
+                  <span class="text-[#DAA035] font-black text-lg">Save 20&ndash;60%</span>
+                  <span class="text-[10px] text-gray-500 font-mono">= S$10K&ndash;60K /yr</span>
+                </div>
+              </div>
+              <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] uppercase font-bold">AFSB outsourced</span>
+                <span class="block text-3xl font-black text-emerald-300">S$2,400<span class="text-sm font-normal text-gray-400"> &ndash; 30,000 /yr</span></span>
+                <p class="text-[11px] text-gray-400">Transaction-based pricing, scales with you</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Based on typical Singapore SME scenarios</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">PRICING</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">
+          How much does outsourcing accounting cost in Singapore?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">
+            Outsourced accounting typically runs S$200 to S$2,500 a month depending on transaction volume and the services you need, far below the S$62,000 to S$87,000 fully-loaded annual cost of an in-house accountant. Most SMEs save 20 to 60% by outsourcing, which works out to roughly S$10,000 to S$60,000 a year.
+          </p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>Pricing tracks your actual transaction volume, not a fixed tier, so a lean business pays lean fees. You can see the full breakdown on the <a href="/pricing/" class="text-[#DAA035] hover:underline">pricing page</a>.</p>
+          <p>Get an exact figure with a fixed quote built around your real activity.</p>
+        </div>
+        <a href="/contact/" class="inline-flex items-center gap-2 px-6 py-3 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold rounded-xl text-sm transition-all hover:scale-[1.01] w-fit">
+          Get a fixed quote &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 4: When to hire in-house? (light EDF0F5, text left) ════ -->
+<section class="bg-[#EDF0F5] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHEN TO HIRE IN-HOUSE</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">
+          When should you hire an in-house accountant instead?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            Hire in-house once your revenue passes roughly S$5 to 8 million, your transaction volume is high, and you need daily financial control on site. At that scale a full-time accountant earns their salary. Below it, you'd be paying S$60,000-plus a year for someone who is busy only part of the month.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed text-gray-700 font-sans">
+          There's no prize for hiring early. Most growing SMEs get better results keeping the work outsourced until the volume actually fills a full-time role.
+        </p>
+      </div>
+
+      <!-- Visual: revenue threshold indicator -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Revenue Threshold Guide</span>
+            </div>
+            <div class="space-y-4 font-sans">
+              {[
+                { range: 'Under S$1M /yr', rec: 'Outsource', color: 'emerald', note: 'DIY or managed service' },
+                { range: 'S$1M – 3M /yr', rec: 'Outsource', color: 'emerald', note: 'Full managed service' },
+                { range: 'S$3M – 5M /yr', rec: 'Outsource', color: 'emerald', note: 'Managed + advisory' },
+                { range: 'S$5M – 8M /yr', rec: 'Hybrid', color: 'amber', note: 'Consider in-house' },
+                { range: 'Over S$8M /yr', rec: 'In-house', color: 'red', note: 'Full-time hire justified' },
+              ].map((row) => (
+                <div class={`p-3 rounded-xl border flex items-center justify-between ${
+                  row.color === 'emerald' ? 'bg-emerald-950/20 border-emerald-900/30' :
+                  row.color === 'amber' ? 'bg-amber-950/20 border-amber-900/30' :
+                  'bg-red-950/20 border-red-900/30'
+                }`}>
+                  <div>
+                    <span class="text-xs font-bold text-white block">{row.range}</span>
+                    <span class="text-[10px] text-gray-500">{row.note}</span>
+                  </div>
+                  <span class={`text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded border ${
+                    row.color === 'emerald' ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' :
+                    row.color === 'amber' ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' :
+                    'text-red-400 bg-red-500/10 border-red-500/20'
+                  }`}>{row.rec}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Indicative — complexity and transaction volume also matter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 5: What to look for in a provider (dark 0A1B37, visual left) ════ -->
+<section class="bg-[#0A1B37] text-[#CBCFD8] py-20 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: 4-point checklist -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">4 Things to Check</span>
+            </div>
+            <div class="space-y-5 font-sans">
+              {[
+                { n: '1', title: 'Who does your work?', desc: 'You should know exactly who keeps your books — not a faceless queue.' },
+                { n: '2', title: 'Compliance calendar?', desc: 'A good provider tracks every reporting deadline so nothing slips.' },
+                { n: '3', title: 'Track record?', desc: 'Timely, accurate reporting. Ask for references or examples.' },
+                { n: '4', title: 'Data security?', desc: 'Cloud software with proper access controls — not files over email.' },
+              ].map((item) => (
+                <div class="flex gap-3">
+                  <span class="w-7 h-7 rounded-full bg-[#DAA035]/10 text-[#DAA035] border border-[#DAA035]/30 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{item.n}</span>
+                  <div>
+                    <span class="block text-sm font-bold text-white">{item.title}</span>
+                    <span class="block text-[11px] text-gray-500 mt-0.5">{item.desc}</span>
+                  </div>
+                </div>
+              ))}
+              <div class="p-3 bg-emerald-950/25 rounded-xl border border-emerald-900/40 mt-2">
+                <p class="text-[10px] font-mono text-[#DAA035] font-bold uppercase mb-1">AFSB answer</p>
+                <p class="text-xs text-gray-300">Named FC. Calendar tracked. 15+ years track record. Cloud-only, access-controlled.</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Favour providers who give you a single named accountant</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">CHOOSING A PROVIDER</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">
+          What should you look for in an outsourced accounting provider?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">
+            Check four things: who actually does your work, how they manage your compliance calendar, their track record on timely, accurate reporting, and how they protect your data. Avoid providers who assign a rotating team you never speak to, and favour one who gives you a single, named, qualified accountant.
+          </p>
+        </div>
+        <div class="space-y-3 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>Start with the person. You should know exactly who keeps your books, not a faceless queue.</p>
+          <p>Then the calendar. A good provider tracks every reporting deadline so nothing slips.</p>
+          <p>Finally, data security. Look for cloud software with proper access controls, not files traded over email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW THE SWITCH WORKS (light gradient) ════ -->
+<section class="py-20 border-b border-gray-200 font-sans" style="background: linear-gradient(to bottom, #F3F7FC, #E9F1FA);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="inline-block py-1.5 px-3.5 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/35 text-[#8A5B00] text-[11px] font-mono uppercase tracking-wider font-extrabold">How the Switch Works</span>
+      <h2 class="text-3xl sm:text-4xl font-sans font-extrabold text-[#000F22] tracking-tight">How does the switch to outsourcing work?</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm text-left">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          It's a clean handover that usually takes a few weeks. We collect your existing records, set up or take over your Xero or QuickBooks, and pick up your monthly cycle with no gap in your books. You keep full visibility throughout, and you approve everything before it's finalised.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-amber-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-amber-500/10 text-amber-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-amber-500/20">01</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/80 flex items-center justify-center text-amber-600 border border-amber-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">We collect your records</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">We collect your existing records and review where things stand — no scramble on your side.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-sky-500/10 text-sky-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-sky-500/20">02</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/80 flex items-center justify-center text-sky-600 border border-sky-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">We set up your software</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">We set up or take over your Xero or QuickBooks Online — you get real-time access throughout.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-emerald-500/10 text-emerald-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-emerald-500/20">03</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/80 flex items-center justify-center text-emerald-600 border border-emerald-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">We run your monthly cycle</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">We run your monthly cycle with no gap in your books. You review and approve everything before it's finalised.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHY CHOOSE US (dark 000B1A) ════ -->
+<section class="bg-[#000B1A] py-20 border-b border-[#0A1628]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHY CHOOSE US</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">Why choose accountantforsmallbusiness.com?</h2>
+        <p class="text-sm sm:text-base leading-relaxed text-[#CBCFD8]">
+          Because you get one named Financial Controller with 15+ years of experience, transaction-based fixed pricing, and a remote model that keeps fees low. You're not paying for a Singapore office, and you're not handed to a rotating team. Mehdi Javed knows your business and keeps your books ready for your tax agent to file.
+        </p>
+        <ul class="space-y-3 text-sm text-[#CBCFD8]">
+          <li class="flex items-start gap-2"><span class="text-[#DAA035] shrink-0">&#10003;</span> Remote means lower cost — no local office overhead to pass on, so you get senior-level work at a price an in-house hire can't match.</li>
+          <li class="flex items-start gap-2"><span class="text-[#DAA035] shrink-0">&#10003;</span> Transaction-based pricing that scales with you — no renegotiation, no surprises.</li>
+        </ul>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="/about/" class="text-xs font-mono text-[#DAA035] hover:underline font-bold">Learn more about Mehdi &rarr;</a>
+          <span class="text-gray-600">|</span>
+          <a href="/accounting-services-singapore/" class="text-xs font-mono text-[#DAA035] hover:underline font-bold">Full accounting service &rarr;</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl relative overflow-hidden border border-gray-800/80" style="background: linear-gradient(to bottom, #0A1628, #000F22);">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-[#DAA035]/5 rounded-full blur-2xl pointer-events-none"></div>
+        <h3 class="text-sm font-mono text-[#DAA035] uppercase tracking-wider border-b border-[#0A1628] pb-3 font-semibold">Why Remote Works</h3>
+        <div class="space-y-4">
+          {[
+            { value: '20–60%', label: 'Typical cost saving vs in-house', width: '60%', grad: 'from-[#DCA33C] to-[#DAA035]' },
+            { value: '15+ Years', label: 'Multi-entity SME experience', width: '100%', grad: 'from-blue-500 to-cyan-400' },
+            { value: 'S$0', label: 'Singapore office overhead passed on', width: '0%', grad: 'from-emerald-600 to-emerald-400' },
+          ].map((stat) => (
+            <div class="bg-[#000F22]/50 p-4 rounded-xl border border-gray-900">
+              <span class="block text-2xl font-black text-[#DAA035] tracking-tight">{stat.value}</span>
+              <span class="block text-[11px] uppercase tracking-wider text-[#FEFFFF] font-mono mt-1">{stat.label}</span>
+              <div class="w-full bg-gray-950 h-1 rounded-full mt-2.5 overflow-hidden">
+                <div class={`bg-gradient-to-r ${stat.grad} h-full rounded-full`} style={`width:${stat.width || '5%'}`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLOSING CTA ════ -->
+<section class="bg-[#FFFDF2] py-20 text-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <h3 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">
+      Spending evenings on the books?
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700 max-w-xl mx-auto font-medium">
+      Get a fixed quote and hand your accounting to one qualified person who keeps it clean every month, for a fraction of an in-house hire.
+    </p>
+    <a href="/contact/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all">
+      Get a quote &nbsp;&rarr;
+    </a>
+  </div>
+</section>
+
+</BaseLayout>

@@ -1,80 +1,58 @@
-# Accountant for Small Business
-# accountantforsmallbusiness.com
-# Remote accounting services for Singapore SMEs
-# Last updated: June 2026
+# Accountant for Small Business Singapore (AFSB)
+> A Singapore-based accounting firm specializing in affordable accounting, bookkeeping, payroll, and compliance services for small businesses, startups, and SMEs. Founded by Mehdi Javed, AFSB offers fixed-fee packages, online tools, and expert guidance tailored to Singapore's regulatory environment (IRAS, ACRA, CPF Board, SFRS).
 
-> Accountant for Small Business is a remote accounting firm operated by Mehdi Javed (Financial Controller), serving Singapore sole proprietors, Pte Ltd companies, e-commerce sellers and growing SMEs. Services: bookkeeping, CPF payroll, SFRS unaudited financial statements, and monthly management reporting. All delivered remotely via Xero and QuickBooks Online.
+## Main Sections
 
-**Scope of service:** We handle bookkeeping, payroll with CPF submission, SFRS-compliant unaudited financial statements, and monthly management reporting. We do NOT file GST, corporate income tax, or conduct statutory audits — those require a licensed Singapore tax agent or ACRA-registered public accountant.
+### Home
+- [Accounting Services Singapore for Small Business | AFSB](https://accountantforsmallbusiness.com/)
 
-**Contact:** accforsmes@gmail.com | LinkedIn: https://www.linkedin.com/in/mehdij/
-**Full content:** https://accountantforsmallbusiness.com/llms-full.txt
+### About
+- [About Mehdi Javed | Accountant for Small Business Singapore](https://accountantforsmallbusiness.com/about/)
 
----
+### Services
+- [Accounting Services for Small Business Singapore | AFSB](https://accountantforsmallbusiness.com/accounting-services-singapore/)
+- [Bookkeeping Services Singapore for Small Business | AFSB](https://accountantforsmallbusiness.com/bookkeeping-services-singapore/)
+- [Outsource Accounting Services Singapore for SMEs | AFSB](https://accountantforsmallbusiness.com/outsource-accounting-services-singapore/)
+- [Payroll Services Singapore for Small Business | AFSB](https://accountantforsmallbusiness.com/payroll-services-singapore/)
+- [SFRS Unaudited Financial Statements Singapore | AFSB](https://accountantforsmallbusiness.com/financial-statements-singapore/)
+- [Accounting Services for Singapore Small Businesses | AFSB](https://accountantforsmallbusiness.com/services/)
 
-## Core Services
+### Pricing & Packages
+- [Accounting Services Pricing Singapore | Fixed Fees | AFSB](https://accountantforsmallbusiness.com/pricing/)
+- [Accounting Packages for Singapore Small Businesses | AFSB](https://accountantforsmallbusiness.com/packages/)
 
-- [Accounting & Bookkeeping Services](https://accountantforsmallbusiness.com/accounting-services-singapore/) — Complete monthly accounting for Singapore SMEs including bookkeeping, reconciliation and financial statements
-- [Bookkeeping Services](https://accountantforsmallbusiness.com/bookkeeping-services-singapore/) — Monthly Xero bookkeeping and bank reconciliation, priced by transaction volume
-- [Payroll Services with CPF](https://accountantforsmallbusiness.com/payroll-services-singapore/) — Monthly payroll, CPF submission, SDL, payslips and IR8A from S$8/employee
-- [Unaudited Financial Statements](https://accountantforsmallbusiness.com/financial-statements-singapore/) — SFRS-compliant year-end accounts for audit-exempt Singapore companies
-- [Outsource Accounting Services](https://accountantforsmallbusiness.com/outsource-accounting-services-singapore/) — Full outsourced accounting function replacing in-house hire
-- [SFRS Compliance Guide](https://accountantforsmallbusiness.com/sfrs-compliance-singapore/) — What SFRS requires for Singapore small companies
+### Blog
+- [Accounting Blog for Singapore Small Businesses | AFSB](https://accountantforsmallbusiness.com/blog/)
+  - [Bookkeeping vs Accounting: What's the Difference? | AFSB](https://accountantforsmallbusiness.com/blog/bookkeeping-vs-accounting/)
+  - [How to Choose an Accountant for Your Singapore SME | AFSB](https://accountantforsmallbusiness.com/blog/how-to-choose-accountant-sme/)
+  - [Year-End Accounting Checklist for Singapore SMEs | AFSB](https://accountantforsmallbusiness.com/blog/year-end-accounting-checklist/)
+  - [How Much Does an Accountant Cost in Singapore? | AFSB](https://accountantforsmallbusiness.com/blog/accountant-cost-singapore/)
+  - [Best Accounting Software for Singapore SMEs (2026) | AFSB](https://accountantforsmallbusiness.com/blog/best-accounting-software-singapore/)
+  - [Xero vs QuickBooks for Singapore Business (2026) | AFSB](https://accountantforsmallbusiness.com/blog/xero-vs-quickbooks-singapore/)
 
-## Pricing & Plans
+### Calculators & Tools
+- [Singapore CPF Calculator 2026 | Employer and Employee | AFSB](https://accountantforsmallbusiness.com/cpf-calculator-singapore/)
+- [Singapore Employee Total Cost Calculator 2026 | AFSB](https://accountantforsmallbusiness.com/employee-cost-calculator-singapore/)
+- [Singapore Corporate Income Tax Calculator 2026 | AFSB](https://accountantforsmallbusiness.com/corporate-tax-calculator-singapore/)
+- [Free Bookkeeping Cost Calculator Singapore 2026 | AFSB](https://accountantforsmallbusiness.com/bookkeeping-cost-calculator-singapore/)
+- [GST Registration Threshold Calculator Singapore | AFSB](https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/)
 
-- [Pricing](https://accountantforsmallbusiness.com/pricing/) — Transparent fixed monthly fees: Starter from S$90, Growth from S$250, Full from S$450
-- [Plan Comparison](https://accountantforsmallbusiness.com/packages/) — Side-by-side feature comparison of all three plans
+### Compliance
+- [SFRS Compliance Singapore for Small Businesses | AFSB](https://accountantforsmallbusiness.com/sfrs-compliance-singapore/)
 
-## Free Calculators
+### Contact
+- [Contact | Accountant for Small Business Singapore | AFSB](https://accountantforsmallbusiness.com/contact/)
 
-- [CPF Calculator 2026](https://accountantforsmallbusiness.com/cpf-calculator-singapore/) — Employee and employer CPF contributions, all age brackets, PR Year 1/2, SDL
-- [Employee Total Cost Calculator](https://accountantforsmallbusiness.com/employee-cost-calculator-singapore/) — True employer cost including CPF, SDL, multi-employee team total, benchmark table
-- [GST Registration Threshold Calculator](https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/) — Retrospective and prospective S$1M tests, supply type filtering
-- [Bookkeeping Cost Estimator](https://accountantforsmallbusiness.com/bookkeeping-cost-calculator-singapore/) — Monthly fee estimate vs in-house hire comparison
-- [Corporate Tax Calculator 2026](https://accountantforsmallbusiness.com/corporate-tax-calculator-singapore/) — YA2026 corporate tax with SUTE/PTE exemptions, tier breakdown, effective rate
+### Legal
+- [Privacy Policy | Accountant for Small Business Singapore](https://accountantforsmallbusiness.com/privacy/)
+- [Terms of Service | Accountant for Small Business Singapore](https://accountantforsmallbusiness.com/terms/)
 
-## Blog & Guides
+## Content Structure Notes
+- The site targets Singapore small business owners, entrepreneurs, and SMEs seeking outsourced accounting, bookkeeping, payroll, and compliance help.
+- Services are priced with fixed fees (no hidden costs) and tailored to local regulations (IRAS, ACRA, CPF, SFRS).
+- Blog posts provide educational content on accounting best practices, software comparisons, and cost guides.
+- Interactive calculators help users estimate CPF contributions, employee costs, corporate tax, bookkeeping fees, and GST registration thresholds.
+- The site includes a dedicated packages page for bundled service offerings.
 
-- [Bookkeeping vs Accounting](https://accountantforsmallbusiness.com/blog/bookkeeping-vs-accounting/) — What each does, how they differ, whether you need one or both
-- [How to Choose an Accountant for Singapore SME](https://accountantforsmallbusiness.com/blog/how-to-choose-accountant-sme/) — Red flags, green flags, what to ask
-- [Year-End Accounting Checklist for Singapore SMEs](https://accountantforsmallbusiness.com/blog/year-end-accounting-checklist/) — 6-step checklist for financial year-end
-- [Accountant Cost Singapore](https://accountantforsmallbusiness.com/blog/accountant-cost-singapore/) — Real monthly costs for different service levels
-- [Best Accounting Software for Singapore SMEs (2026)](https://accountantforsmallbusiness.com/blog/best-accounting-software-singapore/) — Xero, QuickBooks, Wave comparison
-- [Xero vs QuickBooks for Singapore Business](https://accountantforsmallbusiness.com/blog/xero-vs-quickbooks-singapore/) — Full feature and pricing comparison
-
-## Company
-
-- [About Mehdi Javed](https://accountantforsmallbusiness.com/about/) — 15+ years experience, Financial Controller, Singapore-focused
-- [Contact / Get a Quote](https://accountantforsmallbusiness.com/contact/)
-- [Blog Index](https://accountantforsmallbusiness.com/blog/)
-
----
-
-## Key Facts for AI Citation
-
-**Pricing (2026):**
-- Starter plan: from S$90/month (under 30 transactions)
-- Growth plan: from S$250/month (30–100 transactions)
-- Full plan: from S$450/month (100+ transactions, with employees)
-- Payroll add-on: S$8/employee/month
-
-**CPF Rates 2026:**
-- Below 55: Employer 17%, Employee 20%
-- 55–60: Employer 16%, Employee 16%
-- 60–65: Employer 12%, Employee 10.5%
-- 65–70: Employer 9.5%, Employee 7.5%
-- Above 70: Employer 7.5%, Employee 5%
-- PR Year 1: Employer 4%, Employee 5%
-- PR Year 2: Employer 9%, Employee 15%
-- OW ceiling: S$8,000/month
-
-**GST:** 9% rate. Registration threshold: S$1,000,000 taxable turnover (12-month rolling)
-
-**Corporate tax:** 17% flat. SUTE: 75% off first S$100k + 50% off next S$100k (first 3 YAs). PTE: 75% off first S$10k + 50% off next S$190k (YA4+)
-
-**Audit exemption:** 2 of 3 criteria for 2 consecutive years — revenue <S$10M, assets <S$10M, employees ≤50
-
-**SDL:** 0.25% of gross wages, minimum S$2/employee/month
-
-**Services are remote only:** Zoom, Google Meet or async. No in-person meetings.
+## Full Content
+- [Complete site content for LLM indexing](https://accountantforsmallbusiness.com/llms-full.txt)

@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Accounting Services Pricing Singapore | Fixed Fees | AFSB';
+const description = 'Transparent fixed-fee accounting pricing for Singapore small businesses. See what each plan includes and what drives the cost, with no hidden add-ons.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"OfferCatalog","@id":"https://accountantforsmallbusiness.com/pricing/#catalog","name":"Accounting Plans","itemListElement":[{"@type":"Offer","name":"Starter","priceCurrency":"SGD","price":"90","description":"Monthly bookkeeping, bank reconciliation and year-end financial statements for low-volume businesses."},{"@type":"Offer","name":"Growth","priceCurrency":"SGD","price":"250","description":"Starter plus monthly management reports and AP/AR for growing SMEs."},{"@type":"Offer","name":"Full","priceCurrency":"SGD","price":"450","description":"Growth plus monthly payroll with CPF; per-employee fee applies."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are there any hidden fees?","acceptedAnswer":{"@type":"Answer","text":"No. Your fixed monthly fee covers the accounting work in your plan, and anything outside it is named up front. No year-end clean-up charges or surprise add-ons."}},{"@type":"Question","name":"What is not included in the price?","acceptedAnswer":{"@type":"Answer","text":"GST and corporate tax filing are done by your tax agent, incorporation by a filing agent, and statutory audit by an ACRA public accountant. We handle the accounting only."}},{"@type":"Question","name":"What drives the price?","acceptedAnswer":{"@type":"Answer","text":"Monthly transaction volume is the biggest factor, then payroll headcount, bookkeeping frequency and any extras like management reports."}},{"@type":"Question","name":"How do I get an exact price?","acceptedAnswer":{"@type":"Answer","text":"Book a free consultation or request a quote. We ask about your transaction volume and headcount, then give you a fixed figure with no obligation."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://accountantforsmallbusiness.com/pricing/"}]}]}
+<\/script>`;
+
+// CONFIRM — all prices are placeholders awaiting client confirmation
+const plans = [
+  {
+    name: 'Starter',
+    price: 'S$90', // CONFIRM
+    period: '/month',
+    bestFor: 'Sole props, low volume (under ~30 transactions/mo)',
+    features: [
+      'Monthly bookkeeping',
+      'Bank reconciliation',
+      'Year-end financial statements',
+      'Dedicated named accountant',
+      'Xero or QuickBooks included',
+    ],
+    notIncluded: ['Management reports', 'AP/AR tracking', 'Payroll & CPF'],
+    cta: 'Get a Starter quote',
+    highlighted: false,
+    accentClass: 'border-gray-800 hover:border-[#DAA035]/30',
+    badgeColor: 'text-gray-400',
+    bg: 'bg-[#0A1628]',
+  },
+  {
+    name: 'Growth',
+    price: 'S$250', // CONFIRM
+    period: '/month',
+    bestFor: 'Growing SMEs (30 to 100 transactions/mo)',
+    features: [
+      'Everything in Starter',
+      'Monthly management reports',
+      'Accounts payable & receivable',
+      'Dedicated named accountant',
+      'Xero or QuickBooks included',
+    ],
+    notIncluded: ['Payroll & CPF'],
+    cta: 'Get a Growth quote',
+    highlighted: true,
+    accentClass: 'border-[#DAA035] ring-1 ring-[#DAA035]/30',
+    badgeColor: 'text-[#DAA035]',
+    bg: 'bg-[#0A1628]',
+  },
+  {
+    name: 'Full',
+    price: 'S$450', // CONFIRM
+    period: '/month',
+    bestFor: 'Busy SMEs (100+ transactions, with staff)',
+    features: [
+      'Everything in Growth',
+      'Monthly payroll with CPF',
+      'Itemised payslips',
+      'Dedicated named accountant',
+      'Xero or QuickBooks included',
+    ],
+    addon: 'Per-employee payroll from S$8/emp/mo', // CONFIRM
+    notIncluded: [],
+    cta: 'Get a Full quote',
+    highlighted: false,
+    accentClass: 'border-gray-800 hover:border-emerald-500/30',
+    badgeColor: 'text-emerald-400',
+    bg: 'bg-[#081F38]',
+  },
+  {
+    name: 'Custom',
+    price: 'Quote',
+    period: '',
+    bestFor: 'Multi-entity, high volume, special needs',
+    features: [
+      'Tailored scope',
+      'Priced on your actual activity',
+      'Multi-entity / consolidation',
+      'Dedicated named accountant',
+      'Xero or QuickBooks included',
+    ],
+    notIncluded: [],
+    cta: 'Request a custom quote',
+    highlighted: false,
+    accentClass: 'border-gray-800 hover:border-purple-500/30',
+    badgeColor: 'text-purple-400',
+    bg: 'bg-[#0C1B2A]',
+  },
+];
+
+const faqs = [
+  { q: 'Are there any hidden fees?', a: "No. Your fixed monthly fee covers the accounting work in your plan, and anything outside it is named up front. We don't add year-end clean-up charges, software fees or 'admin' costs after you sign. If your transaction volume grows enough to change your plan, we tell you before anything changes." },
+  { q: "What's not included in the price?", a: 'We handle the accounting, not the filing. Your GST and corporate tax are filed by your licensed Singapore tax agent, company incorporation is done by a filing agent, and a statutory audit (if your company needs one) is done by an ACRA-registered public accountant. We keep your books clean so all of them can do their part accurately.' },
+  { q: 'What drives the price up or down?', a: 'Monthly transaction volume is the biggest factor, then payroll headcount, bookkeeping frequency and any extras like management reports. A low-volume sole proprietor sits in Starter; a busy company with staff sits in Full.' },
+  { q: 'How do I get an exact price?', a: "Book a free consultation or request a quote. We ask a few questions about your monthly transaction volume, headcount and what you need, then give you a fixed figure with no obligation. You'll know exactly what you're paying before you commit to anything." },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Pricing</span>
+    </nav>
+    <span class="inline-block py-1.5 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">
+      Fixed Fees &bull; No Hidden Add-ons
+    </span>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      Accounting Pricing for Singapore Small Businesses
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-2xl mx-auto leading-relaxed">
+      Fixed monthly fees, published up front. You see what each plan includes and what drives the cost before you ever talk to us. No hidden add-ons, no surprise invoices.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+      <a href="/contact/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all hover:scale-[1.01] shadow-lg shadow-[#DCA33C]/10">
+        Get a fixed quote
+      </a>
+      <a href="/contact/" class="bg-transparent border border-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-[#DAA035] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all">
+        Book a free consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW PRICING WORKS (light F8FAFC) ════ -->
+<section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">HOW IT WORKS</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">
+          How does your pricing work?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            Pricing is a fixed monthly fee based on your transaction volume and the services you need. We publish three plans (Starter, Growth and Full) plus a custom option, so you can see roughly where you fit before booking. Your exact fee is confirmed in a short call once we know your real numbers.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed text-gray-700 font-sans">
+          Most firms hide what moves you between tiers. We don't. The biggest driver is how many transactions you have each month. Payroll headcount and reporting frequency adjust it from there.
+        </p>
+      </div>
+
+      <!-- Visual: pricing driver dial -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">What drives your fee</span>
+            </div>
+            <div class="space-y-4 font-sans">
+              {[
+                { driver: 'Monthly transactions', weight: 'Biggest factor', bar: '90%', color: 'bg-[#DAA035]' },
+                { driver: 'Payroll headcount', weight: 'Per employee', bar: '55%', color: 'bg-sky-500' },
+                { driver: 'Reporting frequency', weight: 'Monthly vs annual', bar: '35%', color: 'bg-emerald-500' },
+                { driver: 'Extras (reports, AP/AR)', weight: 'Plan tier', bar: '25%', color: 'bg-purple-500' },
+              ].map((item) => (
+                <div class="space-y-1.5">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-white">{item.driver}</span>
+                    <span class="text-[10px] font-mono text-gray-500 uppercase">{item.weight}</span>
+                  </div>
+                  <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden">
+                    <div class={`h-full ${item.color} rounded-full`} style={`width: ${item.bar}`}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div class="mt-5 p-3 bg-[#DAA035]/10 rounded-xl border border-[#DAA035]/25">
+              <p class="text-[10px] font-mono text-[#DAA035] font-bold uppercase mb-1">Our promise</p>
+              <p class="text-xs text-gray-300">Fixed fee confirmed in writing before you commit. Zero surprises.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Exact fee confirmed on a short call</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PLAN CARDS (dark navy) ════ -->
+<section class="relative bg-[#000F22] py-24 overflow-hidden border-b border-gray-950">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full" style="background: radial-gradient(ellipse at center, rgba(220,163,60,0.05) 0%, transparent 65%);"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots-pricing" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="14" cy="14" r="1.2" fill="#DAA035"/></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#dots-pricing)"/>
+    </svg>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 space-y-3">
+      <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">Our Plans</span>
+      <h2 class="text-3xl sm:text-4xl font-sans text-white font-extrabold tracking-tight">Fixed monthly fees — all confirmed before you commit</h2>
+      <p class="text-sm text-gray-500 font-mono"><!-- CONFIRM --> All prices below are market-rate starting points, confirmed in your free call.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+      {plans.map((plan) => (
+        <div class={`relative ${plan.bg} border-2 ${plan.accentClass} rounded-2xl p-7 flex flex-col transition-all duration-200 hover:-translate-y-1 ${plan.highlighted ? 'shadow-2xl shadow-[#DAA035]/10' : 'shadow-lg'}`}>
+          {plan.highlighted && (
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#DAA035] text-[#000F22] text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full whitespace-nowrap">
+              Most Popular
+            </div>
+          )}
+
+          <!-- Plan name + price -->
+          <div class="mb-6">
+            <span class={`text-[10px] font-mono uppercase tracking-widest font-bold block mb-2 ${plan.badgeColor}`}>{plan.name}</span>
+            <!-- CONFIRM price placeholder -->
+            <div class="flex items-end gap-1.5 mb-2">
+              <span class="text-4xl font-black text-[#DAA035] tracking-tight leading-none">{plan.price}</span>
+              {plan.period && <span class="text-xs text-gray-500 font-mono mb-1">{plan.period}</span>}
+            </div>
+            <p class="text-[11px] text-gray-500 leading-snug">{plan.bestFor}</p>
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-white/6 mb-6"></div>
+
+          <!-- Features -->
+          <ul class="flex flex-col gap-2.5 flex-1 mb-6">
+            {plan.features.map((f) => (
+              <li class="flex items-start gap-2.5 text-xs">
+                <svg class="w-4 h-4 shrink-0 mt-0.5 text-[#DAA035]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-[#CBCFD8]">{f}</span>
+              </li>
+            ))}
+            {plan.notIncluded.map((f) => (
+              <li class="flex items-start gap-2.5 text-xs opacity-40">
+                <svg class="w-4 h-4 shrink-0 mt-0.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/>
+                </svg>
+                <span class="text-gray-600">{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          {plan.addon && (
+            <div class="mb-4 p-2.5 rounded-lg bg-white/5 border border-white/8 text-[10px] text-gray-400 font-mono">
+              + {plan.addon}
+            </div>
+          )}
+
+          <a
+            href="/contact/"
+            class={`block text-center px-4 py-3 rounded-xl text-xs font-700 transition-all duration-200 hover:-translate-y-0.5
+              ${plan.highlighted
+                ? 'bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] hover:shadow-lg hover:shadow-[#DAA035]/20'
+                : 'bg-white/8 border border-white/12 text-[#DAA035] hover:bg-[#DCA33C] hover:text-[#000F22] hover:border-[#DCA33C]'
+              }`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHAT DRIVES PRICE (light EDF0F5) ════ -->
+<section class="bg-[#EDF0F5] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">PRICE DRIVERS</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">
+          What drives the price up or down?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            Four things set your fee: monthly transaction volume (the biggest factor), the number of employees on payroll, how often you want your books done, and whether you need extras like management reports. A low-volume sole proprietor sits in Starter; a busy company with staff sits in Full.
+          </p>
+        </div>
+        <div class="space-y-3 text-sm sm:text-base leading-relaxed text-gray-700 font-sans">
+          <p>Transaction volume is the main lever. More invoices and receipts mean more work, so it moves the fee more than anything else.</p>
+          <p>Payroll scales per employee, and weekly books cost more than monthly, which cost more than annual.</p>
+        </div>
+      </div>
+
+      <!-- Visual: plan match guide -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Which plan fits you?</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              {[
+                { profile: 'Sole proprietor, under 30 tx/mo', plan: 'Starter', color: 'text-gray-400', bg: 'bg-gray-800/30 border-gray-700' },
+                { profile: 'Growing SME, 30–100 tx/mo, needs reports', plan: 'Growth', color: 'text-[#DAA035]', bg: 'bg-[#DAA035]/10 border-[#DAA035]/30' },
+                { profile: 'Company with staff, 100+ tx/mo', plan: 'Full', color: 'text-emerald-400', bg: 'bg-emerald-950/25 border-emerald-900/40' },
+                { profile: 'Multi-entity or high volume', plan: 'Custom', color: 'text-purple-400', bg: 'bg-purple-950/20 border-purple-900/30' },
+              ].map((row) => (
+                <div class={`p-3.5 rounded-xl border ${row.bg} flex items-center justify-between`}>
+                  <span class="text-xs text-gray-300 leading-snug flex-1 pr-3">{row.profile}</span>
+                  <span class={`text-xs font-mono font-black uppercase ${row.color} shrink-0`}>{row.plan}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Exact tier confirmed in a free call</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ INCLUDED / NOT INCLUDED TABLE (dark 061224) ════ -->
+<section class="bg-[#061224] py-20 border-b border-gray-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 space-y-3">
+      <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">SCOPE TRANSPARENCY</span>
+      <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">What you pay for, and what you don't</h2>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-800 shadow-2xl">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#0A1628] border-b border-gray-800">
+            <th class="p-4 font-mono font-bold tracking-wider uppercase text-emerald-400">Included in your fee</th>
+            <th class="p-4 font-mono font-bold tracking-wider uppercase text-gray-500">Not included — handled by others</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800/60 bg-[#020B16]">
+          {[
+            { inc: 'Bookkeeping and reconciliation', excl: 'GST filing (your tax agent)' },
+            { inc: 'Financial statement preparation', excl: 'Corporate tax filing (your tax agent)' },
+            { inc: 'Payroll, CPF, payslips (Full plan)', excl: 'Company incorporation (a filing agent)' },
+            { inc: 'Monthly management reports (Growth+)', excl: 'Statutory audit (an ACRA public accountant)' },
+            { inc: 'A dedicated, named accountant', excl: 'Surprise add-ons (there are none)' },
+          ].map((row) => (
+            <tr class="hover:bg-[#0A1628]/50 transition-colors">
+              <td class="p-4">
+                <div class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-[#FEFFFF] text-sm">{row.inc}</span>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/></svg>
+                  <span class="text-gray-500 text-sm">{row.excl}</span>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT: No hidden fees + What's not included (light F8FAFC) ════ -->
+<section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- No hidden fees -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-5">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+          <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-xl font-extrabold text-[#000F22] tracking-tight">Are there any hidden fees?</h3>
+        <div class="p-5 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+          <p class="text-sm leading-relaxed font-semibold italic text-[#000F22]">
+            No. Your fixed monthly fee covers the accounting work in your plan, and anything outside it is named up front. We don't add year-end clean-up charges, software fees or 'admin' costs after you sign. If your transaction volume grows enough to change your plan, we tell you before anything changes.
+          </p>
+        </div>
+      </div>
+
+      <!-- What's not included -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-5">
+        <div class="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center">
+          <svg class="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-xl font-extrabold text-[#000F22] tracking-tight">What isn't included, and who handles it?</h3>
+        <div class="p-5 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+          <p class="text-sm leading-relaxed font-semibold italic text-[#000F22]">
+            We handle the accounting, not the filing. Your GST and corporate tax are filed by your licensed Singapore tax agent, company incorporation is done by a filing agent, and a statutory audit (if your company needs one) is done by an ACRA-registered public accountant. We keep your books clean so all of them can do their part accurately.
+          </p>
+        </div>
+        <p class="text-sm text-gray-600">This keeps your costs honest. You only pay us for the accounting we actually do, not for work that belongs with a licensed specialist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW TO GET AN EXACT PRICE (gradient light) ════ -->
+<section class="py-20 border-b border-gray-200 font-sans" style="background: linear-gradient(to bottom, #F3F7FC, #E9F1FA);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="inline-block py-1.5 px-3.5 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/35 text-[#8A5B00] text-[11px] font-mono uppercase tracking-wider font-extrabold">Get Your Exact Price</span>
+      <h2 class="text-3xl sm:text-4xl font-sans font-extrabold text-[#000F22] tracking-tight">How do I get an exact price?</h2>
+      <p class="text-sm text-gray-700 max-w-xl mx-auto font-medium leading-relaxed">
+        Book a free consultation or request a quote. We ask a few questions about your monthly transaction volume, headcount and what you need, then give you a fixed figure with no obligation.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-amber-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-amber-500/10 text-amber-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-amber-500/20">01</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/80 flex items-center justify-center text-amber-600 border border-amber-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">Tell us your numbers</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">On a short call or quote form — transaction volume, headcount and what you need.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-sky-500/10 text-sky-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-sky-500/20">02</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/80 flex items-center justify-center text-sky-600 border border-sky-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">We confirm your fee</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Fixed plan and price, confirmed in writing. No ambiguity, no hidden adjustments later.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-emerald-500/10 text-emerald-600 text-xs font-mono font-black w-8 h-8 rounded-full flex items-center justify-center border border-emerald-500/20">03</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/80 flex items-center justify-center text-emerald-600 border border-emerald-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">You decide — no pressure</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">You'll know exactly what you're paying before you commit to anything. Zero obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ (dark 000F22) ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLOSING CTA ════ -->
+<section class="bg-[#FFFDF2] py-20 text-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <h3 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">
+      Ready for a price with no guesswork?
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700 max-w-xl mx-auto font-medium">
+      Get a fixed monthly quote built around your real transaction volume, or compare what each plan includes.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/contact/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all">
+        Get a fixed quote &nbsp;&rarr;
+      </a>
+      <a href="/packages/" class="inline-block bg-transparent border-2 border-[#000F22] text-amber-950 hover:bg-[#000F22] hover:text-[#DAA035] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all">
+        Compare packages
+      </a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

@@ -1,0 +1,86 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/best-accounting-software-singapore/#article","headline":"Best Accounting Software for Singapore SMEs (2026)","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Accounting software","Xero","QuickBooks Online","GST InvoiceNow"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/best-accounting-software-singapore/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"Best Accounting Software for Singapore SMEs (2026)","item":"https://accountantforsmallbusiness.com/blog/best-accounting-software-singapore/"}]}]}<\/script>`;
+---
+<BlogLayout
+  title="Best Accounting Software for Singapore SMEs (2026) | AFSB"
+  description="The best accounting software for Singapore SMEs in 2026. A short, honest shortlist with GST and InvoiceNow readiness, PSG grant info, and a clear pick."
+  schemaJsonLd={schemaJsonLd}
+  headline="Best Accounting Software for Singapore SMEs (2026)"
+  intro="You don't need a list of twenty tools. For a Singapore small business, the real choice comes down to two or three cloud platforms, plus one 2026 rule that should shape your decision: GST InvoiceNow. Here's a short, honest shortlist."
+  ctaLabel="Want the software handled for you? We set up and run your books on Xero or QuickBooks Online."
+  ctaHref="/bookkeeping-services-singapore/"
+  relatedPosts={[
+    { title: 'Xero vs QuickBooks for Singapore Business (2026)', href: '/blog/xero-vs-quickbooks-singapore/', tag: 'Software' },
+    { title: 'Bookkeeping Services Singapore', href: '/bookkeeping-services-singapore/', tag: 'Service' },
+    { title: 'How Much Does an Accountant Cost in Singapore?', href: '/blog/accountant-cost-singapore/', tag: 'Pricing' },
+  ]}
+>
+
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What's the best accounting software for Singapore SMEs?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">For most Singapore small businesses, Xero is the strongest all-round choice: IRAS-certified GST, unlimited users and excellent local bank feeds. QuickBooks Online is the best alternative, especially if you run payroll in-house. Both are cloud-based, GST-ready and PSG-eligible.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">There's no single winner for everyone. The right tool depends on your size, payroll needs and whether you work with an accountant.</p>
+  </div>
+
+  <!-- Shortlist table -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">Shortlist at a glance</h2>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead><tr class="bg-[#000F22] text-[#FEFFFF]">
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Software</th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs">Best for</th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs">From /month</th>
+        </tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Xero', 'Accountant-led, growing SMEs', 'S$33'],
+            ['QuickBooks Online', 'Small teams, in-house payroll', 'S$31 to S$38'],
+            ['Financio / local tools', 'Budget-conscious local SMEs', 'Varies'],
+          ].map(([sw, bf, price]) => (
+            <tr class="hover:bg-gray-50">
+              <td class="p-4 font-semibold text-[#000F22]">{sw}</td>
+              <td class="p-4 text-gray-600">{bf}</td>
+              <td class="p-4 font-mono text-[#DAA035] font-bold">{price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {[
+    {
+      h2: 'What should the software handle for Singapore?',
+      answer: 'At minimum: GST reporting for IRAS, local bank feeds, invoicing, and proper financial reports. For 2026, it should also be InvoiceNow-ready, because new voluntary GST registrants from 1 April 2026 must use InvoiceNow e-invoicing, with all GST businesses ready by 2031.',
+      body: [],
+    },
+    {
+      h2: 'Can you get the PSG grant?',
+      answer: 'Yes. The Productivity Solutions Grant covers up to 50% of pre-approved accounting software, including qualifying Xero and QuickBooks packages through approved vendors. Check the current pre-approved list and conditions before buying.',
+      body: [],
+    },
+    {
+      h2: 'Do you still need an accountant if you have software?',
+      answer: "Yes. Software records the data, but it doesn't reconcile correctly on its own, prepare SFRS financial statements, or tell you what your numbers mean. The software plus a qualified accountant is what keeps your books accurate and useful.",
+      body: ['We run your books on Xero or QuickBooks for you — see our bookkeeping service.'],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+
+  <!-- 2026 InvoiceNow alert -->
+  <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-5 mt-4">
+    <p class="text-xs font-mono text-amber-700 font-bold uppercase tracking-wider mb-1">2026 Rule — InvoiceNow</p>
+    <p class="text-sm text-amber-800">New voluntary GST registrants from 1 April 2026 must use InvoiceNow e-invoicing. All GST businesses must be ready by 2031. Pick InvoiceNow-ready software before you register.</p>
+  </div>
+</BlogLayout>

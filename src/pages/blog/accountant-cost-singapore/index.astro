@@ -1,0 +1,73 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/accountant-cost-singapore/#article","headline":"How Much Does an Accountant Cost in Singapore?","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Accountant cost","Accounting fees","Small business accounting"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/accountant-cost-singapore/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"How Much Does an Accountant Cost in Singapore?","item":"https://accountantforsmallbusiness.com/blog/accountant-cost-singapore/"}]}]}<\/script>`;
+---
+<BlogLayout
+  title="How Much Does an Accountant Cost in Singapore? | AFSB"
+  description="How much does an accountant cost in Singapore? Real monthly ranges for small businesses, what drives the price, and how outsourcing compares to hiring in-house."
+  schemaJsonLd={schemaJsonLd}
+  headline="How Much Does an Accountant Cost in Singapore?"
+  intro="Ask three firms what an accountant costs and you'll get three different answers, often without a clear number at all. Here are the real ranges Singapore small businesses pay, what moves the price, and how to work out what you'll actually spend."
+  ctaLabel="Want a real number, not 'it depends'? See our pricing plans."
+  ctaHref="/pricing/"
+  relatedPosts={[
+    { title: 'Should You Outsource Accounting or Hire In-House?', href: '/outsource-accounting-services-singapore/', tag: 'Service' },
+    { title: 'How to Choose an Accountant for Your Singapore SME', href: '/blog/how-to-choose-accountant-sme/', tag: 'Hiring Guide' },
+    { title: 'Bookkeeping vs Accounting: What\'s the Difference?', href: '/blog/bookkeeping-vs-accounting/', tag: 'Fundamentals' },
+  ]}
+>
+
+  {[
+    {
+      h2: 'How much does an accountant cost in Singapore?',
+      answer: 'For most small businesses, monthly accounting runs about S$90 to S$300 for bookkeeping, and S$300 to S$800 for a full managed service including statements and payroll. A full-time in-house accountant costs far more once you add CPF and overhead, roughly S$62,000 to S$87,000 a year.',
+      body: ['The range is wide because businesses differ. Your figure depends mostly on how many transactions you have each month.'],
+    },
+    {
+      h2: 'What drives the price up or down?',
+      answer: 'Four things: your monthly transaction volume (the biggest factor), whether you have employees on payroll, how often your books are done, and any extras like management reports. A low-volume sole proprietor pays far less than a busy company with staff.',
+      body: [],
+    },
+    {
+      h2: 'In-house or outsourced: which is cheaper?',
+      answer: 'Outsourcing is cheaper for most SMEs. A full-time hire costs S$3,500 to S$4,500 a month in base salary alone, before CPF, benefits and software. Outsourcing the same work can save 20 to 60%, while still giving you a qualified accountant and continuity.',
+      body: [],
+    },
+    {
+      h2: 'Is it worth paying for an accountant?',
+      answer: 'For most businesses, yes. The fee usually costs less than the time you\'d lose doing it yourself, the penalties you\'d risk getting it wrong, and the decisions you\'d make on numbers you can\'t trust. Accurate books also make your tax agent\'s job faster and cheaper.',
+      body: [],
+    },
+    {
+      h2: 'How do you get an exact quote?',
+      answer: "Ask for a fixed quote based on your real transaction volume and needs, not a generic tier. A good provider gives you a clear monthly figure with no obligation. Our pricing page shows the plans, and a short call confirms your exact fee.",
+      body: ['See our pricing for plan ranges, or read about outsourced accounting.'],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+
+  <!-- Price summary card -->
+  <div class="bg-[#000F22] rounded-2xl p-6 sm:p-8 mt-4">
+    <h3 class="text-sm font-mono text-[#DAA035] uppercase tracking-wider mb-4">Cost summary at a glance</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {[
+        { label: 'Bookkeeping only', range: 'S$90 – S$300/mo', note: 'Low-volume SMEs' },
+        { label: 'Full managed service', range: 'S$300 – S$800/mo', note: 'Books + statements + payroll' },
+        { label: 'In-house hire', range: 'S$62K – S$87K/yr', note: 'Salary + CPF + overhead' },
+      ].map((item) => (
+        <div class="bg-[#0A1628] border border-gray-800 rounded-xl p-4">
+          <span class="block text-[10px] font-mono text-gray-500 uppercase tracking-wider mb-1">{item.label}</span>
+          <span class="block text-base font-black text-[#DAA035]">{item.range}</span>
+          <span class="block text-[11px] text-gray-500 mt-0.5">{item.note}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</BlogLayout>

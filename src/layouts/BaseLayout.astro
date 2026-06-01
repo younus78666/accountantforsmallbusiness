@@ -62,7 +62,10 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- JSON-LD Schema -->
+    <!-- Global site-wide schema (Organization + Person) -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://accountantforsmallbusiness.com/#org","name":"accountantforsmallbusiness.com","url":"https://accountantforsmallbusiness.com/","founder":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"areaServed":{"@type":"Country","name":"Singapore"},"knowsAbout":["Bookkeeping","Payroll","Financial statements","Management reporting","Xero","QuickBooks Online"]},{"@type":"Person","@id":"https://accountantforsmallbusiness.com/#mehdi","name":"Mehdi Javed","jobTitle":"Financial Controller","worksFor":{"@id":"https://accountantforsmallbusiness.com/#org"},"sameAs":["https://www.linkedin.com/in/mehdij/"]}]}</script>
+
+    <!-- Per-page JSON-LD Schema -->
     {schemaJsonLd && <Fragment set:html={schemaJsonLd} />}
   </head>
   <body class="bg-[#000F22] text-[#CBCFD8] antialiased selection:bg-[#DAA035]/30 selection:text-[#DAA035]">

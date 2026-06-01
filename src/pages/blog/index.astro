@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Singapore SME Accounting Blog | AFSB';
+const description = 'Practical accounting guides for Singapore small businesses: bookkeeping, payroll, financial statements, software and compliance — written by a qualified Financial Controller.';
+
+const posts = [
+  {
+    title: 'Bookkeeping vs Accounting: What\'s the Difference?',
+    desc: 'Bookkeeping vs accounting explained simply. See what each does, how they differ, and whether you need one or both.',
+    href: '/blog/bookkeeping-vs-accounting/',
+    tag: 'Fundamentals',
+  },
+  {
+    title: 'How to Choose an Accountant for Your Singapore SME',
+    desc: 'The questions to ask, what good looks like, and the red flags that should make you walk away.',
+    href: '/blog/how-to-choose-accountant-sme/',
+    tag: 'Hiring Guide',
+  },
+  {
+    title: 'Year-End Accounting Checklist for Singapore SMEs',
+    desc: 'What to reconcile, gather and prepare before your financial statements and filing fall due.',
+    href: '/blog/year-end-accounting-checklist/',
+    tag: 'Compliance',
+  },
+  {
+    title: 'How Much Does an Accountant Cost in Singapore?',
+    desc: 'Real monthly ranges for small businesses, what drives the price, and how outsourcing compares to hiring in-house.',
+    href: '/blog/accountant-cost-singapore/',
+    tag: 'Pricing',
+  },
+  {
+    title: 'Best Accounting Software for Singapore SMEs (2026)',
+    desc: 'A short, honest shortlist with GST and InvoiceNow readiness, PSG grant info, and a clear pick.',
+    href: '/blog/best-accounting-software-singapore/',
+    tag: 'Software',
+  },
+  {
+    title: 'Xero vs QuickBooks for Singapore Business (2026)',
+    desc: 'Compare price, GST and InvoiceNow readiness, payroll and local fit, with a clear recommendation.',
+    href: '/blog/xero-vs-quickbooks-singapore/',
+    tag: 'Software',
+  },
+];
+---
+
+<BaseLayout {title} {description}>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.02)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
+      <span class="inline-block py-1.5 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">
+        Fin-SME Library
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight">
+        Singapore SME Accounting Guides
+      </h1>
+      <p class="text-sm sm:text-base text-[#CBCFD8] max-w-xl mx-auto leading-relaxed">
+        Practical guides on bookkeeping, payroll, financial statements, software and compliance — written by Mehdi Javed, Financial Controller.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="bg-[#000F22] py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <a href={post.href} class="bg-[#0A1628] border border-gray-900 hover:border-[#DAA035]/30 rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 group flex flex-col justify-between">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-2 text-xs font-mono font-bold text-amber-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                {post.tag}
+              </div>
+              <h2 class="text-lg font-extrabold text-[#FEFFFF] leading-snug group-hover:text-[#DAA035] transition-colors duration-200">{post.title}</h2>
+              <p class="text-xs text-[#CBCFD8] leading-relaxed">{post.desc}</p>
+            </div>
+            <div class="flex items-center justify-between border-t border-gray-800 pt-4">
+              <span class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Singapore Focus &bull; May 2026</span>
+              <span class="text-xs font-mono font-bold text-[#DAA035] group-hover:underline">Read &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-[#FFFDF2] py-16 text-center border-t border-amber-100">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+      <h3 class="text-2xl font-sans text-amber-950 font-extrabold tracking-tight">Want the accounting done for you?</h3>
+      <p class="text-sm text-gray-700">See our fixed-fee accounting services for Singapore small businesses.</p>
+      <a href="/accounting-services-singapore/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all">
+        See our services &nbsp;&rarr;
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

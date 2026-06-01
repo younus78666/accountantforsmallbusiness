@@ -1,0 +1,81 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/year-end-accounting-checklist/#article","headline":"Year-End Accounting Checklist for Singapore SMEs","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Year-end accounting","Bookkeeping","Financial statements"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/year-end-accounting-checklist/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"Year-End Accounting Checklist for Singapore SMEs","item":"https://accountantforsmallbusiness.com/blog/year-end-accounting-checklist/"}]}]}<\/script>`;
+---
+<BlogLayout
+  title="Year-End Accounting Checklist for Singapore SMEs | AFSB"
+  description="A year-end accounting checklist for Singapore small businesses. What to reconcile, gather and prepare before your financial statements and filing are due."
+  schemaJsonLd={schemaJsonLd}
+  headline="Year-End Accounting Checklist for Singapore SMEs"
+  intro="Year-end is only stressful when you leave it to year-end. With clean monthly books and a simple checklist, closing your accounts becomes routine. Here's what to work through before your financial statements and filing fall due."
+  ctaLabel="Dreading year-end? Keep books clean all year with our bookkeeping service."
+  ctaHref="/bookkeeping-services-singapore/"
+  relatedPosts={[
+    { title: 'Unaudited Financial Statements Singapore', href: '/financial-statements-singapore/', tag: 'Service' },
+    { title: 'Bookkeeping vs Accounting: What\'s the Difference?', href: '/blog/bookkeeping-vs-accounting/', tag: 'Fundamentals' },
+    { title: 'How Much Does an Accountant Cost in Singapore?', href: '/blog/accountant-cost-singapore/', tag: 'Pricing' },
+  ]}
+>
+
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What's on a year-end accounting checklist?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Reconcile every bank and credit card account, chase and record outstanding invoices, settle or record what you owe, check your payroll and CPF are complete, review your fixed assets, and confirm your books match your records. Once that's done, your financial statements can be prepared cleanly.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">In short: reconcile, tidy receivables and payables, confirm payroll, then close.</p>
+  </div>
+
+  <!-- Checklist table -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">The year-end checklist</h2>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead><tr class="bg-[#000F22] text-[#FEFFFF]">
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Step</th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs">What to do</th>
+        </tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Bank reconciliation', 'Match every account to your statements'],
+            ['Accounts receivable', 'Chase and record all unpaid invoices'],
+            ['Accounts payable', 'Record everything you still owe'],
+            ['Payroll & CPF', 'Confirm all salaries, CPF and IR8A are complete'],
+            ['Fixed assets', 'Review and update the asset register'],
+            ['Final review', 'Confirm books tie out, ready for statements'],
+          ].map(([step, action], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50/50 hover:bg-gray-50'}>
+              <td class="p-4">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-6 h-6 rounded-full bg-[#DAA035]/15 text-[#DAA035] text-[10px] font-mono font-bold flex items-center justify-center border border-[#DAA035]/25 shrink-0">{i+1}</span>
+                  <span class="font-semibold text-[#000F22]">{step}</span>
+                </div>
+              </td>
+              <td class="p-4 text-gray-600">{action}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {[
+    {
+      h2: 'When should you start year-end accounting?',
+      answer: 'Start before year-end, not after. If your books are reconciled monthly, year-end is mostly a final review. If they\'re behind, give yourself several weeks to catch up so your statements and your tax agent\'s filing aren\'t rushed.',
+      body: [],
+    },
+    {
+      h2: 'Who handles what at year-end?',
+      answer: 'We handle the accounting: reconciling, closing the books and preparing your unaudited financial statements. Your licensed Singapore tax agent files your GST and corporate tax using those statements, and an ACRA public accountant audits only if your company isn\'t exempt. Clean books make all of it faster.',
+      body: ['See how we prepare your financial statements.'],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+</BlogLayout>

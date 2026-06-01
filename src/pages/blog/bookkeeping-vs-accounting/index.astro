@@ -1,0 +1,100 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/bookkeeping-vs-accounting/#article","headline":"Bookkeeping vs Accounting: What's the Difference?","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Bookkeeping","Accounting","Small business finance"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/bookkeeping-vs-accounting/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between bookkeeping and accounting?","acceptedAnswer":{"@type":"Answer","text":"Bookkeeping records day-to-day transactions; accounting interprets them. Bookkeeping is the input, accounting is the output."}},{"@type":"Question","name":"Do I need a bookkeeper, an accountant, or both?","acceptedAnswer":{"@type":"Answer","text":"Most small businesses need both functions. One qualified provider often handles bookkeeping and accounting together, which is cheaper and more consistent."}},{"@type":"Question","name":"Can one person do both for a small business?","acceptedAnswer":{"@type":"Answer","text":"Yes. A single qualified accountant who also handles bookkeeping keeps records and reporting in one consistent system."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"Bookkeeping vs Accounting","item":"https://accountantforsmallbusiness.com/blog/bookkeeping-vs-accounting/"}]}]}
+<\/script>`;
+---
+
+<BlogLayout
+  title="Bookkeeping vs Accounting: What's the Difference? | AFSB"
+  description="Bookkeeping vs accounting explained simply for small business owners. See what each does, how they differ, and whether you need one or both."
+  schemaJsonLd={schemaJsonLd}
+  headline="Bookkeeping vs Accounting: What's the Difference?"
+  intro="People use bookkeeping and accounting as if they're the same thing. They're not. Knowing the difference helps you hire the right help and avoid paying for the wrong thing. Here's the plain version, and how to tell which your business needs right now."
+  ctaLabel="Want both handled by one person? See our accounting service for Singapore small businesses."
+  ctaHref="/accounting-services-singapore/"
+  relatedPosts={[
+    { title: 'How to Choose an Accountant for Your Singapore SME', href: '/blog/how-to-choose-accountant-sme/', tag: 'Hiring Guide' },
+    { title: 'Year-End Accounting Checklist for Singapore SMEs', href: '/blog/year-end-accounting-checklist/', tag: 'Compliance' },
+    { title: 'How Much Does an Accountant Cost in Singapore?', href: '/blog/accountant-cost-singapore/', tag: 'Pricing' },
+  ]}
+>
+
+  <!-- Section 1 -->
+  <div class="space-y-6 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What's the difference between bookkeeping and accounting?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Bookkeeping is recording your day-to-day transactions. Accounting is interpreting them. A bookkeeper logs every sale, expense and bank movement and keeps the records accurate. An accountant takes those records and produces financial statements, analyses performance, and advises on decisions. Bookkeeping is the input. Accounting is the output.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Put simply, you can't do accounting without bookkeeping underneath it. The records have to be right before anyone can draw conclusions from them.</p>
+  </div>
+
+  <!-- Comparison table -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">Bookkeeping vs accounting at a glance</h2>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead><tr class="bg-[#000F22] text-[#FEFFFF]">
+          <th class="p-4 font-mono uppercase tracking-wider text-xs"></th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Bookkeeping</th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-sky-400">Accounting</th>
+        </tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Focus', 'Recording transactions', 'Interpreting them'],
+            ['Output', 'Accurate, up-to-date books', 'Statements, analysis, advice'],
+            ['When', 'Ongoing, daily or monthly', 'Periodic, monthly or year-end'],
+            ['Question it answers', 'What happened?', 'What does it mean?'],
+            ['Typical tasks', 'Data entry, reconciliation, invoices', 'Financial statements, reporting, planning'],
+          ].map(([label, bk, acc]) => (
+            <tr class="hover:bg-gray-50">
+              <td class="p-4 font-semibold text-[#000F22] text-xs">{label}</td>
+              <td class="p-4 text-gray-600 text-xs">{bk}</td>
+              <td class="p-4 text-gray-600 text-xs">{acc}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  {[
+    {
+      h2: 'What does a bookkeeper actually do?',
+      answer: 'A bookkeeper records and organises your financial transactions. That means entering sales and expenses, reconciling your bank and credit card accounts, tracking who owes you and who you owe, and keeping your books current in software like Xero or QuickBooks. The goal is accurate, tidy records you can rely on.',
+      body: ['Day to day, that\'s transaction recording, bank reconciliation, accounts payable and receivable, and keeping everything filed correctly.'],
+    },
+    {
+      h2: 'What does an accountant do?',
+      answer: 'An accountant uses your bookkeeping records to produce financial statements, interpret your numbers, and help you make decisions. They prepare your year-end accounts to SFRS, explain what the figures mean for your business, and flag issues before they become problems. They turn raw data into insight.',
+      body: ['In Singapore, a small business accountant prepares your unaudited financial statements, produces management reports, and keeps your books ready for your tax agent to file. The analysis is what separates accounting from pure record-keeping.'],
+    },
+    {
+      h2: 'Do you need a bookkeeper, an accountant, or both?',
+      answer: 'Most small businesses need both functions, but not always two people. You need bookkeeping every month to keep records accurate, and accounting at least at year-end to produce statements and meet compliance. For a small business, one qualified provider often handles both, which keeps everything consistent and cheaper.',
+      body: ['If you\'re choosing, start with bookkeeping (you need it continuously) and add accounting for reporting and year-end. A combined service covers both.'],
+    },
+    {
+      h2: 'Can one person do both for a small business?',
+      answer: "Yes, and for most SMEs that's the better setup. A single qualified accountant who also handles your bookkeeping keeps the records and the reporting in one consistent system, so nothing gets lost between two providers. That's exactly how a small business accounting service is built.",
+      body: ['See how our accounting service combines both, or read about bookkeeping on its own.'],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+
+  <!-- Bottom line -->
+  <div class="bg-[#000F22] rounded-2xl p-6 sm:p-8 mt-8">
+    <h2 class="text-xl font-sans text-[#FEFFFF] font-bold mb-3">The bottom line</h2>
+    <p class="text-sm text-[#CBCFD8] leading-relaxed">Bookkeeping keeps your records accurate. Accounting turns them into something useful. Small businesses need both, and usually one good provider can deliver them together. Get the bookkeeping right first, because everything else depends on it.</p>
+  </div>
+
+</BlogLayout>

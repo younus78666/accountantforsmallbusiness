@@ -1,0 +1,64 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/how-to-choose-accountant-sme/#article","headline":"How to Choose an Accountant for Your Small Business","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Choosing an accountant","Small business accounting"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/how-to-choose-accountant-sme/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Choose an Accountant for Your Small Business","item":"https://accountantforsmallbusiness.com/blog/how-to-choose-accountant-sme/"}]}]}<\/script>`;
+---
+<BlogLayout
+  title="How to Choose an Accountant for Your SME | AFSB"
+  description="How to choose an accountant for your Singapore small business. The questions to ask, what good looks like, and the red flags that should make you walk away."
+  schemaJsonLd={schemaJsonLd}
+  headline="How to Choose an Accountant for Your Singapore SME"
+  intro="Hiring the wrong accountant costs you twice: once in fees, and again in the mess you have to clean up. Choosing well isn't hard once you know what to look for. Here are the questions to ask, the signs of a good fit, and the red flags worth walking away from."
+  ctaLabel="Want an accountant who's clear from day one? See our accounting service."
+  ctaHref="/accounting-services-singapore/"
+  relatedPosts={[
+    { title: 'Bookkeeping vs Accounting: What\'s the Difference?', href: '/blog/bookkeeping-vs-accounting/', tag: 'Fundamentals' },
+    { title: 'How Much Does an Accountant Cost in Singapore?', href: '/blog/accountant-cost-singapore/', tag: 'Pricing' },
+    { title: 'Year-End Accounting Checklist for Singapore SMEs', href: '/blog/year-end-accounting-checklist/', tag: 'Compliance' },
+  ]}
+>
+  {[
+    {
+      h2: 'What should you look for in an accountant?',
+      answer: 'Look for three things: genuine knowledge of Singapore compliance (SFRS, ACRA, IRAS), pricing you can see before you sign, and direct access to a qualified person rather than a rotating team. A good accountant keeps your books accurate, explains your numbers, and flags problems before they cost you.',
+      body: ["Qualifications and experience matter, but so does communication. The best technical accountant is no use if you can't get a straight answer when you need one."],
+    },
+    {
+      h2: 'Does your accountant need to be Singapore-based?',
+      answer: 'No. With cloud accounting on Xero or QuickBooks, a remote accountant can keep your books fully compliant with Singapore standards. What matters is that they know Singapore rules and respond quickly, not where their desk is. Remote often costs less because there\'s no local office overhead.',
+      body: [],
+    },
+    {
+      h2: 'What questions should you ask before hiring?',
+      answer: "Ask who exactly will do your work, what's included at the quoted price, what pushes the fee up, how they handle deadlines, and what they don't cover. The answers tell you fast whether you're dealing with a transparent professional or a sales pitch.",
+      body: ['Good signs: a named person, published pricing, and a clear list of what\'s in and out of scope.'],
+    },
+    {
+      h2: 'What are the red flags?',
+      answer: "Walk away from anyone who won't tell you who does the work, hides pricing behind 'contact us', is vague about what's included, or promises to handle things they aren't licensed for, like filing your tax without being a registered tax agent. Vagueness early means problems later.",
+      body: [],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+  <!-- Summary boxes -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+    <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+      <h3 class="text-sm font-bold text-emerald-800 mb-3 flex items-center gap-2"><span class="text-lg">&#10003;</span> Good signs</h3>
+      <ul class="space-y-1.5 text-xs text-emerald-700">
+        {['A named person you can talk to', 'Published pricing before you sign', 'Clear list of what\'s in and out of scope', 'Honest about the compliance boundary'].map(s => <li class="flex gap-1.5"><span class="shrink-0">·</span>{s}</li>)}
+      </ul>
+    </div>
+    <div class="bg-red-50 border border-red-200 rounded-2xl p-5">
+      <h3 class="text-sm font-bold text-red-800 mb-3 flex items-center gap-2"><span class="text-lg">&#10007;</span> Red flags</h3>
+      <ul class="space-y-1.5 text-xs text-red-700">
+        {['Won\'t say who does the actual work', 'Hides pricing behind "contact us"', 'Vague about what\'s included', 'Promises services they can\'t legally provide'].map(s => <li class="flex gap-1.5"><span class="shrink-0">·</span>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+</BlogLayout>

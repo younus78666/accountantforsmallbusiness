@@ -1,0 +1,101 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/xero-vs-quickbooks-singapore/#article","headline":"Xero vs QuickBooks for Singapore Businesses (2026)","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["Xero","QuickBooks Online","Accounting software","GST InvoiceNow"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/blog/xero-vs-quickbooks-singapore/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which is better for a Singapore small business, Xero or QuickBooks?","acceptedAnswer":{"@type":"Answer","text":"For most Singapore SMEs Xero is the better all-round fit thanks to IRAS-certified GST filing, unlimited users and strong local bank feeds. QuickBooks suits small teams wanting guided setup and stronger built-in payroll."}},{"@type":"Question","name":"Which handles Singapore GST and InvoiceNow better?","acceptedAnswer":{"@type":"Answer","text":"Xero is IRAS-certified and files GST directly; QuickBooks generates GST reports you submit. New voluntary GST registrants from 1 April 2026 must use InvoiceNow, so choose InvoiceNow-ready software before registering."}},{"@type":"Question","name":"Can I get the PSG grant for either?","acceptedAnswer":{"@type":"Answer","text":"Yes. The PSG grant covers up to 50% of pre-approved accounting software, and both Xero and QuickBooks have qualifying packages through approved vendors."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},{"@type":"ListItem","position":3,"name":"Xero vs QuickBooks Singapore","item":"https://accountantforsmallbusiness.com/blog/xero-vs-quickbooks-singapore/"}]}]}<\/script>`;
+---
+<BlogLayout
+  title="Xero vs QuickBooks for Singapore Business (2026) | AFSB"
+  description="Xero vs QuickBooks for a Singapore small business in 2026. Compare price, GST and InvoiceNow readiness, payroll and local fit, with a clear recommendation."
+  schemaJsonLd={schemaJsonLd}
+  headline="Xero vs QuickBooks for Singapore Business (2026)"
+  intro="Xero and QuickBooks Online are the two cloud accounting tools most Singapore SMEs end up choosing between. Both handle bookkeeping, GST and bank feeds well. The right pick comes down to price, payroll needs, local fit, and one rule that's changing fast in 2026: GST InvoiceNow. Here's a clear comparison and a recommendation."
+  ctaLabel="Want it set up and run for you? We handle your bookkeeping on Xero or QuickBooks Online."
+  ctaHref="/bookkeeping-services-singapore/"
+  relatedPosts={[
+    { title: 'Best Accounting Software for Singapore SMEs (2026)', href: '/blog/best-accounting-software-singapore/', tag: 'Software' },
+    { title: 'Bookkeeping Services Singapore', href: '/bookkeeping-services-singapore/', tag: 'Service' },
+    { title: 'How Much Does an Accountant Cost in Singapore?', href: '/blog/accountant-cost-singapore/', tag: 'Pricing' },
+  ]}
+>
+
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What's the difference between Xero and QuickBooks?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Both are cloud accounting platforms for small businesses, but they lean different ways. Xero is built for accountant-led workflows, with unlimited users, deep app integrations and strong local bank feeds. QuickBooks Online focuses on guided setup and built-in payroll and timesheets, which suits small teams managing their own books.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Xero started in New Zealand in 2006 and is used by over 3 million businesses worldwide. QuickBooks, from Intuit, has been around since 1983 and is equally established. For Singapore, both are solid; the differences are in the details.</p>
+  </div>
+
+  <!-- Comparison table -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">Xero vs QuickBooks at a glance (Singapore, 2026)</h2>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead><tr class="bg-[#000F22] text-[#FEFFFF]">
+          <th class="p-4 font-mono uppercase tracking-wider text-xs"></th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Xero</th>
+          <th class="p-4 font-mono uppercase tracking-wider text-xs text-sky-400">QuickBooks Online</th>
+        </tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['From /month (SG)', 'S$33', 'S$31 to S$38'],
+            ['Users', 'Unlimited', 'Capped by plan tier'],
+            ['GST to IRAS', 'IRAS-certified, files directly', 'Generates IRAS GST reports'],
+            ['Payroll', 'Basic built-in (payslips)', 'Stronger built-in payroll'],
+            ['Timesheets', 'Add-on (extra cost)', 'Built in'],
+            ['Local bank feeds', 'Very strong', 'Good'],
+            ['App ecosystem', 'Hundreds of integrations', 'Solid, fewer than Xero'],
+            ['Best for', 'Accountant-led, growing SMEs', 'Small teams, guided setup'],
+          ].map(([label, xero, qbo], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50/50 hover:bg-gray-50'}>
+              <td class="p-4 font-semibold text-[#000F22] text-xs">{label}</td>
+              <td class="p-4 text-gray-600 text-xs">{xero}</td>
+              <td class="p-4 text-gray-600 text-xs">{qbo}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {[
+    {
+      h2: 'Which is better for a Singapore small business?',
+      answer: 'For most Singapore SMEs, Xero is the better all-round fit, thanks to IRAS-certified GST filing, unlimited users and strong local bank integration. QuickBooks Online is the better pick if you want simple guided setup and stronger built-in payroll for a small in-house team. Neither is wrong; it depends on how you work.',
+      body: ['Choose Xero when you work with an accountant, want unlimited users, or rely on lots of app integrations.', 'Choose QuickBooks when you run payroll in-house, want timesheets built in, and prefer a guided setup.'],
+    },
+    {
+      h2: 'How do they compare on price?',
+      answer: "They're close. Xero in Singapore starts around S$33 a month and rises to about S$65 for established plans. QuickBooks Online starts around S$31 to S$38 a month. The bigger cost difference is in extras: Xero charges add-ons for things like timesheets, while QuickBooks bundles more in, but caps your number of users by plan.",
+      body: ['Look past the headline price at what you actually need. Unlimited users (Xero) or built-in payroll and timesheets (QuickBooks) often matter more than a few dollars a month.'],
+    },
+    {
+      h2: 'Which handles Singapore GST and InvoiceNow better?',
+      answer: 'Both handle GST, but Xero is IRAS-certified and files GST returns directly to IRAS, while QuickBooks generates the GST reports you then submit. The bigger 2026 issue is InvoiceNow: new voluntary GST registrants from 1 April 2026 must use InvoiceNow e-invoicing, and all GST businesses must be ready by 2031. Pick software that\'s InvoiceNow-ready before you register for GST.',
+      body: ['This is the rule most comparison articles miss. If GST registration is on your horizon, InvoiceNow readiness should weigh heavily in your choice.'],
+    },
+    {
+      h2: 'Can you get the PSG grant for either?',
+      answer: 'Yes. The Productivity Solutions Grant covers up to 50% of the cost of pre-approved accounting software, and both Xero and QuickBooks have qualifying packages through approved vendors. Eligibility and timing conditions apply, so check the current pre-approved list before you buy.',
+      body: [],
+    },
+    {
+      h2: 'Which one do we recommend?',
+      answer: 'For most Singapore small businesses we work with, Xero is the default choice: IRAS-certified GST, unlimited users, and the strongest local bank feeds. If payroll for a small in-house team is your priority, QuickBooks Online is a strong alternative. We work in both, so whichever you choose, your books stay in good hands.',
+      body: ['Not sure which fits? Our bookkeeping service runs on both Xero and QuickBooks, and we\'ll set you up on whichever suits your business.'],
+    },
+  ].map((sec) => (
+    <div class="space-y-4 mb-12">
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">{sec.h2}</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">{sec.answer}</p>
+      </div>
+      {sec.body.map((p) => <p class="text-sm sm:text-base leading-relaxed text-gray-700">{p}</p>)}
+    </div>
+  ))}
+
+  <!-- InvoiceNow alert -->
+  <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-5 mt-4">
+    <p class="text-xs font-mono text-amber-700 font-bold uppercase tracking-wider mb-1">2026 InvoiceNow Rule</p>
+    <p class="text-sm text-amber-800">New voluntary GST registrants from 1 April 2026 must use InvoiceNow. All GST businesses ready by 2031. Choose InvoiceNow-compatible software before registering for GST.</p>
+  </div>
+</BlogLayout>

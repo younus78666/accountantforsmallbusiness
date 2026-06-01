@@ -1,0 +1,439 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Unaudited Financial Statements Singapore | AFSB';
+const description = "SFRS-compliant unaudited financial statements prepared for Singapore small businesses. Find out if you're audit-exempt and what a proper statement set must include.";
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":["Service","AccountingService"],"@id":"https://accountantforsmallbusiness.com/financial-statements-singapore/#service","name":"Unaudited Financial Statements Singapore","serviceType":"Financial statement preparation","provider":{"@id":"https://accountantforsmallbusiness.com/#org"},"areaServed":{"@type":"Country","name":"Singapore"},"description":"Preparation of SFRS-compliant unaudited financial statements for Singapore small businesses, built from bookkeeping records and ready for ACRA, IRAS and AGM.","isRelatedTo":{"@id":"https://accountantforsmallbusiness.com/accounting-services-singapore/#service"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the small company audit exemption?","acceptedAnswer":{"@type":"Answer","text":"A company is exempt from audit if it meets at least two of three criteria for the past two consecutive years: revenue under S$10 million, assets under S$10 million, and 50 or fewer employees."}},{"@type":"Question","name":"Can unaudited statements be used for a bank loan?","acceptedAnswer":{"@type":"Answer","text":"Sometimes, but many banks prefer or require audited statements for financing. For ACRA, IRAS, AGMs and most grants, properly prepared unaudited statements are accepted."}},{"@type":"Question","name":"How often do I need them?","acceptedAnswer":{"@type":"Answer","text":"Once per financial year for your Annual Return and tax. Some businesses also request half-yearly or quarterly sets for internal use."}},{"@type":"Question","name":"What standard do they follow?","acceptedAnswer":{"@type":"Answer","text":"Singapore Financial Reporting Standards (SFRS), or SFRS for Small Entities where applicable."}},{"@type":"Question","name":"Do you file them with ACRA?","acceptedAnswer":{"@type":"Answer","text":"No. We prepare your statements to SFRS. Filing with ACRA and IRAS is done by you or your tax agent."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Accounting Services","item":"https://accountantforsmallbusiness.com/accounting-services-singapore/"},{"@type":"ListItem","position":3,"name":"Financial Statements","item":"https://accountantforsmallbusiness.com/financial-statements-singapore/"}]}]}
+<\/script>`;
+
+const components = [
+  { label: 'Statement of comprehensive income', purpose: 'Your revenue, costs and profit for the year' },
+  { label: 'Balance sheet', purpose: 'Assets, liabilities and equity at year-end' },
+  { label: 'Cash flow statement', purpose: 'How cash moved through the business' },
+  { label: 'Notes to the accounts', purpose: 'SFRS disclosures and accounting policies' },
+  { label: "Director's Statement", purpose: 'Signed true-and-fair declaration' },
+];
+
+const faqs = [
+  { q: "What's the small company audit exemption?", a: 'A company is exempt from audit if it meets at least two of three criteria for the past two consecutive years: revenue under S$10 million, assets under S$10 million, and 50 or fewer employees.' },
+  { q: 'Can unaudited statements be used for a bank loan?', a: 'Sometimes, but many banks and larger lenders prefer or require audited statements for financing. For ACRA, IRAS, AGMs and most grants, properly prepared unaudited statements are accepted.' },
+  { q: 'How often do I need them?', a: 'Once per financial year, for your Annual Return and tax. Some businesses also ask for half-yearly or quarterly sets for internal or investor use.' },
+  { q: 'What standard do they follow?', a: 'Singapore Financial Reporting Standards (SFRS), or SFRS for Small Entities where applicable. Proper structure and disclosure are required even though the accounts are unaudited.' },
+  { q: 'Do you file them with ACRA?', a: 'No. We prepare your statements to SFRS. Filing with ACRA and IRAS is done by you or your tax agent, using the statements we prepare.' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.02)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/accounting-services-singapore/" class="hover:text-[#DAA035] transition-colors">Accounting Services</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Financial Statements</span>
+    </nav>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      Unaudited Financial Statements in Singapore
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-2xl mx-auto leading-relaxed">
+      Proper SFRS-compliant financial statements for your small company, prepared correctly and ready for ACRA, IRAS and your AGM. We prepare them; you stay compliant.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+      <a href="/contact/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all hover:scale-[1.01] shadow-lg shadow-[#DCA33C]/10">
+        Get your statements prepared
+      </a>
+      <a href="/contact/" class="bg-transparent border border-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-[#DAA035] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all">
+        Book a free consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 1: What are unaudited financial statements? (light F8FAFC, text left) ════ -->
+<section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">DEFINITION</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">
+          What are unaudited financial statements?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            Unaudited financial statements are a company's year-end accounts prepared to Singapore Financial Reporting Standards but not examined by an external auditor. A complete set includes the income statement, balance sheet, cash flow statement, notes to the accounts, and a signed Director's Statement. Audit-exempt small companies file these instead of audited accounts.
+          </p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+          <p>Unaudited does not mean informal. The statements still have to follow SFRS structure and presentation, and the directors still sign a legal declaration that the accounts give a true and fair view of the company.</p>
+          <p>We prepare the full set from your bookkeeping records, formatted to SFRS, so they're ready for ACRA, IRAS and your shareholders.</p>
+        </div>
+      </div>
+
+      <!-- Visual: 5-component checklist -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-6 font-mono">
+              <span class="text-xs text-[#DAA035] font-bold uppercase tracking-wider">Complete statement set</span>
+              <span class="text-[10px] bg-sky-500/15 text-sky-400 border border-sky-500/20 px-2 py-0.5 rounded font-bold uppercase">SFRS</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              {components.map((c, i) => (
+                <div class="p-3 bg-[#020B16] rounded-xl border border-gray-800 flex items-start gap-3 hover:border-gray-700 transition-colors">
+                  <span class={`w-6 h-6 rounded-full text-[10px] font-bold font-mono flex items-center justify-center shrink-0 mt-0.5 ${i === 4 ? 'bg-[#DAA035]/15 text-[#DAA035] border border-[#DAA035]/30' : 'bg-sky-500/15 text-sky-400 border border-sky-500/25'}`}>{i+1}</span>
+                  <div>
+                    <span class="text-xs font-bold text-white block">{c.label}</span>
+                    <span class="text-[11px] text-gray-500 leading-snug">{c.purpose}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*All 5 required — a Xero P&L is not a statement set</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 2: Audit or unaudited? (dark 0A1B30, visual left) ════ -->
+<section class="bg-[#0A1B30] text-[#CBCFD8] py-20 border-b border-gray-950/45">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: 2-of-3 exemption test -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Small Company Audit Exemption</span>
+            </div>
+            <p class="text-[11px] text-gray-400 font-mono text-center mb-5">Meet any 2 of 3 for 2 consecutive years</p>
+            <div class="space-y-3 font-sans">
+              {[
+                { criterion: 'Annual revenue', threshold: 'S$10 million or less', met: true },
+                { criterion: 'Total assets', threshold: 'S$10 million or less', met: true },
+                { criterion: 'Number of employees', threshold: '50 or fewer', met: true },
+              ].map((row, i) => (
+                <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 flex items-center justify-between">
+                  <div>
+                    <span class="block text-xs font-bold text-white">{row.criterion}</span>
+                    <span class="block text-[10px] text-gray-400 mt-0.5">{row.threshold}</span>
+                  </div>
+                  <span class="w-7 h-7 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-sm font-bold flex items-center justify-center shrink-0">&#10003;</span>
+                </div>
+              ))}
+            </div>
+            <div class="mt-4 p-3 bg-[#DAA035]/10 rounded-xl border border-[#DAA035]/25 text-center">
+              <p class="text-[10px] font-mono text-[#DAA035] font-bold uppercase">Exempt = no audit needed</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">But you still must prepare proper financial statements</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*ACRA 2026 — self-assessed each year</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">AUDIT EXEMPTION</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">
+          Does your small company need an audit or just unaudited statements?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">
+            Most small companies in Singapore are exempt from audit. Your company qualifies for the audit exemption if it meets at least two of three criteria for the past two consecutive financial years: annual revenue under S$10 million, total assets under S$10 million, and 50 or fewer employees. If you qualify, you prepare unaudited statements instead of a full statutory audit.
+          </p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>Audit exemption needs no approval from ACRA. You assess your eligibility each year and declare your status when you file your Annual Return. The exemption only removes the audit, not the duty to prepare proper statements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MYTH-BUSTER: Xero P&L is NOT enough (warm FFFDF2) ════ -->
+<section class="bg-[#FFFDF2] text-[#000F22] py-20 border-b border-amber-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: myth vs reality -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Xero Export vs Proper Statements</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              <div class="p-4 bg-red-950/20 rounded-xl border border-red-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-red-400 uppercase font-bold">Xero / QuickBooks P&L export</span>
+                <ul class="space-y-1.5 text-[11px] text-gray-400">
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> Not SFRS-formatted</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> No Director's Statement</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> No notes to the accounts</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> Not accepted by ACRA/IRAS</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> Not accepted by banks</li>
+                </ul>
+              </div>
+              <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] uppercase font-bold">AFSB proper statement set</span>
+                <ul class="space-y-1.5 text-[11px] text-gray-300">
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> SFRS-formatted presentation</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Signed Director's Statement</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Full notes and disclosures</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Accepted by ACRA and IRAS</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Suitable for banks and grants</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*The numbers may be right — the format and completeness are not</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-amber-700 uppercase tracking-widest font-bold block">COMMON MISTAKE</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">
+          Isn't your Xero or QuickBooks report enough?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">
+            No. A profit and loss report and balance sheet exported from Xero or QuickBooks are useful, but they are not financial statements in the eyes of ACRA and IRAS. A proper set must follow SFRS presentation, include notes and a Director's Statement, and tie together as a complete, defensible record. That's the gap we close.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed text-amber-900 font-sans">
+          This is the single most common mistake we see. Owners assume the software output is their statements, then find it doesn't meet what regulators expect or what a bank asks for. The numbers may be right; the format and completeness are not.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 4: Director's Statement (dark 061224, text left) ════ -->
+<section class="bg-[#061224] text-[#CBCFD8] py-20 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">DIRECTOR'S STATEMENT</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">
+          What is the Director's Statement and who signs it?
+        </h2>
+        <div class="p-6 my-2 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">
+            The Director's Statement is a signed legal declaration confirming that the financial statements give a true and fair view of the company's affairs and that the company is solvent. It is a required part of every set of Singapore financial statements, and the responsibility for it sits with the directors. It cannot be delegated away.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          We prepare the statements and the supporting figures. The directors review and sign the declaration. That split keeps the legal responsibility where it belongs while taking the preparation work off your plate.
+        </p>
+      </div>
+
+      <!-- Visual: Director's statement declaration -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Director's Statement</span>
+            </div>
+            <!-- Mock document -->
+            <div class="bg-[#020B16] border border-gray-700 rounded-xl p-5 space-y-3 font-sans">
+              <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest border-b border-gray-800 pb-2 mb-3">In the opinion of the directors:</p>
+              <div class="space-y-2.5">
+                <div class="flex items-start gap-2">
+                  <span class="text-emerald-400 text-xs shrink-0 mt-0.5">(a)</span>
+                  <p class="text-[11px] text-gray-300 leading-relaxed">The financial statements are drawn up so as to give a true and fair view of the affairs of the company at the end of the financial year.</p>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-emerald-400 text-xs shrink-0 mt-0.5">(b)</span>
+                  <p class="text-[11px] text-gray-300 leading-relaxed">At the date of this statement, there are reasonable grounds to believe the company will be able to pay its debts as and when they fall due.</p>
+                </div>
+              </div>
+              <div class="border-t border-gray-800 pt-3 mt-2">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="w-24 h-px bg-gray-600 mb-1"></div>
+                    <p class="text-[10px] text-gray-600 font-mono">Director's signature</p>
+                  </div>
+                  <div>
+                    <div class="w-20 h-px bg-gray-600 mb-1"></div>
+                    <p class="text-[10px] text-gray-600 font-mono">Date</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-amber-950/20 rounded-xl border border-amber-900/30">
+              <p class="text-[10px] font-mono text-amber-400 font-bold uppercase mb-1">Legal responsibility</p>
+              <p class="text-[11px] text-gray-400">Cannot be delegated. Directors must review and sign.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*We prepare the statements; you sign the declaration</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ THREE ROLES: Prepare / Audit / File (light gradient) ════ -->
+<section class="py-20 border-b border-gray-200 font-sans" style="background: linear-gradient(to bottom, #F3F7FC, #E9F1FA);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="inline-block py-1.5 px-3.5 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/35 text-[#8A5B00] text-[11px] font-mono uppercase tracking-wider font-extrabold">Role Split</span>
+      <h2 class="text-3xl sm:text-4xl font-sans font-extrabold text-[#000F22] tracking-tight">Who prepares, audits and files your financial statements?</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] text-[#000F22] shadow-sm text-left">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          Three separate roles. We prepare your unaudited statements to SFRS. If your company is not audit-exempt, an ACRA-registered public accountant audits them, which is a service we don't provide. Your company or your tax agent then files them with ACRA and uses them for IRAS. Clear roles keep everything compliant.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-2xl border-2 border-[#DAA035] shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-[#DAA035]/10 text-[#DAA035] text-xs font-mono font-black px-2.5 py-1 rounded-full border border-[#DAA035]/25">US</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/80 flex items-center justify-center text-amber-600 border border-amber-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">We prepare</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">SFRS-compliant statements built from your bookkeeping records — income statement, balance sheet, cash flow, notes and Director's Statement.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-sky-300 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5 opacity-75">
+        <div class="absolute top-4 right-4 bg-sky-500/10 text-sky-600 text-xs font-mono font-black px-2.5 py-1 rounded-full border border-sky-500/20">IF NEEDED</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100/80 flex items-center justify-center text-sky-600 border border-sky-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">An auditor audits</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">Only if your company is not audit-exempt. Must be an ACRA-registered public accountant. This is a service we don't provide.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-300 shadow-lg hover:shadow-2xl transition-all duration-300 relative space-y-5 group hover:-translate-y-1.5">
+        <div class="absolute top-4 right-4 bg-emerald-500/10 text-emerald-600 text-xs font-mono font-black px-2.5 py-1 rounded-full border border-emerald-500/20">YOU/AGENT</div>
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/80 flex items-center justify-center text-emerald-600 border border-emerald-200/50 shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/></svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-[#000F22] pt-2 tracking-tight">You or your tax agent file</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">With ACRA and IRAS, using the statements we prepared. Clean roles keep everything compliant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ COMPONENTS TABLE (light EBF3FC) ════ -->
+<section class="bg-[#EBF3FC] py-20 border-b border-gray-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 space-y-3">
+      <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHAT'S INCLUDED</span>
+      <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">What a complete set includes</h2>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-xl">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF] border-b border-gray-800">
+            <th class="p-4 font-mono font-bold tracking-wider uppercase">Component</th>
+            <th class="p-4 font-mono font-bold tracking-wider uppercase text-[#DAA035]">Purpose</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          {components.map((c, i) => (
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="p-4">
+                <div class="flex items-center gap-3">
+                  <span class={`w-6 h-6 rounded-full text-[10px] font-bold font-mono flex items-center justify-center shrink-0 ${i === 4 ? 'bg-[#DAA035]/15 text-[#DAA035] border border-[#DAA035]/30' : 'bg-sky-500/10 text-sky-600 border border-sky-500/20'}`}>{i+1}</span>
+                  <span class="font-semibold text-[#000F22]">{c.label}</span>
+                </div>
+              </td>
+              <td class="p-4 text-gray-600">{c.purpose}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHY CHOOSE US (dark 000B1A) ════ -->
+<section class="bg-[#000B1A] py-20 border-b border-[#0A1628]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHY CHOOSE US</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">Why choose accountantforsmallbusiness.com?</h2>
+        <p class="text-sm sm:text-base leading-relaxed text-[#CBCFD8]">
+          Because your statements are prepared by a Financial Controller with 15+ years of experience, formatted properly to SFRS, and built straight from clean books. Mehdi Javed prepares statements that hold up to ACRA, IRAS, banks and grant applications, and tells you plainly what we do and what stays with your auditor or tax agent.
+        </p>
+        <ul class="space-y-2 text-sm text-[#CBCFD8]">
+          <li class="flex items-start gap-2"><span class="text-[#DAA035] shrink-0">&#10003;</span> Statements come straight from accurate bookkeeping, so there's no year-end scramble to reconstruct the numbers.</li>
+          <li class="flex items-start gap-2"><span class="text-[#DAA035] shrink-0">&#10003;</span> We're clear about scope — we prepare, we don't audit or file.</li>
+        </ul>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="/about/" class="text-xs font-mono text-[#DAA035] hover:underline font-bold">Learn more about Mehdi &rarr;</a>
+          <span class="text-gray-600">|</span>
+          <a href="/accounting-services-singapore/" class="text-xs font-mono text-[#DAA035] hover:underline font-bold">Full accounting service &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Stats card -->
+      <div class="lg:col-span-5 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl relative overflow-hidden border border-gray-800/80" style="background: linear-gradient(to bottom, #0A1628, #000F22);">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-[#DAA035]/5 rounded-full blur-2xl pointer-events-none"></div>
+        <h3 class="text-sm font-mono text-[#DAA035] uppercase tracking-wider border-b border-[#0A1628] pb-3 font-semibold">Key Facts</h3>
+        <div class="space-y-4">
+          {[
+            { value: 'Required', label: 'Every Singapore company must prepare statements', sub: 'No exemption from preparation — only from audit', grad: 'from-[#DCA33C] to-[#DAA035]', width: '100%' },
+            { value: '2 of 3', label: 'Criteria needed for audit exemption', sub: 'Revenue, assets, employees — for 2 consecutive years', grad: 'from-emerald-600 to-emerald-400', width: '67%' },
+            { value: 'SFRS', label: 'Standard all statements must follow', sub: 'Or SFRS for Small Entities where applicable', grad: 'from-blue-500 to-cyan-400', width: '100%' },
+          ].map((stat) => (
+            <div class="bg-[#000F22]/50 p-4 rounded-xl border border-gray-900">
+              <span class="block text-2xl font-black text-[#DAA035] tracking-tight">{stat.value}</span>
+              <span class="block text-[11px] uppercase tracking-wider text-[#FEFFFF] font-mono mt-1">{stat.label}</span>
+              <span class="block text-[10px] text-gray-600 mt-0.5">{stat.sub}</span>
+              <div class="w-full bg-gray-950 h-1 rounded-full mt-2.5 overflow-hidden">
+                <div class={`bg-gradient-to-r ${stat.grad} h-full rounded-full`} style={`width:${stat.width}`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLOSING CTA ════ -->
+<section class="bg-[#FFFDF2] py-20 text-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <h3 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">
+      Need proper statements, not just a Xero export?
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700 max-w-xl mx-auto font-medium">
+      We prepare SFRS-compliant unaudited financial statements built from your books, ready for ACRA, IRAS and your AGM.
+    </p>
+    <a href="/contact/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all">
+      Get your statements prepared &nbsp;&rarr;
+    </a>
+  </div>
+</section>
+
+</BaseLayout>

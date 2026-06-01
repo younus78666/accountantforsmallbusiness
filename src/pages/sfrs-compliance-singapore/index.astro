@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'SFRS Compliance Singapore for Small Businesses | AFSB';
+const description = 'SFRS explained for Singapore small businesses. Who must follow it, what it requires, the difference from IFRS, and how we keep your books SFRS-compliant every month.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://accountantforsmallbusiness.com/sfrs-compliance-singapore/#article","headline":"SFRS Compliance in Singapore for Small Businesses","author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["SFRS","Singapore Financial Reporting Standards","Small company accounting","Financial statements"],"mainEntityOfPage":"https://accountantforsmallbusiness.com/sfrs-compliance-singapore/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is SFRS?","acceptedAnswer":{"@type":"Answer","text":"SFRS stands for Singapore Financial Reporting Standards, the accounting framework issued by the Accounting Standards Council. Every Singapore company must prepare financial statements that follow SFRS or SFRS for Small Entities."}},{"@type":"Question","name":"Who must follow SFRS in Singapore?","acceptedAnswer":{"@type":"Answer","text":"Every Singapore-incorporated company must prepare financial statements following SFRS. There is no exemption from preparation, only from audit. Small companies may use SFRS for Small Entities, a simplified version."}},{"@type":"Question","name":"What is the difference between SFRS and SFRS for Small Entities?","acceptedAnswer":{"@type":"Answer","text":"Full SFRS aligns with IFRS and applies to larger or publicly accountable entities. SFRS for Small Entities is a simplified, principle-based framework for small companies that meet the small company criteria: revenue under S$10M, assets under S$10M, and 50 or fewer employees (meeting at least 2 of 3 for 2 consecutive years)."}},{"@type":"Question","name":"Is a Xero profit and loss report SFRS-compliant?","acceptedAnswer":{"@type":"Answer","text":"No. A Xero P&L export is not SFRS-compliant. A proper set requires SFRS-structured presentation, notes to the accounts, and a signed Director's Statement. We prepare this from your bookkeeping records."}},{"@type":"Question","name":"Do you file financial statements with ACRA?","acceptedAnswer":{"@type":"Answer","text":"No. We prepare your SFRS-compliant statements. Filing with ACRA and IRAS is done by you or your licensed tax agent using the statements we prepare."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"SFRS Compliance Singapore","item":"https://accountantforsmallbusiness.com/sfrs-compliance-singapore/"}]}]}
+<\/script>`;
+
+const faqs = [
+  { q: 'What is SFRS?', a: 'SFRS stands for Singapore Financial Reporting Standards, the accounting framework issued by the Accounting Standards Council (ASC). Every Singapore company must prepare financial statements that follow SFRS or SFRS for Small Entities.' },
+  { q: 'Who must follow SFRS in Singapore?', a: 'Every Singapore-incorporated company must prepare financial statements following SFRS. There is no exemption from preparation, only from audit. Small companies may use SFRS for Small Entities, a simplified version.' },
+  { q: 'What is the difference between SFRS and SFRS for Small Entities?', a: 'Full SFRS aligns with IFRS and applies to larger or publicly accountable entities. SFRS for Small Entities is simplified for small companies meeting the criteria: revenue under S$10M, assets under S$10M, 50 or fewer employees.' },
+  { q: 'Is a Xero P&L report SFRS-compliant?', a: 'No. A Xero P&L export is not SFRS-compliant. A proper set requires SFRS-structured presentation, notes to the accounts, and a signed Director\'s Statement.' },
+  { q: 'Do you file financial statements with ACRA?', a: 'No. We prepare your SFRS-compliant statements. Filing with ACRA and IRAS is done by you or your licensed tax agent using the statements we prepare.' },
+  { q: 'What is the Director\'s Statement?', a: 'A legally required signed declaration confirming the statements give a true and fair view of the company\'s affairs and that the company can pay its debts. Directors must sign it. It cannot be delegated.' },
+];
+
+const sfrsComponents = [
+  { n: '01', label: 'Statement of comprehensive income', desc: 'Revenue, costs and profit for the financial year', icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z' },
+  { n: '02', label: 'Statement of financial position', desc: 'Assets, liabilities and equity at year-end (balance sheet)', icon: 'M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97z' },
+  { n: '03', label: 'Statement of cash flows', desc: 'How cash moved in and out of the business', icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z' },
+  { n: '04', label: 'Notes to the accounts', desc: 'SFRS disclosures, accounting policies and details', icon: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z' },
+  { n: '05', label: "Director's Statement", desc: "Signed legal declaration of true and fair view — mandatory", icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">SFRS Compliance Singapore</span>
+    </nav>
+    <span class="inline-block py-1.5 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">
+      Accounting Standards Council &bull; Singapore
+    </span>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      SFRS Compliance in Singapore for Small Businesses
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-2xl mx-auto leading-relaxed">
+      Every Singapore company must prepare financial statements that follow SFRS. Here is what it means, what it requires, which standard applies to your business, and how we keep your books SFRS-ready every month.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+      <a href="/financial-statements-singapore/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all hover:scale-[1.01]">
+        Get your statements prepared
+      </a>
+      <a href="/contact/" class="border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-sm transition-all">
+        Book a free consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 1: What is SFRS? (light F8FAFC, text left) ════ -->
+<section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">DEFINITION</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">What is SFRS?</h2>
+        <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">SFRS stands for Singapore Financial Reporting Standards, the set of accounting rules issued by the Accounting Standards Council (ASC) of Singapore. Every Singapore-incorporated company must prepare its financial statements in accordance with SFRS. There is no exemption from this requirement, only from external audit.</p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+          <p>SFRS is closely aligned with International Financial Reporting Standards (IFRS) but adapted for the Singapore regulatory environment. The ASC reviews and updates the standards to maintain convergence with the IASB's global framework.</p>
+          <p>For most Singapore small businesses, the practical version is <strong>SFRS for Small Entities</strong> — a simplified, principle-based framework that reduces the disclosure burden while keeping the core requirements intact.</p>
+        </div>
+      </div>
+
+      <!-- Visual: SFRS at a glance -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-6 font-mono">
+              <span class="text-xs text-[#DAA035] font-bold uppercase tracking-wider">SFRS at a glance</span>
+              <span class="text-[10px] bg-sky-500/15 text-sky-400 border border-sky-500/20 px-2 py-0.5 rounded font-bold uppercase">ASC</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              {[
+                { label: 'Issued by', value: 'Accounting Standards Council (ASC)' },
+                { label: 'Based on', value: 'IFRS (International Financial Reporting Standards)' },
+                { label: 'Who must follow', value: 'All Singapore-incorporated companies' },
+                { label: 'Simplified version', value: 'SFRS for Small Entities (SFRS for SE)' },
+                { label: 'Exemption available', value: 'From audit only — not from preparation' },
+                { label: 'Enforced by', value: 'ACRA (financial statements) + IRAS (tax filing)' },
+              ].map((row) => (
+                <div class="p-3 bg-[#020B16] rounded-xl border border-gray-800 flex items-start gap-3">
+                  <span class="text-[10px] font-mono text-gray-500 uppercase tracking-wider shrink-0 w-24 pt-0.5">{row.label}</span>
+                  <span class="text-xs font-medium text-white leading-snug">{row.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Updated 2026 — aligned with IFRS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 2: SFRS vs SFRS for SE (dark 0A1B30, visual left) ════ -->
+<section class="bg-[#0A1B30] text-[#CBCFD8] py-20 border-b border-gray-950/45">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: comparison -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Which standard applies?</span>
+            </div>
+            <div class="space-y-4 font-sans">
+              <div class="p-4 bg-[#020B16] rounded-xl border border-gray-800 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] font-bold uppercase">Full SFRS</span>
+                <ul class="space-y-1 text-[11px] text-gray-400">
+                  <li class="flex gap-1.5"><span class="text-[#DAA035] shrink-0">&#10145;</span> Publicly accountable entities</li>
+                  <li class="flex gap-1.5"><span class="text-[#DAA035] shrink-0">&#10145;</span> Large companies</li>
+                  <li class="flex gap-1.5"><span class="text-[#DAA035] shrink-0">&#10145;</span> Listed companies (SGX)</li>
+                  <li class="flex gap-1.5"><span class="text-[#DAA035] shrink-0">&#10145;</span> Subsidiaries of MNCs</li>
+                </ul>
+              </div>
+              <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] font-bold uppercase">SFRS for Small Entities</span>
+                <p class="text-[11px] text-gray-300 mb-1">Qualifies if 2 of 3 criteria met for 2 consecutive years:</p>
+                <ul class="space-y-1 text-[11px] text-gray-300">
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Revenue under S$10 million</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Total assets under S$10 million</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> 50 or fewer employees</li>
+                </ul>
+              </div>
+              <div class="p-3 bg-[#DAA035]/10 border border-[#DAA035]/25 rounded-xl text-center">
+                <p class="text-[10px] font-mono text-[#DAA035] font-bold uppercase">Most Singapore SMEs</p>
+                <p class="text-xs text-gray-300 mt-0.5">Qualify for SFRS for Small Entities</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*ACRA 2026 criteria</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">FULL VS SIMPLIFIED</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">SFRS vs SFRS for Small Entities: which applies to your company?</h2>
+        <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">Full SFRS aligns closely with IFRS and applies to large, publicly accountable or listed entities. For most Singapore small businesses, SFRS for Small Entities applies. It uses the same core principles but with fewer disclosure requirements — significantly reducing the preparation burden for smaller operations.</p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>The simplification is real: SFRS for SE removes around 90 topics that rarely apply to small businesses, such as earnings per share, segment reporting and interim financial reports. What remains is the essential structure: income statement, balance sheet, cash flow, notes and Director's Statement.</p>
+          <p>You self-assess eligibility each year. No approval from ACRA is required — you simply apply the correct standard when preparing your statements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHAT MAKES STATEMENTS SFRS-COMPLIANT (light EBF3FC) ════ -->
+<section class="bg-[#EBF3FC] py-20 border-b border-gray-200">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 space-y-3">
+      <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">WHAT'S REQUIRED</span>
+      <h2 class="text-3xl sm:text-4xl font-sans text-[#000F22] font-extrabold tracking-tight">What makes financial statements SFRS-compliant?</h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm text-left max-w-3xl mx-auto">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">An SFRS-compliant set of financial statements is not just a P&L and balance sheet from your accounting software. It must follow the correct presentation format, include all required disclosures, state the accounting policies applied, and carry a signed Director's Statement confirming the statements give a true and fair view.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {sfrsComponents.map((c) => (
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#DAA035]/10 border border-[#DAA035]/15 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-[#DAA035]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={c.icon}/>
+              </svg>
+            </div>
+            <span class="text-[10px] font-mono text-[#DAA035] font-bold">{c.n}</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-[#000F22]">{c.label}</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">{c.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 3: Xero isn't enough (warm FFFDF2) ════ -->
+<section class="bg-[#FFFDF2] text-[#000F22] py-20 border-b border-amber-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-amber-700 uppercase tracking-widest font-bold block">COMMON MISTAKE</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">Is a Xero or QuickBooks report SFRS-compliant?</h2>
+        <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#000F22]">No. Accounting software produces useful management reports, but a P&L or balance sheet exported from Xero is not SFRS-compliant in the eyes of ACRA and IRAS. The format, disclosures, notes and Director's Statement are missing. These must be added by a qualified accountant who understands the applicable standard.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed text-amber-900 font-sans">This is the most common mistake we see from Singapore small company directors. The numbers may be accurate, but regulators, banks and grant bodies expect the full SFRS presentation, not a software export. We bridge that gap.</p>
+        <a href="/financial-statements-singapore/" class="inline-flex items-center gap-2 text-[#DAA035] hover:underline font-mono text-sm font-bold">
+          See how we prepare your statements &rarr;
+        </a>
+      </div>
+
+      <!-- Visual: Xero export vs proper set -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">What ACRA expects</span>
+            </div>
+            <div class="space-y-3 font-sans">
+              <div class="p-4 bg-red-950/20 rounded-xl border border-red-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-red-400 font-bold uppercase">Xero / QBO export only</span>
+                <ul class="space-y-1 text-[11px] text-gray-400">
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> Not SFRS presentation format</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> No accounting policy notes</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> No SFRS disclosures</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> No Director's Statement</li>
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span> Not accepted by ACRA or banks</li>
+                </ul>
+              </div>
+              <div class="p-4 bg-emerald-950/25 rounded-xl border border-emerald-900/40 space-y-2">
+                <span class="block text-[10px] font-mono text-[#DAA035] font-bold uppercase">AFSB-prepared statement set</span>
+                <ul class="space-y-1 text-[11px] text-gray-300">
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> SFRS / SFRS for SE formatted</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> All required notes and policies</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Director's Statement included</li>
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span> Accepted by ACRA, IRAS, banks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*Built from your clean bookkeeping records</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPLIT 4: SFRS and the audit exemption (dark 061224) ════ -->
+<section class="bg-[#061224] text-[#CBCFD8] py-20 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+      <!-- Visual: exemption test -->
+      <div class="lg:col-span-5 order-2 lg:order-1 h-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+          <div>
+            <div class="border-b border-gray-800 pb-3 mb-6 font-mono text-center">
+              <span class="text-xs text-[#DAA035] uppercase font-bold tracking-wider">Small Company Audit Exemption</span>
+            </div>
+            <p class="text-[11px] text-gray-400 text-center font-mono mb-5">Meet any 2 of 3 for 2 consecutive years</p>
+            <div class="space-y-3 font-sans">
+              {[
+                { criterion: 'Annual revenue', threshold: 'S$10 million or less' },
+                { criterion: 'Total assets', threshold: 'S$10 million or less' },
+                { criterion: 'Employees', threshold: '50 or fewer' },
+              ].map((row) => (
+                <div class="p-3.5 bg-emerald-950/20 rounded-xl border border-emerald-900/35 flex items-center justify-between">
+                  <div>
+                    <span class="block text-xs font-bold text-white">{row.criterion}</span>
+                    <span class="block text-[10px] text-gray-400 mt-0.5">{row.threshold}</span>
+                  </div>
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center justify-center shrink-0">&#10003;</span>
+                </div>
+              ))}
+              <div class="p-3 bg-[#DAA035]/10 border border-[#DAA035]/25 rounded-xl mt-2 text-center">
+                <p class="text-[10px] font-mono text-[#DAA035] font-bold uppercase">Exemption = no audit needed</p>
+                <p class="text-[11px] text-gray-400 mt-0.5">But SFRS statements are still required</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 font-mono text-center pt-4 border-t border-gray-800 mt-4">*ACRA 2026 — self-assessed annually</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center space-y-6">
+        <span class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold block">AUDIT EXEMPTION</span>
+        <h2 class="text-3xl sm:text-4xl font-sans text-[#FEFFFF] font-extrabold tracking-tight">SFRS compliance and the audit exemption: what's the difference?</h2>
+        <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#0A1628] text-[#FEFFFF] shadow-inner">
+          <p class="text-base md:text-lg leading-relaxed font-semibold italic text-[#FEFFFF]">The audit exemption removes the requirement for an external audit, not the requirement to prepare financial statements. Audit-exempt companies still prepare a full SFRS-compliant set of unaudited financial statements every year. The exemption only removes the step where an ACRA-registered public accountant reviews and signs off on those statements.</p>
+        </div>
+        <div class="space-y-4 text-sm sm:text-base leading-relaxed text-[#CBCFD8] font-sans">
+          <p>Most Singapore small businesses qualify for the audit exemption. But qualifying does not eliminate the SFRS filing requirement. You still need a proper set of accounts every year, they just don't need to be audited.</p>
+          <p>We prepare the unaudited statements. An ACRA public accountant audits only if your company is not audit-exempt. Your tax agent files. Three clear roles, no confusion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW WE KEEP YOU SFRS-READY (gradient light) ════ -->
+<section class="py-20 border-b border-gray-200 font-sans" style="background: linear-gradient(to bottom, #F3F7FC, #E9F1FA);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="inline-block py-1.5 px-3.5 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/35 text-[#8A5B00] text-[11px] font-mono uppercase tracking-wider font-extrabold">Our Process</span>
+      <h2 class="text-3xl sm:text-4xl font-sans font-extrabold text-[#000F22] tracking-tight">How we keep your business SFRS-compliant</h2>
+      <p class="text-sm text-gray-700 max-w-xl mx-auto leading-relaxed font-medium">SFRS compliance isn't a year-end event. It starts with clean monthly bookkeeping and ends with properly prepared statements. Here's the full cycle.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      {[
+        { n:'01', title:'Clean monthly books', desc:'We reconcile every account monthly so your records are accurate and current throughout the year — not just at year-end.', color:'amber' },
+        { n:'02', title:'SFRS-structured closing', desc:'At year-end we close your books following the correct SFRS presentation requirements for your company type.', color:'sky' },
+        { n:'03', title:'Full statement set prepared', desc:'We prepare income statement, balance sheet, cash flow, notes and Director\'s Statement in SFRS format.', color:'emerald' },
+        { n:'04', title:'Ready for tax agent', desc:'Your SFRS statements are ready for your licensed tax agent to file corporate tax and GST returns accurately.', color:'purple' },
+      ].map((step) => (
+        <div class={`bg-white p-7 rounded-2xl border-t-4 border-${step.color}-400 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 space-y-3`}>
+          <span class={`text-2xl font-black font-mono text-${step.color}-500`}>{step.n}</span>
+          <h3 class="text-sm font-extrabold text-[#000F22]">{step.title}</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center">
+      <a href="/accounting-services-singapore/" class="inline-flex items-center gap-2 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">
+        See our full accounting service &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ RELATED SERVICES (dark navy) ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-lg font-mono text-[#DAA035] uppercase tracking-widest font-bold mb-6">Related services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {[
+        { title: 'Unaudited Financial Statements', desc: 'Proper SFRS-compliant statements built from your books.', href: '/financial-statements-singapore/' },
+        { title: 'Monthly Bookkeeping', desc: 'Clean records every month — the foundation of SFRS compliance.', href: '/bookkeeping-services-singapore/' },
+        { title: 'Full Accounting Service', desc: 'Bookkeeping, statements, payroll and management reports in one fixed fee.', href: '/accounting-services-singapore/' },
+      ].map((s) => (
+        <a href={s.href} class="bg-[#0A1628] border border-gray-800 hover:border-[#DAA035]/30 rounded-xl p-5 transition-all group">
+          <h3 class="text-sm font-bold text-white mb-1 group-hover:text-[#DAA035] transition-colors">{s.title}</h3>
+          <p class="text-xs text-gray-500 leading-snug">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLOSING CTA ════ -->
+<section class="bg-[#FFFDF2] py-20 text-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <h3 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">
+      Need SFRS-compliant statements prepared?
+    </h3>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700 max-w-xl mx-auto font-medium">
+      We prepare SFRS-compliant unaudited financial statements from your books, ready for ACRA, IRAS, banks and your AGM.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/financial-statements-singapore/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all">
+        Get your statements prepared &rarr;
+      </a>
+      <a href="/contact/" class="inline-block border-2 border-[#000F22] text-amber-950 hover:bg-[#000F22] hover:text-[#DAA035] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all">
+        Book a free consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

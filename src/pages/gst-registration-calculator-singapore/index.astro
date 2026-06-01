@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GSTCalculator from '../../islands/GSTCalculator';
+
+const title = 'GST Registration Calculator Singapore 2026 | Check Your Threshold | AFSB';
+const description = 'Free Singapore GST registration calculator for 2026. Find out if your business must register for GST, how far you are from the S$1 million threshold, and what happens if you miss the deadline.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/#app","name":"Singapore GST Registration Threshold Calculator 2026","url":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/","description":"Free calculator to check whether your Singapore business must register for GST. Covers retrospective and prospective tests against the S$1 million threshold.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},"author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"}},{"@type":"Article","@id":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/#article","headline":"GST Registration Calculator Singapore 2026 — Check Your Threshold","description":"Free Singapore GST registration calculator for 2026. Find out if your business must register for GST, how far you are from the S$1 million threshold, and what happens if you miss the deadline.","url":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/","datePublished":"2026-06-01","dateModified":"2026-06-01","inLanguage":"en-SG","image":{"@type":"ImageObject","url":"https://accountantforsmallbusiness.com/hero-bg.png","width":1200,"height":630},"author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},"publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},"about":["GST registration Singapore","GST threshold","Goods and Services Tax","IRAS registration"],"keywords":["gst registration singapore","gst threshold singapore","when to register gst singapore","gst registration requirements singapore","voluntary gst registration singapore","compulsory gst registration singapore"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the GST registration threshold in Singapore?","acceptedAnswer":{"@type":"Answer","text":"The GST registration threshold in Singapore is S$1 million in taxable turnover over a 12-month period. Once your taxable turnover exceeds this threshold, you are required to register for GST within 30 days."}},{"@type":"Question","name":"What is the difference between the retrospective and prospective GST tests?","acceptedAnswer":{"@type":"Answer","text":"The retrospective test looks at whether your taxable turnover in the past 12 calendar months has exceeded S$1 million. The prospective test applies when you have reasonable grounds to expect your taxable turnover in the next 12 months will exceed S$1 million. Either test can trigger mandatory registration."}},{"@type":"Question","name":"What happens if you miss the GST registration deadline?","acceptedAnswer":{"@type":"Answer","text":"IRAS can backdate your GST registration and make you liable for GST you should have charged from the required date, even if you did not collect it. Financial penalties also apply."}},{"@type":"Question","name":"Can you register for GST voluntarily in Singapore?","acceptedAnswer":{"@type":"Answer","text":"Yes. Businesses below the S$1 million threshold can apply to IRAS for voluntary GST registration. This makes sense if you have mainly GST-registered business customers and significant input tax to claim."}},{"@type":"Question","name":"What is the current GST rate in Singapore?","acceptedAnswer":{"@type":"Answer","text":"The GST rate in Singapore is 9% from 1 January 2024."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"GST Registration Calculator Singapore 2026","item":"https://accountantforsmallbusiness.com/gst-registration-calculator-singapore/"}]}]}
+<\/script>`;
+
+const faqs = [
+  { q: 'What is the GST registration threshold in Singapore?', a: 'The threshold is S$1 million in taxable turnover over any rolling 12-month period. Once you exceed it, you must register within 30 days. There is no exemption from registration if you cross the threshold.' },
+  { q: 'What counts as taxable turnover?', a: 'Taxable turnover includes all standard-rated and zero-rated supplies made in Singapore. It excludes exempt supplies (financial services, sale of residential property, import/export of investment precious metals), out-of-scope supplies, and the sale of capital assets not in the course of business.' },
+  { q: 'What is the difference between the retrospective and prospective tests?', a: 'The retrospective test asks: did your taxable turnover in the past 12 calendar months exceed S$1M? If yes, you must register within 30 days of the end of that month. The prospective test asks: do you have reasonable grounds to believe your taxable turnover in the next 12 months will exceed S$1M? If yes, you must register before that 12-month period starts.' },
+  { q: 'What happens if you miss the GST registration deadline?', a: 'IRAS can backdate your effective registration date. You become liable for GST from when you should have registered, even if you did not collect it from customers. Financial penalties apply for late registration. In serious cases, prosecution under the GST Act is possible.' },
+  { q: 'Can you register for GST voluntarily?', a: 'Yes. Businesses below S$1M turnover can apply to IRAS for voluntary registration. Conditions apply — you must be making or intending to make taxable supplies, and you need to comply with the same filing and record-keeping requirements as mandatory registrants.' },
+  { q: 'What is the GST rate in Singapore in 2026?', a: 'The GST rate is 9%, raised from 8% on 1 January 2024 as part of the two-step increase from 7% (pre-2023).' },
+  { q: 'Can you apply for GST exemption if you mainly make zero-rated supplies?', a: 'Yes. If your zero-rated supplies exceed your standard-rated supplies and you would be in a persistent GST refund position, you can apply to IRAS for exemption from registration under Section 21(3)(b) of the GST Act. This is discretionary and requires IRAS approval.' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">GST Registration Calculator Singapore 2026</span>
+    </nav>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="inline-block py-1 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">Free Tool</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-emerald-500/15 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-widest">IRAS 2026 Rules</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-sky-500/15 border border-sky-500/20 text-sky-400 text-xs font-mono uppercase tracking-widest">S$1M Threshold</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      GST Registration Calculator Singapore 2026
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-2xl mx-auto leading-relaxed">
+      Enter your revenue and find out instantly whether your business must register for GST, which test applies, and exactly what you need to do next. Covers the retrospective and prospective tests against the S$1 million threshold.
+    </p>
+  </div>
+</section>
+
+<!-- ════ CALCULATOR + REFERENCE (2-col desktop) ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Calculator -->
+      <div class="lg:col-span-7">
+        <GSTCalculator client:load />
+      </div>
+
+      <!-- Quick reference sidebar -->
+      <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-24">
+
+        <!-- Key numbers -->
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl overflow-hidden">
+          <div class="px-5 py-3 border-b border-gray-800">
+            <span class="text-xs font-mono text-[#DAA035] uppercase tracking-wider font-bold">GST Quick Reference — 2026</span>
+          </div>
+          <div class="p-5 space-y-3">
+            {[
+              { label: 'Mandatory threshold', value: 'S$1,000,000', note: 'Taxable turnover in 12 months' },
+              { label: 'GST rate', value: '9%', note: 'From 1 January 2024' },
+              { label: 'Registration deadline', value: '30 days', note: 'After becoming liable' },
+              { label: 'Retrospective test', value: 'Past 12 months', note: 'End of each calendar month' },
+              { label: 'Prospective test', value: 'Next 12 months', note: 'When exceeded foreseen' },
+              { label: 'Filing frequency', value: 'Quarterly', note: 'GST F5 return to IRAS' },
+            ].map((item) => (
+              <div class="flex items-start justify-between gap-3 py-2 border-b border-gray-800/50 last:border-0">
+                <div>
+                  <p class="text-[11px] text-gray-400 font-medium">{item.label}</p>
+                  <p class="text-[10px] text-gray-600 italic">{item.note}</p>
+                </div>
+                <span class="text-xs font-mono font-bold text-[#DAA035] shrink-0 text-right">{item.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- What counts toward threshold -->
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-5 space-y-3">
+          <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-wider font-bold border-b border-gray-800 pb-2">What counts toward S$1M?</h3>
+          <div class="space-y-2">
+            <div>
+              <p class="text-[10px] font-mono text-emerald-400 font-bold uppercase mb-1">Counts (taxable supplies)</p>
+              <ul class="space-y-1 text-[11px] text-gray-400">
+                {['Standard-rated sales (9%)', 'Zero-rated exports and services', 'Standard-rated services'].map(i => (
+                  <li class="flex gap-1.5"><span class="text-emerald-400 shrink-0">&#10003;</span>{i}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="border-t border-gray-800 pt-2">
+              <p class="text-[10px] font-mono text-red-400 font-bold uppercase mb-1">Does NOT count (excluded)</p>
+              <ul class="space-y-1 text-[11px] text-gray-400">
+                {['Exempt supplies (financial, residential)', 'Out-of-scope supplies', 'Capital asset sales (not business)', 'Grant income'].map(i => (
+                  <li class="flex gap-1.5"><span class="text-red-400 shrink-0">&#10007;</span>{i}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payroll CTA -->
+        <div class="bg-[#DAA035]/10 border border-[#DAA035]/25 rounded-2xl p-5 space-y-3">
+          <p class="text-xs font-bold text-[#DAA035]">Need help with GST registration?</p>
+          <p class="text-xs text-gray-400 leading-relaxed">We keep your books GST-ready and work with your licensed tax agent so they can file accurately. One fixed monthly fee covers it all.</p>
+          <a href="/contact/" class="block text-center bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold py-2.5 px-4 rounded-xl text-xs transition-all">
+            Book a free consultation &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ARTICLE CONTENT ════ -->
+<article class="bg-[#F8FAFC]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14">
+
+    <!-- Section 1: What is the threshold? -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        What is the GST registration threshold in Singapore?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          The GST registration threshold in Singapore is S$1 million in taxable turnover over any rolling 12-month period. Once your taxable turnover crosses this amount, you are legally required to register for GST under the Goods and Services Tax Act. You have 30 days from the end of the month in which you crossed the threshold to apply.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>Taxable turnover includes all standard-rated and zero-rated supplies made in Singapore. It does not include exempt supplies such as financial services, the sale of residential property, or import and export of investment precious metals. If your business makes mainly exempt supplies, a smaller portion of your revenue counts toward the threshold.</p>
+        <p>The 9% GST rate has been in place since 1 January 2024, completing the two-step increase from 7% that IRAS announced in advance. It applies to all standard-rated supplies charged from the effective date of GST registration.</p>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="mt-6 overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead><tr class="bg-[#000F22] text-[#FEFFFF]">
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Supply type</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">GST charged?</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Counts toward threshold?</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Example</th>
+          </tr></thead>
+          <tbody class="divide-y divide-gray-100 bg-white">
+            {[
+              { type: 'Standard-rated', gst: 'Yes (9%)', counts: '✅ Yes', example: 'F&B, retail, most services' },
+              { type: 'Zero-rated', gst: 'No (0%)', counts: '✅ Yes', example: 'Exports, international services' },
+              { type: 'Exempt', gst: 'No', counts: '❌ No', example: 'Financial services, residential rental' },
+              { type: 'Out-of-scope', gst: 'No', counts: '❌ No', example: 'Salary, dividends, grants' },
+            ].map((row) => (
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-semibold text-[#000F22]">{row.type}</td>
+                <td class="p-4 text-gray-600">{row.gst}</td>
+                <td class="p-4">{row.counts}</td>
+                <td class="p-4 text-gray-500 text-xs">{row.example}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Retrospective test -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        How does the retrospective GST registration test work?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          The retrospective test checks whether your taxable turnover in the past 12 calendar months has exceeded S$1 million. IRAS expects you to review this at the end of every calendar month. If your rolling 12-month taxable turnover crosses the threshold at the end of any month, you must register for GST within 30 days of that month-end.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>The 30-day clock starts ticking from the last day of the month in which your taxable turnover crossed S$1 million. If your turnover crossed the threshold in May, you must apply by 30 June. Your effective GST registration date then becomes 1 July.</p>
+        <p>This means you could be liable to charge GST to customers before you have actually received your GST registration number. IRAS expects you to monitor your turnover proactively, not wait for a reminder.</p>
+      </div>
+
+      <!-- Example box -->
+      <div class="mt-5 bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+        <p class="text-[10px] font-mono text-[#DAA035] uppercase tracking-wider font-bold mb-3">Example — retrospective test</p>
+        <div class="space-y-1.5 text-xs text-[#CBCFD8] font-mono">
+          <p>Jan–Dec 2025: Cumulative taxable turnover reaches S$1,050,000 by 31 December</p>
+          <p class="text-[#DAA035]">→ Registration deadline: 30 January 2026</p>
+          <p>→ Effective GST date: 1 February 2026</p>
+          <p>→ Start charging 9% GST from 1 February</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Prospective test -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        How does the prospective GST registration test work?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          The prospective test applies when you have reasonable grounds to believe your taxable turnover in the next 12 months will exceed S$1 million, even if your past 12-month turnover has not yet crossed the threshold. You must register before the start of the 12-month period in which you expect to exceed the threshold.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>Typical triggers include signing a large contract that will take you above S$1 million, or receiving a confirmed order that pushes your expected annual revenue past the threshold. "Reasonable grounds" means documentary evidence — a signed contract, purchase order, or letter of intent.</p>
+        <p>The prospective test is forward-looking, which means your registration obligation arises before you have actually earned the revenue. If you sign a contract in June that will generate S$1.2 million over the next 12 months, you must register before July begins.</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Miss the deadline -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        What happens if you miss the GST registration deadline?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          If you miss the registration deadline, IRAS will backdate your effective GST registration date to when you became liable. You become legally responsible for the GST you should have charged from that date, even if you did not collect it from customers. That GST comes out of your own revenue.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>On top of backdated GST liability, IRAS can impose a fine of up to S$10,000 for late registration under the GST Act. In cases where IRAS believes the failure was deliberate, the penalty can include imprisonment of up to 3 years.</p>
+        <p>Late registration also creates an administrative burden: you have to re-issue invoices to customers to include GST, and some customers may refuse to pay the GST retrospectively. The practical cost of missing the deadline often exceeds the hassle of registering on time.</p>
+      </div>
+
+      <!-- Warning box -->
+      <div class="mt-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl p-5">
+        <p class="text-xs font-mono text-amber-700 font-bold uppercase tracking-wider mb-1">Important</p>
+        <p class="text-sm text-amber-800">If you think you may have missed a GST registration deadline, speak to a qualified accountant immediately. Voluntary disclosure to IRAS before they discover the missed registration typically results in reduced penalties. Do not wait.</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Voluntary registration -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        Should your business register for GST voluntarily?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          Voluntary GST registration makes sense when you have significant input tax to claim and your customers are mostly GST-registered businesses who can recover the GST you charge them. It makes less sense when most of your customers are individual consumers who cannot recover GST, because you are adding a price increase they bear directly.
+        </p>
+      </div>
+
+      <!-- Pros/Cons -->
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+          <h3 class="text-sm font-extrabold text-[#000F22] mb-3 flex items-center gap-2">
+            <span class="text-emerald-500 text-base">+</span> Reasons to register voluntarily
+          </h3>
+          <ul class="space-y-2 text-xs text-gray-700">
+            {[
+              'Claim input tax on business purchases and expenses',
+              'Looks more established to B2B customers',
+              'Avoid a sudden price increase when you hit the threshold',
+              'Required if applying for certain government grants',
+              'Better cash flow management with quarterly refunds',
+            ].map(i => <li class="flex gap-2"><span class="text-emerald-500 shrink-0">&#10003;</span>{i}</li>)}
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+          <h3 class="text-sm font-extrabold text-[#000F22] mb-3 flex items-center gap-2">
+            <span class="text-red-500 text-base">-</span> Reasons to stay below threshold
+          </h3>
+          <ul class="space-y-2 text-xs text-gray-700">
+            {[
+              'Adds 9% to prices for end consumers who cannot recover it',
+              'Quarterly GST F5 returns add compliance burden',
+              'Requires proper record-keeping and accounting software',
+              'Once registered, must comply or face penalties',
+              'Difficult to deregister if business slows down',
+            ].map(i => <li class="flex gap-2"><span class="text-red-500 shrink-0">&#10007;</span>{i}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: What changes -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        What changes when your business becomes GST-registered?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          Once GST-registered, you must charge 9% GST on all taxable supplies, issue tax invoices that comply with IRAS requirements, file a quarterly GST F5 return, and remit the net GST (output tax minus input tax) to IRAS. You can also claim back input GST on purchases used in your business.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>Your prices effectively increase by 9% for customers who cannot recover GST. For B2B customers who are also GST-registered, the impact is neutral — they claim back the GST you charged. For individual consumers and exempt businesses, your prices are higher by 9% unless you absorb the GST yourself.</p>
+        <p>Record-keeping requirements become more rigorous. You need to retain tax invoices, purchase records, and accounting records for at least 5 years. Using cloud accounting software like Xero or QuickBooks Online makes this significantly easier to manage.</p>
+      </div>
+
+      <!-- Obligations checklist -->
+      <div class="mt-5 bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+        <p class="text-[10px] font-mono text-[#DAA035] uppercase tracking-wider font-bold mb-3">GST-registered business obligations</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {[
+            'Charge 9% GST on standard-rated supplies',
+            'Issue IRAS-compliant tax invoices',
+            'File quarterly GST F5 return',
+            'Remit output tax minus input tax to IRAS',
+            'Claim input GST on business purchases',
+            'Keep records for at least 5 years',
+            'Display GST registration number on invoices',
+            'Inform IRAS of any changes within 30 days',
+          ].map((item) => (
+            <div class="flex items-start gap-2 text-xs text-[#CBCFD8]">
+              <span class="text-[#DAA035] shrink-0">&#10003;</span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: How to register -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-4">
+        How do you register for GST in Singapore?
+      </h2>
+      <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm mb-4">
+        <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">
+          GST registration is done through the IRAS myTax Portal at myTax.iras.gov.sg using your Corppass or Singpass credentials. Mandatory registration must be completed within 30 days of becoming liable. IRAS typically confirms registration within 5 working days for straightforward applications.
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { n: '01', title: 'Log in to myTax Portal', desc: 'Go to myTax.iras.gov.sg and log in with your Corppass (company) or Singpass (individual/sole prop) credentials.' },
+          { n: '02', title: 'Submit GST registration form', desc: 'Complete the GST F1 (mandatory) or GST F2 (voluntary) application. You\'ll need your financial statements or revenue records.' },
+          { n: '03', title: 'Receive confirmation and start charging', desc: 'IRAS confirms your registration and effective date, usually within 5 working days. Start charging 9% GST from the effective date.' },
+        ].map((step) => (
+          <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-2">
+            <span class="text-2xl font-black text-[#DAA035] font-mono">{step.n}</span>
+            <h3 class="text-sm font-extrabold text-[#000F22]">{step.title}</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-sm text-gray-700 leading-relaxed mt-5">
+        GST registration is separate from corporate income tax filing. Your tax agent handles corporate tax; you (or your accountant) handles the GST registration and ongoing quarterly returns. We keep your books GST-ready so the quarterly F5 filing is straightforward for your tax agent.
+      </p>
+    </section>
+
+  </div>
+</article>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold">GST Registration FAQs</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ RELATED ════ -->
+<section class="bg-[#000F22] py-12 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold mb-5">Related tools & services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {[
+        { title: 'CPF Calculator Singapore 2026', desc: 'Calculate employer CPF, employee CPF and SDL instantly.', href: '/cpf-calculator-singapore/' },
+        { title: 'Bookkeeping Cost Estimator', desc: 'Estimate your monthly bookkeeping fee based on transaction volume.', href: '/bookkeeping-cost-calculator-singapore/' },
+        { title: 'Accounting Services Singapore', desc: 'We keep your books GST-ready every month. Fixed monthly fee.', href: '/accounting-services-singapore/' },
+      ].map((s) => (
+        <a href={s.href} class="bg-[#0A1628] border border-gray-800 hover:border-[#DAA035]/30 rounded-xl p-5 transition-all group">
+          <h4 class="text-sm font-bold text-white mb-1 group-hover:text-[#DAA035] transition-colors">{s.title}</h4>
+          <p class="text-xs text-gray-500 leading-snug">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="bg-[#FFFDF2] py-16 text-center">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+    <h3 class="text-2xl sm:text-3xl font-sans text-amber-950 font-extrabold tracking-tight">
+      Need to get your books GST-ready?
+    </h3>
+    <p class="text-sm text-gray-700">We keep your bookkeeping current and GST-compliant every month, so when the time comes to register, everything is in order. Fixed monthly fee.</p>
+    <a href="/contact/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all">
+      Book a free consultation &rarr;
+    </a>
+  </div>
+</section>
+
+</BaseLayout>

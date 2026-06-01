@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlanCalculator from '../islands/PlanCalculator';
 import TestimonialsCarousel from '../islands/TestimonialsCarousel';
+import ContactForm from '../islands/ContactForm';
 
 const title = 'Accounting Services Singapore for Small Business | AFSB';
 const description = 'Affordable accounting services in Singapore for small businesses. Fixed monthly fees, Xero, GST, payroll and tax handled remotely by an expert accountant.';
@@ -14,39 +15,58 @@ const schemaJsonLd = `<script type="application/ld+json">
 <BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
 
 <!-- ════════════════════════════════════════ HERO ════ -->
-<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-24 pb-20 border-b border-gray-900 text-center">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(220,163,60,0.04)_0%,transparent_65%)] pointer-events-none"></div>
 
-    <span class="inline-block py-1.5 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest mb-6">
-      Serving Singapore SMEs Remotely
-    </span>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-center">
 
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-6 leading-tight max-w-3xl mx-auto">
-      Accounting Services in Singapore for Small Businesses
-    </h1>
+      <!-- ── LEFT: text ── -->
+      <div class="flex flex-col justify-center space-y-7">
 
-    <p class="text-base sm:text-lg md:text-xl text-[#CBCFD8] mb-10 max-w-2xl mx-auto leading-relaxed">
-      Fixed monthly fees. No surprises. Your books, payroll and financial statements handled remotely by a Financial Controller with 15+ years of experience, so you can get back to running your business.
-    </p>
+        <span class="inline-block w-fit py-1.5 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">
+          Serving Singapore SMEs Remotely
+        </span>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-      <a href="/contact/" class="w-full sm:w-auto bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-8 py-3.5 rounded-lg text-base transition-all transform hover:scale-[1.01] shadow-lg shadow-[#DCA33C]/10 text-center">
-        Book a free consultation
-      </a>
-      <a href="/pricing/" class="w-full sm:w-auto bg-transparent border border-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-[#DAA035] font-semibold px-8 py-3.5 rounded-lg text-base transition-all text-center">
-        Get a fixed quote
-      </a>
-    </div>
+        <h1 class="text-4xl sm:text-5xl xl:text-6xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+          Accounting Services in Singapore for Small Businesses
+        </h1>
 
-    <!-- Trust strip -->
-    <div class="border-t border-gray-800/80 pt-8 mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-[#CBCFD8] font-mono tracking-wider">
-      {['Xero & QuickBooks', 'SFRS-ready books', "15+ years' experience", 'Serving clients remotely'].map((item) => (
-        <div class="flex items-center justify-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#DAA035]"></span>
-          <span>{item}</span>
+        <p class="text-base sm:text-lg text-[#CBCFD8] leading-relaxed max-w-xl">
+          Fixed monthly fees. No surprises. Your books, payroll and financial statements handled remotely by a Financial Controller with 15+ years of experience, so you can get back to running your business.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/contact/" class="w-full sm:w-auto bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-7 py-3.5 rounded-lg text-sm transition-all hover:scale-[1.01] shadow-lg shadow-[#DCA33C]/10 text-center">
+            Book a free consultation
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-transparent border border-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] text-[#DAA035] font-semibold px-7 py-3.5 rounded-lg text-sm transition-all text-center">
+            See pricing
+          </a>
         </div>
-      ))}
+
+        <!-- Trust strip -->
+        <div class="border-t border-gray-800/60 pt-6 grid grid-cols-2 gap-3 text-xs text-[#CBCFD8] font-mono tracking-wider">
+          {['Xero & QuickBooks', 'SFRS-ready books', "15+ years' experience", 'Serving clients remotely'].map((item) => (
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#DAA035] shrink-0"></span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- ── RIGHT: multi-step form ── -->
+      <div class="w-full">
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+          <div class="mb-6 text-center">
+            <h2 class="text-lg font-serif text-[#FEFFFF] font-bold">Get your fixed quote today</h2>
+            <p class="text-xs text-[#CBCFD8] mt-1">Free. No obligation. Response within 1 business day.</p>
+          </div>
+          <ContactForm client:load />
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

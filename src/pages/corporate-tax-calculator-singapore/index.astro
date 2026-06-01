@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CorpTaxCalculator from '../../islands/CorpTaxCalculator';
+
+const title = 'Singapore Corporate Income Tax Calculator 2026 | AFSB';
+const description = 'Calculate Singapore corporate tax for YA2026. Includes Start-Up Tax Exemption (SUTE) and Partial Tax Exemption (PTE) with tier breakdown and effective rate. Free.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schemaJsonLd={`<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication",
+   "@id":"https://accountantforsmallbusiness.com/corporate-tax-calculator-singapore/#app",
+   "name":"Singapore Corporate Income Tax Calculator 2026",
+   "url":"https://accountantforsmallbusiness.com/corporate-tax-calculator-singapore/",
+   "description":"Free calculator for Singapore YA2026 corporate tax. Applies Start-Up Tax Exemption (SUTE) or Partial Tax Exemption (PTE) automatically and shows tier breakdown, effective rate and monthly cash provision.",
+   "applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,
+   "offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},
+   "featureList":["SUTE and PTE exemption schemes","Three-tier breakdown","Effective tax rate","Monthly provision","SUTE vs PTE comparison","Build-up from revenue mode"]
+  },
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the corporate tax rate in Singapore for 2026?",
+     "acceptedAnswer":{"@type":"Answer","text":"The Singapore corporate income tax rate for YA2026 is 17% on chargeable income. However, most companies pay far less than 17% because of the Start-Up Tax Exemption (SUTE) for the first three years or the Partial Tax Exemption (PTE) from YA4 onwards. A new startup with S$300,000 chargeable income would pay approximately S$29,750, an effective rate of about 9.9%."}},
+    {"@type":"Question","name":"What is the Start-Up Tax Exemption (SUTE) in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"The SUTE exempts 75% of the first S$100,000 of chargeable income and 50% of the next S$100,000, for the first three Years of Assessment. This means only S$75,000 of the first S$200,000 is taxable. To qualify, the company must be incorporated in Singapore, tax-resident in Singapore, and have no more than 20 shareholders where all are individuals or at least one individual holds at least 10% of shares."}},
+    {"@type":"Question","name":"What is the Partial Tax Exemption (PTE) in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"From YA4 onwards, companies qualify for the Partial Tax Exemption. It exempts 75% of the first S$10,000 of chargeable income and 50% of the next S$190,000. The maximum exemption is S$102,500 per YA. Investment holding companies and companies whose income mainly comes from investments are excluded from both PTE and SUTE."}},
+    {"@type":"Question","name":"What is chargeable income for Singapore corporate tax?",
+     "acceptedAnswer":{"@type":"Answer","text":"Chargeable income is the company's net profit after deducting all allowable business expenses from revenue. Allowable deductions include staff costs (including CPF), rent, utilities, professional fees, depreciation via capital allowances, and other revenue expenses wholly and exclusively incurred for the business. Personal expenses, fines and capital expenditure are not deductible."}},
+    {"@type":"Question","name":"When must Singapore corporate tax be filed and paid?",
+     "acceptedAnswer":{"@type":"Answer","text":"Singapore companies must file their Estimated Chargeable Income (ECI) within three months after the financial year end. The Form C-S or Form C tax return is due by 30 November of the YA. Corporate tax is payable in instalments via GIRO or as a lump sum upon assessment. Late filing attracts penalties from IRAS."}},
+    {"@type":"Question","name":"Does Singapore have a corporate tax rebate for 2026?",
+     "acceptedAnswer":{"@type":"Answer","text":"IRAS announces any CIT rebate for each Year of Assessment separately. For YA2024, a 50% rebate capped at S$40,000 was granted. Whether a similar rebate applies for YA2026 should be confirmed on the IRAS website at the time of filing, as rebates are not guaranteed each year."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Free Tools","item":"https://accountantforsmallbusiness.com/services/"},
+    {"@type":"ListItem","position":3,"name":"Corporate Tax Calculator","item":"https://accountantforsmallbusiness.com/corporate-tax-calculator-singapore/"}
+  ]}
+]}
+<\/script>`}
+>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-[#000F22] border-b border-gray-900 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex items-center gap-2 text-xs text-gray-500 font-mono">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/services/" class="hover:text-[#DAA035] transition-colors">Free Tools</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Corporate Tax Calculator</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-[#000F22] border-b border-gray-900 py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 mb-5">
+          <span class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest border border-[#DAA035]/30 bg-[#DAA035]/5 px-3 py-1 rounded-full">
+            Free Tool · YA2026
+          </span>
+          <span class="text-[10px] font-mono text-gray-600">17% headline rate · SUTE &amp; PTE applied</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-5 leading-tight">
+          Singapore Corporate<br/>
+          <span class="text-[#DAA035]">Income Tax Calculator</span>
+        </h1>
+        <p class="text-base text-[#CBCFD8] leading-relaxed mb-6 max-w-lg">
+          Enter your chargeable income — or build up from revenue — and see exactly how much corporate tax your Singapore company owes for YA2026, after all exemptions.
+        </p>
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-gray-500">
+          {['17% corporate rate', 'SUTE first 3 YAs', 'PTE from YA4', 'Tier breakdown', 'Effective rate', 'Monthly provision'].map(tag => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#DAA035]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator + Sidebar -->
+  <section class="bg-[#F8FAFC] py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+        <div class="lg:col-span-2">
+          <CorpTaxCalculator client:load />
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-5 lg:sticky lg:top-24">
+
+          <!-- Rate card -->
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">YA2026 Tax Structure</p>
+            <div class="space-y-4">
+              <div>
+                <p class="text-[10px] text-gray-600 font-mono uppercase tracking-wider mb-2">Headline Rate</p>
+                <p class="text-3xl font-black text-[#DAA035]">17%</p>
+                <p class="text-[11px] text-gray-500 mt-0.5">On chargeable income</p>
+              </div>
+              <div class="border-t border-gray-800 pt-3">
+                <p class="text-[10px] text-gray-600 font-mono uppercase tracking-wider mb-2">SUTE — First 3 YAs</p>
+                <div class="space-y-1 text-xs text-[#CBCFD8]">
+                  <div class="flex justify-between"><span>First S$100k</span><span class="text-emerald-400 font-bold">75% exempt</span></div>
+                  <div class="flex justify-between"><span>Next S$100k</span><span class="text-emerald-400 font-bold">50% exempt</span></div>
+                  <div class="flex justify-between"><span>Above S$200k</span><span class="text-gray-500">0% exempt</span></div>
+                </div>
+              </div>
+              <div class="border-t border-gray-800 pt-3">
+                <p class="text-[10px] text-gray-600 font-mono uppercase tracking-wider mb-2">PTE — YA 4+</p>
+                <div class="space-y-1 text-xs text-[#CBCFD8]">
+                  <div class="flex justify-between"><span>First S$10k</span><span class="text-emerald-400 font-bold">75% exempt</span></div>
+                  <div class="flex justify-between"><span>Next S$190k</span><span class="text-emerald-400 font-bold">50% exempt</span></div>
+                  <div class="flex justify-between"><span>Above S$200k</span><span class="text-gray-500">0% exempt</span></div>
+                </div>
+              </div>
+              <div class="border-t border-gray-800 pt-3">
+                <p class="text-[10px] text-gray-500 font-mono">
+                  Max SUTE saving: <span class="text-white">S$17,000/YA</span><br/>
+                  Max PTE saving: <span class="text-white">S$17,425/YA</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IRAS disclaimer -->
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-amber-500/20">
+            <p class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-2">Important Note</p>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Corporate tax is filed and paid to IRAS by your tax agent or filing agent — not your bookkeeper. We prepare the accurate financial statements your tax agent needs. Always verify any rebates announced by IRAS for the current YA before filing.
+            </p>
+          </div>
+
+          <!-- Related tools -->
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Related Calculators</p>
+            <ul class="space-y-2">
+              {[
+                { label: 'Employee Cost Calculator', href: '/employee-cost-calculator-singapore/' },
+                { label: 'CPF Calculator 2026', href: '/cpf-calculator-singapore/' },
+                { label: 'GST Registration Threshold', href: '/gst-registration-calculator-singapore/' },
+                { label: 'Bookkeeping Cost Estimator', href: '/bookkeeping-cost-calculator-singapore/' },
+              ].map(l => (
+                <li>
+                  <a href={l.href} class="flex items-center gap-2 text-xs text-[#CBCFD8] hover:text-[#DAA035] transition-colors group">
+                    <svg class="w-3 h-3 text-gray-700 group-hover:text-[#DAA035] transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-white py-14 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 text-gray-700">
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          What is the Singapore corporate tax rate for 2026?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            The Singapore corporate income tax rate for YA2026 is 17%. However, most Singapore-incorporated companies pay a significantly lower effective rate because of the Start-Up Tax Exemption (first 3 YAs) or the Partial Tax Exemption (YA4 onwards). A profitable startup earning S$300,000 effectively pays around 9.9%.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          Singapore's 17% headline rate is one of the lowest in Asia-Pacific. Combined with the SUTE and PTE schemes, effective tax rates for small and medium companies are substantially lower — making Singapore one of the most tax-efficient jurisdictions for incorporating a business.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          What is the difference between SUTE and PTE?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            SUTE is for new companies in their first three Years of Assessment — it exempts 75% of the first S$100,000 and 50% of the next S$100,000. PTE applies from YA4 onwards to all qualifying companies — it exempts 75% of the first S$10,000 and 50% of the next S$190,000. SUTE gives larger savings at lower income levels; at higher income levels, the difference narrows.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mt-4">
+          <table class="w-full text-sm text-left border-collapse">
+            <thead>
+              <tr class="bg-[#000F22] text-[#FEFFFF]">
+                {['', 'SUTE (YA 1–3)', 'PTE (YA 4+)'].map(h => (
+                  <th class="p-3 font-mono text-[11px] uppercase tracking-wider text-[#DAA035]">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              {[
+                ['First tier', '75% off S$100k', '75% off S$10k'],
+                ['Second tier', '50% off next S$100k', '50% off next S$190k'],
+                ['Max exemption', 'S$125,000', 'S$102,500'],
+                ['Max tax saving', 'S$21,250', 'S$17,425'],
+                ['Who qualifies', 'New SG-incorporated companies, ≤20 individual shareholders', 'All qualifying resident companies'],
+                ['Investment holding cos.', 'Not eligible', 'Not eligible'],
+              ].map(([label, sute, pte]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-[#000F22] text-xs">{label}</td>
+                  <td class="p-3 text-gray-600 text-xs">{sute}</td>
+                  <td class="p-3 text-gray-600 text-xs">{pte}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          What counts as chargeable income in Singapore?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            Chargeable income is your net profit after deducting all allowable business expenses from revenue. Common allowable deductions include staff costs and CPF, rent, professional fees, capital allowances on equipment, and trade debts written off. Non-deductible items include private expenses, fines, capital expenditure, and expenses not wholly for business.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          Accurate financial statements are the foundation of a correct tax filing. If your bookkeeping is incomplete or expenses are miscategorised, your chargeable income will be wrong — either overstating tax owed (you lose cash) or understating it (you risk an IRAS audit). This is why clean, monthly bookkeeping directly reduces your tax risk.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          Who files and pays corporate tax in Singapore?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            Corporate income tax is filed with IRAS by a licensed tax agent or filing agent — not your bookkeeper or accountant. Your accountant's role is to prepare accurate financial statements and management accounts so your tax agent can compute the correct chargeable income and file on time.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          The ECI (Estimated Chargeable Income) must be filed within 3 months of your financial year end. The full Form C-S (for companies with revenue under S$5M) or Form C is due by 30 November. Your bookkeeper provides the numbers; your tax agent does the filing. Keep the two roles clear.
+        </p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="space-y-4 border-t border-gray-200 pt-10">
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-6">Frequently asked questions</h2>
+        {[
+          { q: 'Can a startup claim SUTE if it has a corporate shareholder?', a: 'No. SUTE requires that all shareholders are individuals, or at least one individual shareholder holds at least 10% of shares, during the first three YAs. If a corporate entity owns 100% of shares, SUTE does not apply. However, PTE (partial exemption) still applies from the first YA in that case.' },
+          { q: 'What happens if my company makes a loss?', a: 'If your chargeable income is zero or negative, no corporate tax is payable. Unutilised capital allowances and trade losses can be carried forward indefinitely to offset future taxable income, subject to the same business ownership condition. They can also be carried back one YA under the loss carry-back relief, up to S$100,000.' },
+          { q: 'Is dividend income taxable in Singapore?', a: 'Singapore operates a one-tier tax system. Once corporate tax has been paid on a company\'s profits, dividends distributed to shareholders are exempt from further tax. Shareholders — whether individuals or companies — do not pay tax on dividends received from Singapore-resident companies.' },
+          { q: 'Do I need audited accounts to file corporate tax?', a: 'Companies that qualify for audit exemption (revenue under S$10M, assets under S$10M, fewer than 50 employees — any 2 of 3) do not need statutory audits. Unaudited financial statements prepared to SFRS standards are sufficient for tax filing purposes, provided they are accurate and complete.' },
+        ].map(faq => (
+          <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold text-[#000F22] mb-2">{faq.q}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#000F22] border-t border-gray-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs font-mono text-[#DAA035] uppercase tracking-widest mb-4">Get your financials ready to file</p>
+      <h2 class="text-2xl sm:text-3xl font-serif text-[#FEFFFF] font-bold mb-5">
+        Accurate books mean your tax agent can file correctly and on time
+      </h2>
+      <p class="text-sm text-[#CBCFD8] leading-relaxed mb-8 max-w-xl mx-auto">
+        We handle bookkeeping, SFRS financial statements and management reporting every month — so your numbers are always ready when your tax agent needs them.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/financial-statements-singapore/" class="inline-flex items-center gap-2 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold px-7 py-3.5 rounded-xl text-sm transition-all">
+          Financial statements service
+        </a>
+        <a href="/contact/" class="inline-flex items-center gap-2 border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">
+          Get a free quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

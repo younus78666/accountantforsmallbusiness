@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreakevenCalculator from '../../islands/BreakevenCalculator';
+
+const title = 'Break-Even Calculator Singapore 2026 | AFSB';
+const description = 'Calculate your Singapore business break-even point in units and revenue. Enter fixed costs, selling price and variable costs for an instant result with formula breakdown.';
+---
+
+<BaseLayout title={title} description={description} schemaJsonLd={`<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/break-even-calculator-singapore/#app",
+   "name":"Singapore Break-Even Calculator 2026",
+   "url":"https://accountantforsmallbusiness.com/break-even-calculator-singapore/",
+   "description":"Free break-even calculator for Singapore businesses. Enter your fixed costs, variable cost per unit and selling price to find break-even units, revenue and contribution margin.",
+   "applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,
+   "offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},
+   "featureList":["Break-even units and revenue","Contribution margin and CM ratio","Current position vs break-even","Target profit calculator","Formula breakdown","Progress bar to break-even"]},
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is break-even point and why does it matter for Singapore SMEs?",
+     "acceptedAnswer":{"@type":"Answer","text":"The break-even point is the sales volume at which total revenue equals total costs — you make neither profit nor loss. Every unit sold above break-even contributes pure profit. Singapore SMEs need to know their break-even to set realistic sales targets, price products correctly, and understand whether the business model is viable at their current cost structure."}},
+    {"@type":"Question","name":"What is contribution margin?",
+     "acceptedAnswer":{"@type":"Answer","text":"Contribution margin is selling price minus variable cost per unit. It represents what each sale contributes toward covering your fixed costs and then generating profit. For example, if you sell at S$150 and variable cost is S$60, your contribution margin is S$90 per unit. Divide your total fixed costs by S$90 to find break-even units."}},
+    {"@type":"Question","name":"What counts as a fixed cost in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"Fixed costs are expenses that stay the same regardless of sales volume: office rent, staff salaries (including CPF and SDL), software subscriptions, insurance, loan repayments, and accounting fees. In Singapore, payroll is often the largest fixed cost because it includes the employer CPF contribution (up to 17%) on top of base salary."}},
+    {"@type":"Question","name":"What counts as a variable cost?",
+     "acceptedAnswer":{"@type":"Answer","text":"Variable costs change directly with sales volume: cost of goods sold (raw materials, stock), delivery fees, packaging, payment gateway commissions, and sales commissions. For service businesses, direct labour time charged per project may be variable. These are expressed per unit or as a percentage of revenue."}},
+    {"@type":"Question","name":"How does knowing my break-even improve profitability?",
+     "acceptedAnswer":{"@type":"Answer","text":"Knowing your break-even tells you exactly how many sales you need before you start making money. It reveals whether your pricing is too low (small contribution margin = high break-even volume) or your fixed costs are too high. Any price increase directly lowers the break-even point — a small price rise often has a bigger impact than cutting costs."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Free Tools","item":"https://accountantforsmallbusiness.com/services/"},
+    {"@type":"ListItem","position":3,"name":"Break-Even Calculator","item":"https://accountantforsmallbusiness.com/break-even-calculator-singapore/"}
+  ]}
+]}
+<\/script>`}>
+
+  <nav class="bg-[#000F22] border-b border-gray-900 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex items-center gap-2 text-xs text-gray-500 font-mono">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/services/" class="hover:text-[#DAA035] transition-colors">Free Tools</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Break-Even Calculator</span>
+    </div>
+  </nav>
+
+  <section class="bg-[#000F22] border-b border-gray-900 py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 mb-5">
+          <span class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest border border-[#DAA035]/30 bg-[#DAA035]/5 px-3 py-1 rounded-full">Free Tool</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-5 leading-tight">
+          Singapore<br/><span class="text-[#DAA035]">Break-Even Calculator</span>
+        </h1>
+        <p class="text-base text-[#CBCFD8] leading-relaxed mb-6 max-w-lg">
+          Find the exact sales volume where your revenue covers all costs. Enter your fixed costs, selling price and variable cost — get break-even units, revenue and contribution margin instantly.
+        </p>
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-gray-500">
+          {['Break-even units & revenue','Contribution margin','Current position','Target profit','Formula shown','S$ denominated'].map(tag => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#DAA035]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#F8FAFC] py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <BreakevenCalculator client:load />
+        </div>
+        <div class="space-y-5 lg:sticky lg:top-24">
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">The Formula</p>
+            <div class="space-y-3 text-xs font-mono text-[#CBCFD8]">
+              <div class="bg-[#0A1628] rounded-lg p-3">
+                <p class="text-[#DAA035] mb-1">Contribution Margin</p>
+                <p>= Selling Price − Variable Cost</p>
+              </div>
+              <div class="bg-[#0A1628] rounded-lg p-3">
+                <p class="text-[#DAA035] mb-1">Break-Even Units</p>
+                <p>= Fixed Costs ÷ Contribution Margin</p>
+              </div>
+              <div class="bg-[#0A1628] rounded-lg p-3">
+                <p class="text-[#DAA035] mb-1">Break-Even Revenue</p>
+                <p>= Break-Even Units × Selling Price</p>
+              </div>
+              <div class="bg-[#0A1628] rounded-lg p-3">
+                <p class="text-[#DAA035] mb-1">Target Profit Units</p>
+                <p>= (Fixed Costs + Target Profit) ÷ CM</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Singapore Fixed Cost Note</p>
+            <p class="text-xs text-gray-400 leading-relaxed">In Singapore, payroll is often the largest fixed cost — remember to include the employer CPF contribution (up to 17% on top of gross salary) and SDL (0.25% min S$2/employee) in your fixed cost total.</p>
+            <a href="/employee-cost-calculator-singapore/" class="text-xs text-[#DAA035] hover:underline font-mono mt-2 block">Calculate your true payroll cost →</a>
+          </div>
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Related Calculators</p>
+            <ul class="space-y-2">
+              {[
+                {label:'Cash Flow Runway', href:'/cash-flow-runway-calculator/'},
+                {label:'Employee Cost Calculator', href:'/employee-cost-calculator-singapore/'},
+                {label:'Bookkeeping Cost Estimator', href:'/bookkeeping-cost-calculator-singapore/'},
+                {label:'Corporate Tax Calculator', href:'/corporate-tax-calculator-singapore/'},
+              ].map(l => (
+                <li><a href={l.href} class="flex items-center gap-2 text-xs text-[#CBCFD8] hover:text-[#DAA035] transition-colors group">
+                  <svg class="w-3 h-3 text-gray-700 group-hover:text-[#DAA035] shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  {l.label}
+                </a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-700">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">What is the break-even point and why does it matter?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">The break-even point is the sales volume at which total revenue exactly covers total costs — zero profit, zero loss. Every unit sold above break-even contributes pure profit. Knowing this number is the foundation of any sensible pricing and cost decision.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">For a Singapore SME, break-even analysis is especially important because fixed costs are substantial: rent at Singapore rates, employer CPF contributions on top of staff salaries, and GST complexity once you cross S$1 million turnover. A business that does not know its break-even is flying without instruments.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">What is contribution margin and why does it drive break-even?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">Contribution margin is selling price minus variable cost per unit. It is the amount each sale contributes toward fixed costs before generating profit. A higher contribution margin means fewer sales needed to break even. Raising your price by even S$10 per unit often has a more dramatic effect than cutting costs.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">If your contribution margin is very thin — say S$10 per unit on a S$100 product — you need to sell 10,000 units to cover S$100,000 of fixed costs. But if you can raise the price to S$110 with the same variable cost, your contribution margin becomes S$20 and you only need 5,000 units. Pricing directly controls how hard your business works to break even.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">What should I include in fixed vs variable costs?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">Fixed costs stay constant regardless of sales: rent, salaries with CPF, subscriptions, loan repayments, insurance. Variable costs change with volume: stock or raw materials, delivery, packaging, commissions. In Singapore, payroll is often the largest fixed cost because employer CPF adds up to 17% on top of each salary.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">Use our <a href="/employee-cost-calculator-singapore/" class="text-[#DAA035] hover:underline">Employee Cost Calculator</a> to find the true employer cost per staff member including CPF and SDL, then add that to your fixed cost total here for an accurate break-even result.</p>
+      </div>
+      <div class="space-y-4 border-t border-gray-200 pt-10">
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-6">Frequently asked questions</h2>
+        {[
+          {q:'Can I use this for a service business without physical units?', a:'Yes. For service businesses, define one "unit" as one hour, one project, one retainer, or one client — whatever your pricing unit is. Enter the average selling price per unit and your average variable cost (direct time/materials per engagement). The result still gives you the number of engagements needed to cover your fixed costs.'},
+          {q:'What if my contribution margin is negative?', a:'A negative contribution margin means your variable cost exceeds your selling price — you lose money on every sale regardless of volume. No break-even exists at that pricing. You must either raise your price or reduce variable costs before the business can ever be profitable.'},
+          {q:'How does CPF affect my break-even as a Singapore employer?', a:'Employer CPF adds 17% to the cost of each staff member under 55, on top of their gross salary (capped at S$8,000/month OW). This can significantly increase your fixed cost base and push your break-even point higher. Use the Employee Cost Calculator to compute the true payroll cost, then include it in your fixed costs here.'},
+          {q:'Should I recalculate break-even if my costs change?', a:'Yes — recalculate whenever you change pricing, take on new fixed costs (new staff, new premises), change suppliers, or see variable costs shift. Clean monthly bookkeeping gives you the accurate cost data needed for a reliable break-even calculation at any point in the year.'},
+        ].map(f => (
+          <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold text-[#000F22] mb-2">{f.q}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#000F22] border-t border-gray-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-serif text-[#FEFFFF] font-bold mb-4">Know your real numbers every month</h2>
+      <p class="text-sm text-[#CBCFD8] mb-8 max-w-xl mx-auto">Accurate monthly P&L shows whether you are above or below break-even at any point. We deliver clean books and management reports every month — fixed fee, no surprises.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/pricing/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold px-7 py-3.5 rounded-xl text-sm transition-all">See pricing</a>
+        <a href="/contact/" class="border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">Get a free quote</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

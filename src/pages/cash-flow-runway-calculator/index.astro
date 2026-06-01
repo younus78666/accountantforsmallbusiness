@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CashFlowCalculator from '../../islands/CashFlowCalculator';
+
+const title = 'Cash Flow Runway Calculator Singapore | AFSB';
+const description = 'Calculate how many months of cash runway your Singapore business has. Enter opening cash, revenue and expenses for a 12-month projection with danger zone alerts.';
+---
+
+<BaseLayout title={title} description={description} schemaJsonLd={`<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/cash-flow-runway-calculator/#app",
+   "name":"Singapore Cash Flow Runway Calculator",
+   "url":"https://accountantforsmallbusiness.com/cash-flow-runway-calculator/",
+   "description":"Free cash flow runway calculator for Singapore businesses. Enter your opening cash, monthly revenue and expenses to see how many months of runway you have plus a 12-month projection.",
+   "applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,
+   "offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},
+   "featureList":["Cash runway in months","Danger zone alerts","12-month projection table","Break-even revenue calculation","Expense cut scenario","Revenue growth modelling"]},
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is cash flow runway?",
+     "acceptedAnswer":{"@type":"Answer","text":"Cash flow runway is the number of months a business can continue operating at its current burn rate before its cash balance reaches zero. It is calculated by dividing the current cash balance by the monthly net cash outflow. A runway of less than 3 months is critical; 3 to 6 months is a caution zone; 6 months or more is generally considered healthy for an SME."}},
+    {"@type":"Question","name":"What is a healthy cash runway for a Singapore small business?",
+     "acceptedAnswer":{"@type":"Answer","text":"Most financial advisors recommend a minimum of 3 to 6 months of cash runway for small businesses. For Singapore SMEs that depend on B2B payments with 30 to 60-day payment terms, 6 months is a safer buffer. If you have lumpy revenue (project-based or seasonal), aim for 9 to 12 months to weather slow periods without stress."}},
+    {"@type":"Question","name":"What is burn rate?",
+     "acceptedAnswer":{"@type":"Answer","text":"Burn rate is the net amount of cash a business spends each month when expenses exceed revenue. If your monthly expenses are S$30,000 and your monthly revenue is S$22,000, your burn rate is S$8,000 per month. With S$80,000 in the bank, your runway is 10 months. Burn rate is the most important metric for any business that is not yet cash flow positive."}},
+    {"@type":"Question","name":"How can a Singapore SME extend its cash runway?",
+     "acceptedAnswer":{"@type":"Answer","text":"The fastest levers are: (1) cut discretionary fixed costs — software, subscriptions, non-essential hires; (2) chase outstanding receivables aggressively — Singapore B2B payment terms average 45 days and slow collections are the most common cause of cash crises; (3) negotiate longer payment terms with suppliers; (4) raise prices to improve contribution margin; (5) pause non-critical capex. Clean monthly bookkeeping is essential because you cannot manage what you cannot see."}},
+    {"@type":"Question","name":"What is the difference between cash flow and profit?",
+     "acceptedAnswer":{"@type":"Answer","text":"A business can be profitable on paper but cash-flow negative at the same time. This happens when revenue is recognised before cash is collected (debtors), or when large cash expenses are paid before they appear in the P&L (prepayments, stock builds). Cash flow runway focuses on actual cash movements, not accrual accounting profit. You can go bankrupt while being profitable if you run out of cash."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Free Tools","item":"https://accountantforsmallbusiness.com/services/"},
+    {"@type":"ListItem","position":3,"name":"Cash Flow Runway Calculator","item":"https://accountantforsmallbusiness.com/cash-flow-runway-calculator/"}
+  ]}
+]}
+<\/script>`}>
+
+  <nav class="bg-[#000F22] border-b border-gray-900 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex items-center gap-2 text-xs text-gray-500 font-mono">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/services/" class="hover:text-[#DAA035] transition-colors">Free Tools</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Cash Flow Runway</span>
+    </div>
+  </nav>
+
+  <section class="bg-[#000F22] border-b border-gray-900 py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 mb-5">
+          <span class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest border border-[#DAA035]/30 bg-[#DAA035]/5 px-3 py-1 rounded-full">Free Tool</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-5 leading-tight">
+          Cash Flow<br/><span class="text-[#DAA035]">Runway Calculator</span>
+        </h1>
+        <p class="text-base text-[#CBCFD8] leading-relaxed mb-6 max-w-lg">
+          See how many months of cash your Singapore business has left. Enter your opening balance, monthly revenue and expenses for an instant runway estimate and 12-month projection.
+        </p>
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-gray-500">
+          {['Runway in months','Danger zone alert','12-month projection','Break-even revenue','Expense scenario','Revenue growth model'].map(tag => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#DAA035]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#F8FAFC] py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <CashFlowCalculator client:load />
+        </div>
+        <div class="space-y-5 lg:sticky lg:top-24">
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">Runway Health Guide</p>
+            <div class="space-y-3">
+              {[
+                {label:'< 3 months', color:'text-red-400', bg:'bg-red-500/10 border-red-500/20', desc:'Critical — act immediately'},
+                {label:'3–6 months', color:'text-amber-400', bg:'bg-amber-500/10 border-amber-500/20', desc:'Caution — take action now'},
+                {label:'6–12 months', color:'text-emerald-400', bg:'bg-emerald-500/10 border-emerald-500/20', desc:'Healthy — stay focused'},
+                {label:'12+ months', color:'text-blue-400', bg:'bg-blue-500/10 border-blue-500/20', desc:'Strong — invest in growth'},
+              ].map(r => (
+                <div class={`border rounded-lg p-3 ${r.bg}`}>
+                  <p class={`text-xs font-bold ${r.color}`}>{r.label}</p>
+                  <p class="text-[11px] text-gray-500 mt-0.5">{r.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">The Formula</p>
+            <div class="space-y-2 text-xs font-mono text-[#CBCFD8]">
+              <div class="bg-[#0A1628] rounded-lg p-3"><p class="text-[#DAA035] mb-1">Burn Rate</p><p>= Fixed Exp + Variable Exp − Revenue</p></div>
+              <div class="bg-[#0A1628] rounded-lg p-3"><p class="text-[#DAA035] mb-1">Cash Runway</p><p>= Opening Cash ÷ Monthly Burn Rate</p></div>
+              <div class="bg-[#0A1628] rounded-lg p-3"><p class="text-[#DAA035] mb-1">Break-Even Revenue</p><p>= Fixed Exp ÷ (1 − Variable Exp %)</p></div>
+            </div>
+          </div>
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Related Calculators</p>
+            <ul class="space-y-2">
+              {[
+                {label:'Break-Even Calculator', href:'/break-even-calculator-singapore/'},
+                {label:'Employee Cost Calculator', href:'/employee-cost-calculator-singapore/'},
+                {label:'Bookkeeping Cost Estimator', href:'/bookkeeping-cost-calculator-singapore/'},
+                {label:'Corporate Tax Calculator', href:'/corporate-tax-calculator-singapore/'},
+              ].map(l => (
+                <li><a href={l.href} class="flex items-center gap-2 text-xs text-[#CBCFD8] hover:text-[#DAA035] transition-colors group">
+                  <svg class="w-3 h-3 text-gray-700 group-hover:text-[#DAA035] shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  {l.label}
+                </a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-gray-700">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">What is cash flow runway and why does it matter?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">Cash flow runway is the number of months a business can continue operating at its current burn rate before cash reaches zero. It is the most important survival metric for any business that is not yet cash flow positive. A profitable business can still go bankrupt if it runs out of cash before invoices are collected.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">In Singapore, B2B payment terms of 30–60 days are common. A business with strong sales but slow-paying clients can find itself cash-negative even when the P&L looks healthy. Knowing your runway forces you to manage receivables aggressively and keep an eye on the actual bank balance, not just the profit figure.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">What is the difference between cash flow and profit?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">Profit is an accounting concept — it includes revenue you have earned but not yet collected, and excludes cash you have spent that is not yet an expense (prepayments, stock). Cash flow is what actually moves through your bank account. You can be profitable on paper and cash-negative at the same time.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">This is why your monthly management accounts should include both a P&L (profitability) and a cash flow statement (liquidity). The two tell different parts of the story. Our monthly reporting delivers both so you always know where you stand on both measures.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">How can Singapore SMEs extend their cash runway quickly?</h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-4">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">The fastest levers are: cut discretionary fixed costs immediately, chase overdue receivables aggressively (Singapore B2B payment averages 45 days — even reducing this to 30 days frees significant cash), negotiate longer payment terms with suppliers, and pause non-critical capital expenditure. Clean books are a prerequisite — you cannot cut what you cannot see.</p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">Use the expense cut scenario toggle in the calculator above to model the impact of a 10%, 20% or 30% reduction in fixed costs on your runway. Small cuts often have a much larger impact on runway than expected because they compound month after month.</p>
+      </div>
+      <div class="space-y-4 border-t border-gray-200 pt-10">
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-6">Frequently asked questions</h2>
+        {[
+          {q:'How much cash runway should a Singapore startup have?', a:'Most investors and advisors recommend 12 to 18 months of runway for startups. For bootstrapped SMEs, 6 months is the minimum safe level. Below 3 months, the business is in crisis territory and needs immediate action. The goal is always to get to cash flow positive before runway runs out.'},
+          {q:'Does this calculator handle GST-inclusive revenue?', a:'Enter your revenue as the amount actually received in your bank account. If you are GST-registered, that means the GST-exclusive amount (your 9% GST collected belongs to IRAS, not you). Using GST-inclusive revenue would overstate your cash position because the GST component must be remitted quarterly.'},
+          {q:'What is variable expense percentage?', a:'Variable expenses are costs that scale with revenue — cost of goods sold, delivery, commissions, payment processing fees. Express these as a percentage of revenue. For example, if your gross margin is 70%, your variable cost percentage is 30%. For pure service businesses with no COGS, this may be 0%.'},
+          {q:'Can I use this for fundraising or bank loan applications?', a:'This calculator gives you the core projections you need, but a bank or investor will require more detailed financial statements and a formal cashflow forecast. We can help by preparing accurate monthly management accounts and financial statements from which a proper forecast can be built.'},
+        ].map(f => (
+          <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold text-[#000F22] mb-2">{f.q}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#000F22] border-t border-gray-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-serif text-[#FEFFFF] font-bold mb-4">See your real cash position every month</h2>
+      <p class="text-sm text-[#CBCFD8] mb-8 max-w-xl mx-auto">Monthly bookkeeping and management reports show your actual cash position, not a guess. We deliver clean books, P&L and cash flow summary every month — fixed fee, no surprises.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/pricing/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold px-7 py-3.5 rounded-xl text-sm transition-all">See pricing</a>
+        <a href="/contact/" class="border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">Get a free quote</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

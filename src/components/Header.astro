@@ -76,10 +76,15 @@ const blogs = [
 
       <!-- Desktop CTA -->
       <div class="hidden lg:block">
-        <a href="/contact/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:scale-[1.02] flex items-center gap-1.5 shadow-md" style="box-shadow: 0 4px 12px rgba(220,163,60,0.15);">
+        <button
+          data-popup="quote"
+          class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:scale-[1.02] flex items-center gap-1.5 shadow-md cursor-pointer"
+          style="box-shadow: 0 4px 12px rgba(220,163,60,0.15);"
+          aria-label="Get a quote"
+        >
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           Get a Quote
-        </a>
+        </button>
       </div>
 
       <!-- Mobile hamburger -->
@@ -109,9 +114,9 @@ const blogs = [
         ))}
       </div>
       <a href="/contact/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Contact</a>
-      <a href="/contact/" class="block w-full text-center bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-semibold py-3 px-4 rounded-lg mt-4">
+      <button data-popup="quote" class="block w-full text-center bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-semibold py-3 px-4 rounded-lg mt-4 cursor-pointer">
         Get a Free Quote
-      </a>
+      </button>
     </div>
   </div>
 </header>

@@ -95,41 +95,110 @@ const blogs = [
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="lg:hidden hidden bg-[#0A1628] border-b border-gray-900">
-    <div class="px-4 pt-2 pb-6 space-y-1">
-      <a href="/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Home</a>
-      <a href="/about/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">About</a>
-      <div class="pl-3 py-1 border-l border-gray-800 space-y-1">
-        <span class="block text-xs uppercase tracking-wider text-[#DAA035] font-semibold px-3 py-1">Services</span>
-        {services.map((s) => (
-          <a href={s.href} class="block px-3 py-2 text-sm text-[#CBCFD8] hover:text-[#DAA035]">{s.label}</a>
-        ))}
+  <!-- Mobile menu — fixed, slides up from bottom -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0A1628] border-t border-gray-800 rounded-t-2xl shadow-2xl"
+    style="max-height: 85vh; overflow-y: auto;"
+  >
+    <!-- Drag handle -->
+    <div class="flex justify-center pt-3 pb-1">
+      <div class="w-10 h-1 rounded-full bg-gray-700"></div>
+    </div>
+
+    <div class="px-4 pt-2 pb-8 space-y-1">
+      <!-- Close row -->
+      <div class="flex items-center justify-between mb-3 px-3">
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-wider">Menu</span>
+        <button id="mobile-menu-close" class="text-gray-500 hover:text-white transition-colors p-1">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
       </div>
-      <a href="/pricing/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Pricing</a>
-      <div class="pl-3 py-1 border-l border-gray-800 space-y-1">
-        <span class="block text-xs uppercase tracking-wider text-[#DAA035] font-semibold px-3 py-1">Blog</span>
-        {blogs.map((b) => (
-          <a href={b.href} class="block px-3 py-1.5 text-xs text-[#CBCFD8] hover:text-[#DAA035]">{b.label}</a>
-        ))}
+
+      <a href="/" class="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-[#FEFFFF] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">
+        <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Home
+      </a>
+      <a href="/about/" class="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-[#FEFFFF] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">
+        <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        About
+      </a>
+
+      <div class="border-t border-gray-800/60 my-2"></div>
+      <p class="text-[10px] font-mono text-[#DAA035] uppercase tracking-widest px-3 py-1">Services</p>
+      {services.map((s) => (
+        <a href={s.href} class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#CBCFD8] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">{s.label}</a>
+      ))}
+
+      <div class="border-t border-gray-800/60 my-2"></div>
+      <a href="/pricing/" class="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-[#FEFFFF] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">
+        <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Pricing
+      </a>
+      <a href="/packages/" class="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-[#FEFFFF] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">
+        <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+        Compare Packages
+      </a>
+
+      <div class="border-t border-gray-800/60 my-2"></div>
+      <p class="text-[10px] font-mono text-[#DAA035] uppercase tracking-widest px-3 py-1">Blog</p>
+      {blogs.map((b) => (
+        <a href={b.href} class="block px-3 py-2 text-xs text-[#CBCFD8] hover:text-[#DAA035] hover:bg-[#000F22] rounded-lg transition-colors">{b.label}</a>
+      ))}
+
+      <div class="border-t border-gray-800/60 my-2"></div>
+      <a href="/contact/" class="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-[#FEFFFF] hover:bg-[#000F22] hover:text-[#DAA035] transition-colors">
+        <svg class="w-4 h-4 text-[#DAA035] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Contact
+      </a>
+
+      <div class="pt-3">
+        <button data-popup="quote" class="w-full flex items-center justify-center gap-2 bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-bold py-4 px-4 rounded-xl text-sm transition-all shadow-lg shadow-[#DCA33C]/15">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          Get a Free Quote
+        </button>
       </div>
-      <a href="/contact/" class="block px-3 py-2.5 rounded-md text-base font-medium text-[#FEFFFF] hover:bg-[#000F22]">Contact</a>
-      <button data-popup="quote" class="block w-full text-center bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-semibold py-3 px-4 rounded-lg mt-4 cursor-pointer">
-        Get a Free Quote
-      </button>
     </div>
   </div>
+
+  <!-- Backdrop for mobile menu -->
+  <div id="mobile-backdrop" class="lg:hidden hidden fixed inset-0 z-30 bg-[#000F22]/60 backdrop-blur-sm"></div>
+
 </header>
 
 <script>
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-backdrop');
+  const closeBtn = document.getElementById('mobile-menu-close');
   const iconMenu = document.getElementById('icon-menu');
   const iconClose = document.getElementById('icon-close');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    backdrop?.classList.remove('hidden');
+    menu?.classList.add('mobile-menu-open');
+    iconMenu?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    backdrop?.classList.add('hidden');
+    menu?.classList.remove('mobile-menu-open');
+    iconMenu?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
   toggle?.addEventListener('click', () => {
-    const open = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden', open);
-    iconMenu?.classList.toggle('hidden', !open);
-    iconClose?.classList.toggle('hidden', open);
+    if (menu?.classList.contains('hidden')) openMenu(); else closeMenu();
   });
+
+  closeBtn?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  // Close on any menu link click
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 </script>

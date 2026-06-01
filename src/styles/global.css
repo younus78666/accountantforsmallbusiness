@@ -43,6 +43,21 @@ h1, h2, h3, .heading-serif {
   font-family: var(--font-serif);
 }
 
+/* Hand cursor on every interactive element */
+a, button, [role="button"], summary, input[type="checkbox"],
+input[type="radio"], select, label[for], [data-popup] {
+  cursor: pointer;
+}
+
+/* Mobile menu: slide up from bottom */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.mobile-menu-open {
+  animation: slideUp 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 /* Custom scrollbar — exact copy from React app */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #000F22; }

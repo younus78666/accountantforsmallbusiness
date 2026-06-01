@@ -1,4 +1,4 @@
----
+﻿---
 interface Props {
   heading: string;
   subtext?: string;
@@ -42,18 +42,18 @@ const isGold = variant === 'gold';
   )}
 
   <div class="relative z-10 section-inner text-center">
-    <h2 class={`text-3xl lg:text-5xl font-800 mb-4 tracking-tight ${isGold ? 'text-navy' : 'text-white'}`}>
+    <h2 class={`text-3xl lg:text-5xl font-extrabold mb-4 tracking-tight ${isGold ? 'text-navy' : 'text-white'}`}>
       {heading}
     </h2>
     {subtext && (
-      <p class={`text-lg max-w-xl mx-auto mb-10 font-400 leading-relaxed ${isGold ? 'text-navy/75' : 'text-white/65'}`}>
+      <p class={`text-lg max-w-xl mx-auto mb-10 font-normal leading-relaxed ${isGold ? 'text-navy/75' : 'text-white/65'}`}>
         {subtext}
       </p>
     )}
     <div class="flex flex-wrap justify-center gap-4">
       <a
         href={primaryHref}
-        class={`inline-flex items-center gap-2 px-8 py-4 text-base font-700 rounded-xl transition-all duration-200 hover:-translate-y-0.5
+        class={`inline-flex items-center gap-2 px-8 py-4 text-base font-bold rounded-xl transition-all duration-200 hover:-translate-y-0.5
           ${isGold
             ? 'bg-navy text-gold-btn hover:bg-navy-deep hover:shadow-xl hover:shadow-navy/30'
             : 'bg-gold-btn text-navy hover:bg-gold-hover hover:shadow-xl hover:shadow-gold/25'}`}
@@ -66,7 +66,7 @@ const isGold = variant === 'gold';
       {secondaryLabel && secondaryHref && (
         <a
           href={secondaryHref}
-          class={`inline-flex items-center gap-2 px-8 py-4 text-base font-600 rounded-xl border-2 transition-all duration-200 hover:-translate-y-0.5
+          class={`inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-xl border-2 transition-all duration-200 hover:-translate-y-0.5
             ${isGold
               ? 'border-navy/30 text-navy hover:border-navy hover:bg-navy/5'
               : 'border-white/25 text-white hover:border-gold hover:text-gold-btn'}`}

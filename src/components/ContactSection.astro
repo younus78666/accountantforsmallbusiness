@@ -9,7 +9,7 @@
     <div class="text-center mb-14">
       <div class="eyebrow-dark mb-5">Get in Touch</div>
       <h2 class="text-3xl lg:text-5xl text-white mb-4">Book a free consultation</h2>
-      <p class="text-white/55 text-lg max-w-xl mx-auto font-400">
+      <p class="text-white/55 text-lg max-w-xl mx-auto font-normal">
         Tell us about your business. We'll assess your needs and send a fixed quote within one business day.
       </p>
     </div>
@@ -18,7 +18,7 @@
 
       <!-- Form -->
       <div class="bg-navy-panel rounded-2xl p-8 lg:p-10 border border-white/8">
-        <h3 class="text-xl font-700 text-white mb-6">Send us a message</h3>
+        <h3 class="text-xl font-bold text-white mb-6">Send us a message</h3>
         <form
           name="contact"
           method="POST"
@@ -30,58 +30,58 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="name" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Full Name *</label>
+              <label for="name" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Full Name *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
                 placeholder="Your full name"
-                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
             <div>
-              <label for="email" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Email Address *</label>
+              <label for="email" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Email Address *</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
                 placeholder="you@company.com"
-                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="company" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Company Name</label>
+              <label for="company" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Company Name</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 placeholder="Your company"
-                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
             <div>
-              <label for="phone" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Phone / WhatsApp</label>
+              <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Phone / WhatsApp</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 placeholder="+65 XXXX XXXX"
-                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200"
               />
             </div>
           </div>
 
           <div>
-            <label for="service" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Service Needed</label>
+            <label for="service" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Service Needed</label>
             <select
               id="service"
               name="service"
-              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 appearance-none"
+              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 appearance-none"
             >
               <option value="" disabled selected>Select a service</option>
               <option value="bookkeeping">Bookkeeping</option>
@@ -94,19 +94,19 @@
           </div>
 
           <div>
-            <label for="message" class="block text-xs font-700 uppercase tracking-wider text-white/45 mb-2">Tell us about your business</label>
+            <label for="message" class="block text-xs font-bold uppercase tracking-wider text-white/45 mb-2">Tell us about your business</label>
             <textarea
               id="message"
               name="message"
               rows="4"
               placeholder="How many transactions per month? Any staff? GST registered? (Optional, helps us quote accurately)"
-              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-500 text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 resize-none"
+              class="w-full px-4 py-3 rounded-xl border border-white/10 text-sm font-medium text-white placeholder-white/25 bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all duration-200 resize-none"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gold-btn text-navy text-base font-700 rounded-xl hover:bg-gold-hover transition-all duration-200 hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
+            class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gold-btn text-navy text-base font-bold rounded-xl hover:bg-gold-hover transition-all duration-200 hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
           >
             Send Message, Get a Free Quote
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -114,7 +114,7 @@
             </svg>
           </button>
 
-          <p class="text-center text-xs text-white/30 font-400">We respond within 1 business day. No spam, ever.</p>
+          <p class="text-center text-xs text-white/30 font-normal">We respond within 1 business day. No spam, ever.</p>
         </form>
       </div>
 
@@ -123,7 +123,7 @@
 
         <!-- Contact details -->
         <div class="bg-navy rounded-2xl p-8">
-          <h3 class="text-lg font-700 text-white mb-6">Contact details</h3>
+          <h3 class="text-lg font-bold text-white mb-6">Contact details</h3>
           <div class="flex flex-col gap-5">
 
             <div class="flex items-start gap-4">
@@ -133,9 +133,9 @@
                 </svg>
               </div>
               <div>
-                <p class="text-white/40 text-xs font-600 uppercase tracking-wider mb-1">Email</p>
+                <p class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1">Email</p>
                 <!-- CONFIRM email -->
-                <a href="mailto:hello@accountantforsmallbusiness.com" class="text-white text-sm font-500 hover:text-gold-btn transition-colors break-all">
+                <a href="mailto:hello@accountantforsmallbusiness.com" class="text-white text-sm font-medium hover:text-gold-btn transition-colors break-all">
                   hello@accountantforsmallbusiness.com
                 </a>
               </div>
@@ -148,8 +148,8 @@
                 </svg>
               </div>
               <div>
-                <p class="text-white/40 text-xs font-600 uppercase tracking-wider mb-1">Response time</p>
-                <p class="text-white text-sm font-500">Within 1 business day</p>
+                <p class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1">Response time</p>
+                <p class="text-white text-sm font-medium">Within 1 business day</p>
                 <p class="text-white/40 text-xs mt-0.5">Mon&ndash;Fri, Singapore time (GMT+8)</p>
               </div>
             </div>
@@ -161,8 +161,8 @@
                 </svg>
               </div>
               <div>
-                <p class="text-white/40 text-xs font-600 uppercase tracking-wider mb-1">Service area</p>
-                <p class="text-white text-sm font-500">Singapore &mdash; remote delivery</p>
+                <p class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1">Service area</p>
+                <p class="text-white text-sm font-medium">Singapore &mdash; remote delivery</p>
                 <p class="text-white/40 text-xs mt-0.5">All services delivered via Xero & video call</p>
               </div>
             </div>
@@ -177,7 +177,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <span class="text-white/70 text-xs font-600">Singapore, serving SMEs remotely</span>
+            <span class="text-white/70 text-xs font-semibold">Singapore, serving SMEs remotely</span>
           </div>
           <iframe
             title="Singapore map"

@@ -1,4 +1,4 @@
----
+﻿---
 interface Stat { value: string; label: string; }
 interface Props { stats: Stat[]; }
 const { stats } = Astro.props;
@@ -25,10 +25,10 @@ const { stats } = Astro.props;
     <div class="grid grid-cols-2 lg:grid-cols-4 divide-x-0 sm:divide-x divide-navy/15">
       {stats.map((stat, i) => (
         <div class={`flex flex-col items-center text-center px-6 py-4 ${i < stats.length - 1 && i % 2 === 1 ? 'border-b border-navy/15 sm:border-b-0' : ''} ${i === 0 || i === 2 ? 'sm:border-0' : ''}`}>
-          <span class="text-4xl lg:text-5xl font-800 text-navy tracking-tight leading-none mb-2">
+          <span class="text-4xl lg:text-5xl font-extrabold text-navy tracking-tight leading-none mb-2">
             {stat.value}
           </span>
-          <span class="text-[0.65rem] font-700 uppercase tracking-widest text-navy/60">{stat.label}</span>
+          <span class="text-[0.65rem] font-bold uppercase tracking-widest text-navy/60">{stat.label}</span>
         </div>
       ))}
     </div>

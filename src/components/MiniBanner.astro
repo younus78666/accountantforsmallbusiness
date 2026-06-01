@@ -1,4 +1,4 @@
----
+﻿---
 interface Props {
   text: string;
   ctaLabel: string;
@@ -22,11 +22,11 @@ const dark = variant === 'navy';
       <div class={`w-2 h-2 rounded-full flex-shrink-0 ${dark ? 'bg-gold-btn' : 'bg-navy'}`}
            style={dark ? 'box-shadow: 0 0 8px rgba(220,163,60,0.5);' : ''}
       ></div>
-      <p class={`text-sm font-500 ${dark ? 'text-white/75' : 'text-ink/65'}`}>{text}</p>
+      <p class={`text-sm font-medium ${dark ? 'text-white/75' : 'text-ink/65'}`}>{text}</p>
     </div>
     <a
       href={ctaHref}
-      class={`flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-700 rounded-xl transition-all duration-200 hover:-translate-y-0.5
+      class={`flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl transition-all duration-200 hover:-translate-y-0.5
         ${dark
           ? 'bg-gold-btn text-navy hover:bg-gold-hover hover:shadow-md hover:shadow-gold/20'
           : 'bg-navy text-white hover:bg-navy-deep hover:shadow-md hover:shadow-navy/20'}`}

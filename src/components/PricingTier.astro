@@ -1,4 +1,4 @@
----
+﻿---
 interface Props {
   name: string;
   price: string;
@@ -20,22 +20,22 @@ const { name, price, period = '/month', tagline, features, cta, highlighted = fa
   style={highlighted ? 'box-shadow: 0 16px 48px rgba(220,163,60,0.25);' : ''}
 >
   {highlighted && (
-    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-navy text-gold-btn text-[0.6rem] font-700 uppercase tracking-widest rounded-full border border-gold/20 whitespace-nowrap">
+    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-navy text-gold-btn text-[0.6rem] font-bold uppercase tracking-widest rounded-full border border-gold/20 whitespace-nowrap">
       Most Popular
     </div>
   )}
 
   <!-- Name + price -->
   <div class="mb-7">
-    <p class={`text-xs font-700 uppercase tracking-widest mb-3 ${highlighted ? 'text-navy/60' : 'text-white/40'}`}>
+    <p class={`text-xs font-bold uppercase tracking-widest mb-3 ${highlighted ? 'text-navy/60' : 'text-white/40'}`}>
       {name}
     </p>
     <!-- CONFIRM price placeholder -->
     <div class={`flex items-end gap-1.5 mb-2 ${highlighted ? 'text-navy' : 'text-white'}`}>
-      <span class="text-5xl font-800 tracking-tight leading-none">{price}</span>
-      <span class={`text-xs font-500 mb-1.5 ${highlighted ? 'text-navy/55' : 'text-white/40'}`}>{period}</span>
+      <span class="text-5xl font-extrabold tracking-tight leading-none">{price}</span>
+      <span class={`text-xs font-medium mb-1.5 ${highlighted ? 'text-navy/55' : 'text-white/40'}`}>{period}</span>
     </div>
-    <p class={`text-sm font-400 ${highlighted ? 'text-navy/70' : 'text-white/50'}`}>{tagline}</p>
+    <p class={`text-sm font-normal ${highlighted ? 'text-navy/70' : 'text-white/50'}`}>{tagline}</p>
   </div>
 
   <!-- Divider -->
@@ -48,7 +48,7 @@ const { name, price, period = '/month', tagline, features, cta, highlighted = fa
         <svg class={`w-4 h-4 flex-shrink-0 mt-0.5 ${highlighted ? 'text-navy' : 'text-gold-btn'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
         </svg>
-        <span class={`text-sm font-400 leading-snug ${highlighted ? 'text-navy/85' : 'text-white/65'}`}>{feature}</span>
+        <span class={`text-sm font-normal leading-snug ${highlighted ? 'text-navy/85' : 'text-white/65'}`}>{feature}</span>
       </li>
     ))}
   </ul>
@@ -56,7 +56,7 @@ const { name, price, period = '/month', tagline, features, cta, highlighted = fa
   <!-- CTA -->
   <a
     href={cta.href}
-    class={`block text-center px-6 py-3.5 rounded-xl text-sm font-700 transition-all duration-200 hover:-translate-y-0.5
+    class={`block text-center px-6 py-3.5 rounded-xl text-sm font-bold transition-all duration-200 hover:-translate-y-0.5
       ${highlighted
         ? 'bg-navy text-gold-btn hover:bg-navy-deep hover:shadow-lg hover:shadow-navy/30'
         : 'bg-gold-btn/15 border border-gold-btn/30 text-gold-btn hover:bg-gold-btn hover:text-navy hover:border-gold-btn'

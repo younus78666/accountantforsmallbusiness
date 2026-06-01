@@ -1,4 +1,4 @@
----
+﻿---
 interface FaqItem { q: string; a: string; }
 interface Props { items: FaqItem[]; dark?: boolean; }
 const { items, dark = false } = Astro.props;
@@ -17,7 +17,7 @@ const { items, dark = false } = Astro.props;
         class={`flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none
           ${dark ? 'text-white' : 'text-ink'}`}
       >
-        <span class="text-sm font-600 leading-snug">{item.q}</span>
+        <span class="text-sm font-semibold leading-snug">{item.q}</span>
         <!-- Plus/minus icon -->
         <span class={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-200
           ${dark ? 'bg-white/6 group-open:bg-gold-btn/20' : 'bg-light-bg group-open:bg-gold-btn/15'}`}>
@@ -26,7 +26,7 @@ const { items, dark = false } = Astro.props;
           </svg>
         </span>
       </summary>
-      <div class={`px-6 pb-5 text-sm leading-relaxed font-400
+      <div class={`px-6 pb-5 text-sm leading-relaxed font-normal
         ${dark ? 'text-white/55' : 'text-ink/60'}`}>
         {item.a}
       </div>

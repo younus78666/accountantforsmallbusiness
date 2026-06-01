@@ -1,0 +1,553 @@
+# Accountant for Small Business — Complete Site Content
+# accountantforsmallbusiness.com
+# Format: llms-full.txt (structured for LLM/AEO indexing)
+# Last updated: June 2026
+# Index: https://accountantforsmallbusiness.com/llms.txt
+
+---
+
+## BUSINESS IDENTITY
+
+**Name:** Accountant for Small Business
+**Domain:** accountantforsmallbusiness.com
+**Operator:** Mehdi Javed, Financial Controller
+**LinkedIn:** https://www.linkedin.com/in/mehdij/
+**Contact:** accforsmes@gmail.com
+**Location:** Singapore (remote delivery worldwide to Singapore businesses)
+**Delivery:** 100% remote — Zoom, Google Meet, async. No in-person meetings.
+**Software:** Xero and QuickBooks Online
+
+**One-line description:**
+Remote accounting services for Singapore sole proprietors, Pte Ltd companies, e-commerce sellers and growing SMEs — fixed monthly fees covering bookkeeping, payroll, SFRS financial statements and management reporting.
+
+**What we do:**
+1. Bookkeeping — monthly transaction recording and bank reconciliation in Xero/QBO
+2. Payroll — CPF submission, SDL, payslips, IR8A, IR21 for Singapore employees
+3. Financial statements — SFRS-compliant unaudited year-end accounts
+4. Management reporting — monthly P&L, balance sheet, cash flow summary
+
+**What we do NOT do (must be done by licensed specialists):**
+- GST filing (requires IRAS-licensed tax agent or filing agent)
+- Corporate income tax filing (requires tax agent)
+- Company incorporation (requires ACRA-registered agent)
+- Statutory audit (requires ACRA-registered public accountant)
+
+---
+
+## PRICING (2026)
+
+### Plan Tiers
+
+**Starter — from S$90/month**
+- Best for: Sole proprietors, seed-stage startups
+- Volume: Under 30 transactions/month
+- Includes: Monthly bookkeeping, bank reconciliation, Xero/QBO access, monthly summary
+
+**Growth — from S$250/month**
+- Best for: Trading companies, growing SMEs
+- Volume: 30–100 transactions/month
+- Includes: Everything in Starter + management reports
+
+**Full Managed — from S$450/month**
+- Best for: SMEs with employees, GST-registered companies
+- Volume: 100+ transactions/month
+- Includes: Everything in Growth + payroll, CPF, SDL, IR8A
+
+**Add-ons:**
+- Payroll processing: S$8/employee/month
+- GST-registered uplift: S$20–30/month additional
+- Annual financial statements: Quoted on request
+
+**Price confirmation process:**
+1. You share your monthly transaction volume and service needs
+2. Mehdi confirms your exact fixed fee in writing
+3. You decide — no payment collected, zero pressure
+
+**What the price never includes:**
+- Hourly billing or time-and-materials add-ons
+- GST filing, corporate tax, or audit (these are out of scope)
+- Setup fees or transition charges
+
+---
+
+## SERVICES
+
+### 1. Accounting Services
+URL: /accounting-services-singapore/
+
+**What is included in monthly accounting for Singapore small businesses?**
+Monthly accounting covers bookkeeping (recording and reconciling all transactions), preparation of SFRS-compliant financial statements at year-end, monthly management reports (P&L, balance sheet, cash flow), payroll with CPF submission, and accounts payable/receivable management. All delivered remotely via Xero or QuickBooks Online.
+
+**How does the service work month to month?**
+1. You share records — Bank statements, invoices, receipts via Xero bank feed or email
+2. We do the books — All transactions posted, reconciled, categorised and reviewed
+3. You get reports and filings — Clean monthly accounts, management report, and payslips ready for your review
+
+**Six core services:**
+1. Bookkeeping — Daily/monthly transaction recording in Xero or QBO
+2. Bank reconciliation — Every account matched and balanced monthly
+3. Accounts payable/receivable — Invoices tracked, aging managed
+4. Payroll with CPF — Salary calculation, CPF and SDL submission, payslips
+5. Financial statements — SFRS-compliant unaudited year-end accounts
+6. Management reporting — Monthly P&L, balance sheet, cash flow, KPIs
+
+**Why outsource accounting in Singapore?**
+A full-time in-house accountant costs S$3,500–5,500/month with CPF. Outsourcing delivers the same accuracy for a fraction of the cost, removes the compliance risk from your team, and scales with your volume without the overhead of a hire.
+
+---
+
+### 2. Bookkeeping Services
+URL: /bookkeeping-services-singapore/
+
+**What is bookkeeping?**
+Bookkeeping is the day-to-day recording of your business transactions: sales, expenses and bank movements, all logged and reconciled so your records are accurate and current. Our service does this for you each month in Xero, covering data entry, bank reconciliation, ledger maintenance and a clear monthly summary.
+
+**What is the difference between bookkeeping and accounting?**
+Bookkeeping records the transactions; accounting interprets them. A bookkeeper logs your sales, expenses and bank movements into Xero and reconciles them. An accountant uses those records to prepare financial statements and management reports. For most small businesses, one provider does both, while a tax agent handles the actual GST and tax filing.
+
+**How much do bookkeeping services cost in Singapore?**
+Monthly bookkeeping for a Singapore SME typically costs S$90 to S$800, depending on transaction volume. A freelance bookkeeper runs S$300 to S$800 a month for basic scope, while DIY with Xero is about S$35 a month in software plus your own time. We price on your real transaction count, not a fixed tier.
+
+**Should you DIY bookkeeping with Xero or outsource it?**
+DIY with Xero works while you have the time and your transaction volume is low. Once books start eating your evenings or you are unsure they are correct, outsourcing is the safer call. A full-time in-house bookkeeper costs S$3,500 to S$5,500 a month with CPF, so outsourcing gives you the same accuracy for a fraction of that.
+
+**Five signs it is time to outsource bookkeeping:**
+1. You are doing books at the weekend
+2. You are behind by more than one month
+3. You are unsure your records are correct
+4. Your statements are never ready on time
+5. Your tax agent will not file until your books are cleaned up
+
+**Is bookkeeping required by law in Singapore?**
+Yes. IRAS requires businesses to keep proper accounting records for at least five years. Some level of bookkeeping is mandatory for all registered businesses.
+
+**Does bookkeeping include GST and tax filing?**
+No. We keep your records clean and your statements ready, which is the foundation for filing. Your GST and corporate tax are filed by your tax agent, and clean books make their job accurate and on time.
+
+---
+
+### 3. Payroll Services
+URL: /payroll-services-singapore/
+
+**What does a payroll service in Singapore include?**
+A payroll service handles the full monthly cycle: salary calculation, CPF and SDL submission, itemised payslips, and year-end IR8A filing. A good provider also manages IR21 tax clearance for leavers and keeps up with rate changes, so your staff are paid correctly and your filings stay compliant with MOM, IRAS and the CPF Board.
+
+**How does payroll work in Singapore?**
+Singapore payroll has four moving parts: CPF contributions for citizens and PRs, the Skills Development Levy (SDL) for all employees, the Foreign Worker Levy (FWL) for Work Permit and S Pass holders, and annual income reporting through IR8A. Each has its own rate, deadline and penalty.
+
+**What are the payroll deadlines in Singapore?**
+- Salary payment: Within 7 days of end of pay cycle (Employment Act)
+- CPF submission: By 14th of the following month
+- SDL payment: Together with CPF (by 14th)
+- IR8A filing: By 1 March each year (for previous year)
+- Late CPF penalty: 1.5% interest/month plus fines up to S$5,000 per offence
+
+**What changed for Singapore payroll in 2026?**
+The 2026 Budget raised the CPF Ordinary Wage ceiling to S$8,000 (from S$6,800), stepped up CPF rates for senior workers above 55, and lifted the Local Qualifying Salary to S$1,800. Employers who have not updated their payroll assumptions may be miscalculating contributions and exposing themselves to back-pay liability.
+
+**CPF Rates 2026 — Singapore Citizens and PRs:**
+| Age | Employer CPF | Employee CPF |
+|-----|-------------|-------------|
+| Below 55 | 17% | 20% |
+| 55–60 | 16% | 16% |
+| 60–65 | 12% | 10.5% |
+| 65–70 | 9.5% | 7.5% |
+| Above 70 | 7.5% | 5% |
+| PR Year 1 | 4% | 5% |
+| PR Year 2 | 9% | 15% |
+| EP / S-Pass / Work Permit | 0% | 0% |
+
+CPF Ordinary Wage ceiling (2026): S$8,000/month
+Skills Development Levy (SDL): 0.25% of gross wages, minimum S$2/employee/month
+Foreign Worker Levy: Applies to Work Permit and S Pass holders (rates vary by sector and quota)
+
+**Our payroll pricing:** From S$8/employee/month. Includes CPF, SDL, payslips, annual IR8A.
+
+---
+
+### 4. Unaudited Financial Statements
+URL: /financial-statements-singapore/
+
+**What are unaudited financial statements?**
+Unaudited financial statements are a company's year-end accounts prepared to Singapore Financial Reporting Standards but not examined by an external auditor. A complete set includes the income statement, balance sheet, cash flow statement, notes to the accounts, and a signed Director's Statement. Audit-exempt small companies file these instead of audited accounts.
+
+**Does your small company need an audit or just unaudited statements?**
+Most small companies in Singapore are exempt from audit. Your company qualifies for the audit exemption if it meets at least two of three criteria for the past two consecutive financial years:
+- Annual revenue under S$10 million
+- Total assets under S$10 million
+- 50 or fewer employees
+
+**A complete SFRS financial statement set includes:**
+1. Statement of Comprehensive Income — Revenue, costs and profit/loss for the year
+2. Balance Sheet (Statement of Financial Position) — Assets, liabilities and equity at year-end
+3. Statement of Cash Flows — How cash moved through the business during the year
+4. Notes to the Accounts — SFRS accounting policies and mandatory disclosures
+5. Director's Statement — Signed legal declaration of true-and-fair view and solvency
+
+**Is a Xero or QuickBooks report SFRS-compliant?**
+No. A profit and loss report and balance sheet exported from Xero or QuickBooks are useful, but they are not financial statements in the eyes of ACRA and IRAS. A proper set must follow SFRS presentation, include notes and a Director's Statement, and tie together as a complete, defensible record.
+
+**Who prepares, audits and files financial statements?**
+Three separate roles:
+1. Accountant (us): Prepares unaudited statements to SFRS
+2. Auditor (ACRA-registered public accountant, NOT us): Examines if audit is required
+3. Tax agent / company secretary: Files with ACRA and uses for IRAS
+
+---
+
+### 5. Outsource Accounting Services
+URL: /outsource-accounting-services-singapore/
+
+**What does outsourcing your accounting mean?**
+Outsourcing means replacing an in-house accounting function with a dedicated external provider. Instead of hiring a full-time accountant, you engage a firm that handles bookkeeping, financial statements, payroll and reporting on a fixed monthly fee. You get the same output, none of the overhead.
+
+**In-house vs outsourced: the real cost comparison**
+| Item | In-house hire | Outsourced (AFSB) |
+|------|--------------|-------------------|
+| Base salary | S$3,500–5,500/mo | — |
+| Employer CPF (17%) | S$595–935/mo | — |
+| Accounting software | S$35–100/mo | Included |
+| Benefits / leave | S$200–400/mo | — |
+| Total monthly | S$4,330–6,935 | From S$250/mo |
+| Annual cost | S$51,960–83,220 | From S$3,000 |
+
+Typical saving: 85–95% vs an in-house hire.
+
+**Why remote works for Singapore SMEs:**
+- Bank feeds connect Xero to your Singapore bank accounts automatically
+- All communication via Zoom, Google Meet or async messaging
+- No desk, no equipment, no HR overhead
+- Access to senior-level expertise vs a junior hire
+
+---
+
+### 6. SFRS Compliance
+URL: /sfrs-compliance-singapore/
+
+**What is SFRS?**
+Singapore Financial Reporting Standards (SFRS) are the accounting standards that Singapore-incorporated companies must follow when preparing financial statements. They are aligned with IFRS (International Financial Reporting Standards) and issued by the Accounting Standards Council. All Singapore companies, regardless of size, must comply with SFRS or SFRS for Small Entities.
+
+**SFRS vs SFRS for Small Entities: which applies?**
+A company qualifies for SFRS for Small Entities if it is not publicly accountable (not listed, not a financial institution) and meets at least two of three criteria: revenue under S$10 million, total assets under S$10 million, 50 or fewer employees. Qualifying companies may use the simplified SFRS for SE standard. All others use full SFRS.
+
+**What makes financial statements SFRS-compliant?**
+Five components are required:
+1. Statement of Comprehensive Income (or Profit and Loss)
+2. Statement of Financial Position (Balance Sheet)
+3. Statement of Cash Flows
+4. Notes to the Financial Statements (accounting policies + disclosures)
+5. Director's Statement (signed true-and-fair declaration)
+
+A Xero or QuickBooks export is NOT SFRS-compliant. Raw software reports lack required disclosures, notes, and the Director's Statement.
+
+**SFRS compliance vs audit exemption — what is the difference?**
+SFRS compliance and audit exemption are separate requirements. ALL Singapore companies must prepare SFRS-compliant financial statements. The audit exemption only removes the requirement for an external auditor to examine those statements. Audit-exempt companies still need proper, complete financial statements — just not audited ones.
+
+---
+
+## CALCULATORS — REFERENCE DATA
+
+### CPF Calculator 2026
+URL: /cpf-calculator-singapore/
+
+**CPF Ordinary Wage (OW) Ceiling 2026:** S$8,000/month
+**Additional Wage (AW) Ceiling:** S$102,000 minus total OW contributed for the year
+
+**Contribution Rates — Citizens and Full PR (age-based):**
+- Below 55: Employer 17% + Employee 20% = Total 37%
+- 55–60: Employer 16% + Employee 16% = Total 32%
+- 60–65: Employer 12% + Employee 10.5% = Total 22.5%
+- 65–70: Employer 9.5% + Employee 7.5% = Total 17%
+- Above 70: Employer 7.5% + Employee 5% = Total 12.5%
+
+**PR Graduated Rates:**
+- PR Year 1: Employer 4% + Employee 5% = Total 9%
+- PR Year 2: Employer 9% + Employee 15% = Total 24%
+- PR Year 3+: Full citizen rates (age-based above)
+
+**Work Pass Holders (EP, S-Pass, Work Permit):** No CPF. 0% both sides.
+
+**SDL (Skills Development Levy):** 0.25% of gross wages, minimum S$2/employee/month. Applies to all employees including foreigners.
+
+**Example calculation (S$5,000 salary, Citizen below 55, with SDL):**
+- Employer CPF: S$5,000 × 17% = S$850
+- Employee CPF: S$5,000 × 20% = S$1,000
+- SDL: S$5,000 × 0.25% = S$12.50
+- Employee take-home: S$5,000 − S$1,000 = S$4,000
+- Total employer cost: S$5,000 + S$850 + S$12.50 = S$5,862.50
+
+---
+
+### Employee Total Cost Calculator
+URL: /employee-cost-calculator-singapore/
+
+**What is the true employer cost of hiring in Singapore?**
+For a Singapore Citizen or PR under 55 earning S$4,000/month, the total employer cost is approximately S$4,690/month: S$4,000 gross + S$680 employer CPF (17%) + S$10 SDL (0.25%). That is a 17.25% markup above gross salary.
+
+**Employer cost formula:**
+Total cost = Gross salary + Employer CPF + SDL
+
+**Benchmark costs (Citizen below 55, monthly, SDL included):**
+| Gross Salary | Employer CPF | SDL | Total Cost | Markup | Take-home |
+|-------------|-------------|-----|-----------|--------|----------|
+| S$3,000 | S$510 | S$8 | S$3,518 | 17.3% | S$2,400 |
+| S$4,000 | S$680 | S$10 | S$4,690 | 17.3% | S$3,200 |
+| S$5,000 | S$850 | S$13 | S$5,863 | 17.3% | S$4,000 |
+| S$6,000 | S$1,020 | S$15 | S$7,035 | 17.3% | S$4,800 |
+| S$8,000 | S$1,360 | S$20 | S$9,380 | 17.3% | S$6,400 |
+| S$10,000 | S$1,360* | S$25 | S$11,385 | 13.9% | S$8,400* |
+| S$12,000 | S$1,360* | S$30 | S$13,390 | 11.6% | S$9,600* |
+
+*CPF capped at S$8,000 OW ceiling from January 2026.
+
+**EP / S-Pass holders:** No CPF obligation. Cost = Gross + SDL only.
+
+---
+
+### GST Registration Threshold Calculator
+URL: /gst-registration-calculator-singapore/
+
+**GST registration threshold:** S$1,000,000 taxable turnover in any rolling 12-month period.
+**GST rate (2026):** 9% (raised from 8% on 1 January 2024)
+
+**Two tests for mandatory registration:**
+
+1. **Retrospective test:** Past 12 calendar months' taxable turnover exceeds S$1 million
+   - Registration deadline: Within 30 days of exceeding the threshold
+
+2. **Prospective test:** You have reasonable grounds to expect taxable turnover in the next 12 months to exceed S$1 million
+   - Registration: Immediately upon forming the expectation
+
+**What counts toward the threshold:**
+- Standard-rated supplies (taxable at 9%) — counts
+- Zero-rated supplies (exports, international services, taxable at 0%) — counts
+- Exempt supplies (financial services, medical, residential rent) — does NOT count
+
+**GST collection example:**
+- Annual taxable revenue S$1.2M: Monthly GST to remit ~S$9,000 (S$1.2M × 9% ÷ 12)
+- GST is held in trust for IRAS — it is not your income
+
+**Voluntary registration:** Available to businesses below S$1M if making taxable supplies. Allows GST input tax claims on business expenses.
+
+---
+
+### Bookkeeping Cost Estimator
+URL: /bookkeeping-cost-calculator-singapore/
+
+**AFSB pricing tiers (2026):**
+- Starter: From S$90/month — under 30 transactions/month
+- Growth: From S$250/month — 30–100 transactions/month
+- Full Managed: From S$450/month — 100+ transactions, employees
+
+**Payroll add-on:** S$8/employee/month (CPF, SDL, payslips, IR8A included)
+
+**Annual cost comparison (Growth plan, 60 tx/mo, no employees, monthly billing):**
+- AFSB monthly cost: S$250/month = S$3,000/year
+- In-house accountant: S$3,500 base + S$595 CPF + S$100 software + S$300 benefits = S$4,495/month = S$53,940/year
+- Annual saving: ~S$50,940 (94% less)
+
+**In-house true cost components:**
+- Base salary: S$3,500–5,500/month
+- Employer CPF (17%): S$595–935/month
+- Software (Xero/QBO): ~S$35–100/month
+- Benefits, leave, training: S$200–400/month
+- Total: S$4,330–6,935/month
+
+---
+
+### Corporate Income Tax Calculator
+URL: /corporate-tax-calculator-singapore/
+
+**Singapore corporate tax rate (YA2026):** 17% on chargeable income
+
+**Start-Up Tax Exemption (SUTE) — first 3 Years of Assessment:**
+- First S$100,000 of chargeable income: 75% exempt (only 25% taxable)
+  → Tax on this tier: S$100,000 × 25% × 17% = S$4,250
+- Next S$100,000: 50% exempt (only 50% taxable)
+  → Tax on this tier: S$100,000 × 50% × 17% = S$8,500
+- Above S$200,000: Fully taxable at 17%
+
+SUTE eligibility: Singapore-incorporated company, tax resident, no more than 20 shareholders where all are individuals OR at least one individual holds ≥10% of issued shares.
+
+**Partial Tax Exemption (PTE) — YA 4 and beyond:**
+- First S$10,000: 75% exempt (25% taxable)
+  → Tax on this tier: S$10,000 × 25% × 17% = S$425
+- Next S$190,000: 50% exempt (50% taxable)
+  → Tax on this tier: S$190,000 × 50% × 17% = S$16,150
+- Above S$200,000: Fully taxable at 17%
+
+Maximum exemption under SUTE: S$125,000 → Max tax saving: S$21,250/YA
+Maximum exemption under PTE: S$102,500 → Max tax saving: S$17,425/YA
+
+**SUTE example (S$300,000 chargeable income):**
+- Tier 1 (S$100k, 75% exempt): Tax = S$4,250
+- Tier 2 (S$100k, 50% exempt): Tax = S$8,500
+- Tier 3 (S$100k, 100% taxable): Tax = S$17,000
+- **Total tax: S$29,750**
+- **Effective rate: 9.9%** (vs 17% headline)
+- **Tax saving vs flat rate: S$21,250**
+
+**What is chargeable income?**
+Chargeable income = Revenue − all allowable deductions.
+Allowable deductions include: staff costs + CPF, rent, utilities, professional fees, capital allowances, trade debts written off.
+Non-deductible: private expenses, fines, capital expenditure, expenses not wholly for business purposes.
+
+**Who files corporate tax?**
+Corporate tax (ECI and Form C-S/C) is filed with IRAS by a licensed tax agent — not your bookkeeper. The bookkeeper/accountant prepares accurate financial statements, which the tax agent uses to compute chargeable income and file. We prepare the statements; your tax agent files.
+
+**Filing deadlines:**
+- ECI (Estimated Chargeable Income): Within 3 months of financial year end
+- Form C-S or Form C: By 30 November of the Year of Assessment
+
+---
+
+## REGULATORY REFERENCE DATA
+
+### Singapore Corporate Structure Quick Reference
+
+| Topic | Key rule | Source |
+|-------|---------|--------|
+| Audit exemption | 2 of 3: revenue <S$10M, assets <S$10M, employees ≤50 (2 consecutive YAs) | ACRA |
+| Record retention | Minimum 5 years | IRAS |
+| CPF OW ceiling (2026) | S$8,000/month | CPF Board |
+| GST threshold | S$1,000,000 taxable turnover (rolling 12M) | IRAS |
+| GST rate | 9% (from 1 Jan 2024) | IRAS |
+| Corporate tax rate | 17% | IRAS |
+| Salary payment deadline | Within 7 days of pay cycle end | MOM |
+| CPF payment deadline | By 14th of following month | CPF Board |
+| IR8A filing | By 1 March (for prior year) | IRAS |
+| ECI filing | Within 3 months of FYE | IRAS |
+| Form C-S/C filing | By 30 Nov of YA | IRAS |
+| Local Qualifying Salary (2026) | S$1,800/month | MOM |
+
+---
+
+## BLOG CONTENT SUMMARIES
+
+### Bookkeeping vs Accounting: What's the Difference?
+URL: /blog/bookkeeping-vs-accounting/
+
+Bookkeeping records day-to-day transactions; accounting interprets them. Bookkeeping is the input; accounting is the output. You cannot produce accurate financial statements without clean books underneath them. Most Singapore small businesses need both functions — and one qualified provider typically handles both.
+
+**Bookkeeper does:** Transaction recording, bank reconciliation, accounts payable/receivable, keeping books current in Xero or QBO.
+**Accountant does:** Financial statements, management reports, interpreting numbers, advising on decisions, preparing records for the tax agent.
+**Can one person do both?** Yes. A single qualified accountant who also handles bookkeeping keeps records and reporting in one consistent system.
+
+---
+
+### How to Choose an Accountant for Your Singapore SME
+URL: /blog/how-to-choose-accountant-sme/
+
+Key questions to ask before engaging an accountant: Do they specialise in Singapore SMEs? Do they work in Xero or QuickBooks? Is pricing fixed or hourly? Do they understand SFRS and CPF? Can they provide references?
+
+**Red flags:** Hourly billing with no cap, vague scope, not familiar with CPF/IRAS requirements, cannot explain what SFRS-compliant means.
+**Green flags:** Fixed monthly fee confirmed in writing, clear scope document, responsive communication, understands your industry.
+
+---
+
+### Year-End Accounting Checklist for Singapore SMEs
+URL: /blog/year-end-accounting-checklist/
+
+Six-step year-end checklist:
+1. Reconcile all bank and credit card accounts
+2. Review accounts receivable — write off bad debts, age the outstanding balances
+3. Review accounts payable — ensure all supplier invoices are recorded
+4. Run and review your fixed asset register and capital allowances
+5. Confirm CPF contributions are up to date and SDL is paid
+6. Provide clean books and trial balance to your accountant for statement preparation
+
+---
+
+### How Much Does an Accountant Cost in Singapore?
+URL: /blog/accountant-cost-singapore/
+
+**Freelance bookkeeper:** S$300–800/month for basic bookkeeping
+**Outsourced accounting firm:** S$90–800/month (volume-based fixed fee)
+**Part-time in-house:** S$1,500–2,500/month
+**Full-time in-house:** S$3,500–5,500/month total cost (salary + CPF + software + benefits)
+**Big-4 / mid-tier firms:** S$2,000–8,000+/month for small business scope
+
+Most Singapore SMEs get the best value from a fixed-fee outsourced provider at S$90–450/month.
+
+---
+
+### Best Accounting Software for Singapore SMEs (2026)
+URL: /blog/best-accounting-software-singapore/
+
+**Xero:** Best overall for Singapore SMEs. S$35–75/month. Built-in bank feeds, multi-currency, InvoiceNow e-invoicing support, strong ecosystem.
+**QuickBooks Online:** Strong US-origin platform, good for e-commerce. S$18–55/month. PEPPOL/InvoiceNow support via add-ons.
+**Wave:** Free for basic bookkeeping. Good for sole proprietors with very low volume. Limited Singapore-specific features.
+**MYOB:** Popular in Australia, limited Singapore SME adoption.
+
+**InvoiceNow note:** Singapore is progressively mandating PEPPOL e-invoicing. Both Xero and QBO support InvoiceNow. Check if your accounting software is InvoiceNow-registered.
+
+---
+
+### Xero vs QuickBooks for Singapore Business (2026)
+URL: /blog/xero-vs-quickbooks-singapore/
+
+| Feature | Xero | QuickBooks Online |
+|---------|------|-------------------|
+| Singapore bank feeds | Extensive | Good |
+| CPF payroll | Via Xero Payroll | Via add-on |
+| Multi-currency | Built-in | Built-in |
+| InvoiceNow | Native | Via add-on |
+| Price (entry) | ~S$35/mo | ~S$18/mo |
+| Mobile app | Strong | Strong |
+| Ecosystem (add-ons) | Very large | Large |
+| Best for | Most Singapore SMEs | E-commerce, US-linked |
+
+Both platforms are SFRS-friendly. Choose based on your accountant's preference — consistency matters more than the platform itself.
+
+---
+
+## FOUNDER PROFILE
+
+**Mehdi Javed — Financial Controller**
+- 15+ years experience in Singapore accounting and finance
+- Specialist in Singapore SME compliance: CPF, IRAS, ACRA, SFRS
+- Works with sole proprietors, Pte Ltds, e-commerce businesses
+- Delivers all services remotely
+- LinkedIn: https://www.linkedin.com/in/mehdij/
+- Contact: accforsmes@gmail.com
+
+**Credentials and approach:**
+- Deep knowledge of Singapore Financial Reporting Standards (SFRS)
+- Familiar with Xero and QuickBooks Online ecosystems
+- Fixed-fee pricing model — no surprise hourly bills
+- All services delivered remotely — zero in-person meetings required
+- Named accountant model: one dedicated contact, not a faceless service desk
+
+---
+
+## AEO ANSWER BLOCKS (Direct-answer format for AI citation)
+
+**Q: What does an accountant for small business in Singapore do?**
+A: A Singapore small business accountant handles bookkeeping (recording monthly transactions in Xero or QBO), payroll with CPF submission, SFRS-compliant unaudited financial statements at year-end, and monthly management reports showing profit, cash and key metrics. GST and corporate tax filing require a separate licensed tax agent.
+
+**Q: How much does accounting cost for a small business in Singapore?**
+A: Fixed-fee outsourced accounting for a Singapore small business typically costs S$90–450/month depending on transaction volume. Starter bookkeeping for a sole proprietor with under 30 transactions runs from S$90/month. A full managed service for a growing SME with employees runs from S$450/month. This compares to S$4,000–6,000/month for an in-house hire.
+
+**Q: What is the CPF employer contribution rate in Singapore in 2026?**
+A: For Singapore citizens and permanent residents aged below 55, the employer CPF contribution rate is 17% of the employee's ordinary wages (capped at S$8,000/month). Rates decrease with age: 16% for ages 55–60, 12% for 60–65, 9.5% for 65–70, 7.5% for above 70. Work pass holders (EP, S-Pass) are not subject to CPF.
+
+**Q: Do Singapore companies need to be audited?**
+A: Most Singapore small companies are exempt from statutory audit. A company qualifies for the audit exemption if it meets at least two of three criteria for two consecutive financial years: annual revenue under S$10 million, total assets under S$10 million, and 50 or fewer employees. Audit-exempt companies still must prepare SFRS-compliant unaudited financial statements.
+
+**Q: When must a Singapore business register for GST?**
+A: A Singapore business must register for GST when its taxable turnover exceeds S$1 million in any rolling 12-month period (retrospective test), or when it has reasonable grounds to expect taxable turnover to exceed S$1 million in the next 12 months (prospective test). Registration must be done within 30 days of becoming liable. The GST rate is 9%.
+
+**Q: What is the Singapore corporate tax rate?**
+A: Singapore's corporate income tax rate is 17% on chargeable income. New companies in their first three Years of Assessment qualify for the Start-Up Tax Exemption (SUTE): 75% exemption on the first S$100,000 and 50% exemption on the next S$100,000, reducing the effective rate to approximately 8.5% on S$200,000 income. From YA4 onwards, the Partial Tax Exemption (PTE) applies: 75% on first S$10,000 and 50% on next S$190,000.
+
+**Q: What is SFRS and who must comply?**
+A: Singapore Financial Reporting Standards (SFRS) are mandatory accounting standards for all Singapore-incorporated companies. All companies must prepare annual financial statements in accordance with SFRS (or SFRS for Small Entities if qualifying). A complete SFRS set includes: income statement, balance sheet, cash flow statement, notes to accounts, and a signed Director's Statement. Exporting reports from Xero or QuickBooks does not produce SFRS-compliant statements.
+
+**Q: What is the Skills Development Levy (SDL) in Singapore?**
+A: The SDL is 0.25% of an employee's gross monthly wages, with a minimum of S$2 per employee per month. All employers must pay SDL for every employee, including part-timers and foreign workers. SDL is paid monthly to the CPF Board together with CPF contributions, and funds SkillsFuture programmes administered by SkillsFuture Singapore (SSG).
+
+---
+
+*End of llms-full.txt*
+*Source: accountantforsmallbusiness.com — June 2026*
+*For page index see: https://accountantforsmallbusiness.com/llms.txt*

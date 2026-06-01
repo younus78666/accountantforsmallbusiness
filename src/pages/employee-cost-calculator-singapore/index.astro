@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EmployeeCostCalculator from '../../islands/EmployeeCostCalculator';
+
+const title = 'Singapore Employee Total Cost Calculator 2026 | AFSB';
+const description = 'Calculate the true employer cost of hiring in Singapore. CPF contributions, Skills Development Levy and all statutory costs. Free 2026 calculator with benchmark table.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/employee-cost-calculator-singapore/#app",
+   "name":"Singapore Employee Total Cost Calculator 2026",
+   "url":"https://accountantforsmallbusiness.com/employee-cost-calculator-singapore/",
+   "description":"Free calculator showing the true employer cost of hiring in Singapore: gross salary, employer CPF, SDL, and total cost to company with benchmark table.",
+   "applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,
+   "offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},
+   "featureList":["2026 CPF employer contribution rates","Skills Development Levy calculation","Multi-employee team total","Annual and monthly views","Salary benchmark table","All age brackets and PR year rates"]
+  },
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the true cost of hiring an employee in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"For a Singapore Citizen or PR under 55 earning S$4,000/month, the true employer cost is approximately S$4,692/month: S$4,000 gross salary + S$680 employer CPF (17%) + S$10 SDL (0.25%). That is a 17.25% markup above the gross salary. Work pass holders (EP, S-Pass) have no CPF obligation, so the cost is closer to gross plus SDL only."}},
+    {"@type":"Question","name":"Does the employer pay CPF on top of salary in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"Yes. CPF is an addition to the salary — it does not come out of the employee's gross. The employer pays their share (up to 17% for staff under 55) on top of the salary they agreed to pay. Only the employee's share is deducted from the employee's gross wages."}},
+    {"@type":"Question","name":"What is the CPF Ordinary Wage ceiling for 2026?",
+     "acceptedAnswer":{"@type":"Answer","text":"The CPF Ordinary Wage (OW) ceiling is S$8,000 per month from January 2026. CPF contributions are only calculated on the first S$8,000 of monthly wages. For employees earning above S$8,000, the employer CPF contribution is capped at the S$8,000 ceiling."}},
+    {"@type":"Question","name":"What is the Skills Development Levy (SDL) in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"The Skills Development Levy (SDL) is 0.25% of the employee's gross monthly wages, with a minimum of S$2 per employee per month. All employers must pay SDL for all employees including part-timers and foreign workers. SDL funds the SkillsFuture schemes administered by SSG."}},
+    {"@type":"Question","name":"Do Singapore employers pay CPF for EP or S-Pass holders?",
+     "acceptedAnswer":{"@type":"Answer","text":"No. Employment Pass (EP) and S-Pass holders are exempt from CPF contributions. Neither the employer nor the employee makes CPF contributions for these work pass holders. SDL still applies. Work Permit holders are also exempt from CPF but may attract a Foreign Worker Levy (FWL) depending on sector."}},
+    {"@type":"Question","name":"What are the employer CPF rates for older workers in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"Employer CPF rates for 2026: below 55 = 17%, ages 55–60 = 15.5%, ages 60–65 = 12%, ages 65–70 = 9.5%, above 70 = 7.5%. These graduated rates reduce the employer cost for rehiring older Singaporeans, supporting the government's re-employment policy."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Free Tools","item":"https://accountantforsmallbusiness.com/services/"},
+    {"@type":"ListItem","position":3,"name":"Employee Cost Calculator","item":"https://accountantforsmallbusiness.com/employee-cost-calculator-singapore/"}
+  ]}
+]}
+<\/script>`;
+---
+
+<BaseLayout title={title} description={description} schemaJsonLd={schemaJsonLd}>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-[#000F22] border-b border-gray-900 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex items-center gap-2 text-xs text-gray-500 font-mono">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <a href="/services/" class="hover:text-[#DAA035] transition-colors">Free Tools</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Employee Cost Calculator</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-[#000F22] border-b border-gray-900 py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 mb-5">
+          <span class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest border border-[#DAA035]/30 bg-[#DAA035]/5 px-3 py-1 rounded-full">
+            Free Tool · 2026 Rates
+          </span>
+          <span class="text-[10px] font-mono text-gray-600">Updated Jan 2026</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-5 leading-tight">
+          Singapore Employee<br/>
+          <span class="text-[#DAA035]">Total Cost Calculator</span>
+        </h1>
+        <p class="text-base text-[#CBCFD8] leading-relaxed mb-6 max-w-lg">
+          Find out what each hire <em>actually</em> costs your business. Employer CPF, SDL and all statutory obligations — instantly, for up to 10 employees at once.
+        </p>
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-gray-500">
+          {[
+            '2026 CPF rates',
+            'All age brackets',
+            'PR Year 1 & 2',
+            'SDL included',
+            'Multi-employee',
+            'Annual view',
+          ].map(tag => (
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3 h-3 text-[#DAA035]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator + Sidebar -->
+  <section class="bg-[#F8FAFC] py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+        <!-- Calculator island -->
+        <div class="lg:col-span-2">
+          <EmployeeCostCalculator client:load />
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-5 lg:sticky lg:top-24">
+
+          <!-- Key rates card -->
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">2026 Employer CPF Rates</p>
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="border-b border-gray-800">
+                  <th class="pb-2 text-left text-gray-600 font-mono font-normal">Age</th>
+                  <th class="pb-2 text-right text-gray-600 font-mono font-normal">Employer</th>
+                  <th class="pb-2 text-right text-gray-600 font-mono font-normal">Employee</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-900">
+                {[
+                  ['Below 55',  '17%',   '20%'],
+                  ['55 – 60',   '15.5%', '16%'],
+                  ['60 – 65',   '12%',   '10.5%'],
+                  ['65 – 70',   '9.5%',  '7.5%'],
+                  ['Above 70',  '7.5%',  '5%'],
+                ].map(([age, er, ee]) => (
+                  <tr>
+                    <td class="py-2 text-[#CBCFD8]">{age}</td>
+                    <td class="py-2 text-right text-amber-400 font-bold">{er}</td>
+                    <td class="py-2 text-right text-gray-400">{ee}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div class="mt-3 pt-3 border-t border-gray-800 space-y-1.5 text-[10px] text-gray-600 font-mono">
+              <p>OW ceiling: <span class="text-white">S$8,000/month</span></p>
+              <p>PR Year 1: <span class="text-white">Employer 4% / Employee 5%</span></p>
+              <p>PR Year 2: <span class="text-white">Employer 9% / Employee 15%</span></p>
+              <p>EP / S-Pass: <span class="text-white">No CPF</span></p>
+            </div>
+          </div>
+
+          <!-- SDL card -->
+          <div class="bg-[#000F22] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Skills Development Levy</p>
+            <p class="text-xs text-[#CBCFD8] leading-relaxed">
+              SDL = <strong class="text-white">0.25%</strong> of gross monthly wages, minimum <strong class="text-white">S$2</strong> per employee. Applies to all employees including foreigners. Payable monthly to CPF Board together with CPF contributions.
+            </p>
+          </div>
+
+          <!-- Related tools -->
+          <div class="bg-[#0A1628] rounded-2xl p-5 border border-gray-800">
+            <p class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-3">Related Calculators</p>
+            <ul class="space-y-2">
+              {[
+                { label: 'CPF Calculator 2026', href: '/cpf-calculator-singapore/' },
+                { label: 'Bookkeeping Cost Estimator', href: '/bookkeeping-cost-calculator-singapore/' },
+                { label: 'GST Registration Threshold', href: '/gst-registration-calculator-singapore/' },
+              ].map(l => (
+                <li>
+                  <a href={l.href} class="flex items-center gap-2 text-xs text-[#CBCFD8] hover:text-[#DAA035] transition-colors group">
+                    <svg class="w-3 h-3 text-gray-700 group-hover:text-[#DAA035] transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content section -->
+  <section class="bg-white py-14 border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 text-gray-700">
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          What is the true cost of hiring an employee in Singapore?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            The true employer cost is the gross salary plus the employer CPF contribution (up to 17%) plus the Skills Development Levy (0.25%). For a citizen under 55 earning S$4,000/month, the total employer outlay is S$4,692 — a 17.25% markup above the agreed salary.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          Most business owners anchor on the salary figure when budgeting for a new hire. The actual cost is higher — not because of hidden charges, but because of mandatory statutory contributions the employer pays on top. Knowing the true number prevents budget surprises, especially when hiring a second or third person.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          Which employer costs are mandatory in Singapore?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            Two statutory employer costs apply to all Singapore citizen and PR employees: the employer CPF contribution and the Skills Development Levy. Work pass holders (EP, S-Pass) are exempt from CPF but SDL still applies.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mt-4">
+          <table class="w-full text-sm text-left border-collapse">
+            <thead>
+              <tr class="bg-[#000F22] text-[#FEFFFF]">
+                <th class="p-3 font-mono text-[11px] uppercase tracking-wider">Cost</th>
+                <th class="p-3 font-mono text-[11px] uppercase tracking-wider text-[#DAA035]">Rate</th>
+                <th class="p-3 font-mono text-[11px] uppercase tracking-wider">Who it applies to</th>
+                <th class="p-3 font-mono text-[11px] uppercase tracking-wider">Ceiling</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              {[
+                ['Employer CPF', 'Up to 17%', 'Citizen & PR', 'S$8,000 OW'],
+                ['SDL', '0.25% (min S$2)', 'All employees incl. foreigners', 'None'],
+                ['Employee CPF', 'Up to 20%', 'Deducted from employee wages', 'S$8,000 OW'],
+              ].map(([cost, rate, who, ceiling]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-[#000F22]">{cost}</td>
+                  <td class="p-3 text-[#DAA035] font-bold">{rate}</td>
+                  <td class="p-3 text-gray-600">{who}</td>
+                  <td class="p-3 text-gray-600 font-mono text-xs">{ceiling}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          How does the CPF Ordinary Wage ceiling affect employer costs?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            From 2026, CPF contributions are calculated on the first S$8,000 of monthly ordinary wages only. Above that ceiling, no additional CPF is payable. This means the employer CPF cost is capped at S$1,360/month per employee under 55 regardless of how high the salary goes.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          For employees earning S$8,000 or below, every dollar of salary increase also increases your CPF obligation. Above S$8,000, the employer CPF stays fixed while the gross cost continues to grow. This is an important planning point when offering salary packages near or above the ceiling.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-4">
+          How does this calculator differ from the CPF Calculator?
+        </h2>
+        <div class="border-l-[3px] border-[#DAA035] bg-[#F2F4F7] rounded-r-lg p-5 mb-5">
+          <p class="text-base font-semibold italic text-[#000F22] leading-relaxed">
+            The CPF Calculator shows payslip deductions and contributions for a single employee. This calculator shows the total employer outlay — gross salary plus all employer costs — for up to 10 employees at once, with an annual view and benchmark comparison table.
+          </p>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed">
+          Use the CPF Calculator when you need to verify a specific payslip or check contribution amounts. Use this calculator when you are building a hiring budget, comparing the cost of different salary offers, or planning annual payroll spend for your team.
+        </p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="space-y-4 border-t border-gray-200 pt-10">
+        <h2 class="text-2xl sm:text-3xl font-sans font-extrabold text-[#000F22] tracking-tight mb-6">Frequently asked questions</h2>
+        {[
+          {
+            q: 'Does employer CPF come out of the employee\'s salary?',
+            a: 'No. The employer CPF contribution is paid by the employer on top of the employee\'s gross salary. Only the employee\'s share of CPF is deducted from their gross wages. When you offer S$4,000/month, the employee receives S$4,000 minus their CPF share. You pay S$4,000 plus your CPF share.',
+          },
+          {
+            q: 'Do I pay CPF for part-time employees in Singapore?',
+            a: 'Yes. CPF is payable for all employees earning more than S$50/month regardless of employment status — full-time, part-time, or casual. The rates are the same; only the dollar amount differs because contributions are a percentage of actual wages paid.',
+          },
+          {
+            q: 'What is the PR graduated CPF rate?',
+            a: 'To ease the financial adjustment for new Permanent Residents, reduced CPF rates apply in Years 1 and 2. In Year 1, employer contributes 4% and employee contributes 5%. In Year 2, employer contributes 9% and employee contributes 15%. From Year 3 onwards, full citizen rates apply.',
+          },
+          {
+            q: 'When must SDL be paid?',
+            a: 'SDL is payable monthly, together with CPF contributions, by the 14th of the following month. It is remitted to the CPF Board who channels the funds to SkillsFuture Singapore. Late payment attracts a 10% penalty on the outstanding SDL amount.',
+          },
+        ].map(faq => (
+          <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold text-[#000F22] mb-2">{faq.q}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#000F22] border-t border-gray-900 py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs font-mono text-[#DAA035] uppercase tracking-widest mb-4">Payroll done for you</p>
+      <h2 class="text-2xl sm:text-3xl font-serif text-[#FEFFFF] font-bold mb-5">
+        We calculate CPF, file SDL and deliver compliant payslips every month
+      </h2>
+      <p class="text-sm text-[#CBCFD8] leading-relaxed mb-8 max-w-xl mx-auto">
+        From S$8 per employee per month. Fixed fee, no hourly billing. All handled remotely so you can focus on your business.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/payroll-services-singapore/" class="inline-flex items-center gap-2 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold px-7 py-3.5 rounded-xl text-sm transition-all">
+          See payroll service
+        </a>
+        <a href="/contact/" class="inline-flex items-center gap-2 border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">
+          Get a free quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -84,16 +84,57 @@ export default function PlanCalculator() {
                   {sliderVal} transactions
                 </span>
               </div>
-              <div className="relative py-2">
+              <div className="relative py-3">
                 <input
                   type="range"
                   min={5}
                   max={150}
                   value={sliderVal}
                   onChange={(e) => setSliderVal(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-950 rounded-lg cursor-pointer focus:outline-none"
-                  style={{ accentColor: '#DAA035' }}
+                  className="w-full cursor-pointer focus:outline-none"
+                  style={{
+                    accentColor: '#DAA035',
+                    height: '6px',
+                    WebkitAppearance: 'none',
+                    appearance: 'none',
+                    background: `linear-gradient(to right, #DAA035 0%, #DAA035 ${((sliderVal - 5) / (150 - 5)) * 100}%, #1a2234 ${((sliderVal - 5) / (150 - 5)) * 100}%, #1a2234 100%)`,
+                    borderRadius: '9999px',
+                    outline: 'none',
+                  }}
                 />
+                <style>{`
+                  input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 50%;
+                    background: #DAA035;
+                    border: 3px solid #000F22;
+                    box-shadow: 0 0 0 3px #DAA035, 0 2px 8px rgba(218,160,53,0.5);
+                    cursor: grab;
+                    transition: box-shadow 0.15s ease, transform 0.15s ease;
+                  }
+                  input[type=range]::-webkit-slider-thumb:active {
+                    cursor: grabbing;
+                    transform: scale(1.15);
+                    box-shadow: 0 0 0 4px #DAA035, 0 4px 16px rgba(218,160,53,0.7);
+                  }
+                  input[type=range]::-moz-range-thumb {
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 50%;
+                    background: #DAA035;
+                    border: 3px solid #000F22;
+                    box-shadow: 0 0 0 3px #DAA035, 0 2px 8px rgba(218,160,53,0.5);
+                    cursor: grab;
+                  }
+                  input[type=range]::-moz-range-track {
+                    height: 6px;
+                    border-radius: 9999px;
+                    background: #1a2234;
+                  }
+                `}</style>
               </div>
               <div className="flex justify-between text-[10px] text-gray-400 font-mono pt-1">
                 <span>Min (5)</span>
@@ -115,7 +156,7 @@ export default function PlanCalculator() {
                     style={{ accentColor: '#DAA035' }}
                   />
                   <span className="text-xs text-white font-semibold group-hover:text-[#DAA035] transition-colors">
-                    Include Payroll & CPF submission add-on?
+                    Include Payroll & CPF filing support add-on?
                   </span>
                 </label>
                 {includePayroll && (

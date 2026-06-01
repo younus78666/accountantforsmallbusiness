@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allLinks = {
+  'Core Services': [
+    { label: 'Accounting Services Singapore', href: '/accounting-services-singapore/' },
+    { label: 'Bookkeeping Services Singapore', href: '/bookkeeping-services-singapore/' },
+    { label: 'Outsource Accounting Singapore', href: '/outsource-accounting-services-singapore/' },
+    { label: 'Payroll Services Singapore', href: '/payroll-services-singapore/' },
+    { label: 'Financial Statements Singapore', href: '/financial-statements-singapore/' },
+  ],
+  'Pricing & Plans': [
+    { label: 'Transparent Pricing', href: '/pricing/' },
+    { label: 'Compare Packages', href: '/packages/' },
+  ],
+  'Company': [
+    { label: 'About Mehdi Javed', href: '/about/' },
+    { label: 'Contact Us', href: '/contact/' },
+  ],
+  'Blog & Guides': [
+    { label: 'Blog Index', href: '/blog/' },
+    { label: 'Bookkeeping vs Accounting', href: '/blog/bookkeeping-vs-accounting/' },
+    { label: 'How to Choose an Accountant', href: '/blog/how-to-choose-accountant-sme/' },
+    { label: 'Year-End Checklist', href: '/blog/year-end-accounting-checklist/' },
+    { label: 'Accountant Cost Singapore', href: '/blog/accountant-cost-singapore/' },
+    { label: 'Best Accounting Software', href: '/blog/best-accounting-software-singapore/' },
+    { label: 'Xero vs QuickBooks', href: '/blog/xero-vs-quickbooks-singapore/' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Page Not Found | Accountant for Small Business Singapore"
+  description="The page you're looking for doesn't exist. Find what you need below."
+>
+  <section class="relative bg-[#000F22] min-h-[80vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.04)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 w-full">
+
+      <!-- 404 hero -->
+      <div class="text-center mb-16 space-y-5">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#DAA035]/10 border border-[#DAA035]/20 mx-auto">
+          <span class="text-4xl font-black text-[#DAA035] font-mono">404</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight">
+          Page not found
+        </h1>
+        <p class="text-base text-[#CBCFD8] max-w-md mx-auto leading-relaxed">
+          The page you're looking for doesn't exist or has been moved. Here's everything on the site to help you find what you need.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-2">
+          <a href="/" class="bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-semibold px-7 py-3 rounded-lg text-sm transition-all">
+            Go to homepage
+          </a>
+          <a href="/contact/" class="border border-[#DAA035] text-[#DAA035] hover:bg-[#DAA035] hover:text-[#000F22] font-semibold px-7 py-3 rounded-lg text-sm transition-all">
+            Contact us
+          </a>
+        </div>
+      </div>
+
+      <!-- All site links -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {Object.entries(allLinks).map(([category, links]) => (
+          <div>
+            <h2 class="text-[10px] font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4 pb-2 border-b border-gray-800">
+              {category}
+            </h2>
+            <ul class="space-y-2.5">
+              {links.map((link) => (
+                <li>
+                  <a href={link.href} class="text-sm text-[#CBCFD8] hover:text-[#DAA035] transition-colors flex items-center gap-2 group">
+                    <svg class="w-3 h-3 text-gray-700 group-hover:text-[#DAA035] shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Payroll Services Singapore for Small Business | AFSB';
@@ -307,7 +307,7 @@ const faqs = [
                 { label: 'Salary payment', deadline: 'Within 7 days of pay cycle end', law: 'Employment Act', severity: 'amber' },
                 { label: 'CPF submission', deadline: 'Monthly, by last day of following month', law: 'CPF Act', severity: 'amber' },
                 { label: 'Late CPF penalty', deadline: '1.5%/month + up to S$5,000 fine', law: 'CPF Act', severity: 'red' },
-                { label: 'IR8A filing', deadline: 'Annual — by start of year', law: 'IRAS', severity: 'amber' },
+                { label: 'IR8A filing', deadline: 'Annual, by start of year', law: 'IRAS', severity: 'amber' },
                 { label: 'IR21 clearance', deadline: 'Before leaver departs Singapore', law: 'IRAS', severity: 'red' },
               ].map((row) => (
                 <div class={`p-3 rounded-xl border ${row.severity === 'red' ? 'bg-red-950/20 border-red-900/30' : 'bg-[#020B16] border-gray-800'}`}>
@@ -422,7 +422,7 @@ const faqs = [
           {[
             { label: 'CPF Ordinary Wage ceiling', value: 'S$8,000', sub: 'Raised in 2026 Budget', grad: 'from-[#DCA33C] to-[#DAA035]', width: '80%' },
             { label: 'Local Qualifying Salary', value: 'S$1,800', sub: 'Minimum for local employees', grad: 'from-sky-500 to-blue-400', width: '60%' },
-            { label: 'Senior worker CPF rates', value: 'Stepped up', sub: 'Workers above 55 — verify your rates', grad: 'from-purple-500 to-pink-400', width: '70%' },
+            { label: 'Senior worker CPF rates', value: 'Stepped up', sub: 'Workers above 55, verify your rates', grad: 'from-purple-500 to-pink-400', width: '70%' },
           ].map((stat) => (
             <div class="bg-[#000F22]/50 p-4 rounded-xl border border-gray-900">
               <div class="flex items-center justify-between mb-1">
@@ -436,7 +436,7 @@ const faqs = [
             </div>
           ))}
         </div>
-        <p class="text-[10px] text-gray-600 font-mono text-center pt-2">*We apply these automatically — no manual updates needed</p>
+        <p class="text-[10px] text-gray-600 font-mono text-center pt-2">*We apply these automatically, no manual updates needed</p>
       </div>
     </div>
   </div>

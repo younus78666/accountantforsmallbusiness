@@ -1,4 +1,4 @@
----
+﻿---
 const year = new Date().getFullYear();
 ---
 
@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 
     <!-- ── CENTERED FULL LOGO (big) ── -->
     <div class="flex flex-col items-center text-center mb-14">
-      <a href="/" aria-label="Accountant for Small Business — Home">
+      <a href="/" aria-label="Accountant for Small Business, Home">
         <!-- logo.png has a navy bg that matches #000F22 perfectly -->
         <img
           src="/footer-logo.png"
@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
         />
       </a>
       <p class="mt-5 text-sm text-[#CBCFD8] max-w-lg leading-relaxed">
-        Remote accounting services for Singapore small businesses — bookkeeping, payroll, financial statements and management reporting. Fixed monthly fees. No surprises.
+        Remote accounting services for Singapore small businesses, bookkeeping, payroll, financial statements and management reporting. Fixed monthly fees. No surprises.
       </p>
       <div class="flex flex-wrap justify-center gap-3 mt-5">
         <a href="/contact/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] text-xs font-bold rounded-lg transition-colors">
@@ -99,7 +99,13 @@ const year = new Date().getFullYear();
     <!-- ── BOTTOM BAR ── -->
     <div class="border-t border-gray-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
       <p class="text-[#CBCFD8]">&copy; {year} Accountant for Small Business &bull; All Rights Reserved.</p>
-      <span class="text-[11px] text-gray-600 font-mono">SFRS &amp; SFRS for Small Entities Compliant</span>
+      <div class="flex items-center gap-4 text-[11px] text-gray-600 font-mono">
+        <a href="/privacy/" class="hover:text-[#DAA035] transition-colors">Privacy Policy</a>
+        <span>·</span>
+        <a href="/terms/" class="hover:text-[#DAA035] transition-colors">Terms of Service</a>
+        <span>·</span>
+        <span>SFRS Compliant</span>
+      </div>
     </div>
 
   </div>
@@ -109,7 +115,7 @@ const year = new Date().getFullYear();
 <div class="bg-[#000B18] border-t border-gray-900/50 py-8">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
     <p class="text-sm text-gray-400 leading-relaxed max-w-3xl mx-auto">
-      <strong class="text-[#CBCFD8]">Accountant for Small Business</strong> is a remote accounting firm serving Singapore sole proprietors, Pte Ltd companies, e-commerce sellers and growing SMEs. We handle bookkeeping, CPF payroll, SFRS financial statements and monthly management reports — so your records stay clean, your tax agent can file on time, and you always know what you're paying.
+      <strong class="text-[#CBCFD8]">Accountant for Small Business</strong> is a remote accounting firm serving Singapore sole proprietors, Pte Ltd companies, e-commerce sellers and growing SMEs. We handle bookkeeping, CPF payroll, SFRS financial statements and monthly management reports, so your records stay clean, your tax agent can file on time, and you always know what you're paying.
     </p>
     <p class="text-xs text-gray-600 font-mono">
       Singapore-focused &bull; Cloud-based delivery via Xero &amp; QuickBooks &bull; Fixed monthly fees &bull; No hidden costs

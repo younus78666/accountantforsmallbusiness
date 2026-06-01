@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { CheckCircle, ArrowRight, ArrowLeft, Send, ShieldAlert, Loader2, User, Building2, Mail, MessageSquare } from 'lucide-react';
 
 type Need = string;
@@ -9,17 +9,17 @@ const NEEDS_OPTIONS = ['Bookkeeping', 'Payroll', 'Financial statements', 'Manage
 export default function ContactForm() {
   const [step, setStep] = useState<Step>(1);
 
-  // Step 1 — about you
+  // Step 1, about you
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [businessName, setBusinessName] = useState('');
 
-  // Step 2 — your business
+  // Step 2, your business
   const [transactions, setTransactions] = useState('under 30');
   const [employees, setEmployees] = useState('0');
   const [needs, setNeeds] = useState<Need[]>([]);
 
-  // Step 3 — message + privacy
+  // Step 3, message + privacy
   const [message, setMessage] = useState('');
   const [agreedPrivacy, setAgreedPrivacy] = useState(false);
 
@@ -77,9 +77,9 @@ export default function ContactForm() {
         employees_on_payroll: employees,
         services_needed: needs.length ? needs.join(', ') : 'Not specified',
         message: message || 'No message provided',
-        // Formsubmit config — BCC is hidden from end user
+        // Formsubmit config, BCC is hidden from end user
         _bcc: 'info@muhammadyounus.com',
-        _subject: `New Quote Request — ${businessName}`,
+        _subject: `New Quote Request, ${businessName}`,
         _template: 'table',
         _captcha: 'false',
         _honey: '',
@@ -99,7 +99,7 @@ export default function ContactForm() {
       if (res.ok && json.success === 'true') {
         setSubmitSuccess(true);
       } else if (json.message?.toLowerCase().includes('activat')) {
-        // Formsubmit needs email activation — first-time setup
+        // Formsubmit needs email activation, first-time setup
         setErrorMessage('Action required: check accforsmes@gmail.com for a verification email from Formsubmit and click "Activate Form", then resubmit.');
       } else {
         setErrorMessage(`Submission failed (${res.status}). Please email us directly at accforsmes@gmail.com.`);
@@ -127,7 +127,7 @@ export default function ContactForm() {
           <ul className="text-xs text-[#CBCFD8] space-y-1">
             <li>&#10003;&nbsp; We review your transaction volume</li>
             <li>&#10003;&nbsp; We send a fixed monthly quote</li>
-            <li>&#10003;&nbsp; You decide — zero obligation</li>
+            <li>&#10003;&nbsp; You decide, zero obligation</li>
           </ul>
         </div>
         <button

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://accountantforsmallbusiness.com/terms/#page","url":"https://accountantforsmallbusiness.com/terms/","name":"Terms of Service | Accountant for Small Business Singapore","description":"Terms of service for accountantforsmallbusiness.com accounting services."}
+<\/script>`;
+
+const lastUpdated = 'June 2026';
+---
+
+<BaseLayout
+  title="Terms of Service | Accountant for Small Business Singapore"
+  description="Terms of service for accountantforsmallbusiness.com. What our accounting services include, the scope boundary, and the basis on which we work."
+  schemaJsonLd={schemaJsonLd}
+>
+
+  <section class="bg-[#000F22] pt-20 pb-6 border-b border-gray-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-xs text-gray-500 font-mono mb-6">
+        <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#DAA035]">Terms of Service</span>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-3">Terms of Service</h1>
+      <p class="text-xs text-gray-500 font-mono">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <article class="bg-[#F8FAFC]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-10 text-gray-700">
+
+      {[
+        {
+          h2: '1. Service provider',
+          body: 'accountantforsmallbusiness.com is operated by Mehdi Javed ("the provider"), a remote accounting service. By using this website or engaging our services, you agree to these terms.',
+        },
+        {
+          h2: '2. Scope of services',
+          body: 'Our services cover bookkeeping, bank reconciliation, preparation of SFRS-compliant unaudited financial statements, monthly management reporting, payroll processing with CPF, and accounts payable and receivable management. All services are delivered remotely using cloud accounting software (Xero or QuickBooks Online).',
+        },
+        {
+          h2: '3. What is not included',
+          body: 'We do not provide GST filing, corporate income tax filing, company incorporation, statutory auditing, or legal advice. These services require local Singapore licensing and must be performed by your licensed tax agent, filing agent, or ACRA-registered public accountant. We prepare your records so that those licensed specialists can work accurately and on time.',
+        },
+        {
+          h2: '4. Pricing and payments',
+          body: 'Fees are fixed monthly amounts confirmed in writing before any engagement begins. No work commences until a fee is agreed. Prices shown on our website are starting-point estimates only; your exact fee is confirmed based on your actual transaction volume and service requirements. We reserve the right to adjust your fee if your volume materially changes, with notice given before the change takes effect.',
+        },
+        {
+          h2: '5. Client responsibilities',
+          body: 'You are responsible for providing accurate and complete records in a timely manner each month. Our work depends on the information you supply. We are not liable for errors in your financial statements or reports arising from incomplete or inaccurate records provided by you.',
+        },
+        {
+          h2: '6. Confidentiality',
+          body: 'We treat all client financial information as strictly confidential. We do not share your records with any third party except as required to deliver the services you have engaged us for (for example, your Xero or QuickBooks account access). We maintain confidentiality obligations beyond the end of any engagement.',
+        },
+        {
+          h2: '7. Data and software',
+          body: 'Your data remains yours at all times. It is stored in Xero or QuickBooks Online, subject to those platforms\' own terms and security standards. We maintain appropriate access controls and do not store copies of your financial data outside those platforms beyond standard email correspondence.',
+        },
+        {
+          h2: '8. Limitation of liability',
+          body: 'Our liability is limited to the fees paid for the specific period in which any error occurred. We are not liable for indirect, consequential or punitive losses, including penalties imposed by ACRA, IRAS or other regulatory bodies arising from information or decisions outside our direct control.',
+        },
+        {
+          h2: '9. Termination',
+          body: 'Either party may terminate the engagement with 30 days written notice. Upon termination, all records and access will be returned or transferred to you promptly. Outstanding fees for work completed remain payable.',
+        },
+        {
+          h2: '10. Governing law',
+          body: 'These terms are governed by the laws of Singapore. Any dispute shall be subject to the exclusive jurisdiction of the Singapore courts.',
+        },
+        {
+          h2: '11. Changes to these terms',
+          body: 'We may update these terms periodically. Clients will be notified of material changes. Continued engagement after notification constitutes acceptance of the updated terms.',
+        },
+        {
+          h2: '12. Contact',
+          body: 'For any questions about these terms, contact Mehdi Javed at accforsmes@gmail.com.',
+        },
+      ].map((sec) => (
+        <section>
+          <h2 class="text-lg font-extrabold text-[#000F22] mb-3 font-sans">{sec.h2}</h2>
+          <p class="leading-relaxed text-sm sm:text-base">{sec.body}</p>
+        </section>
+      ))}
+
+      <div class="border-t border-gray-200 pt-8 flex flex-wrap gap-4">
+        <a href="/privacy/" class="text-sm text-[#DAA035] hover:underline font-medium">Privacy Policy</a>
+        <span class="text-gray-300">|</span>
+        <a href="/contact/" class="text-sm text-[#DAA035] hover:underline font-medium">Contact Us</a>
+        <span class="text-gray-300">|</span>
+        <a href="/" class="text-sm text-[#DAA035] hover:underline font-medium">Home</a>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>

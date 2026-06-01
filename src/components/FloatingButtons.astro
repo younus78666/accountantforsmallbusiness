@@ -1,11 +1,11 @@
----
+﻿---
 /* WhatsApp float (left) + Scroll-to-top (right) */
 const waNumber = '923332999777';
 const waMessage = encodeURIComponent("Hi Mehdi, I'm looking for accounting services for my Singapore small business. Can we get a free quote?");
 const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
 ---
 
-<!-- WhatsApp — bottom left -->
+<!-- WhatsApp, bottom left -->
 <a
   href={waUrl}
   target="_blank"
@@ -22,7 +22,7 @@ const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
   <span class="whitespace-nowrap">Chat with us</span>
 </a>
 
-<!-- Scroll to top — bottom right -->
+<!-- Scroll to top, bottom right -->
 <button
   id="scroll-top-btn"
   aria-label="Scroll to top"

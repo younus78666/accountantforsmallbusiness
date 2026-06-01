@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://accountantforsmallbusiness.com/privacy/#page","url":"https://accountantforsmallbusiness.com/privacy/","name":"Privacy Policy | Accountant for Small Business Singapore","description":"Privacy policy for accountantforsmallbusiness.com. How we collect, use and protect your personal information."}
+<\/script>`;
+
+const lastUpdated = 'June 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy | Accountant for Small Business Singapore"
+  description="Privacy policy for accountantforsmallbusiness.com. How we collect, use and protect your personal information."
+  schemaJsonLd={schemaJsonLd}
+>
+
+  <section class="bg-[#000F22] pt-20 pb-6 border-b border-gray-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-xs text-gray-500 font-mono mb-6">
+        <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#DAA035]">Privacy Policy</span>
+      </nav>
+      <h1 class="text-3xl sm:text-4xl font-serif text-[#FEFFFF] font-bold tracking-tight mb-3">Privacy Policy</h1>
+      <p class="text-xs text-gray-500 font-mono">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <article class="bg-[#F8FAFC]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose-sm text-gray-700 space-y-10">
+
+      {[
+        {
+          h2: '1. Who we are',
+          body: 'This website is operated by Mehdi Javed, trading as accountantforsmallbusiness.com ("we", "us", "our"), a remote accounting service serving Singapore small businesses. Our contact email is accforsmes@gmail.com.',
+        },
+        {
+          h2: '2. What information we collect',
+          body: 'We collect only what you provide through our contact form: your full name, email address, business name, approximate monthly transaction volume, number of employees on payroll, the services you need, and any optional message. We do not collect payment details, sensitive financial data, or any information about minors.',
+        },
+        {
+          h2: '3. Why we collect it',
+          body: 'We use your information solely to respond to your enquiry, prepare a fixed monthly quote, and communicate about the accounting services you requested. We do not use your data for marketing, sell it to third parties, or share it outside the scope of delivering our service.',
+        },
+        {
+          h2: '4. How we process your form submission',
+          body: 'Form submissions are delivered via Formsubmit.co to our email address. Formsubmit acts as a processing intermediary and handles data in accordance with their own privacy policy. We retain your enquiry details to fulfil your quote request and for standard business record-keeping. We do not store form data in any additional database.',
+        },
+        {
+          h2: '5. Cookies and analytics',
+          body: 'This website may use Google Analytics to understand how visitors interact with the site. Analytics data is aggregated and anonymised. We use no advertising cookies, tracking pixels, or remarketing scripts. You can opt out of Google Analytics via browser extensions or cookie settings.',
+        },
+        {
+          h2: '6. Data retention',
+          body: 'We keep enquiry correspondence for as long as necessary to fulfil the request and for standard business purposes, and in any case no longer than five years. You may request deletion of your personal data at any time by emailing accforsmes@gmail.com.',
+        },
+        {
+          h2: '7. Your rights',
+          body: 'You have the right to access, correct or request deletion of your personal data. To exercise any of these rights, contact us at accforsmes@gmail.com. We will respond within one business day.',
+        },
+        {
+          h2: '8. Third-party links',
+          body: 'This site contains links to third-party websites (including LinkedIn and WhatsApp). We are not responsible for the privacy practices of those services. Please review their privacy policies directly.',
+        },
+        {
+          h2: '9. Changes to this policy',
+          body: 'We may update this policy periodically. The current version is always published at this URL with the date of last update shown above. Continued use of the site after a change constitutes acceptance of the updated policy.',
+        },
+        {
+          h2: '10. Contact',
+          body: 'For any privacy questions, contact Mehdi Javed at accforsmes@gmail.com.',
+        },
+      ].map((sec) => (
+        <section>
+          <h2 class="text-lg font-extrabold text-[#000F22] mb-3 font-sans">{sec.h2}</h2>
+          <p class="leading-relaxed text-sm sm:text-base">{sec.body}</p>
+        </section>
+      ))}
+
+      <div class="border-t border-gray-200 pt-8 flex flex-wrap gap-4">
+        <a href="/terms/" class="text-sm text-[#DAA035] hover:underline font-medium">Terms of Service</a>
+        <span class="text-gray-300">|</span>
+        <a href="/contact/" class="text-sm text-[#DAA035] hover:underline font-medium">Contact Us</a>
+        <span class="text-gray-300">|</span>
+        <a href="/" class="text-sm text-[#DAA035] hover:underline font-medium">Home</a>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>

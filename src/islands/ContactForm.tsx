@@ -1,26 +1,22 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, ArrowRight, ArrowLeft, Send, ShieldAlert, Loader2, User, Building2, Mail, MessageSquare } from 'lucide-react';
 
 type Need = string;
 type Step = 1 | 2 | 3;
 
 const NEEDS_OPTIONS = ['Bookkeeping', 'Payroll', 'Financial statements', 'Management reports', 'Not sure yet'];
+const WORKER_URL = 'https://form.accountantforsmallbusiness.com/contact';
 
 export default function ContactForm() {
   const [step, setStep] = useState<Step>(1);
 
-  // Step 1, about you
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName]               = useState('');
+  const [email, setEmail]             = useState('');
   const [businessName, setBusinessName] = useState('');
-
-  // Step 2, your business
   const [transactions, setTransactions] = useState('under 30');
-  const [employees, setEmployees] = useState('0');
-  const [needs, setNeeds] = useState<Need[]>([]);
-
-  // Step 3, message + privacy
-  const [message, setMessage] = useState('');
+  const [employees, setEmployees]     = useState('0');
+  const [needs, setNeeds]             = useState<Need[]>([]);
+  const [message, setMessage]         = useState('');
   const [agreedPrivacy, setAgreedPrivacy] = useState(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -69,40 +65,29 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      const payload = {
-        name,
-        email,
-        business: businessName,
-        monthly_transactions: transactions,
-        employees_on_payroll: employees,
-        services_needed: needs.length ? needs.join(', ') : 'Not specified',
-        message: message || 'No message provided',
-        // Formsubmit config, BCC is hidden from end user
-        _bcc: 'info@muhammadyounus.com',
-        _subject: `New Quote Request, ${businessName}`,
-        _template: 'table',
-        _captcha: 'false',
-        _honey: '',
-      };
-
-      const res = await fetch('https://formsubmit.co/ajax/accforsmes@gmail.com', {
+      const res = await fetch(WORKER_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:                 name.trim(),
+          email:                email.trim(),
+          business:             businessName.trim(),
+          monthly_transactions: transactions,
+          employees_on_payroll: employees,
+          services_needed:      needs.length ? needs.join(', ') : 'Not specified',
+          message:              message.trim() || '',
+          source:               'Contact Page Form',
+        }),
       });
 
       const json = await res.json().catch(() => ({}));
 
-      if (res.ok && json.success === 'true') {
+      if (res.ok && json.ok) {
         setSubmitSuccess(true);
-      } else if (json.message?.toLowerCase().includes('activat')) {
-        // Formsubmit needs email activation, first-time setup
-        setErrorMessage('Action required: check accforsmes@gmail.com for a verification email from Formsubmit and click "Activate Form", then resubmit.');
       } else {
-        setErrorMessage(`Submission failed (${res.status}). Please email us directly at accforsmes@gmail.com.`);
+        setErrorMessage(
+          json.error || `Submission failed (${res.status}). Please email us at accforsmes@gmail.com.`
+        );
       }
     } catch {
       setErrorMessage('Network error. Please email us directly at accforsmes@gmail.com.');
@@ -116,22 +101,29 @@ export default function ContactForm() {
     return (
       <div className="bg-[#0A1628] border border-[#DAA035]/50 p-8 md:p-12 rounded-2xl text-center shadow-lg">
         <div className="w-20 h-20 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-[#DAA035] animate-pulse" />
+          <CheckCircle className="w-10 h-10 text-[#DAA035]" />
         </div>
         <h3 className="text-2xl font-serif text-[#FEFFFF] font-bold mb-3">Request Received!</h3>
-        <p className="text-[#CBCFD8] mb-6 leading-relaxed text-sm max-w-md mx-auto">
+        <p className="text-[#CBCFD8] mb-3 leading-relaxed text-sm max-w-md mx-auto">
           Thank you, <strong className="text-white">{name}</strong>. Mehdi will review your details for <strong className="text-white">{businessName}</strong> and respond within one business day.
         </p>
+        <p className="text-xs text-[#DAA035] mb-6 font-mono">
+          A confirmation email has been sent to {email}
+        </p>
         <div className="p-4 bg-[#000F22] rounded-xl inline-block border border-gray-800 mb-8 text-left">
-          <p className="text-[10px] text-[#DAA035] font-mono uppercase tracking-widest mb-1">What happens next</p>
-          <ul className="text-xs text-[#CBCFD8] space-y-1">
-            <li>&#10003;&nbsp; We review your transaction volume</li>
-            <li>&#10003;&nbsp; We send a fixed monthly quote</li>
-            <li>&#10003;&nbsp; You decide, zero obligation</li>
+          <p className="text-[10px] text-[#DAA035] font-mono uppercase tracking-widest mb-2">What happens next</p>
+          <ul className="text-xs text-[#CBCFD8] space-y-1.5">
+            <li>&#10003;&nbsp; Mehdi reviews your transaction volume</li>
+            <li>&#10003;&nbsp; You receive a fixed monthly quote in writing</li>
+            <li>&#10003;&nbsp; You decide, zero obligation or payment</li>
           </ul>
         </div>
         <button
-          onClick={() => { setSubmitSuccess(false); setStep(1); setName(''); setEmail(''); setBusinessName(''); setNeeds([]); setMessage(''); setAgreedPrivacy(false); }}
+          onClick={() => {
+            setSubmitSuccess(false); setStep(1);
+            setName(''); setEmail(''); setBusinessName('');
+            setNeeds([]); setMessage(''); setAgreedPrivacy(false);
+          }}
           className="block w-full bg-[#DCA33C] text-[#000F22] hover:bg-[#C8912F] font-semibold py-3 px-6 rounded-xl transition-colors cursor-pointer"
         >
           Submit another request
@@ -140,7 +132,6 @@ export default function ContactForm() {
     );
   }
 
-  // ── Progress bar ────────────────────────────────────────────────────────────
   const steps = [
     { n: 1, label: 'About You' },
     { n: 2, label: 'Your Business' },
@@ -156,9 +147,9 @@ export default function ContactForm() {
             <React.Fragment key={s.n}>
               <div className="flex items-center gap-2">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold font-mono transition-all
-                  ${step > s.n ? 'bg-emerald-500 text-white border-2 border-emerald-500' :
+                  ${step > s.n  ? 'bg-emerald-500 text-white border-2 border-emerald-500' :
                     step === s.n ? 'bg-[#DCA33C] text-[#000F22] border-2 border-[#DCA33C]' :
-                    'bg-[#0A1628] text-gray-500 border-2 border-gray-800'}`}>
+                                   'bg-[#0A1628] text-gray-500 border-2 border-gray-800'}`}>
                   {step > s.n ? '✓' : s.n}
                 </div>
                 <span className={`text-xs font-medium hidden sm:block ${step === s.n ? 'text-[#DAA035]' : step > s.n ? 'text-emerald-400' : 'text-gray-600'}`}>
@@ -186,9 +177,9 @@ export default function ContactForm() {
 
       <form onSubmit={handleSubmit}>
 
-        {/* ── STEP 1: About You ──────────────────────────────────────────── */}
+        {/* ── STEP 1 ──────────────────────────────────────────────────────── */}
         {step === 1 && (
-          <div className="space-y-5 animate-fadeIn">
+          <div className="space-y-5">
             <div className="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-5">
               <h3 className="text-xl font-serif text-[#FEFFFF] border-b border-[#DAA035]/20 pb-3 flex items-center gap-2">
                 <User className="w-5 h-5 text-[#DAA035]" />
@@ -196,7 +187,9 @@ export default function ContactForm() {
               </h3>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">Full Name <span className="text-[#DAA035]">*</span></label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">
+                  Full Name <span className="text-[#DAA035]">*</span>
+                </label>
                 <input type="text" required value={name} onChange={e => setName(e.target.value)}
                   placeholder="John Doe"
                   className="w-full bg-[#000F22] border border-gray-800 rounded-xl px-4 py-3 text-[#FEFFFF] placeholder-gray-600 focus:border-[#DAA035] focus:outline-none transition-colors text-sm"
@@ -204,7 +197,9 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">Email Address <span className="text-[#DAA035]">*</span></label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">
+                  Email Address <span className="text-[#DAA035]">*</span>
+                </label>
                 <div className="relative">
                   <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-600" />
                   <input type="email" required value={email} onChange={e => setEmail(e.target.value)}
@@ -215,7 +210,9 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">Business Name <span className="text-[#DAA035]">*</span></label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">
+                  Business Name <span className="text-[#DAA035]">*</span>
+                </label>
                 <div className="relative">
                   <Building2 className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-600" />
                   <input type="text" required value={businessName} onChange={e => setBusinessName(e.target.value)}
@@ -228,9 +225,9 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* ── STEP 2: Your Business ──────────────────────────────────────── */}
+        {/* ── STEP 2 ──────────────────────────────────────────────────────── */}
         {step === 2 && (
-          <div className="space-y-5 animate-fadeIn">
+          <div className="space-y-5">
             <div className="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-6">
               <h3 className="text-xl font-serif text-[#FEFFFF] border-b border-[#DAA035]/20 pb-3 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-[#DAA035]" />
@@ -238,7 +235,9 @@ export default function ContactForm() {
               </h3>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">Monthly Transactions (approx)</label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">
+                  Monthly Transactions (approx)
+                </label>
                 <div className="grid grid-cols-3 gap-3">
                   {[['under 30', 'Under 30', 'Starter'], ['30 to 100', '30 – 100', 'Growth'], ['100+', '100+', 'Full']].map(([val, label, plan]) => (
                     <button key={val} type="button" onClick={() => setTransactions(val)}
@@ -251,7 +250,9 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">Employees on Payroll</label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">
+                  Employees on Payroll
+                </label>
                 <select value={employees} onChange={e => setEmployees(e.target.value)}
                   className="w-full bg-[#000F22] border border-gray-800 rounded-xl px-4 py-3 text-[#FEFFFF] focus:border-[#DAA035] focus:outline-none transition-colors text-sm">
                   <option value="0">None</option>
@@ -262,7 +263,9 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">Services needed <span className="text-gray-600 normal-case font-normal">(select all that apply)</span></label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-2 uppercase tracking-wide">
+                  Services needed <span className="text-gray-600 normal-case font-normal">(select all that apply)</span>
+                </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {NEEDS_OPTIONS.map(need => (
                     <label key={need} className="flex items-center gap-3 cursor-pointer p-3 rounded-xl border border-gray-800 hover:border-[#DAA035]/40 transition-all select-none bg-[#000F22]">
@@ -277,29 +280,40 @@ export default function ContactForm() {
           </div>
         )}
 
-        {/* ── STEP 3: Message + Submit ──────────────────────────────────── */}
+        {/* ── STEP 3 ──────────────────────────────────────────────────────── */}
         {step === 3 && (
-          <div className="space-y-5 animate-fadeIn">
+          <div className="space-y-5">
             <div className="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-5">
               <h3 className="text-xl font-serif text-[#FEFFFF] border-b border-[#DAA035]/20 pb-3 flex items-center gap-2">
                 <MessageSquare className="w-5 h-5 text-[#DAA035]" />
                 Any final details?
               </h3>
 
-              {/* Summary card */}
+              {/* Summary */}
               <div className="bg-[#000F22] border border-gray-800 rounded-xl p-4 space-y-2">
                 <p className="text-[10px] font-mono text-[#DAA035] uppercase tracking-wider mb-2">Your request summary</p>
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
-                  <span className="text-gray-500">Name:</span><span className="text-[#FEFFFF] font-medium">{name}</span>
-                  <span className="text-gray-500">Business:</span><span className="text-[#FEFFFF] font-medium">{businessName}</span>
-                  <span className="text-gray-500">Transactions:</span><span className="text-[#DAA035] font-medium">{transactions}/mo</span>
-                  <span className="text-gray-500">Staff:</span><span className="text-[#FEFFFF] font-medium">{employees === '0' ? 'None' : employees}</span>
-                  {needs.length > 0 && <><span className="text-gray-500">Needs:</span><span className="text-[#FEFFFF] font-medium">{needs.join(', ')}</span></>}
+                  <span className="text-gray-500">Name:</span>
+                  <span className="text-[#FEFFFF] font-medium">{name}</span>
+                  <span className="text-gray-500">Business:</span>
+                  <span className="text-[#FEFFFF] font-medium">{businessName}</span>
+                  <span className="text-gray-500">Transactions:</span>
+                  <span className="text-[#DAA035] font-medium">{transactions}/mo</span>
+                  <span className="text-gray-500">Staff:</span>
+                  <span className="text-[#FEFFFF] font-medium">{employees === '0' ? 'None' : employees}</span>
+                  {needs.length > 0 && (
+                    <>
+                      <span className="text-gray-500">Needs:</span>
+                      <span className="text-[#FEFFFF] font-medium">{needs.join(', ')}</span>
+                    </>
+                  )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">Additional message <span className="text-gray-600 normal-case font-normal">(optional)</span></label>
+                <label className="block text-xs font-semibold text-[#CBCFD8] mb-1.5 uppercase tracking-wide">
+                  Additional message <span className="text-gray-600 normal-case font-normal">(optional)</span>
+                </label>
                 <textarea rows={4} value={message} onChange={e => setMessage(e.target.value)}
                   placeholder="Any other details that would help us quote accurately..."
                   className="w-full bg-[#000F22] border border-gray-800 rounded-xl px-4 py-3 text-[#FEFFFF] placeholder-gray-600 focus:border-[#DAA035] focus:outline-none transition-colors resize-none text-sm"
@@ -310,14 +324,15 @@ export default function ContactForm() {
                 <input type="checkbox" required checked={agreedPrivacy} onChange={e => setAgreedPrivacy(e.target.checked)}
                   className="w-4 h-4 mt-0.5 rounded cursor-pointer shrink-0" style={{ accentColor: '#DAA035' }} />
                 <span className="text-xs text-[#CBCFD8] leading-relaxed">
-                  I consent to sharing my name, email, and business details for the purpose of receiving a fixed quote and scheduling the initial consultation. No payment is collected and no spam.
+                  I consent to sharing my name, email, and business details for the purpose of receiving a fixed quote.
+                  No payment is collected. <a href="/privacy/" className="text-[#DAA035] hover:underline">Privacy policy</a>.
                 </span>
               </label>
             </div>
           </div>
         )}
 
-        {/* ── Navigation buttons ────────────────────────────────────────── */}
+        {/* ── Nav buttons ─────────────────────────────────────────────────── */}
         <div className={`flex gap-3 mt-6 ${step > 1 ? 'justify-between' : 'justify-end'}`}>
           {step > 1 && (
             <button type="button" onClick={prevStep}
@@ -334,10 +349,13 @@ export default function ContactForm() {
           ) : (
             <button type="submit" disabled={isSubmitting}
               className="flex-1 flex items-center justify-center gap-2 px-8 py-3.5 bg-[#DCA33C] hover:bg-[#C8912F] disabled:bg-gray-700 text-[#000F22] font-semibold rounded-xl transition-all active:scale-[0.98] cursor-pointer text-sm">
-              {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /><span>Sending...</span></> : <><Send className="w-4 h-4" /><span>Get my fixed quote</span></>}
+              {isSubmitting
+                ? <><Loader2 className="w-4 h-4 animate-spin" /><span>Sending...</span></>
+                : <><Send className="w-4 h-4" /><span>Get my fixed quote</span></>}
             </button>
           )}
         </div>
+
       </form>
     </div>
   );

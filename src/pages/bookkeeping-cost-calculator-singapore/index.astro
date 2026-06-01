@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookkeepingEstimator from '../../islands/BookkeepingEstimator';
+
+const title = 'Bookkeeping Cost Calculator Singapore 2026 | Estimate Your Monthly Fee | AFSB';
+const description = 'Free bookkeeping cost calculator for Singapore small businesses. Estimate your monthly bookkeeping fee based on transaction volume, employees and services needed. Compare vs in-house hire.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/bookkeeping-cost-calculator-singapore/#app","name":"Singapore Bookkeeping Cost Estimator 2026","url":"https://accountantforsmallbusiness.com/bookkeeping-cost-calculator-singapore/","description":"Estimate your monthly bookkeeping cost for a Singapore small business based on transaction volume, employee count and services needed.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},"author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does bookkeeping cost per month in Singapore?","acceptedAnswer":{"@type":"Answer","text":"Monthly bookkeeping for a Singapore SME typically costs S$90 to S$800, depending on transaction volume, whether you need payroll and management reports, and bookkeeping frequency. A low-volume sole proprietor pays far less than a GST-registered company with staff."}},{"@type":"Question","name":"What drives the cost of bookkeeping in Singapore?","acceptedAnswer":{"@type":"Answer","text":"The main driver is monthly transaction volume. GST registration, payroll headcount and whether you need monthly management reports also adjust the fee. Annual bookkeeping costs roughly 30% less than monthly."}},{"@type":"Question","name":"Is it cheaper to outsource bookkeeping or hire in-house?","acceptedAnswer":{"@type":"Answer","text":"For most Singapore SMEs, outsourcing is significantly cheaper. An in-house bookkeeper costs S$3,500 to S$5,500 per month including CPF and benefits. Outsourcing the same work typically costs S$90 to S$800 per month — a saving of 70 to 85%."}},{"@type":"Question","name":"What is included in a bookkeeping service?","acceptedAnswer":{"@type":"Answer","text":"A monthly bookkeeping service covers transaction recording, bank reconciliation, accounts payable and receivable, and a monthly summary. Full-service plans also include SFRS financial statements, management reports and payroll with CPF."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"Bookkeeping Cost Calculator Singapore","item":"https://accountantforsmallbusiness.com/bookkeeping-cost-calculator-singapore/"}]}]}
+<\/script>`;
+
+const faqs = [
+  { q: 'How much does bookkeeping cost per month in Singapore?', a: 'Monthly bookkeeping for a Singapore SME typically costs S$90 to S$800, depending on transaction volume, whether you need payroll and management reports, and bookkeeping frequency. A low-volume sole proprietor pays far less than a GST-registered company with staff.' },
+  { q: 'What drives the cost of bookkeeping in Singapore?', a: 'The main driver is monthly transaction volume. GST registration, payroll headcount and whether you need monthly management reports also adjust the fee. Annual bookkeeping costs roughly 30% less than monthly.' },
+  { q: 'Is it cheaper to outsource bookkeeping or hire in-house?', a: 'For most Singapore SMEs, outsourcing is significantly cheaper. An in-house bookkeeper costs S$3,500 to S$5,500 per month including CPF and benefits. Outsourcing the same work typically costs S$90 to S$800 per month, a saving of 70 to 85%.' },
+  { q: 'What is included in a bookkeeping service?', a: 'A monthly bookkeeping service covers transaction recording, bank reconciliation, accounts payable and receivable, and a monthly summary. Full-service plans also include SFRS financial statements, management reports and payroll with CPF.' },
+  { q: 'Does the estimator include GST filing?', a: 'No. GST and corporate tax filing are done by your licensed Singapore tax agent. Our bookkeeping service keeps your records clean and tax-ready so your tax agent can file accurately. The calculator covers accounting costs only.' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">Bookkeeping Cost Calculator</span>
+    </nav>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="inline-block py-1 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">Free Tool</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-emerald-500/15 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-widest">No obligation</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-sky-500/15 border border-sky-500/20 text-sky-400 text-xs font-mono uppercase tracking-widest">Singapore SMEs</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      Singapore Bookkeeping Cost Calculator
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-xl mx-auto leading-relaxed">
+      Drag the slider to your monthly transaction volume, add payroll headcount and see your estimated monthly fee in seconds, alongside a comparison with in-house hiring costs.
+    </p>
+  </div>
+</section>
+
+<!-- ════ ESTIMATOR + SIDEBAR ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Estimator -->
+      <div class="lg:col-span-7">
+        <BookkeepingEstimator client:load />
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-24">
+
+        <!-- What's included -->
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-6 space-y-4">
+          <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-wider font-bold border-b border-gray-800 pb-3">What each plan includes</h3>
+          {[
+            { plan: 'Starter', price: 'From S$90/mo', includes: ['Monthly bookkeeping', 'Bank reconciliation', 'Year-end statements', 'Dedicated accountant', 'Xero / QuickBooks'] },
+            { plan: 'Growth', price: 'From S$250/mo', includes: ['Everything in Starter', 'Management reports', 'AP/AR tracking'] },
+            { plan: 'Full', price: 'From S$450/mo', includes: ['Everything in Growth', 'Monthly payroll with CPF', 'Itemised payslips'] },
+          ].map((p) => (
+            <div class="bg-[#000F22] border border-gray-800 rounded-xl p-4 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white">{p.plan}</span>
+                <span class="text-xs font-mono font-bold text-[#DAA035]">{p.price}</span>
+              </div>
+              <ul class="space-y-1">
+                {p.includes.map((item) => (
+                  <li class="flex items-center gap-2 text-[11px] text-gray-400">
+                    <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <a href="/pricing/" class="block text-center border border-gray-700 text-[#CBCFD8] hover:border-[#DAA035] hover:text-[#DAA035] py-2.5 px-4 rounded-xl text-xs font-medium transition-all">
+            Full pricing breakdown &rarr;
+          </a>
+        </div>
+
+        <!-- CPF Calculator CTA -->
+        <div class="bg-sky-950/25 border border-sky-900/40 rounded-2xl p-5 space-y-3">
+          <p class="text-xs font-bold text-sky-300">Also need CPF calculations?</p>
+          <p class="text-xs text-gray-400 leading-relaxed">Use our free CPF calculator to check employer and employee contributions with the 2026 OW ceiling of S$8,000.</p>
+          <a href="/cpf-calculator-singapore/" class="block text-center border border-sky-500/30 text-sky-400 hover:bg-sky-500/10 py-2.5 px-4 rounded-xl text-xs font-medium transition-all">
+            CPF Calculator 2026 &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHAT DRIVES COST (light) ════ -->
+<section class="bg-[#F8FAFC] py-16 border-b border-gray-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What drives the cost of bookkeeping in Singapore?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {[
+        { n:'01', title:'Transaction volume', desc:'The biggest driver. More invoices, receipts and bank entries mean more work. A sole proprietor with 20 transactions pays far less than a company processing 150 a month.', badge:'Biggest factor' },
+        { n:'02', title:'Payroll headcount', desc:'Each employee adds monthly payroll processing, CPF computation and payslip generation. The payroll addon is priced per employee so your fee scales cleanly with headcount.', badge:'Per employee' },
+        { n:'03', title:'GST registration', desc:'GST-registered businesses have quarterly F5 filing obligations which adds reconciliation complexity and a small fee uplift. Non-GST businesses pay less.', badge:'Adds complexity' },
+        { n:'04', title:'Frequency & scope', desc:'Monthly books cost more than year-end only, because they keep records current throughout the year. Adding management reports or AP/AR tracking moves you to the Growth plan.', badge:'Tier factor' },
+      ].map((item) => (
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm space-y-2">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-[10px] font-mono font-bold text-[#DAA035]">{item.n}</span>
+            <span class="text-[10px] font-mono font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">{item.badge}</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-[#000F22]">{item.title}</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold text-center mb-10">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ RELATED ════ -->
+<section class="bg-[#000F22] py-12 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold mb-5">Related tools & services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {[
+        { title: 'CPF Calculator Singapore 2026', desc: 'Calculate employer CPF, employee CPF and SDL instantly.', href: '/cpf-calculator-singapore/' },
+        { title: 'Bookkeeping Services Singapore', desc: 'Monthly Xero bookkeeping from S$90/mo — transaction-based pricing.', href: '/bookkeeping-services-singapore/' },
+        { title: 'Transparent Pricing', desc: 'See all plans, what each includes, and get a fixed quote.', href: '/pricing/' },
+      ].map((s) => (
+        <a href={s.href} class="bg-[#0A1628] border border-gray-800 hover:border-[#DAA035]/30 rounded-xl p-5 transition-all group">
+          <h4 class="text-sm font-bold text-white mb-1 group-hover:text-[#DAA035] transition-colors">{s.title}</h4>
+          <p class="text-xs text-gray-500 leading-snug">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="bg-[#FFFDF2] py-16 text-center">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+    <h3 class="text-2xl sm:text-3xl font-sans text-amber-950 font-extrabold tracking-tight">Ready for an exact price?</h3>
+    <p class="text-sm text-gray-700">Get a fixed monthly quote built around your real transaction volume. One short call, one clear number, no obligation.</p>
+    <a href="/contact/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all">
+      Get my fixed quote &rarr;
+    </a>
+  </div>
+</section>
+
+</BaseLayout>

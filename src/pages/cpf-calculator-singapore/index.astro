@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CPFCalculator from '../../islands/CPFCalculator';
+
+const title = 'Singapore CPF Calculator 2026 | Employer & Employee Contributions | AFSB';
+const description = 'Free Singapore CPF contribution calculator for 2026. Calculate employer CPF, employee CPF, SDL and net salary instantly. Accurate 2026 OW ceiling of S$8,000 and all age brackets.';
+
+const schemaJsonLd = `<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://accountantforsmallbusiness.com/cpf-calculator-singapore/#app","name":"Singapore CPF Contribution Calculator 2026","url":"https://accountantforsmallbusiness.com/cpf-calculator-singapore/","description":"Calculate Singapore CPF employer and employee contributions for 2026 with accurate OW ceiling, all age brackets and PR graduated rates.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},"author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the CPF OW ceiling in 2026?","acceptedAnswer":{"@type":"Answer","text":"The CPF Ordinary Wage (OW) ceiling is S$8,000 per month from January 2026, raised from S$6,800 under the 2026 Budget to improve retirement savings for middle-income workers."}},{"@type":"Question","name":"How much CPF does an employer pay in Singapore?","acceptedAnswer":{"@type":"Answer","text":"For employees below 55, employers contribute 17% of wages (up to the OW ceiling of S$8,000). Rates are lower for employees aged 55 and above."}},{"@type":"Question","name":"What is SDL in Singapore payroll?","acceptedAnswer":{"@type":"Answer","text":"The Skills Development Levy (SDL) is 0.25% of every employee's gross wages, with a minimum of S$2 per employee per month. It funds workforce training through SkillsFuture Singapore."}},{"@type":"Question","name":"Do foreign employees on Employment Pass get CPF?","acceptedAnswer":{"@type":"Answer","text":"No. CPF applies to Singapore citizens and permanent residents only. Foreign employees on Employment Pass, S Pass or Work Permit are not subject to CPF, though Work Permit and S Pass holders attract the Foreign Worker Levy (FWL)."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},{"@type":"ListItem","position":2,"name":"CPF Calculator Singapore 2026","item":"https://accountantforsmallbusiness.com/cpf-calculator-singapore/"}]}]}
+<\/script>`;
+
+const cpfRates = [
+  { age: 'Below 55',  employer: '17%',   employee: '20%',   total: '37%' },
+  { age: '55 to 60', employer: '16%',   employee: '16%',   total: '32%' },
+  { age: '60 to 65', employer: '12%',   employee: '10.5%', total: '22.5%' },
+  { age: '65 to 70', employer: '9.5%',  employee: '7.5%',  total: '17%' },
+  { age: 'Above 70', employer: '7.5%',  employee: '5%',    total: '12.5%' },
+];
+
+const faqs = [
+  { q: 'What is the CPF OW ceiling in 2026?', a: 'The CPF Ordinary Wage (OW) ceiling is S$8,000 per month from January 2026, raised from S$6,800 under the 2026 Budget to improve retirement savings for middle-income workers.' },
+  { q: 'How much CPF does an employer pay in Singapore?', a: 'For employees below 55, employers contribute 17% of wages up to the OW ceiling of S$8,000. Rates decrease for employees aged 55 and above.' },
+  { q: 'What is the Skills Development Levy (SDL)?', a: 'SDL is 0.25% of every employee\'s gross wages, with a minimum of S$2 per employee per month. It funds workforce training through SkillsFuture Singapore and applies to all employees including foreigners.' },
+  { q: 'Do foreign employees get CPF?', a: 'No. CPF applies to Singapore citizens and permanent residents only. Foreign employees on Employment Pass, S Pass or Work Permit are not subject to CPF. Work Permit and S Pass holders attract the Foreign Worker Levy (FWL).' },
+  { q: 'What is the CPF Additional Wage ceiling?', a: 'The AW ceiling is S$102,000 minus the total OW subject to CPF for the year. It caps CPF contributions on bonuses and variable pay to prevent employees from front-loading all compensation as OW.' },
+  { q: 'Why do PR employees have different CPF rates?', a: 'New PRs start on graduated contribution rates in their first two years to ease the transition. Year 1: employer 4%, employee 5%. Year 2: employer 9%, employee 15%. From year 3 onwards they contribute at the same rates as citizens.' },
+];
+---
+
+<BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
+
+<!-- ════ HERO ════ -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
+    <nav class="flex items-center justify-center gap-2 text-xs text-gray-500 font-mono mb-2">
+      <a href="/" class="hover:text-[#DAA035] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#DAA035]">CPF Calculator Singapore 2026</span>
+    </nav>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="inline-block py-1 px-3 rounded-full bg-[#DAA035]/15 border border-[#DAA035]/30 text-[#DAA035] text-xs font-mono uppercase tracking-widest">Free Tool</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-emerald-500/15 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-widest">2026 Rates</span>
+      <span class="inline-block py-1 px-3 rounded-full bg-sky-500/15 border border-sky-500/20 text-sky-400 text-xs font-mono uppercase tracking-widest">OW Ceiling S$8,000</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-serif text-[#FEFFFF] font-bold tracking-tight leading-tight">
+      Singapore CPF Calculator 2026
+    </h1>
+    <p class="text-sm sm:text-base text-[#CBCFD8] max-w-xl mx-auto leading-relaxed">
+      Calculate employer CPF, employee CPF, SDL and net salary instantly. Accurate 2026 contribution rates with updated S$8,000 OW ceiling and all age brackets.
+    </p>
+  </div>
+</section>
+
+<!-- ════ CALCULATOR + RATES (2-col on desktop) ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Calculator -->
+      <div class="lg:col-span-7">
+        <CPFCalculator client:load />
+      </div>
+
+      <!-- Rates reference sidebar -->
+      <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-24">
+
+        <!-- Rates table -->
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl overflow-hidden">
+          <div class="px-5 py-3 border-b border-gray-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-[#DAA035] uppercase tracking-wider font-bold">2026 CPF Rates — Citizens & PRs (3rd yr+)</span>
+          </div>
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#000F22] text-gray-500">
+                <th class="p-3 text-left font-mono uppercase tracking-wider">Age</th>
+                <th class="p-3 text-center font-mono uppercase tracking-wider text-sky-400">Employer</th>
+                <th class="p-3 text-center font-mono uppercase tracking-wider text-amber-400">Employee</th>
+                <th class="p-3 text-center font-mono uppercase tracking-wider text-white">Total</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800">
+              {cpfRates.map((row) => (
+                <tr class="hover:bg-[#000F22]/50 transition-colors">
+                  <td class="p-3 font-medium text-white">{row.age}</td>
+                  <td class="p-3 text-center font-mono font-bold text-sky-400">{row.employer}</td>
+                  <td class="p-3 text-center font-mono font-bold text-amber-400">{row.employee}</td>
+                  <td class="p-3 text-center font-mono font-bold text-[#DAA035]">{row.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Key numbers -->
+        <div class="bg-[#0A1628] border border-gray-800 rounded-2xl p-5 space-y-3">
+          <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-wider font-bold border-b border-gray-800 pb-2">2026 Key Numbers</h3>
+          {[
+            { label: 'OW Ceiling (monthly)', value: 'S$8,000', note: 'Raised in 2026 Budget' },
+            { label: 'AW Ceiling (annual)', value: 'S$102,000 - OW', note: 'Minus total OW for year' },
+            { label: 'SDL rate', value: '0.25% / min S$2', note: 'All employees including foreigners' },
+            { label: 'PR Year 1', value: 'Employer 4% / Emp 5%', note: 'Graduated rates' },
+            { label: 'PR Year 2', value: 'Employer 9% / Emp 15%', note: 'Graduated rates' },
+          ].map((item) => (
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <span class="block text-[11px] text-gray-400">{item.label}</span>
+                <span class="block text-[10px] text-gray-600 italic">{item.note}</span>
+              </div>
+              <span class="text-xs font-mono font-bold text-[#DAA035] text-right shrink-0">{item.value}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-[#DAA035]/10 border border-[#DAA035]/25 rounded-2xl p-5 space-y-3">
+          <p class="text-xs font-bold text-[#DAA035]">Want payroll handled for you?</p>
+          <p class="text-xs text-gray-400 leading-relaxed">We run monthly payroll with CPF, SDL and IR8A filing for Singapore SMEs. Per-employee pricing, no manual updates needed.</p>
+          <a href="/payroll-services-singapore/" class="block text-center bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-bold py-2.5 px-4 rounded-xl text-xs transition-all">
+            See payroll service &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOW CPF WORKS (light) ════ -->
+<section class="bg-[#F8FAFC] py-16 border-b border-gray-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">How Singapore CPF works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {[
+        { title: 'Ordinary Wage (OW)', body: 'Regular monthly salary. CPF is calculated on OW up to the monthly ceiling of S$8,000. Any OW above S$8,000 is not subject to CPF contributions.' },
+        { title: 'Additional Wage (AW)', body: 'Bonuses, variable pay and other non-monthly wages. Subject to CPF up to the AW ceiling: S$102,000 minus total OW subject to CPF for the year.' },
+        { title: 'Skills Development Levy', body: 'SDL is 0.25% of every employee\'s gross wages, minimum S$2/month. It applies to all employees including foreigners and funds SkillsFuture training programmes.' },
+        { title: '2026 Budget changes', body: 'The OW ceiling rose from S$6,800 to S$8,000/month from 1 January 2026. CPF rates for workers aged 55-60 also increased to 32% total. Employers who have not updated their payroll may be underpaying.' },
+      ].map((item) => (
+        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+          <h3 class="text-sm font-extrabold text-[#000F22] mb-2">{item.title}</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="bg-[#000F22] py-16 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl font-serif text-white font-semibold text-center mb-10">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-[#0A1628] border border-gray-900 rounded-lg p-5 group">
+          <summary class="w-full flex items-center justify-between text-left font-sans text-sm sm:text-base font-semibold text-white cursor-pointer list-none select-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:text-[#DAA035] transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-gray-800 text-xs sm:text-sm text-[#CBCFD8] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ RELATED ════ -->
+<section class="bg-[#000F22] py-12 border-b border-gray-950">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-xs font-mono text-[#DAA035] uppercase tracking-widest font-bold mb-5">Related tools & services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {[
+        { title: 'Bookkeeping Cost Estimator', desc: 'Estimate your monthly bookkeeping fee based on transaction volume.', href: '/bookkeeping-cost-calculator-singapore/' },
+        { title: 'Payroll Services Singapore', desc: 'Let us handle CPF, SDL, payslips and IR8A every month.', href: '/payroll-services-singapore/' },
+        { title: 'How Much Does an Accountant Cost?', desc: 'Real monthly price ranges for Singapore small businesses.', href: '/blog/accountant-cost-singapore/' },
+      ].map((s) => (
+        <a href={s.href} class="bg-[#0A1628] border border-gray-800 hover:border-[#DAA035]/30 rounded-xl p-5 transition-all group">
+          <h4 class="text-sm font-bold text-white mb-1 group-hover:text-[#DAA035] transition-colors">{s.title}</h4>
+          <p class="text-xs text-gray-500 leading-snug">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="bg-[#FFFDF2] py-16 text-center">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+    <h3 class="text-2xl sm:text-3xl font-sans text-amber-950 font-extrabold tracking-tight">Want payroll handled accurately every month?</h3>
+    <p class="text-sm text-gray-700">We run payroll with CPF, SDL and IR8A for Singapore SMEs. Priced per employee, automatically updated for 2026 rate changes.</p>
+    <a href="/payroll-services-singapore/" class="inline-block bg-[#DCA33C] hover:bg-[#C8912F] text-[#000F22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all">
+      See payroll services &rarr;
+    </a>
+  </div>
+</section>
+
+</BaseLayout>

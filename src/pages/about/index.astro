@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'About Mehdi Javed | Accountant for Small Business Singapore';
@@ -22,7 +22,7 @@ const glance = [
 
 <BaseLayout {title} {description} schemaJsonLd={schemaJsonLd}>
 
-<!-- ════ HERO ════ -->
+<!-- ---- HERO ---- -->
 <section class="relative overflow-hidden bg-gradient-to-b from-[#000F22] to-[#0A1628] pt-20 pb-16 border-b border-gray-900 text-center">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,163,60,0.02)_0%,transparent_70%)] pointer-events-none"></div>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
@@ -51,7 +51,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ SPLIT 1: Who is behind it? (light F8FAFC, text left) ════ -->
+<!-- ---- SPLIT 1: Who is behind it? (light F8FAFC, text left) ---- -->
 <section class="bg-[#F8FAFC] text-[#000F22] py-20 border-b border-gray-200">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -91,7 +91,7 @@ const glance = [
           <div class="flex flex-col items-center gap-5">
             <div class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#DAA035]/40 shadow-xl" style="box-shadow: 0 0 24px rgba(220,163,60,0.15);">
               <img
-                src="/Mehdi Jawed - Accountant For Small Businesses.png"
+                src="/mehdi-javed.jpg"
                 alt="Mehdi Javed, Financial Controller"
                 class="w-full h-full object-cover object-top"
               />
@@ -129,7 +129,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ SPLIT 2: Qualifications & track record (dark 0A1B30, visual left) ════ -->
+<!-- ---- SPLIT 2: Qualifications & track record (dark 0A1B30, visual left) ---- -->
 <section class="bg-[#0A1B30] text-[#CBCFD8] py-20 border-b border-gray-950/45">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -189,7 +189,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ SPLIT 3: Remote accounting (light EDF0F5, text left) ════ -->
+<!-- ---- SPLIT 3: Remote accounting (light EDF0F5, text left) ---- -->
 <section class="bg-[#EDF0F5] text-[#000F22] py-20 border-b border-gray-200">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -221,9 +221,9 @@ const glance = [
             <!-- Timeline of locations -->
             <div class="relative pl-4 border-l border-[#DAA035]/30 space-y-5 font-sans">
               {[
-                { step: '1', title: 'You share records', sub: 'Connect bank feed or upload via Xero / QuickBooks', flag: '🇸🇬' },
-                { step: '2', title: 'Mehdi does the work', sub: 'Reconciles, posts and reviews everything in Karachi', flag: '🇵🇰' },
-                { step: '3', title: 'You get reports', sub: 'Clean books + statements delivered online', flag: '🇸🇬' },
+                { step: '1', title: 'You share records', sub: 'Connect bank feed or upload via Xero / QuickBooks', flag: '????' },
+                { step: '2', title: 'Mehdi does the work', sub: 'Reconciles, posts and reviews everything in Karachi', flag: '????' },
+                { step: '3', title: 'You get reports', sub: 'Clean books + statements delivered online', flag: '????' },
               ].map((item) => (
                 <div class="flex items-start gap-4 relative z-10">
                   <div class="w-7 h-7 rounded-full bg-[#DAA035]/10 text-[#DAA035] border border-[#DAA035]/35 font-mono text-xs font-bold flex items-center justify-center shrink-0 -ml-[1.875rem]">{item.step}</div>
@@ -252,7 +252,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ SPLIT 4: Scope, what Mehdi does vs tax agent (dark 061224) ════ -->
+<!-- ---- SPLIT 4: Scope, what Mehdi does vs tax agent (dark 061224) ---- -->
 <section class="bg-[#061224] text-[#CBCFD8] py-20 border-b border-gray-950">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -308,7 +308,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ WHY TRUST (warm FFFDF2) ════ -->
+<!-- ---- WHY TRUST (warm FFFDF2) ---- -->
 <section class="bg-[#FFFDF2] text-[#000F22] py-20 border-b border-amber-100">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
     <div class="text-center space-y-3">
@@ -345,7 +345,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ MEHDI AT A GLANCE TABLE (dark navy) ════ -->
+<!-- ---- MEHDI AT A GLANCE TABLE (dark navy) ---- -->
 <section class="bg-[#000F22] py-20 border-b border-gray-950">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 space-y-3">
@@ -371,7 +371,7 @@ const glance = [
   </div>
 </section>
 
-<!-- ════ CLOSING CTA ════ -->
+<!-- ---- CLOSING CTA ---- -->
 <section class="bg-[#FFFDF2] py-20 text-center">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     <h3 class="text-3xl sm:text-4xl font-sans text-amber-950 font-extrabold tracking-tight">

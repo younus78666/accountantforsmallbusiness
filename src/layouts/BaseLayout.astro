@@ -1,4 +1,4 @@
-﻿---
+---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -18,7 +18,7 @@ const {
   title,
   description,
   canonical,
-  ogImage = '/hero-bg.png',
+  ogImage = '/hero-bg.jpg',
   schemaJsonLd,
   preloadHero = true,
 } = Astro.props;
@@ -47,7 +47,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
     <!-- DNS prefetch for external services -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="https://formsubmit.co" />
+    <link rel="dns-prefetch" href="https://form.accountantforsmallbusiness.com" />
 
     <!-- Google Fonts: preconnect then load with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,7 +57,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
     <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
     <!-- LCP: preload hero background image on pages that use it -->
-    {preloadHero && <link rel="preload" as="image" href="/hero-bg.png" fetchpriority="high" />}
+    {preloadHero && <link rel="preload" as="image" href="/hero-bg.jpg" fetchpriority="high" />}
 
     <!-- SEO -->
     <title>{title}</title>

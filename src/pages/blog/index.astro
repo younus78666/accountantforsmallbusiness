@@ -6,6 +6,13 @@ const description = 'Practical guides on bookkeeping, payroll, financial stateme
 
 const posts = [
   {
+    title: 'CPF Contribution Rates 2026 Singapore: Complete Employer Guide',
+    desc: 'Full rate table by age band, OA/SA/MA split, part-time rules, the 2026 OW ceiling increase, and a worked payslip example.',
+    href: '/blog/cpf-contribution-rates-2026-singapore/',
+    tag: 'Payroll',
+    date: 'June 2026',
+  },
+  {
     title: 'Bookkeeping vs Accounting: What\'s the Difference?',
     desc: 'Bookkeeping vs accounting explained simply. See what each does, how they differ, and whether you need one or both.',
     href: '/blog/bookkeeping-vs-accounting/',
@@ -77,7 +84,7 @@ const posts = [
               <p class="text-xs text-[#CBCFD8] leading-relaxed">{post.desc}</p>
             </div>
             <div class="flex items-center justify-between border-t border-gray-800 pt-4">
-              <span class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Singapore Focus &bull; May 2026</span>
+              <span class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Singapore Focus &bull; {post.date ?? 'May 2026'}</span>
               <span class="text-xs font-mono font-bold text-[#DAA035] group-hover:underline">Read &rarr;</span>
             </div>
           </a>

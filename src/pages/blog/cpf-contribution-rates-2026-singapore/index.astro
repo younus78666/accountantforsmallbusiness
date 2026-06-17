@@ -1,0 +1,252 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+  {"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/cpf-contribution-rates-2026-singapore/#article",
+   "headline":"CPF Contribution Rates 2026 Singapore: Complete Employer Guide",
+   "description":"CPF contribution rates 2026 for Singapore employers — full table by age band, OA/SA/MA split, part-time rules, and how to calculate every payslip correctly.",
+   "url":"https://accountantforsmallbusiness.com/blog/cpf-contribution-rates-2026-singapore/",
+   "datePublished":"2026-06-22","dateModified":"2026-06-22","inLanguage":"en-SG",
+   "image":{"@type":"ImageObject","url":"https://accountantforsmallbusiness.com/hero-bg.jpg","width":1200,"height":630},
+   "author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},
+   "publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},
+   "about":["CPF contribution rates","CPF employer","Singapore payroll","CPF 2026"],
+   "keywords":["cpf contribution rate 2026","cpf contribution rate singapore","employer cpf rate 2026","cpf contribution calculator","cpf employer contribution"],
+   "mainEntityOfPage":{"@type":"WebPage","@id":"https://accountantforsmallbusiness.com/blog/cpf-contribution-rates-2026-singapore/"}},
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the CPF contribution rate for 2026?",
+     "acceptedAnswer":{"@type":"Answer","text":"For employees below age 55, the total CPF contribution rate is 37% of ordinary wages — 17% paid by the employer and 20% by the employee. Rates drop progressively from age 55, with the lowest tier (above 70) at a combined 10% (5% employer plus 5% employee)."}},
+    {"@type":"Question","name":"What is the CPF Ordinary Wage ceiling in 2026?",
+     "acceptedAnswer":{"@type":"Answer","text":"The CPF Ordinary Wage (OW) ceiling is S$6,800 per month from January 2026, up from S$6,300 in 2025. This means CPF contributions are calculated only on the first S$6,800 of monthly salary. Any wages above this amount are not subject to CPF contributions on the ordinary wage portion."}},
+    {"@type":"Question","name":"Do part-time employees in Singapore have CPF?",
+     "acceptedAnswer":{"@type":"Answer","text":"Yes. CPF contributions apply to all Singapore citizens and permanent residents earning more than S$50 per month, including part-time workers. The same age-based rate table applies. Contributions are calculated on the actual wages earned, not a pro-rated ceiling."}},
+    {"@type":"Question","name":"What happens if an employer makes the wrong CPF contribution?",
+     "acceptedAnswer":{"@type":"Answer","text":"Underpayment of CPF is a civil liability in Singapore. The CPF Board can recover the shortfall plus interest at 1.5% per month. Persistent non-compliance can lead to prosecution. The simplest way to avoid errors is to use CPF Board's online calculator or outsource payroll to a service that handles CPF submissions directly."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"CPF Contribution Rates 2026 Singapore","item":"https://accountantforsmallbusiness.com/blog/cpf-contribution-rates-2026-singapore/"}
+  ]}
+]}<\/script>`;
+---
+
+<BlogLayout
+  title="CPF Contribution Rates 2026 Singapore: Employer Guide | AFSB"
+  description="CPF contribution rates 2026 for Singapore employers — full table by age band, OA/SA/MA split, part-time rules, and how to calculate every payslip correctly."
+  schemaJsonLd={schemaJsonLd}
+  headline="CPF Contribution Rates 2026 Singapore: Complete Employer Guide"
+  intro="CPF is one of the things you can't afford to get wrong. Underpay and the CPF Board charges interest. Overpay and you've handed the government cash that should be in your employee's pocket. This guide covers every rate, every age band and every edge case you'll run into as a Singapore employer in 2026."
+  date="22 June 2026"
+  datePublished="2026-06-22"
+  dateModified="2026-06-22"
+  readTime="8 min read"
+  ctaLabel="Want your CPF calculated correctly every month? We handle payroll for Singapore SMEs."
+  ctaHref="/payroll-services-singapore/"
+  relatedPosts={[
+    { title: 'Free CPF Calculator Singapore 2026', href: '/cpf-calculator-singapore/', tag: 'Calculator' },
+    { title: 'Total Employee Cost Calculator', href: '/employee-cost-calculator-singapore/', tag: 'Calculator' },
+    { title: 'Payroll Services Singapore', href: '/payroll-services-singapore/', tag: 'Service' },
+  ]}
+>
+
+  <!-- ── SECTION 1: What are CPF contribution rates for 2026? ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What are the CPF contribution rates for 2026?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">For employees below 55, the total CPF contribution rate is 37% of ordinary wages: 17% from the employer and 20% from the employee. Rates reduce progressively as employees get older, dropping to a combined 10% for those above 70. All rates apply to Singapore citizens and permanent residents earning more than S$50 a month.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">The rates haven't changed dramatically from 2025 to 2026 for the under-55 group, but the Ordinary Wage ceiling increased from S$6,300 to S$6,800 per month from January 2026. That's the most important 2026 update for payroll calculations.</p>
+  </div>
+
+  <!-- ── RATE TABLE BY AGE ── -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-2">CPF contribution rates 2026 by age band</h2>
+    <p class="text-sm text-gray-600 mb-6">Applies to Singapore citizens and PRs earning above S$750/month. Lower contribution rates apply between S$50 and S$750 (graduated scale).</p>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF]">
+            <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Age Group</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Employer Rate</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Employee Rate</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Total Rate</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Below 55', '17%', '20%', '37%'],
+            ['55 to 60', '13%', '15%', '28%'],
+            ['60 to 65', '9%', '9.5%', '18.5%'],
+            ['65 to 70', '7.5%', '5.5%', '13%'],
+            ['Above 70', '5%', '5%', '10%'],
+          ].map(([age, employer, employee, total], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50/50 hover:bg-gray-50'}>
+              <td class="p-4 font-semibold text-[#000F22]">{age}</td>
+              <td class="p-4 text-gray-700">{employer}</td>
+              <td class="p-4 text-gray-700">{employee}</td>
+              <td class="p-4 font-bold text-[#DAA035]">{total}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-500 mt-3 font-mono">Source: CPF Board Singapore. Rates for employees earning above S$750/month. Always verify against the CPF Board's official rate table before processing payroll.</p>
+  </div>
+
+  <!-- ── SECTION 2: Employer vs Employee split ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">How are CPF rates split between employee and employer?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">The employer pays their share on top of the employee's gross salary. The employee's share is deducted from their wages. Both portions are paid together to the CPF Board by the 14th of the following month. The employer doesn't "split" a combined rate -- they pay their portion as an additional cost on top of salary.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Here's why this matters for budgeting: if you hire an employee at S$4,000/month, you're not just paying S$4,000. You're paying S$4,000 salary plus S$680 in employer CPF (17%), for a total of S$4,680 per month. That's the real cost before any other benefits. Use our <a href="/employee-cost-calculator-singapore/" class="text-[#DAA035] font-semibold hover:underline">total employee cost calculator</a> to see the full picture including SDL and other levies.</p>
+
+    <!-- Worked example box -->
+    <div class="bg-[#000F22] rounded-2xl p-6 border border-gray-800 mt-4">
+      <p class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">Worked Example: Employee aged 35, salary S$4,000/month</p>
+      <div class="space-y-2 text-sm text-[#CBCFD8] font-mono">
+        <div class="flex justify-between border-b border-gray-800 pb-2"><span>Gross salary</span><span class="text-[#FEFFFF]">S$4,000.00</span></div>
+        <div class="flex justify-between border-b border-gray-800 pb-2"><span>Employee CPF (20% of S$4,000)</span><span class="text-amber-400">S$800.00</span></div>
+        <div class="flex justify-between border-b border-gray-800 pb-2 font-bold"><span class="text-[#FEFFFF]">Take-home pay</span><span class="text-[#FEFFFF]">S$3,200.00</span></div>
+        <div class="flex justify-between border-b border-gray-800 pb-2"><span>Employer CPF (17% of S$4,000)</span><span class="text-amber-400">S$680.00</span></div>
+        <div class="flex justify-between pt-2 font-bold text-base"><span class="text-[#DAA035]">Total cost to employer</span><span class="text-[#DAA035]">S$4,680.00</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: CPF rates for 55-65 ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What is the CPF rate for workers aged 55 to 65?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Workers aged 55 to 60 contribute at 28% total (13% employer, 15% employee). Those aged 60 to 65 contribute at 18.5% total (9% employer, 9.5% employee). The Singapore government has been gradually raising rates for older workers in recent years as part of the refresh of the CPF system.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">It's worth knowing that the age used is the employee's age at the <strong>last day of the calendar month</strong>, not their birthday during the month. So if an employee turns 55 on 20 July, the lower rate applies from 1 July, not from the 20th. Many payroll systems don't handle this automatically, which is why it's a common error in manual payroll.</p>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">If you're running payroll for a mixed-age workforce, our <a href="/cpf-calculator-singapore/" class="text-[#DAA035] font-semibold hover:underline">CPF calculator</a> handles each age band separately so you don't have to do it by hand.</p>
+  </div>
+
+  <!-- ── SECTION 4: OA/SA/MA allocation ── -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-2">How is the CPF contribution split between OA, SA and MA?</h2>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700 mb-6">The total CPF contribution doesn't all go into one pot. It's divided between three accounts: the Ordinary Account (OA), Special Account (SA) and MediShield Account (MA). The allocation shifts toward MA and away from OA as employees get older, because healthcare needs increase with age.</p>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm mb-4">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF]">
+            <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Age Group</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">OA (Housing/Investment)</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">SA (Retirement)</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">MA (Healthcare)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Below 35', '23%', '6%', '8%'],
+            ['35 to 45', '21%', '7%', '9%'],
+            ['45 to 55', '19%', '8%', '10%'],
+            ['55 to 60', '15%', '3.5%', '9.5%'],
+            ['60 to 65', '12%', '1%', '5.5%'],
+            ['65 to 70', '8%', '1%', '4%'],
+            ['Above 70', '7.5%', '1%', '1.5%'],
+          ].map(([age, oa, sa, ma], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50/50 hover:bg-gray-50'}>
+              <td class="p-4 font-semibold text-[#000F22]">{age}</td>
+              <td class="p-4 text-gray-700">{oa}</td>
+              <td class="p-4 text-gray-700">{sa}</td>
+              <td class="p-4 text-gray-700">{ma}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-500 font-mono">Percentages are of the employee's ordinary wages. Rows sum to the employee's contribution rate (e.g. Below 35: 23+6+8 = 37%). Source: CPF Board.</p>
+  </div>
+
+  <!-- ── SECTION 5: Part-time and variable wage ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">How do you calculate CPF for part-time or variable-wage employees?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">CPF applies to actual wages earned, not a standardised amount. For part-time employees, calculate CPF on the actual hourly or daily wages paid. For variable-wage workers (commission-based sales staff, for example), separate the Ordinary Wages from Additional Wages each month because different annual limits apply to each.</p>
+    </div>
+
+    <div class="space-y-3 text-sm sm:text-base text-gray-700">
+      <p><strong>Ordinary Wages (OW)</strong> are wages earned in the same month -- salary, allowances, overtime. The monthly OW ceiling is S$6,800 in 2026. CPF is calculated on the lower of actual OW or S$6,800.</p>
+      <p><strong>Additional Wages (AW)</strong> are wages not earned in the same month -- annual bonuses, commissions paid quarterly, sign-on bonuses. The AW ceiling is S$102,000 minus total OW already CPF'd that year. So if an employee earned S$6,800 x 12 = S$81,600 in OW, their AW ceiling for the year is S$102,000 - S$81,600 = S$20,400.</p>
+      <p>This matters because a large bonus paid in December can hit the AW ceiling if the employee has been near the OW ceiling all year. Getting this wrong either means you've over-contributed (cash refundable but time-consuming) or under-contributed (interest penalties).</p>
+    </div>
+
+    <!-- Step-by-step how-to -->
+    <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6 mt-4">
+      <p class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">How to calculate CPF for a monthly salary employee</p>
+      <ol class="space-y-3">
+        {[
+          { step: 'Confirm the employee\'s age on the last day of the month.', note: 'This determines the rate row in the table above.' },
+          { step: 'Calculate Ordinary Wages for the month.', note: 'Include basic salary + fixed allowances. Cap at S$6,800.' },
+          { step: 'Multiply OW by the employer rate to get employer CPF.', note: 'E.g. S$4,000 x 17% = S$680.' },
+          { step: 'Multiply OW by the employee rate to get employee CPF.', note: 'E.g. S$4,000 x 20% = S$800. Deduct this from gross pay.' },
+          { step: 'Add any Additional Wages for the month.', note: 'Check against the AW ceiling before applying CPF to bonuses.' },
+          { step: 'Submit both portions to CPF Board by the 14th of the next month.', note: 'Late submission attracts a late payment interest of 1.5% per month.' },
+        ].map((item, i) => (
+          <li class="flex gap-3">
+            <span class="w-7 h-7 rounded-full bg-[#DAA035]/15 text-[#DAA035] text-xs font-mono font-bold flex items-center justify-center border border-[#DAA035]/25 shrink-0 mt-0.5">{i+1}</span>
+            <div>
+              <p class="text-sm font-semibold text-[#000F22]">{item.step}</p>
+              <p class="text-xs text-gray-500 mt-0.5">{item.note}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: What changed in 2026 ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What changed in CPF rates from 2025 to 2026?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">The biggest change in 2026 is the increase in the Ordinary Wage ceiling from S$6,300 to S$6,800 per month. This means employees earning between S$6,300 and S$6,800 now contribute CPF on the additional S$500 of monthly income. Employers in this salary band also pay additional CPF. The percentage rates themselves remain unchanged for most age groups.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">The OW ceiling increase is part of Singapore's plan to raise the ceiling to S$8,000 by 2026, improving retirement savings for higher earners. If you have employees earning between S$6,300 and S$8,000 per month, review your payroll to confirm you've applied the S$6,800 ceiling from January 2026 onward.</p>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">The graduated CPF rates for workers aged 55 and above have also continued their multi-year step-up path. The Singapore government aims to bring senior worker rates closer to the under-55 rates by 2030 to support longer working lives. Check the CPF Board's website or ask your payroll provider to confirm the exact current rates if you're processing payroll for employees in the 55-70 age range.</p>
+  </div>
+
+  <!-- ── SECTION 7: Impact on employee cost ── -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">How does CPF affect total employee cost for Singapore SMEs?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">For an employee below 55 earning S$4,000/month, the employer's total cost is S$4,680 -- the S$4,000 salary plus S$680 in employer CPF. At S$6,800 (the ceiling), total cost reaches S$7,956. CPF isn't the only add-on: SDL (Skills Development Levy) at 0.25% of gross wages adds S$10-17/month per employee, and you'll need to factor in any FWL (Foreign Worker Levy) for non-resident employees.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Many SME owners underestimate employment costs because they anchor to the salary figure. The true cost of an employee includes employer CPF, SDL, any MOM-required benefits (paid annual leave, sick leave) and the time cost of payroll administration. Our <a href="/employee-cost-calculator-singapore/" class="text-[#DAA035] font-semibold hover:underline">employee cost calculator</a> adds all of these up automatically.</p>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">If you're budgeting for a new hire or renegotiating a salary, run the numbers through the calculator first. It's free and takes about 90 seconds. For ongoing payroll -- including CPF submissions, IR8A filing and payslip generation -- our <a href="/payroll-services-singapore/" class="text-[#DAA035] font-semibold hover:underline">payroll service</a> handles everything at a fixed monthly fee.</p>
+  </div>
+
+  <!-- ── FAQ SECTION ── -->
+  <div class="space-y-4 border-t border-gray-200 pt-10 mb-4">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">Frequently asked questions</h2>
+    <div class="space-y-4">
+      {[
+        {
+          q: 'What is the CPF contribution rate for 2026?',
+          a: 'For employees below 55, the total rate is 37% (17% employer, 20% employee). For those aged 55 to 60 it\'s 28% (13% employer, 15% employee). The rate continues to reduce for older age bands down to 10% total for workers above 70.'
+        },
+        {
+          q: 'What is the CPF Ordinary Wage ceiling in 2026?',
+          a: 'S$6,800 per month from January 2026, up from S$6,300 in 2025. CPF is calculated only on the first S$6,800 of monthly salary. Earnings above this ceiling don\'t attract ordinary wage CPF contributions.'
+        },
+        {
+          q: 'Do part-time employees have to pay CPF in Singapore?',
+          a: 'Yes. CPF applies to all citizens and PRs earning more than S$50/month, including part-time workers. The same age-based rate table applies, calculated on actual wages earned. There\'s no special lower rate for part-time status.'
+        },
+        {
+          q: 'What happens if an employer makes a wrong CPF contribution?',
+          a: 'Underpayment attracts interest at 1.5% per month from the CPF Board, and the shortfall must still be made up. Persistent non-payment can lead to prosecution. Overpayment can usually be refunded but requires a formal application. Getting payroll right from the start is far easier than correcting it later.'
+        },
+      ].map(f => (
+        <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+          <h3 class="text-sm font-bold text-[#000F22] mb-2">{f.q}</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</BlogLayout>

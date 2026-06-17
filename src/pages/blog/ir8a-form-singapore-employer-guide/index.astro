@@ -1,0 +1,325 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+
+const schemaJsonLd = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+  {"@type":"Article","@id":"https://accountantforsmallbusiness.com/blog/ir8a-form-singapore-employer-guide/#article",
+   "headline":"IR8A Form Singapore 2026: Complete Employer Filing Guide",
+   "description":"IR8A form Singapore — what it is, what to include, the March 1 deadline, Auto Inclusion Scheme obligations, and how to avoid the most common employer filing errors.",
+   "url":"https://accountantforsmallbusiness.com/blog/ir8a-form-singapore-employer-guide/",
+   "datePublished":"2026-06-29","dateModified":"2026-06-29","inLanguage":"en-SG",
+   "image":{"@type":"ImageObject","url":"https://accountantforsmallbusiness.com/hero-bg.jpg","width":1200,"height":630},
+   "author":{"@id":"https://accountantforsmallbusiness.com/#mehdi"},
+   "publisher":{"@id":"https://accountantforsmallbusiness.com/#org"},
+   "about":["IR8A form","employer tax filing","IRAS Singapore","Auto Inclusion Scheme","payroll Singapore"],
+   "keywords":["ir8a singapore","form ir8a","ir8a submission deadline","iras auto inclusion scheme","ir8a employer guide 2026"],
+   "mainEntityOfPage":{"@type":"WebPage","@id":"https://accountantforsmallbusiness.com/blog/ir8a-form-singapore-employer-guide/"}},
+  {"@type":"HowTo","name":"How to submit IR8A via the Auto Inclusion Scheme","step":[
+    {"@type":"HowToStep","position":1,"name":"Register for AIS on myTax Portal","text":"Log into myTax Portal with your Corppass. Navigate to Employer Tax Matters and register for the Auto Inclusion Scheme if you have 5 or more employees."},
+    {"@type":"HowToStep","position":2,"name":"Prepare employee income details","text":"Gather each employee's employment income, bonus, directors fees, CPF contributions, and any benefits-in-kind for the year."},
+    {"@type":"HowToStep","position":3,"name":"Enter or import data into myTax Portal","text":"Key in each employee's details manually, or use IRAS-approved payroll software to generate and upload an AIS data file."},
+    {"@type":"HowToStep","position":4,"name":"Verify and submit by 1 March","text":"Review all entries for accuracy, then submit. IRAS pre-fills the employee's tax return automatically — employees do not need to enter their employment income separately."},
+    {"@type":"HowToStep","position":5,"name":"Provide IR8A copy to employees","text":"Even after AIS submission, give each employee a copy of their IR8A by 1 March so they can verify their income figures before filing their personal tax return."}
+  ]},
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the IR8A form in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"IR8A is an annual return of employee income that every Singapore employer must prepare for each employee who earned income during the calendar year. It summarises employment income, bonuses, CPF contributions, and any benefits-in-kind. Employers must submit it to IRAS and give a copy to each employee by 1 March each year."}},
+    {"@type":"Question","name":"When is the IR8A submission deadline?",
+     "acceptedAnswer":{"@type":"Answer","text":"The deadline is 1 March each year for the preceding calendar year's income. For Year of Assessment 2026 (income earned in 2025), the deadline was 1 March 2026. For YA 2027 (income earned in 2026), the deadline is 1 March 2027. Late submission attracts a composition fine of up to S$1,000 per employee."}},
+    {"@type":"Question","name":"Who must submit IR8A in Singapore?",
+     "acceptedAnswer":{"@type":"Answer","text":"Every employer in Singapore must prepare IR8A for each employee who received employment income during the year, including part-time workers, casual workers, and directors. Employers with 5 or more employees must submit electronically via the Auto Inclusion Scheme. Employers with fewer than 5 employees can choose to submit manually or via AIS."}},
+    {"@type":"Question","name":"What is the Auto Inclusion Scheme (AIS) for IR8A?",
+     "acceptedAnswer":{"@type":"Answer","text":"The Auto Inclusion Scheme (AIS) is an IRAS program where employers submit employee income data electronically. IRAS then pre-fills the employment income section of each employee's personal tax return automatically. Employers with 5 or more employees are required to participate. It removes the need for employees to manually enter their salary figures when filing personal tax."}},
+    {"@type":"Question","name":"What happens if I miss the IR8A deadline?",
+     "acceptedAnswer":{"@type":"Answer","text":"IRAS can impose a composition fine of up to S$1,000 per employee for late or missing IR8A submissions. Repeated non-compliance can result in court proceedings. If you realise you have missed the deadline, submit as soon as possible and contact IRAS — voluntary disclosure before IRAS contacts you generally results in a lower penalty."}}
+  ]},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://accountantforsmallbusiness.com/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://accountantforsmallbusiness.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"IR8A Form Singapore Employer Guide","item":"https://accountantforsmallbusiness.com/blog/ir8a-form-singapore-employer-guide/"}
+  ]}
+]}<\/script>`;
+---
+
+<BlogLayout
+  title="IR8A Form Singapore 2026: Complete Employer Filing Guide | AFSB"
+  description="IR8A form Singapore — what it is, what to include, the March 1 deadline, Auto Inclusion Scheme rules, and how to avoid the most common employer filing errors."
+  schemaJsonLd={schemaJsonLd}
+  headline="IR8A Form Singapore 2026: Complete Employer Filing Guide"
+  intro="Every Singapore employer has to file IR8A for every employee, every year. Miss the 1 March deadline and IRAS can fine you up to S$1,000 per employee. Get the numbers wrong and your employees' tax returns will be wrong too. This guide covers everything you need to know — what goes in the form, who has to file electronically, and where most employers make mistakes."
+  date="29 June 2026"
+  datePublished="2026-06-29"
+  dateModified="2026-06-29"
+  readTime="7 min read"
+  ctaLabel="We handle IR8A filing and year-round payroll for Singapore SMEs — fixed monthly fee."
+  ctaHref="/payroll-services-singapore/"
+  relatedPosts={[
+    { title: 'CPF Contribution Rates 2026 Singapore', href: '/blog/cpf-contribution-rates-2026-singapore/', tag: 'Payroll' },
+    { title: 'Total Employee Cost Calculator', href: '/employee-cost-calculator-singapore/', tag: 'Calculator' },
+    { title: 'Payroll Services Singapore', href: '/payroll-services-singapore/', tag: 'Service' },
+  ]}
+>
+
+  <!-- SECTION 1: What is IR8A? -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What is the IR8A form in Singapore?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">IR8A is an annual return of employee income that every Singapore employer must prepare and submit to IRAS by 1 March each year. It records each employee's total employment income, bonuses, CPF contributions, and any benefits-in-kind received during the calendar year. IRAS uses this data to pre-fill employees' personal tax returns.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Think of IR8A as the Singapore equivalent of the UK's P60 or the US W-2. You're telling IRAS what each employee earned from you last year so IRAS can check that the employee's personal tax return matches. If your IR8A says S$60,000 and the employee declares S$55,000, IRAS will query it.</p>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">The form covers the full calendar year — 1 January to 31 December — and the submission deadline is always 1 March the following year. So for income earned in 2026 (Year of Assessment 2027), the deadline is 1 March 2027.</p>
+  </div>
+
+  <!-- Deadline callout -->
+  <div class="bg-[#000F22] rounded-2xl p-6 border border-[#DAA035]/30 mb-12">
+    <p class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-4">Key IR8A Dates</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left border-collapse">
+        <thead>
+          <tr class="border-b border-gray-800">
+            <th class="pb-3 text-[#DAA035] font-mono text-xs uppercase tracking-wider">Year of Assessment</th>
+            <th class="pb-3 text-[#DAA035] font-mono text-xs uppercase tracking-wider">Income Period</th>
+            <th class="pb-3 text-[#DAA035] font-mono text-xs uppercase tracking-wider">IR8A Deadline</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          {[
+            ['YA 2026', '1 Jan – 31 Dec 2025', '1 March 2026'],
+            ['YA 2027', '1 Jan – 31 Dec 2026', '1 March 2027'],
+            ['YA 2028', '1 Jan – 31 Dec 2027', '1 March 2028'],
+          ].map(([ya, period, deadline]) => (
+            <tr>
+              <td class="py-3 text-[#CBCFD8] font-semibold">{ya}</td>
+              <td class="py-3 text-[#CBCFD8]">{period}</td>
+              <td class="py-3 text-[#DAA035] font-bold">{deadline}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Who must file -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">Who must submit IR8A in Singapore?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Every employer in Singapore must prepare IR8A for each employee who received employment income during the year. This includes full-time employees, part-time workers, casual workers, and company directors. If you paid anyone a salary, bonus, director's fee or commission in Singapore, you need an IR8A for them.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">There's no minimum income threshold. Even if you paid a part-timer S$200 for two weeks of work, they need an IR8A. The only people who don't get IR8A are sole proprietors and partners — they file their own business income separately.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+      {[
+        { label: 'Needs IR8A', color: 'emerald', items: ['Full-time salaried employees', 'Part-time and casual workers', 'Company directors (fees + salary)', 'Contract staff on payroll', 'Foreign employees on work passes', 'Employees who resigned during the year'] },
+        { label: 'Does NOT need IR8A', color: 'red', items: ['Sole proprietors filing own income', 'Partners in a partnership', 'Self-employed freelancers (not on payroll)', 'Vendors and suppliers (paid via invoice)', 'Employees who filed IR21 on cessation'] },
+      ].map(({ label, color, items }) => (
+        <div class={`rounded-xl border p-5 ${color === 'emerald' ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-red-500/5 border-red-500/20'}`}>
+          <p class={`text-xs font-mono font-bold uppercase tracking-widest mb-3 ${color === 'emerald' ? 'text-emerald-400' : 'text-red-400'}`}>{label}</p>
+          <ul class="space-y-1.5">
+            {items.map(item => (
+              <li class="flex items-start gap-2 text-xs text-gray-700">
+                <svg class={`w-3.5 h-3.5 mt-0.5 shrink-0 ${color === 'emerald' ? 'text-emerald-500' : 'text-red-500'}`} fill="currentColor" viewBox="0 0 20 20">
+                  {color === 'emerald'
+                    ? <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    : <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  }
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- SECTION 3: What goes in IR8A -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What information goes into the IR8A form?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">IR8A captures six main categories: employment income (salary, wages, leave pay), bonus and commission, director's fees, CPF contributions by both employer and employee, benefits-in-kind (car, accommodation, club memberships), and lump sum payments like gratuity or retirement benefits. Every figure must match your payroll records exactly.</p>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF]">
+            <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Category</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">What to include</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Common mistakes</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['Employment income', 'Basic salary, wages, overtime, allowances, leave pay paid out', 'Missing transport/meal allowances that are taxable'],
+            ['Bonus & commission', 'All contractual and discretionary bonuses, sales commissions', 'Declaring bonus in wrong YA if paid in January for prior year'],
+            ['Director\'s fees', 'Approved director fees for the YA, not when paid', 'Using cash payment date instead of the date fees were approved at AGM'],
+            ['CPF contributions', 'Both employer and employee CPF — must match CPF Board records', 'Using payroll estimate instead of actual CPF Board figures'],
+            ['Benefits-in-kind', 'Company car, accommodation, club membership, insurance premiums', 'Omitting mobile phone or laptop if personal use is significant'],
+            ['Lump sum payments', 'Gratuity, retirement benefits, contractual ex-gratia payments', 'Misclassifying severance as non-taxable when it\'s partly taxable'],
+          ].map(([cat, include, mistake], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50/50 hover:bg-gray-50'}>
+              <td class="p-4 font-semibold text-[#000F22] whitespace-nowrap">{cat}</td>
+              <td class="p-4 text-gray-700 text-xs">{include}</td>
+              <td class="p-4 text-red-600 text-xs">{mistake}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-gray-600 mt-3">The supporting forms Appendix 8A (benefits-in-kind) and Appendix 8B (gains from stock options) are filed alongside IR8A when relevant. If your employees don't have benefits-in-kind or stock options, you won't need these.</p>
+  </div>
+
+  <!-- SECTION 4: Auto Inclusion Scheme -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What is the Auto Inclusion Scheme and do you have to use it?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">The Auto Inclusion Scheme (AIS) is IRAS's electronic submission system for IR8A data. Employers with 5 or more employees must participate in AIS. Under AIS, you submit income data electronically via myTax Portal or IRAS-compatible payroll software, and IRAS automatically pre-fills each employee's personal income tax return. Employees don't have to key in their salary themselves.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">If you have fewer than 5 employees, AIS participation is optional but strongly recommended. Manual IR8A submission means printing the form, filling it in, and mailing or hand-delivering it to IRAS — which is slower and more error-prone than electronic submission.</p>
+
+    <!-- HowTo steps -->
+    <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6 mt-2">
+      <p class="text-xs font-mono font-bold text-[#DAA035] uppercase tracking-widest mb-5">How to submit IR8A via the Auto Inclusion Scheme</p>
+      <ol class="space-y-4">
+        {[
+          { step: 'Register for AIS on myTax Portal', detail: 'Log in with Corppass. Go to Employer Tax Matters and register for AIS. You\'ll need your company\'s UEN and Corppass admin access.' },
+          { step: 'Gather each employee\'s full-year income figures', detail: 'Pull salary, bonus, CPF contributions and any benefits-in-kind from your payroll records. Cross-check CPF figures against your CPF Board statements, not your payroll software estimate.' },
+          { step: 'Enter or import data into myTax Portal', detail: 'Key in each employee\'s details manually for small teams, or use IRAS-approved payroll software (Xero, QuickBooks, and most local payroll tools can generate an AIS-format file) to bulk upload.' },
+          { step: 'Review and submit by 1 March', detail: 'Check all figures match your records. Once submitted, IRAS pre-fills each employee\'s return automatically. Amendments are possible after submission but require a formal amendment request.' },
+          { step: 'Give each employee a copy of their IR8A', detail: 'You\'re still required to provide a physical or digital copy of the IR8A to each employee by 1 March, even after AIS submission. Employees use it to verify their pre-filled tax return.' },
+        ].map((item, i) => (
+          <li class="flex gap-3">
+            <span class="w-7 h-7 rounded-full bg-[#DAA035]/15 text-[#DAA035] text-xs font-mono font-bold flex items-center justify-center border border-[#DAA035]/25 shrink-0 mt-0.5">{i + 1}</span>
+            <div>
+              <p class="text-sm font-semibold text-[#000F22]">{item.step}</p>
+              <p class="text-xs text-gray-500 mt-0.5 leading-relaxed">{item.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <!-- SECTION 5: Common mistakes -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What are the most common IR8A mistakes Singapore employers make?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">The three most common errors are: declaring a January bonus in the wrong Year of Assessment, using estimated CPF figures instead of confirmed CPF Board figures, and missing employees who left during the year. Each of these triggers an IRAS query and requires an amendment submission.</p>
+    </div>
+
+    <div class="space-y-3">
+      {[
+        {
+          n: '01',
+          title: 'Bonus declared in the wrong Year of Assessment',
+          body: 'If you pay a 2025 performance bonus in January 2026, it\'s still YA 2026 income (2025 calendar year) only if it was contractually due in 2025. If it\'s a discretionary bonus approved and paid in January 2026, it\'s YA 2027 income (2026 calendar year). Most employers default to payment date, which is often wrong.',
+        },
+        {
+          n: '02',
+          title: 'CPF figures don\'t match CPF Board records',
+          body: 'IRAS cross-checks your declared CPF contributions against the CPF Board\'s records. If your payroll software rounds differently or you had a late CPF submission, the figures won\'t match. Always pull your CPF contribution history from the CPF Board portal before filing, not from your payroll system.',
+        },
+        {
+          n: '03',
+          title: 'Missing employees who resigned or were terminated',
+          body: 'You need IR8A for every employee who worked for you at any point during the year, even if they left in February. If you\'ve already filed IR21 for a foreign employee on work pass cessation, you don\'t need a separate IR8A — IR21 covers both.',
+        },
+        {
+          n: '04',
+          title: 'Taxable allowances not declared',
+          body: 'Transport allowances, meal allowances and handphone allowances are generally taxable unless they\'re strict reimbursements of actual receipted expenses. Many employers treat fixed monthly allowances as non-taxable when they\'re not. IRAS has specific rules — when in doubt, declare and let the employee claim any exemption themselves.',
+        },
+        {
+          n: '05',
+          title: 'Missing the 1 March deadline entirely',
+          body: 'It\'s easy to forget IR8A when you\'re busy closing the financial year. Set a calendar reminder in December each year so you\'re not scrambling in February. If you\'re late, submit immediately and contact IRAS proactively — voluntary disclosure before they chase you usually results in a reduced fine.',
+        },
+      ].map(({ n, title, body }) => (
+        <div class="bg-white border border-gray-200 rounded-xl p-5 flex gap-4">
+          <span class="text-2xl font-mono font-black text-gray-100 shrink-0 leading-none mt-0.5">{n}</span>
+          <div>
+            <p class="text-sm font-bold text-[#000F22] mb-1">{title}</p>
+            <p class="text-xs text-gray-600 leading-relaxed">{body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- SECTION 6: What if you miss the deadline -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What happens if you miss the IR8A deadline or file incorrectly?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">Late or missing IR8A submissions can attract a composition fine of up to S$1,000 per employee. Persistent non-compliance can lead to court proceedings with fines up to S$10,000 per offence. If you've missed the deadline, submit as soon as possible and contact IRAS directly — proactive disclosure before IRAS raises a query almost always results in a lower penalty than waiting to be caught.</p>
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">Amendment submissions are allowed after the 1 March deadline if you discover an error. Log into myTax Portal and submit a revised IR8A. IRAS will update the affected employee's pre-filled return accordingly. There's no penalty for amendments as long as the original submission was on time and the correction is made promptly.</p>
+    <p class="text-sm sm:text-base leading-relaxed text-gray-700">The simplest way to avoid all of this is clean monthly payroll records all year round. When December comes, your IR8A figures are already there — you just need to compile and submit them. Our <a href="/payroll-services-singapore/" class="text-[#DAA035] font-semibold hover:underline">payroll service</a> handles monthly payslips, CPF submissions and year-end IR8A filing as part of the fixed monthly package. We also feed the data into your <a href="/blog/cpf-contribution-rates-2026-singapore/" class="text-[#DAA035] font-semibold hover:underline">CPF calculations</a> throughout the year so nothing needs to be reconstructed at year-end.</p>
+  </div>
+
+  <!-- SECTION 7: IR8A vs IR21 -->
+  <div class="space-y-4 mb-12">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight">What is the difference between IR8A and IR21?</h2>
+    <div class="p-6 border-l-[3px] border-[#DAA035] rounded-r-lg bg-[#F2F4F7] shadow-sm">
+      <p class="text-base leading-relaxed font-semibold italic text-[#000F22]">IR8A is an annual summary of income for all employees, filed by 1 March. IR21 is a separate tax clearance form you must file at least one month before a foreign employee (on a work pass) stops working for you or leaves Singapore permanently. IR21 triggers IRAS to assess and clear the employee's tax before they leave. You must withhold their final salary until IRAS issues a clearance directive.</p>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm mt-4">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-[#000F22] text-[#FEFFFF]">
+            <th class="p-4 font-mono uppercase tracking-wider text-xs text-[#DAA035]">Form</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Who it covers</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Deadline</th>
+            <th class="p-4 font-mono uppercase tracking-wider text-xs">Purpose</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {[
+            ['IR8A', 'All employees (citizens, PRs, foreigners)', '1 March annually', 'Annual income summary for IRAS and employee tax return pre-fill'],
+            ['IR21', 'Foreign employees on work passes leaving Singapore', 'At least 1 month before last day of employment', 'Tax clearance before departure — withhold final pay until clearance issued'],
+          ].map(([form, who, deadline, purpose], i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+              <td class="p-4 font-bold text-[#DAA035]">{form}</td>
+              <td class="p-4 text-gray-700 text-xs">{who}</td>
+              <td class="p-4 text-gray-700 text-xs font-semibold">{deadline}</td>
+              <td class="p-4 text-gray-700 text-xs">{purpose}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="space-y-4 border-t border-gray-200 pt-10 mb-4">
+    <h2 class="text-2xl sm:text-3xl font-sans text-[#000F22] font-extrabold tracking-tight mb-6">Frequently asked questions</h2>
+    <div class="space-y-4">
+      {[
+        {
+          q: 'What is the IR8A form in Singapore?',
+          a: 'IR8A is an annual return of employee income that every Singapore employer must prepare for each employee and submit to IRAS by 1 March. It summarises salary, bonus, CPF contributions and benefits-in-kind for the calendar year. IRAS uses it to pre-fill employees\' personal tax returns under the Auto Inclusion Scheme.',
+        },
+        {
+          q: 'When is the IR8A submission deadline?',
+          a: '1 March each year for the preceding calendar year\'s income. For income earned in 2026 (YA 2027), the deadline is 1 March 2027. Late submission can attract a composition fine of up to S$1,000 per employee.',
+        },
+        {
+          q: 'Do I have to use the Auto Inclusion Scheme?',
+          a: 'Yes, if you have 5 or more employees. Employers with fewer than 5 can choose to submit manually or via AIS. Electronic AIS submission is recommended for everyone — it\'s faster, reduces errors, and pre-fills your employees\' tax returns automatically.',
+        },
+        {
+          q: 'What happens if I miss the IR8A deadline?',
+          a: 'IRAS can impose a composition fine of up to S$1,000 per employee. If you\'ve missed the deadline, submit immediately and contact IRAS proactively. Voluntary disclosure before IRAS raises a query generally results in a reduced penalty versus waiting to be contacted.',
+        },
+        {
+          q: 'Do I need IR8A for an employee who left partway through the year?',
+          a: 'Yes. You need IR8A for every employee who worked for you at any point during the calendar year, regardless of whether they\'re still employed. The only exception is foreign employees for whom you\'ve already filed IR21 on cessation of employment — IR21 covers their income for that year.',
+        },
+      ].map(f => (
+        <div class="bg-[#F8FAFC] border border-gray-200 rounded-xl p-5">
+          <h3 class="text-sm font-bold text-[#000F22] mb-2">{f.q}</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</BlogLayout>
